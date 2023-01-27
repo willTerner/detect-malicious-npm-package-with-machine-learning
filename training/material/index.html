@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <div>
+      <textarea id="input1" style="width: 80%; height: 450px;"></textarea>
+   </div>
+   <div>
+      <textarea id="input2" style="width: 80%; height: 450px;"></textarea>
+   </div>
+   <div>
+      <button id="commit">提交</button>
+      <div id="result"></div>
+   </div>
+   <script>
+      const commitButton = document.querySelector("#commit");
+      commitButton.addEventListener("click", () => {
+        const input1 = document.querySelector("#input1");
+        const input2 = document.querySelector("#input2");
+        const result = document.querySelector("#result");
+        let resultText = "";
+        if (input1.value.trim() === input2.value.trim()) {
+            resultText = "相等";
+        } else {
+            resultText = "不相等";
+        }
+        result.innerHTML = resultText;
+      });
+   </script>
+</body>
+</html>
