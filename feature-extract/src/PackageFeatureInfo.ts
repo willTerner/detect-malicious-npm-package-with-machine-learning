@@ -6,8 +6,17 @@ import { getDomainPattern, IP_Pattern, Network_Command_Pattern, SensitiveStringP
 import { getAllInstallScripts } from "./GetInstallScripts";
 import { scanJSFileByAST } from "./ASTUtil";
 import { matchUseRegExp } from "./RegExpUtil";
+import { Worker, workerData } from "worker_threads";
+import chalk from "chalk";
+import { writeFile } from "fs/promises";
+import { stringify } from "csv-stringify/sync";
+import { fork } from "child_process";
+import { IGNORE_JS_FILES } from "./IgnoreJSFiles";
 
 
+const BABEL_STUCK_FILES_PATH = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/babel-struck-files.csv";
+
+const ALLOWED_MAX_JS_SIZE = 2 * 1024 * 1024;
 
 export interface PackageFeatureInfo {
    editDistance: number;
@@ -43,13 +52,48 @@ export interface PackageFeatureInfo {
    version: string,
 }
 
+async function parseJSAsync(code: string, featureSet: PackageFeatureInfo, isInstallScript: boolean, targetJSFilePath: string): Promise<PackageFeatureInfo> {
+   return new Promise(async(resolve, reject) => {
+     const childProcess = fork("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/out/src/ProcessSingleFileProces.js");
+     const sendData = {
+         code,
+         featureSet,
+         isInstallScript,
+         targetJSFilePath
+     };
+
+     childProcess.send(sendData);
+
+     const MAX_WAIT_TIME = 2000;
+     const start_time_stamp = Date.now();
+     let timer_id = setInterval(async() => {
+         const time_diff = Date.now() - start_time_stamp;
+         console.log(chalk.green("时间差为" + time_diff));
+         if (time_diff >= MAX_WAIT_TIME) {
+            // babel处理代码卡住，停止转义，并记录在文件中
+            await writeFile(BABEL_STUCK_FILES_PATH,  stringify([[targetJSFilePath]]));
+            childProcess.kill();
+            console.log(chalk.red("调用terminate"));
+            reject(new Error("babel struck at file" + targetJSFilePath));
+         }
+     }, 10);
+
+     childProcess.on('message', resolve);
+     childProcess.on('error', reject);
+     childProcess.on('exit', (code) => {
+         console.log("babel 处理进程退出信号为" + code);
+         clearInterval(timer_id);
+     });
+   });
+};
+
 /**
  * 
  * @param dirPath 源码包（目录下有package.json文件）的路径
  * @param tgzPath 压缩包的路径
  */
 export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFeatureInfo> {
-   const result: PackageFeatureInfo = {
+   let result: PackageFeatureInfo = {
       editDistance: 0,
       averageBracketNumber: 0,
       packageSize: 0,
@@ -121,7 +165,7 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
    }
    
    // 分析install hook js files
-   getAllInstallScripts(result.executeJSFiles);
+   await getAllInstallScripts(result.executeJSFiles);
 
    async function traverseDir(dirPath: string) {
       if (basename(dirPath) === "node_modules") {
@@ -135,9 +179,14 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
             result.numberOfJSFiles++;
             await new Promise((resolve) => {
                setTimeout(async () => {
-                  let jsFileContent = await readFile(join(dirPath, dirent.name), {encoding: "utf-8"});
-                  scanJSFileByAST(jsFileContent, result, isInstallScriptFile);
-                  matchUseRegExp(jsFileContent, result);
+                  let targetJSFilePath = join(dirPath, dirent.name);
+                  let jsFileContent = await readFile(targetJSFilePath, {encoding: "utf-8"});
+                  const fileInfo = await stat(targetJSFilePath);
+                  console.log(chalk.blue("现在分析的js文件路径是") + chalk.red(targetJSFilePath) + "  文件大小为" + fileInfo.size);
+                  if (fileInfo.size <= ALLOWED_MAX_JS_SIZE && IGNORE_JS_FILES.indexOf(targetJSFilePath) < 0) {
+                     await scanJSFileByAST(jsFileContent, result, isInstallScriptFile, targetJSFilePath);
+                     matchUseRegExp(jsFileContent, result);
+                  }
                   resolve(true);
                }, 0);
             });

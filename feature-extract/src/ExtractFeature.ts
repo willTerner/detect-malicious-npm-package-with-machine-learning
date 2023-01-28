@@ -1,5 +1,6 @@
+import chalk from "chalk";
 import { stringify } from "csv-stringify/sync";
-import { writeFile, opendir } from "fs/promises";
+import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
 import { getPackageFeatureInfo, PackageFeatureInfo } from "./PackageFeatureInfo";
 
@@ -8,7 +9,11 @@ const malicious_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/sourc
 
 const normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/normal";
 
- async function extractFeatureFromFile(sourcePath: string, isMaliciousPackage: boolean) {
+const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
+
+
+
+export async function extractFeatureFromPackage(sourcePath: string, isMaliciousPackage: boolean) {
    const result: PackageFeatureInfo = await getPackageFeatureInfo(sourcePath);
    const csvPath = join(isMaliciousPackage ? malicious_path : normal_path, result.packageName + ".csv");
    const featureArr: [string, number|boolean][] = [];
@@ -39,20 +44,60 @@ const normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-c
    featureArr.push(["containSuspicousString", result.containSuspiciousString]);
    await new Promise(resolve => {
       setTimeout(async() => {
-        await writeFile(csvPath, stringify(featureArr));
+        await writeFile(csvPath, stringify(featureArr, {
+         cast: {
+            "boolean": function(value) {
+               if (value) {
+                  return "true";
+               }
+               return "false";
+            }
+         }
+        }));
         resolve(true);
      });
    });
 }
 
 export async function extractFeatureFromDir(dirPath: string, isMaliciousPath: boolean) {
-   const dir = await opendir(dirPath);
-   for await (const dirent of dir) {
-      if (dirent.isDirectory()) {
-         await extractFeatureFromDir(join(dirPath, dirent.name), isMaliciousPath);
-      } else if (dirent.isFile() && dirent.name.endsWith(".tgz")) {
-         await extractFeatureFromFile(join(dirPath, "package"), isMaliciousPath);
+   let oldPackageArr = JSON.parse(await readFile(progress_json_path, {encoding: "utf-8"})) as string[];
+
+   let counter = 0;
+
+   const max_package_number = 150;
+
+   let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
+
+   const progress_detail_path = join("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material", idx_ + ".csv");
+
+   let newPackageArr: string[] = [];
+
+   async function resolveExtract(dirPath: string) {
+      const dir = await opendir(dirPath);
+      for await (const dirent of dir) {
+         const currentFilePath = join(dirPath, dirent.name);
+         if (dirent.isDirectory()) {
+            await resolveExtract(currentFilePath);
+         } else if (dirent.isFile() && dirent.name.endsWith(".tgz")) {
+            const packagePath = join(dirPath, "package");
+            if (oldPackageArr.indexOf(packagePath) < 0) {
+               newPackageArr.push(packagePath);
+               console.log(chalk("现在分析了" + counter + "个包"));
+               await extractFeatureFromPackage(packagePath, isMaliciousPath);
+               counter++;
+               if (counter === max_package_number) {
+                  //  更新progress.json
+                  oldPackageArr = oldPackageArr.concat(newPackageArr);
+                  const outputArr = newPackageArr.map(el => [el]);
+                  await writeFile(progress_json_path, JSON.stringify(oldPackageArr));
+                  await writeFile(progress_detail_path, stringify(outputArr));
+                  process.exit(0);
+               }
+            }
+         }
       }
    }
+
+   await resolveExtract(dirPath);
 }
 

@@ -87,4 +87,5 @@
 + 如何检测使用代码混淆(打包和压缩，比如webpack，rollup等工具)的恶意包
   + 案例event-stream
 + 没有考虑ts文件
++ js中的babel，正则表达式无法分析大文件（阈值: 2MB），比如/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/momnet/2.28.0/package/moment.js，不过恶意代码文件一般不会这么大
 

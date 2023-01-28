@@ -34,6 +34,6 @@ test('createBufferFromASCII works on [] and b = []', () => {
       packageName: "",
       version: ""
    };
-   scanJSFileByAST("let a = Buffer.from([11,20]);", result, false);
+   scanJSFileByAST("let a = Buffer.from([11,20]);", result, false, "");
    expect(result.useBufferFrom).toBe(true);
  });

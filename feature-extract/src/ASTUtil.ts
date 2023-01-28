@@ -1,19 +1,38 @@
 import {parse} from '@babel/core';
 import traversePkg from '@babel/traverse';
-import * as t from '@babel/types';
 import { PackageFeatureInfo } from './PackageFeatureInfo';
+import * as t from "@babel/types";
 import { base64_Pattern, getDomainPattern, IP_Pattern, SensitiveStringPattern } from './Patterns';
+import { getFileLogger } from './FileLogger';
+import chalk from 'chalk';
+
+let traverse: any;
 
 
-const traverse = traversePkg as any;
+if (process.env.NODE_ENV) {
+   traverse = (traversePkg as any);
+} else {
+   traverse = (traversePkg as any).default;
+}
 
 
 
-export function scanJSFileByAST(code: string, featureSet: PackageFeatureInfo, isInstallScript: boolean) {
-   const ast = parse(code, {
-      sourceType: "script"
-   });
 
+
+export async function scanJSFileByAST(code: string, featureSet: PackageFeatureInfo, isInstallScript: boolean, targetJSFilePath: string) {
+   const logger = await getFileLogger();
+   let ast: any;
+   try{
+      ast = parse(code, {
+         sourceType: "script"
+      });
+   }catch(error) {
+      logger.log("现在分析的文件是: " + targetJSFilePath);
+      const errorObj = error as Error;
+      logger.log("error名称: " + errorObj.name);
+      logger.log("error信息" + errorObj.message);
+      logger.log("错误栈" + errorObj.stack);
+   }
    traverse(ast, {
       CallExpression: function(path) {
          if (path.node.callee.name === "require") {
@@ -58,8 +77,7 @@ export function scanJSFileByAST(code: string, featureSet: PackageFeatureInfo, is
             if (path.node.arguments[0].type === "ArrayExpression") {
                featureSet.createBufferFromASCII = true;
             }
-            const type = path.scope.getBinding(path.node.arguments[0].name).path.node.init.type;
-            if (type === "ArrayExpression") {
+            if (t.isIdentifier(path.node.arguments[0])) {
                featureSet.createBufferFromASCII = true;
             }
          }
@@ -115,24 +133,16 @@ export function scanJSFileByAST(code: string, featureSet: PackageFeatureInfo, is
       },
       NewExpression: function(path) {
          if (path.node.callee.name === 'Buffer') {
-           if (path.node.arguments.length > 0 && path.node.arguments[0].type === 'ArrayExpression') {
+         if (path.node.arguments.length > 0 && path.node.arguments[0].type === 'ArrayExpression') {
             // Todo: 如何参数是其他类型可以生成数组的表达式，比如函数调用，如何识别
-             featureSet.createBufferFromASCII = true;
-           }
-           if (path.node.arguments.length > 0 && path.node.arguments[0].type === "Identifier") {
-            let typeName:string = "";
-            try{
-               typeName = path.scope.getBinding(path.node.arguments[0].name).path.node.init.type;
-               if (typeName === "ArrayExpression") {
-                  featureSet.createBufferFromASCII = true;
-               }
-            }catch(er) {
-
-            }
-           }
+            featureSet.createBufferFromASCII = true;
          }
-       },
-       ImportDeclaration: function(path) {
+         if (path.node.arguments.length > 0 && path.node.arguments[0].type === "Identifier") {
+               featureSet.createBufferFromASCII = true;
+         }
+         }
+      },
+      ImportDeclaration: function(path) {
          const moduleName = path.node.source.value;
          if (path.node.source.value === "base64-js") {
             featureSet.useBase64Conversion = true;
@@ -157,21 +167,22 @@ export function scanJSFileByAST(code: string, featureSet: PackageFeatureInfo, is
                if (isInstallScript) {
                   featureSet.accessNetworkInInstallScript = true;
                }
-             }
+            }
          }
          {
             if (moduleName === "dns") {
                featureSet.containDomain = true;
             }
          }
-       },
-       Identifier: function(path) {
+      },
+      Identifier: function(path) {
          if (path.node.name === "eval") {
             featureSet.useEval = true;
          }
-       },
+      },
    });
 
+   return featureSet;
 }
 
 

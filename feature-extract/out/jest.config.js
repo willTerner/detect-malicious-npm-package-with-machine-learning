@@ -1,11 +1,10 @@
-"use strict";
-exports.__esModule = true;
 // Sync object
-var config = {
+const config = {
     verbose: true,
     transform: {
-        "^.+\\.tsx?$": "ts-jest"
-    }
+        "^.+\\.tsx?$": "ts-jest",
+    },
+    testPathIgnorePatterns: ['<rootDir>/out/', '<rootDir>/node_modules/']
 };
-exports["default"] = config;
+export default config;
 //# sourceMappingURL=jest.config.js.map

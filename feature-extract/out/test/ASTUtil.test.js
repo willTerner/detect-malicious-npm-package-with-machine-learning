@@ -1,8 +1,6 @@
-"use strict";
-exports.__esModule = true;
-var ASTUtil_1 = require("../src/ASTUtil");
-test('createBufferFromASCII works on [] and b = []', function () {
-    var result = {
+import { scanJSFileByAST } from "../src/ASTUtil";
+test('createBufferFromASCII works on [] and b = []', () => {
+    let result = {
         editDistance: 0,
         averageBracketNumber: 0,
         packageSize: 0,
@@ -35,7 +33,7 @@ test('createBufferFromASCII works on [] and b = []', function () {
         packageName: "",
         version: ""
     };
-    (0, ASTUtil_1.scanJSFileByAST)("let a = Buffer.from([11,20]);", result, false);
+    scanJSFileByAST("let a = Buffer.from([11,20]);", result, false, "");
     expect(result.useBufferFrom).toBe(true);
 });
 //# sourceMappingURL=ASTUtil.test.js.map

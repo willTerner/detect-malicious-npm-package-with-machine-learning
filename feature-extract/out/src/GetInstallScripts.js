@@ -1,64 +1,85 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
 };
-exports.__esModule = true;
-exports.getAllInstallScripts = void 0;
-var core_1 = require("@babel/core");
-var traverse_1 = __importDefault(require("@babel/traverse"));
-var fs_1 = require("fs");
-var path_1 = require("path");
-var traverse = traverse_1["default"]["default"];
+import { parse } from '@babel/core';
+import traversePkg from '@babel/traverse';
+import { accessSync, readFileSync } from 'fs';
+import { dirname, join } from 'path';
+import * as t from '@babel/types';
+import { getFileLogger } from './FileLogger';
+const traverse = traversePkg.default;
 /**
  *
  * @param installScripts install hook中js file的路径
  * @return 所有在install hook中执行的js file路径
  */
-function getAllInstallScripts(installScripts) {
-    function resolveAllInstallScripts(installScripts, idx) {
-        if (idx >= installScripts.length) {
-            return;
-        }
-        try {
-            var codeContent = (0, fs_1.readFileSync)(installScripts[idx], {
-                encoding: "utf-8"
-            });
-            var ast = (0, core_1.parse)(codeContent, {
-                sourceType: "script"
-            });
-            traverse(ast, {
-                CallExpression: function (path) {
-                    if (path.node.callee.name === "require") {
-                        if (path.node.arguments.length > 0) {
-                            var moduleName = path.node.arguments[0].value;
-                            if (moduleName.startsWith("/") || moduleName.startsWith("./") || moduleName.startsWith("../")) {
-                                var importScript = (0, path_1.join)((0, path_1.dirname)(installScripts[idx]), moduleName);
-                                if (importScript.endsWith(".js") || importScript.indexOf(".") < 0) {
-                                    if (!importScript.endsWith(".js")) {
-                                        importScript = importScript + ".js";
-                                    }
+export function getAllInstallScripts(installScripts) {
+    return __awaiter(this, void 0, void 0, function* () {
+        function resolveAllInstallScripts(installScripts, idx) {
+            return __awaiter(this, void 0, void 0, function* () {
+                if (idx >= installScripts.length) {
+                    return;
+                }
+                const logger = yield getFileLogger();
+                const codeContent = readFileSync(installScripts[idx], {
+                    encoding: "utf-8"
+                });
+                let ast;
+                try {
+                    ast = parse(codeContent, {
+                        sourceType: "script"
+                    });
+                }
+                catch (error) {
+                    logger.log("现在分析的文件是: " + installScripts[idx]);
+                    const errorObj = error;
+                    logger.log("error名称: " + errorObj.name);
+                    logger.log("error信息" + errorObj.message);
+                    logger.log("错误栈" + errorObj.stack);
+                }
+                traverse(ast, {
+                    CallExpression: function (path) {
+                        if (path.node.callee.name === "require") {
+                            if (path.node.arguments.length > 0) {
+                                if (t.isStringLiteral(path.node.arguments[0])) {
+                                    const moduleName = path.node.arguments[0].value;
                                     try {
-                                        (0, fs_1.accessSync)(importScript);
-                                        installScripts.push(importScript);
+                                        if (moduleName.startsWith("/") || moduleName.startsWith("./") || moduleName.startsWith("../")) {
+                                            let importScript = join(dirname(installScripts[idx]), moduleName);
+                                            if (importScript.endsWith(".js") || importScript.indexOf(".") < 0) {
+                                                if (!importScript.endsWith(".js")) {
+                                                    importScript = importScript + ".js";
+                                                }
+                                                try {
+                                                    accessSync(importScript);
+                                                    installScripts.push(importScript);
+                                                }
+                                                catch (error) {
+                                                    console.log(error);
+                                                }
+                                            }
+                                        }
                                     }
                                     catch (error) {
-                                        console.log(error);
+                                        throw error;
                                     }
                                 }
                             }
                         }
                     }
-                }
+                });
+                yield resolveAllInstallScripts(installScripts, idx + 1);
             });
-            resolveAllInstallScripts(installScripts, idx + 1);
         }
-        catch (error) {
-            console.log(error);
-        }
-    }
-    resolveAllInstallScripts(installScripts, 0);
+        yield resolveAllInstallScripts(installScripts, 0);
+    });
 }
-exports.getAllInstallScripts = getAllInstallScripts;
 // let filePaths = ["/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/src/example.js"];
 // getAllInstallScripts(filePaths);
 // console.log(filePaths);
