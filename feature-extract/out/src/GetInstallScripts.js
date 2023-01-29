@@ -33,7 +33,8 @@ export function getAllInstallScripts(installScripts) {
                 let ast;
                 try {
                     ast = parse(codeContent, {
-                        sourceType: "script"
+                        sourceType: "unambiguous",
+                        plugins: ["@babel/plugin-syntax-flow"]
                     });
                 }
                 catch (error) {

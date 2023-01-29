@@ -24,7 +24,8 @@ export async function scanJSFileByAST(code: string, featureSet: PackageFeatureIn
    let ast: any;
    try{
       ast = parse(code, {
-         sourceType: "script"
+         sourceType: "unambiguous",
+         plugins: ["@babel/plugin-syntax-flow"]
       });
    }catch(error) {
       logger.log("现在分析的文件是: " + targetJSFilePath);
@@ -69,6 +70,12 @@ export async function scanJSFileByAST(code: string, featureSet: PackageFeatureIn
                   featureSet.containDomain = true;
                }
             }
+            if (path.node.arguments.length > 0) {
+               const moduleName = path.node.arguments[0].value as string;
+               if (moduleName === "crypto" || moduleName === "zlib") {
+                  featureSet.useCrpytoAndZip = true;
+               }
+            }
          }
          if (t.isMemberExpression(path.node.callee) && path.node.callee.object.name === "Buffer" && path.node.callee.property.name === "from") {
             featureSet.useBufferFrom = true;
@@ -80,6 +87,9 @@ export async function scanJSFileByAST(code: string, featureSet: PackageFeatureIn
             if (t.isIdentifier(path.node.arguments[0])) {
                featureSet.createBufferFromASCII = true;
             }
+         }
+         if (t.isMemberExpression(path.node.callee) && path.node.callee.object.name === "os") {
+            featureSet.accessSensitiveAPI = true;
          }
       },
       StringLiteral: function(path) {
@@ -121,13 +131,6 @@ export async function scanJSFileByAST(code: string, featureSet: PackageFeatureIn
             featureSet.accessProcessEnvInJSFile = true;
             if (isInstallScript) {
                featureSet.accessProcessEnvInInstallScript = true;
-            }
-         }
-         const names = ["arch", "homedir", "hostname", "networkInterfaces", "networkInterfaces", "platform", "type", "userInfo", "version", "machine"];
-         for (const name of names) {
-            if (path.get("object").isIdentifier({name: "os"}) && path.get("property").isIdentifier({name})) {
-               featureSet.accessSensitiveAPI = true;
-               break;
             }
          }
       },

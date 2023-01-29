@@ -68,7 +68,7 @@ function parseJSAsync(code, featureSet, isInstallScript, targetJSFilePath) {
  * @param dirPath 源码包（目录下有package.json文件）的路径
  * @param tgzPath 压缩包的路径
  */
-export function getPackageFeatureInfo(dirPath) {
+export function getPackageFeatureInfo(dirPath, tgzPath) {
     return __awaiter(this, void 0, void 0, function* () {
         let result = {
             editDistance: 0,
@@ -107,7 +107,7 @@ export function getPackageFeatureInfo(dirPath) {
         const packageJSONInfo = yield getPackageJSONInfo(packageJSONPath);
         Object.assign(result, packageJSONInfo);
         result.editDistance = yield minEditDistance(packageJSONInfo.packageName);
-        const fileInfo = yield stat(dirPath);
+        const fileInfo = yield stat(tgzPath);
         result.packageSize = fileInfo.size;
         // 分析install hook command
         for (const scriptContent of packageJSONInfo.installCommand) {

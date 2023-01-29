@@ -22,10 +22,11 @@ import { getPackageFeatureInfo } from "./PackageFeatureInfo";
 const malicious_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious";
 const normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/normal";
 const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
-export function extractFeatureFromPackage(sourcePath, isMaliciousPackage) {
+export function extractFeatureFromPackage(sourcePath, isMaliciousPackage, tgzPath) {
     return __awaiter(this, void 0, void 0, function* () {
-        const result = yield getPackageFeatureInfo(sourcePath);
-        const csvPath = join(isMaliciousPackage ? malicious_path : normal_path, result.packageName + ".csv");
+        const result = yield getPackageFeatureInfo(sourcePath, tgzPath);
+        const fileName = result.packageName.replace(/\//g, "-");
+        const csvPath = join(isMaliciousPackage ? malicious_path : normal_path, fileName + ".csv");
         const featureArr = [];
         featureArr.push(["editDistance", result.editDistance]);
         featureArr.push(["averageBracket", result.averageBracketNumber]);
@@ -52,6 +53,8 @@ export function extractFeatureFromPackage(sourcePath, isMaliciousPackage) {
         featureArr.push(["accessProcessEnvInJSFile", result.accessProcessEnvInJSFile]);
         featureArr.push(["accessProcessEnvInInstallScript", result.accessProcessEnvInInstallScript]);
         featureArr.push(["containSuspicousString", result.containSuspiciousString]);
+        featureArr.push(["useCrpytoAndZip", result.useCrpytoAndZip]);
+        featureArr.push(["accessSensitiveAPI", result.accessSensitiveAPI]);
         yield new Promise(resolve => {
             setTimeout(() => __awaiter(this, void 0, void 0, function* () {
                 yield writeFile(csvPath, stringify(featureArr, {
@@ -73,7 +76,7 @@ export function extractFeatureFromDir(dirPath, isMaliciousPath) {
     return __awaiter(this, void 0, void 0, function* () {
         let oldPackageArr = JSON.parse(yield readFile(progress_json_path, { encoding: "utf-8" }));
         let counter = 0;
-        const max_package_number = 150;
+        const max_package_number = 1900;
         let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
         const progress_detail_path = join("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material", idx_ + ".csv");
         let newPackageArr = [];
@@ -92,11 +95,12 @@ export function extractFeatureFromDir(dirPath, isMaliciousPath) {
                                 yield resolveExtract(currentFilePath);
                             }
                             else if (dirent.isFile() && dirent.name.endsWith(".tgz")) {
+                                const tgzPath = join(dirPath, dirent.name);
                                 const packagePath = join(dirPath, "package");
                                 if (oldPackageArr.indexOf(packagePath) < 0) {
                                     newPackageArr.push(packagePath);
                                     console.log(chalk("现在分析了" + counter + "个包"));
-                                    yield extractFeatureFromPackage(packagePath, isMaliciousPath);
+                                    yield extractFeatureFromPackage(packagePath, isMaliciousPath, tgzPath);
                                     counter++;
                                     if (counter === max_package_number) {
                                         //  更新progress.json

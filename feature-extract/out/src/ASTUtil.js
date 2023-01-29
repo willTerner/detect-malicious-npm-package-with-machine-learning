@@ -25,7 +25,8 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
         let ast;
         try {
             ast = parse(code, {
-                sourceType: "script"
+                sourceType: "unambiguous",
+                plugins: ["@babel/plugin-syntax-flow"]
             });
         }
         catch (error) {
@@ -71,6 +72,12 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                             featureSet.containDomain = true;
                         }
                     }
+                    if (path.node.arguments.length > 0) {
+                        const moduleName = path.node.arguments[0].value;
+                        if (moduleName === "crypto" || moduleName === "zlib") {
+                            featureSet.useCrpytoAndZip = true;
+                        }
+                    }
                 }
                 if (t.isMemberExpression(path.node.callee) && path.node.callee.object.name === "Buffer" && path.node.callee.property.name === "from") {
                     featureSet.useBufferFrom = true;
@@ -82,6 +89,9 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     if (t.isIdentifier(path.node.arguments[0])) {
                         featureSet.createBufferFromASCII = true;
                     }
+                }
+                if (t.isMemberExpression(path.node.callee) && path.node.callee.object.name === "os") {
+                    featureSet.accessSensitiveAPI = true;
                 }
             },
             StringLiteral: function (path) {
@@ -123,13 +133,6 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     featureSet.accessProcessEnvInJSFile = true;
                     if (isInstallScript) {
                         featureSet.accessProcessEnvInInstallScript = true;
-                    }
-                }
-                const names = ["arch", "homedir", "hostname", "networkInterfaces", "networkInterfaces", "platform", "type", "userInfo", "version", "machine"];
-                for (const name of names) {
-                    if (path.get("object").isIdentifier({ name: "os" }) && path.get("property").isIdentifier({ name })) {
-                        featureSet.accessSensitiveAPI = true;
-                        break;
                     }
                 }
             },

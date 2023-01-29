@@ -25,7 +25,8 @@ export async function getAllInstallScripts(installScripts: string[]) {
       let ast: any;
       try{
          ast = parse(codeContent, {
-            sourceType: "script"
+            sourceType: "unambiguous",
+            plugins: ["@babel/plugin-syntax-flow"]
          });
       }catch(error) {
          logger.log("现在分析的文件是: " + installScripts[idx]);

@@ -1,6 +1,9 @@
 ### 训练集
 
-+ 去重后的恶意包集为unique_package.csv
++ knife中公有1530个不同名称的恶意包
+
+### 处理特征文件
++ averageBracketNumber可能为NaN, 因为jsFiles number可能为0
 
 ### 训练
 

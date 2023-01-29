@@ -13,9 +13,10 @@ const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/s
 
 
 
-export async function extractFeatureFromPackage(sourcePath: string, isMaliciousPackage: boolean) {
-   const result: PackageFeatureInfo = await getPackageFeatureInfo(sourcePath);
-   const csvPath = join(isMaliciousPackage ? malicious_path : normal_path, result.packageName + ".csv");
+export async function extractFeatureFromPackage(sourcePath: string, isMaliciousPackage: boolean, tgzPath: string) {
+   const result: PackageFeatureInfo = await getPackageFeatureInfo(sourcePath, tgzPath);
+   const fileName = result.packageName.replace(/\//g, "-");
+   const csvPath = join(isMaliciousPackage ? malicious_path : normal_path, fileName + ".csv");
    const featureArr: [string, number|boolean][] = [];
    featureArr.push(["editDistance", result.editDistance]);
    featureArr.push(["averageBracket", result.averageBracketNumber]);
@@ -42,6 +43,8 @@ export async function extractFeatureFromPackage(sourcePath: string, isMaliciousP
    featureArr.push(["accessProcessEnvInJSFile", result.accessProcessEnvInJSFile]);
    featureArr.push(["accessProcessEnvInInstallScript", result.accessProcessEnvInInstallScript]);
    featureArr.push(["containSuspicousString", result.containSuspiciousString]);
+   featureArr.push(["useCrpytoAndZip", result.useCrpytoAndZip]);
+   featureArr.push(["accessSensitiveAPI", result.accessSensitiveAPI]);
    await new Promise(resolve => {
       setTimeout(async() => {
         await writeFile(csvPath, stringify(featureArr, {
@@ -64,7 +67,7 @@ export async function extractFeatureFromDir(dirPath: string, isMaliciousPath: bo
 
    let counter = 0;
 
-   const max_package_number = 150;
+   const max_package_number = 1900;
 
    let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
 
@@ -79,11 +82,12 @@ export async function extractFeatureFromDir(dirPath: string, isMaliciousPath: bo
          if (dirent.isDirectory()) {
             await resolveExtract(currentFilePath);
          } else if (dirent.isFile() && dirent.name.endsWith(".tgz")) {
+            const tgzPath = join(dirPath, dirent.name);
             const packagePath = join(dirPath, "package");
             if (oldPackageArr.indexOf(packagePath) < 0) {
                newPackageArr.push(packagePath);
                console.log(chalk("现在分析了" + counter + "个包"));
-               await extractFeatureFromPackage(packagePath, isMaliciousPath);
+               await extractFeatureFromPackage(packagePath, isMaliciousPath, tgzPath);
                counter++;
                if (counter === max_package_number) {
                   //  更新progress.json

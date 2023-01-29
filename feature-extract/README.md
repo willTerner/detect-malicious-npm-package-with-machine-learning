@@ -63,7 +63,7 @@
     - /dev/** */
   - 
 - 补充
-  - 使用加密函数crpyto
+  - 使用加密函数crypto
   - 使用压缩函数zlib
   - 使用os库的函数获得系统信息os.hostname()，os.userinfo等
   - 恶意包没有使用到hook，而是在js文件被导入使用时发生恶意行为
@@ -77,7 +77,7 @@
 + 安装脚本中使用了第三方包来进行恶意操作，如何检测这种行为?
 + knife有大量重复的样本
   + arm-**有大量重复，且版本都是99.10.9，恶意行为为窃取并发送隐私数据
-+ 改变文件扩展名，js改成md --> 把node命令后面的文件作为js文件来分析
++ **todo**: 改变文件扩展名，js改成md --> 把node命令后面的文件作为js文件来分析
 + knife样本集中包含非恶意包，比如ca-bucky-client
 + package.json中的仓库url不准确
 + 异常情况的处理: install hook提供的js文件目录不对
@@ -88,4 +88,6 @@
   + 案例event-stream
 + 没有考虑ts文件
 + js中的babel，正则表达式无法分析大文件（阈值: 2MB），比如/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/momnet/2.28.0/package/moment.js，不过恶意代码文件一般不会这么大
++ 通过命令下载恶意代码执行恶意代码，比如/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/rrgod/1.0.0下载python执行
+  + 可以作为优化点 
 

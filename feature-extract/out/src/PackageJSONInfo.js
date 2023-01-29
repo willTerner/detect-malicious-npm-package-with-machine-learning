@@ -7,6 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import chalk from 'chalk';
+import { access } from 'fs/promises';
 import { stat, readFile } from 'fs/promises';
 import { dirname, join } from 'path';
 export function getPackageSize(tgzPath) {
@@ -48,16 +50,28 @@ export function getPackageJSONInfo(filePath) {
             result.installCommand.push(preinstall);
             let jsFile = extractJSFilePath(preinstall);
             if (jsFile) {
-                jsFile = join(parentDir, jsFile);
-                executeJSFiles.push(jsFile);
+                try {
+                    jsFile = join(parentDir, jsFile);
+                    yield access(jsFile);
+                    executeJSFiles.push(jsFile);
+                }
+                catch (error) {
+                    console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+                }
             }
         }
         if (install) {
             result.installCommand.push(install);
             let jsFile = extractJSFilePath(install);
             if (jsFile) {
-                jsFile = join(parentDir, jsFile);
-                executeJSFiles.push(jsFile);
+                try {
+                    jsFile = join(parentDir, jsFile);
+                    yield access(jsFile);
+                    executeJSFiles.push(jsFile);
+                }
+                catch (error) {
+                    console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+                }
             }
         }
         if (postinstall) {
@@ -65,15 +79,21 @@ export function getPackageJSONInfo(filePath) {
             let jsFile = extractJSFilePath(postinstall);
             if (jsFile) {
                 jsFile = join(parentDir, jsFile);
-                executeJSFiles.push(jsFile);
+                try {
+                    yield access(jsFile);
+                    executeJSFiles.push(jsFile);
+                }
+                catch (error) {
+                    console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+                }
             }
         }
         result.executeJSFiles = executeJSFiles;
         return result;
     });
 }
-function extractJSFilePath(scriptContent) {
-    const jsFileReg = /node\s+(.+\.js)/;
+export function extractJSFilePath(scriptContent) {
+    const jsFileReg = /node\s+?(.+?\.js)/;
     const matchResult = scriptContent.match(jsFileReg);
     if (matchResult) {
         return matchResult[1];

@@ -1,3 +1,5 @@
+import chalk from 'chalk';
+import { access } from 'fs/promises';
 import {stat, readFile} from 'fs/promises';
 import { dirname, join } from 'path';
 
@@ -51,16 +53,26 @@ export async function getPackageJSONInfo(filePath: string): Promise<PackageJSONI
       result.installCommand.push(preinstall);
       let jsFile = extractJSFilePath(preinstall);
       if (jsFile) {
-         jsFile = join(parentDir, jsFile);
-         executeJSFiles.push(jsFile);
+         try{
+            jsFile = join(parentDir, jsFile);
+            await access(jsFile);
+            executeJSFiles.push(jsFile);
+         }catch(error) {
+            console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+         }
       }
    }
    if (install) {
       result.installCommand.push(install);
       let jsFile = extractJSFilePath(install);
       if (jsFile) {
-         jsFile = join(parentDir, jsFile);
-         executeJSFiles.push(jsFile);
+         try{
+            jsFile = join(parentDir, jsFile);
+            await access(jsFile);
+            executeJSFiles.push(jsFile);
+         }catch(error) {
+            console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+         }
       }
    }
    if (postinstall) {
@@ -68,15 +80,20 @@ export async function getPackageJSONInfo(filePath: string): Promise<PackageJSONI
       let jsFile = extractJSFilePath(postinstall);
       if (jsFile) {
          jsFile = join(parentDir, jsFile);
-         executeJSFiles.push(jsFile);
+         try{
+            await access(jsFile);
+            executeJSFiles.push(jsFile);
+         }catch(error) {
+            console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+         }
       }
    }
    result.executeJSFiles = executeJSFiles;
    return result;
 }
 
-function extractJSFilePath(scriptContent: string): string | undefined {
-   const jsFileReg = /node\s+(.+\.js)/;
+export function extractJSFilePath(scriptContent: string): string | undefined {
+   const jsFileReg = /node\s+?(.+?\.js)/;
    const matchResult = scriptContent.match(jsFileReg);
    if (matchResult) {
       return matchResult[1];

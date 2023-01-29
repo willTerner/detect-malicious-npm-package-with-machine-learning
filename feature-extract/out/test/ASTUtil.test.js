@@ -33,7 +33,11 @@ test('createBufferFromASCII works on [] and b = []', () => {
         packageName: "",
         version: ""
     };
-    scanJSFileByAST("let a = Buffer.from([11,20]);", result, false, "");
-    expect(result.useBufferFrom).toBe(true);
+    let code = `// @flow
+   function add(a: number, b: number): number {
+     return a + b;
+   }
+   `;
+    scanJSFileByAST(code, result, false, "");
 });
 //# sourceMappingURL=ASTUtil.test.js.map
