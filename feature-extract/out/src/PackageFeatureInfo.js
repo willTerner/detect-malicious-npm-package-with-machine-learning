@@ -27,6 +27,7 @@ import { writeFile } from "fs/promises";
 import { stringify } from "csv-stringify/sync";
 import { fork } from "child_process";
 import { IGNORE_JS_FILES } from "./IgnoreJSFiles";
+import { getDirectorySizeInBytes } from "./FileUtil";
 const BABEL_STUCK_FILES_PATH = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/babel-struck-files.csv";
 const ALLOWED_MAX_JS_SIZE = 2 * 1024 * 1024;
 function parseJSAsync(code, featureSet, isInstallScript, targetJSFilePath) {
@@ -68,7 +69,7 @@ function parseJSAsync(code, featureSet, isInstallScript, targetJSFilePath) {
  * @param dirPath 源码包（目录下有package.json文件）的路径
  * @param tgzPath 压缩包的路径
  */
-export function getPackageFeatureInfo(dirPath, tgzPath) {
+export function getPackageFeatureInfo(dirPath) {
     return __awaiter(this, void 0, void 0, function* () {
         let result = {
             editDistance: 0,
@@ -107,8 +108,7 @@ export function getPackageFeatureInfo(dirPath, tgzPath) {
         const packageJSONInfo = yield getPackageJSONInfo(packageJSONPath);
         Object.assign(result, packageJSONInfo);
         result.editDistance = yield minEditDistance(packageJSONInfo.packageName);
-        const fileInfo = yield stat(tgzPath);
-        result.packageSize = fileInfo.size;
+        result.packageSize = getDirectorySizeInBytes(dirPath);
         // 分析install hook command
         for (const scriptContent of packageJSONInfo.installCommand) {
             {

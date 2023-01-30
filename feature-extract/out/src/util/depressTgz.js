@@ -14,7 +14,7 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
     function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
     function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 };
-import { opendir } from "fs/promises";
+import { opendir, readdir, rm } from "fs/promises";
 import { join, dirname } from "path";
 import { promisify } from "util";
 import { exec } from 'child_process';
@@ -69,5 +69,22 @@ function depressPackageAndSetDir(targetDir) {
         }
     });
 }
-depressPackageAndSetDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife");
+function normalizeDir(targetDir) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const files = yield readdir(targetDir, {
+            withFileTypes: true
+        });
+        for (const file of files) {
+            const filePath = join(targetDir, file.name);
+            if (file.isFile() && (file.name === "analyze-result.json" || file.name === "changes-feature.csv")) {
+                yield rm(filePath);
+            }
+            else if (file.isDirectory()) {
+                yield normalizeDir(filePath);
+            }
+        }
+    });
+}
+//depressPackageAndSetDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife");
+normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/补充数据集");
 //# sourceMappingURL=depressTgz.js.map

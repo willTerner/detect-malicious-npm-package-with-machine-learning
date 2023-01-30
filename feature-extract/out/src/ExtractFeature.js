@@ -22,9 +22,14 @@ import { getPackageFeatureInfo } from "./PackageFeatureInfo";
 const malicious_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious";
 const normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/normal";
 const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
-export function extractFeatureFromPackage(sourcePath, isMaliciousPackage, tgzPath) {
+export var ResovlePackagePath;
+(function (ResovlePackagePath) {
+    ResovlePackagePath[ResovlePackagePath["By_Knife"] = 0] = "By_Knife";
+    ResovlePackagePath[ResovlePackagePath["By_Normal"] = 1] = "By_Normal";
+})(ResovlePackagePath || (ResovlePackagePath = {}));
+export function extractFeatureFromPackage(sourcePath, isMaliciousPackage) {
     return __awaiter(this, void 0, void 0, function* () {
-        const result = yield getPackageFeatureInfo(sourcePath, tgzPath);
+        const result = yield getPackageFeatureInfo(sourcePath);
         const fileName = result.packageName.replace(/\//g, "-");
         const csvPath = join(isMaliciousPackage ? malicious_path : normal_path, fileName + ".csv");
         const featureArr = [];
@@ -72,15 +77,15 @@ export function extractFeatureFromPackage(sourcePath, isMaliciousPackage, tgzPat
         });
     });
 }
-export function extractFeatureFromDir(dirPath, isMaliciousPath) {
+export function extractFeatureFromDir(dirPath, isMaliciousPath, resolvePath) {
     return __awaiter(this, void 0, void 0, function* () {
         let oldPackageArr = JSON.parse(yield readFile(progress_json_path, { encoding: "utf-8" }));
         let counter = 0;
-        const max_package_number = 1900;
+        const max_package_number = 100;
         let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
         const progress_detail_path = join("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material", idx_ + ".csv");
         let newPackageArr = [];
-        function resolveExtract(dirPath) {
+        function resolveExtractByKnife(dirPath) {
             var _a, e_1, _b, _c;
             return __awaiter(this, void 0, void 0, function* () {
                 const dir = yield opendir(dirPath);
@@ -92,25 +97,11 @@ export function extractFeatureFromDir(dirPath, isMaliciousPath) {
                             const dirent = _c;
                             const currentFilePath = join(dirPath, dirent.name);
                             if (dirent.isDirectory()) {
-                                yield resolveExtract(currentFilePath);
+                                yield resolveExtractByKnife(currentFilePath);
                             }
                             else if (dirent.isFile() && dirent.name.endsWith(".tgz")) {
-                                const tgzPath = join(dirPath, dirent.name);
                                 const packagePath = join(dirPath, "package");
-                                if (oldPackageArr.indexOf(packagePath) < 0) {
-                                    newPackageArr.push(packagePath);
-                                    console.log(chalk("现在分析了" + counter + "个包"));
-                                    yield extractFeatureFromPackage(packagePath, isMaliciousPath, tgzPath);
-                                    counter++;
-                                    if (counter === max_package_number) {
-                                        //  更新progress.json
-                                        oldPackageArr = oldPackageArr.concat(newPackageArr);
-                                        const outputArr = newPackageArr.map(el => [el]);
-                                        yield writeFile(progress_json_path, JSON.stringify(oldPackageArr));
-                                        yield writeFile(progress_detail_path, stringify(outputArr));
-                                        process.exit(0);
-                                    }
-                                }
+                                yield resolveExtract(packagePath);
                             }
                         }
                         finally {
@@ -127,7 +118,59 @@ export function extractFeatureFromDir(dirPath, isMaliciousPath) {
                 }
             });
         }
-        yield resolveExtract(dirPath);
+        function resolveExtractByNormal(dirPath) {
+            var _a, e_2, _b, _c;
+            return __awaiter(this, void 0, void 0, function* () {
+                const dir = yield opendir(dirPath);
+                try {
+                    for (var _d = true, dir_2 = __asyncValues(dir), dir_2_1; dir_2_1 = yield dir_2.next(), _a = dir_2_1.done, !_a;) {
+                        _c = dir_2_1.value;
+                        _d = false;
+                        try {
+                            const dirent = _c;
+                            if (dirent.isDirectory()) {
+                                const packagePath = join(dirPath, dirent.name, "package");
+                                yield resolveExtract(packagePath);
+                            }
+                        }
+                        finally {
+                            _d = true;
+                        }
+                    }
+                }
+                catch (e_2_1) { e_2 = { error: e_2_1 }; }
+                finally {
+                    try {
+                        if (!_d && !_a && (_b = dir_2.return)) yield _b.call(dir_2);
+                    }
+                    finally { if (e_2) throw e_2.error; }
+                }
+            });
+        }
+        function resolveExtract(packagePath) {
+            return __awaiter(this, void 0, void 0, function* () {
+                if (oldPackageArr.indexOf(packagePath) < 0) {
+                    newPackageArr.push(packagePath);
+                    console.log(chalk("现在分析了" + counter + "个包"));
+                    yield extractFeatureFromPackage(packagePath, isMaliciousPath);
+                    counter++;
+                    if (counter === max_package_number) {
+                        //  更新progress.json
+                        oldPackageArr = oldPackageArr.concat(newPackageArr);
+                        const outputArr = newPackageArr.map(el => [el]);
+                        yield writeFile(progress_json_path, JSON.stringify(oldPackageArr));
+                        yield writeFile(progress_detail_path, stringify(outputArr));
+                        process.exit(0);
+                    }
+                }
+            });
+        }
+        if (resolvePath === ResovlePackagePath.By_Knife) {
+            yield resolveExtractByKnife(dirPath);
+        }
+        if (resolvePath === ResovlePackagePath.By_Normal) {
+            yield resolveExtractByNormal(dirPath);
+        }
     });
 }
 //# sourceMappingURL=ExtractFeature.js.map

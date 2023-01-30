@@ -13,7 +13,7 @@ let jsonContent = "";
 export async function minEditDistance(packageName: string): Promise<number> {
    let minDistance = Number.MAX_SAFE_INTEGER;
    if (!jsonContent) {
-      jsonContent = await readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-1000.json", {encoding: "utf-8"});
+      jsonContent = await readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", {encoding: "utf-8"});
    }
    const popularPackageNames = JSON.parse(jsonContent) as PackageDescription[];
    for (const popularPackageName of popularPackageNames) {

@@ -19,7 +19,7 @@ export function minEditDistance(packageName) {
     return __awaiter(this, void 0, void 0, function* () {
         let minDistance = Number.MAX_SAFE_INTEGER;
         if (!jsonContent) {
-            jsonContent = yield readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-1000.json", { encoding: "utf-8" });
+            jsonContent = yield readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", { encoding: "utf-8" });
         }
         const popularPackageNames = JSON.parse(jsonContent);
         for (const popularPackageName of popularPackageNames) {
