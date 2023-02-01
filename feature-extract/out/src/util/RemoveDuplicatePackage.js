@@ -17,8 +17,12 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
 import { opendir, readFile, writeFile } from "fs/promises";
 import { join } from "path";
 import { parse } from 'csv-parse/sync';
+import { readdirSync } from "fs";
+import { rm } from "fs/promises";
+import { test_malicious_dedupl_path, test_malicious_path } from "../Paths";
 const ignore_prop_names = ["editDistance", "packageSize", "packageName", "version", "installCommand", "executeJSFiles"];
 const unique_features = [];
+const knife_csv_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious";
 export function isDuplicatePackage(featureSet) {
     if (unique_features.findIndex((singleFeature) => {
         for (const key of Object.keys(featureSet)) {
@@ -38,20 +42,16 @@ export function isDuplicatePackage(featureSet) {
 const ignore_feature_names = ["packageSize", "editDistance"];
 const uniques = [];
 const file_names = [];
-export function removeDuplicatePackage(targetDir) {
+export function removeDuplicatePackage(targetDir, saveDir) {
     var _a, e_1, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
         const dir = yield opendir(targetDir);
-        const saveDir = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious-dedupli";
         try {
             for (var _d = true, dir_1 = __asyncValues(dir), dir_1_1; dir_1_1 = yield dir_1.next(), _a = dir_1_1.done, !_a;) {
                 _c = dir_1_1.value;
                 _d = false;
                 try {
                     const dirent = _c;
-                    if (dirent.name === "@bynder-private-dragula.csv") {
-                        debugger;
-                    }
                     const csvPath = join(targetDir, dirent.name);
                     const csvContent = yield readFile(csvPath, { encoding: "utf-8" });
                     const featureArr = yield parse(csvContent);
@@ -84,6 +84,55 @@ export function removeDuplicatePackage(targetDir) {
             }
             finally { if (e_1) throw e_1.error; }
         }
+    });
+}
+export function removeDuplicatePackageForDuan(targetDir) {
+    var _a, e_2, _b, _c;
+    return __awaiter(this, void 0, void 0, function* () {
+        let dir = yield opendir(knife_csv_path);
+        const csvNameArr = [];
+        try {
+            for (var _d = true, dir_2 = __asyncValues(dir), dir_2_1; dir_2_1 = yield dir_2.next(), _a = dir_2_1.done, !_a;) {
+                _c = dir_2_1.value;
+                _d = false;
+                try {
+                    const dirent = _c;
+                    if (dirent.isFile()) {
+                        const dotIndex = dirent.name.lastIndexOf(".");
+                        csvNameArr.push(dirent.name.substring(0, dotIndex));
+                    }
+                }
+                finally {
+                    _d = true;
+                }
+            }
+        }
+        catch (e_2_1) { e_2 = { error: e_2_1 }; }
+        finally {
+            try {
+                if (!_d && !_a && (_b = dir_2.return)) yield _b.call(dir_2);
+            }
+            finally { if (e_2) throw e_2.error; }
+        }
+        const files = readdirSync(targetDir, { withFileTypes: true });
+        for (const dirent of files) {
+            if (dirent.isDirectory()) {
+                const packageJSONPath = join(targetDir, dirent.name, "package", "package.json");
+                const jsonContent = yield readFile(packageJSONPath, { encoding: "utf-8" });
+                const jsonObj = JSON.parse(jsonContent);
+                let packageName = jsonObj.name;
+                packageName = packageName.replace(/\//g, "-");
+                if (csvNameArr.includes(packageName)) {
+                    yield rm(join(targetDir, dirent.name), { recursive: true, force: true });
+                }
+            }
+        }
+    });
+}
+export function doSomethingRemove() {
+    return __awaiter(this, void 0, void 0, function* () {
+        //await removeDuplicatePackageForDuan(duan_path)
+        yield removeDuplicatePackage(test_malicious_path, test_malicious_dedupl_path);
     });
 }
 //# sourceMappingURL=RemoveDuplicatePackage.js.map

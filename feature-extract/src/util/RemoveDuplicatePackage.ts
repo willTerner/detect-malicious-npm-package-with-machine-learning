@@ -2,11 +2,16 @@ import { opendir, readFile, writeFile } from "fs/promises";
 import { join } from "path";
 import { PackageFeatureInfo } from "../PackageFeatureInfo";
 import {parse} from 'csv-parse/sync';
+import { readdirSync } from "fs";
+import { rm } from "fs/promises";
+import {  duan_path, test_malicious_dedupl_path, test_malicious_path } from "../Paths";
 
 const ignore_prop_names = ["editDistance", "packageSize", "packageName", "version", "installCommand", "executeJSFiles"];
 
 
 const unique_features: PackageFeatureInfo[] = [];
+
+const knife_csv_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious";
 
 export function isDuplicatePackage(featureSet: PackageFeatureInfo): boolean {
    if (unique_features.findIndex((singleFeature) => {
@@ -31,13 +36,9 @@ const uniques: any[] = [];
 
 const file_names: string[] = []
 
-export async function removeDuplicatePackage(targetDir: string) {
+export async function removeDuplicatePackage(targetDir: string, saveDir: string) {
    const dir = await opendir(targetDir);
-   const saveDir = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious-dedupli";
    for await (const dirent of dir) {
-      if (dirent.name === "@bynder-private-dragula.csv") {
-         debugger;
-      }
       const csvPath = join(targetDir, dirent.name);
       const csvContent = await readFile(csvPath, {encoding: "utf-8"});
       const featureArr = await parse(csvContent);
@@ -58,4 +59,33 @@ export async function removeDuplicatePackage(targetDir: string) {
          await writeFile(savePath, csvContent);
       } 
    }
+}
+
+export async function removeDuplicatePackageForDuan(targetDir) {
+   let dir = await opendir(knife_csv_path);
+   const csvNameArr: string[] = [];
+   for await (const dirent of dir) {
+      if (dirent.isFile()) {
+         const dotIndex = dirent.name.lastIndexOf(".");
+         csvNameArr.push(dirent.name.substring(0, dotIndex));
+      }
+   }
+   const files = readdirSync(targetDir, {withFileTypes: true});
+   for (const dirent of files) {
+      if (dirent.isDirectory()) {
+         const packageJSONPath = join(targetDir, dirent.name,"package", "package.json");
+         const jsonContent = await readFile(packageJSONPath, {encoding: "utf-8"});
+         const jsonObj = JSON.parse(jsonContent);
+         let packageName = jsonObj.name;
+         packageName = packageName.replace(/\//g, "-");
+         if (csvNameArr.includes(packageName)) {
+            await rm(join(targetDir, dirent.name), {recursive: true, force: true});
+         }
+      }
+   }
+}
+
+export async function doSomethingRemove() {
+   //await removeDuplicatePackageForDuan(duan_path)
+   await removeDuplicatePackage(test_malicious_path, test_malicious_dedupl_path);
 }

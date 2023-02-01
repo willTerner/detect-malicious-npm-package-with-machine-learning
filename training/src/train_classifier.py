@@ -1,3 +1,4 @@
+from pickle_util import save_classifier
 from read_feature import read_features
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
@@ -11,8 +12,9 @@ from prettytable import PrettyTable
 import os
 import numpy as np
 
-table_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/src/table"
+table_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/src/table/on_knife_and_duan"
 field_names = ["hyperparamter", "accuracy", "precision", "recall", "f1", "MCC"]
+classifier_save_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/src/classifier"
 
 rf_best_estimator = 64
 rf_best_depth = 15
@@ -51,6 +53,11 @@ def train_classifier_RF_Validation(X, y, csv_name_arr):
 def test_RF(X_train, y_train, X_test, y_test):
    model = RandomForestClassifier(n_estimators=rf_best_estimator, max_depth=rf_best_depth)
    model.fit(X_train, y_train)
+
+   save_path = os.path.join(classifier_save_path, "RF.pkl")
+
+   save_classifier(model, save_path)
+
    test_table_path = os.path.join(table_path, "RF_table_test.csv")
    table = PrettyTable()
    table.field_names = field_names
@@ -78,7 +85,11 @@ if __name__ == "__main__":
    malicous_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious"
    normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/normal"
    malicous_dedupli_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious-dedupli"
-   [X, y, csv_name_arr] = read_features(malicous_dedupli_path, normal_path)
-   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
-   train_classifier_RF_Validation(X_train, y_train, csv_name_arr)
+   test_malicous_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test_set/malicous"
+   test_normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test_set/normal"
+   test_malicous_dedupl_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test_set/malicious-dedupli"
+   [X_train, y_train, csv_name_arr] = read_features(malicous_dedupli_path, normal_path)
+   [X_test, y_test, _] = read_features(test_malicous_dedupl_path, test_normal_path)
+   #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+   #train_classifier_RF_Validation(X, y, csv_name_arr)
    test_RF(X_train, y_train, X_test, y_test)

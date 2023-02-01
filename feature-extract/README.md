@@ -67,6 +67,7 @@
   - 使用压缩函数zlib
   - 使用os库的函数获得系统信息os.hostname()，os.userinfo等
   - 恶意包没有使用到hook，而是在js文件被导入使用时发生恶意行为
+  - 在install hook中使用命令，比如bash sh执行脚本
 
 #### 特征为包版本间的差别
 

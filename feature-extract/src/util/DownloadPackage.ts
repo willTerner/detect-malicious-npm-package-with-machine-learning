@@ -4,25 +4,43 @@ import { promisify } from "util";
 import {exec} from 'child_process';
 import { file } from "@babel/types";
 import { readdirSync } from "fs";
+import { duan_path, test_normal_path } from "../Paths";
 
 const asyncExec = promisify(exec);
 
 export enum ResolveDepressDir {
    KNIFE,
    NORMAL,
+   DUAN,
+   TEST_NORMAL
 }
+
+
 
 async function resolveDepressDir(tgzPath: string, resolveDepressDir: ResolveDepressDir) {
    if (resolveDepressDir === ResolveDepressDir.KNIFE) {
       return dirname(tgzPath);
    }
-   if (resolveDepressDir === ResolveDepressDir.NORMAL) {
+   if (resolveDepressDir === ResolveDepressDir.NORMAL || resolveDepressDir === ResolveDepressDir.TEST_NORMAL) {
       const dotIndex = basename(tgzPath).lastIndexOf(".");
       let fileName = basename(tgzPath).substring(0, dotIndex);
-      fileName = fileName.replace(/\/g/, "-");
+      fileName = fileName.replace(/\//g, "-");
       const returnDir =  join(dirname(tgzPath),fileName);
       await mkdir(returnDir);
       return returnDir;
+   }
+   if (resolveDepressDir === ResolveDepressDir.DUAN) {
+      const dotIndex = basename(tgzPath).lastIndexOf(".");
+      let fileName = basename(tgzPath).substring(0, dotIndex);
+      fileName = fileName.replace(/\//g, "-");
+      const returnDir = join(duan_path, fileName);
+      try{
+         await access(returnDir);
+         return returnDir;
+      }catch(error) {
+         await mkdir(returnDir);
+         return returnDir;
+      }
    }
 }
 
@@ -67,11 +85,11 @@ async function normalizeDir(targetDir) {
  async function downloadPopularPackage() {
    const jsonContent = await readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", {encoding: "utf-8"});
    let packageArr = JSON.parse(jsonContent);
-   packageArr = packageArr.slice(0, 2000);
+   packageArr = packageArr.slice(2000, 4000);
    packageArr = packageArr.map(el => el.name);
    for (let packageName of packageArr) {
       try {
-         const {stdout, stderr} = await asyncExec(`cd /Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集 && npm pack ${packageName}`);
+         const {stdout, stderr} = await asyncExec(`cd /Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal && npm pack ${packageName}`);
          console.log(stdout, stderr);
       } catch (error) {
          console.log(error);
@@ -83,6 +101,7 @@ async function normalizeDir(targetDir) {
 
 //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/补充数据集");
 export async function doSomething() {
-   normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集");
-   //depressPackageAndSetDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集", ResolveDepressDir.NORMAL);
+  // normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集");
+   depressPackageAndSetDir(test_normal_path, ResolveDepressDir.TEST_NORMAL);
+  // downloadPopularPackage();
 }

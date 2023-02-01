@@ -3,6 +3,7 @@ import { stringify } from "csv-stringify/sync";
 import { writeFile, opendir, readFile, readdir } from "fs/promises";
 import { join } from "path";
 import { getPackageFeatureInfo, PackageFeatureInfo } from "./PackageFeatureInfo";
+import { test_malicious_path, test_normal_csv_path } from "./Paths";
 
 
 const malicious_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious";
@@ -11,16 +12,35 @@ const normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-c
 
 const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
 
+
+
 export enum ResovlePackagePath {
    By_Knife,
    By_Normal,
+   By_Duan,
+   By_Test_Normal
+}
+
+function getDirectory(resolvePath: ResovlePackagePath) {
+   if (resolvePath === ResovlePackagePath.By_Knife) {
+      return malicious_path;
+   }
+   if (resolvePath === ResovlePackagePath.By_Normal) {
+      return normal_path;
+   }
+   if (resolvePath === ResovlePackagePath.By_Duan) {
+      return test_malicious_path;
+   }
+   if (resolvePath === ResovlePackagePath.By_Test_Normal) {
+      return test_normal_csv_path;
+   }
 }
 
 
-export async function extractFeatureFromPackage(sourcePath: string, isMaliciousPackage: boolean) {
+export async function extractFeatureFromPackage(sourcePath: string, resolvepath: ResovlePackagePath) {
    const result: PackageFeatureInfo = await getPackageFeatureInfo(sourcePath);
    const fileName = result.packageName.replace(/\//g, "-");
-   const csvPath = join(isMaliciousPackage ? malicious_path : normal_path, fileName + ".csv");
+   const csvPath = join(getDirectory(resolvepath), fileName + ".csv");
    const featureArr: [string, number|boolean][] = [];
    featureArr.push(["editDistance", result.editDistance]);
    featureArr.push(["averageBracket", result.averageBracketNumber]);
@@ -66,7 +86,7 @@ export async function extractFeatureFromPackage(sourcePath: string, isMaliciousP
    });
 }
 
-export async function extractFeatureFromDir(dirPath: string, isMaliciousPath: boolean, resolvePath: ResovlePackagePath) {
+export async function extractFeatureFromDir(dirPath: string, resolvePath: ResovlePackagePath) {
    let oldPackageArr = JSON.parse(await readFile(progress_json_path, {encoding: "utf-8"})) as string[];
 
    let counter = 0;
@@ -106,7 +126,7 @@ export async function extractFeatureFromDir(dirPath: string, isMaliciousPath: bo
       if (oldPackageArr.indexOf(packagePath) < 0) {
          newPackageArr.push(packagePath);
          console.log(chalk("现在分析了" + counter + "个包"));
-         await extractFeatureFromPackage(packagePath, isMaliciousPath);
+         await extractFeatureFromPackage(packagePath, resolvePath);
          counter++;
          if (counter === max_package_number) {
             //  更新progress.json
@@ -123,7 +143,7 @@ export async function extractFeatureFromDir(dirPath: string, isMaliciousPath: bo
       await resolveExtractByKnife(dirPath);
    }
 
-   if (resolvePath === ResovlePackagePath.By_Normal) {
+   if (resolvePath === ResovlePackagePath.By_Normal || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Test_Normal) {
       await resolveExtractByNormal(dirPath);
    }
    

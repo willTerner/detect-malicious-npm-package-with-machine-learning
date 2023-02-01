@@ -1,6 +1,7 @@
 import { extractFeatureFromDir, ResovlePackagePath } from "./ExtractFeature";
+import { test_normal_path } from "./Paths";
 import { doSomething } from "./util/DownloadPackage";
-import { removeDuplicatePackage } from "./util/RemoveDuplicatePackage";
+import { doSomethingRemove, removeDuplicatePackage } from "./util/RemoveDuplicatePackage";
 
 
 const knifePath = "/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife";
@@ -14,6 +15,8 @@ const event_stream = "/Users/huchaoqun/Desktop/code/school-course/毕设/数据�
  const normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集";
 
 
-//extractFeatureFromDir(normal_path, false, ResovlePackagePath.By_Normal);
+
+//extractFeatureFromDir(test_normal_path,  ResovlePackagePath.By_Test_Normal);
 //doSomething();
-removeDuplicatePackage("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious");
+//removeDuplicatePackage("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious");
+doSomethingRemove();

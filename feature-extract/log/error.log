@@ -1,39 +1,308 @@
-现在分析的文件是: 
-error名称: TypeError
-error信息yield* (intermediate value)(intermediate value)(intermediate value) is not iterable
-错误栈TypeError: yield* (intermediate value)(intermediate value)(intermediate value) is not iterable
-    at all (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-descriptors.ts:263:38)
-    at createDescriptors.next (<anonymous>)
-    at createDescriptors (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-descriptors.ts:253:17)
-    at createPluginDescriptors.next (<anonymous>)
-    at createPluginDescriptors (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-descriptors.ts:178:34)
-    at Generator.next (<anonymous>)
-    at Function.<anonymous> (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/gensync-utils/async.ts:10:3)
-    at Generator.next (<anonymous>)
-    at evaluateSync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:251:28)
-    at Function.sync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:89:14)
-    at sync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/gensync-utils/async.ts:83:25)
-    at sync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:182:19)
-    at onFirstPause (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:210:24)
-    at Generator.next (<anonymous>)
-    at cachedFunction (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/caching.ts:131:34)
-    at cachedFunction.next (<anonymous>)
-    at plugins (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-chain.ts:725:34)
-    at mergeChainOpts.next (<anonymous>)
-    at mergeChainOpts (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-chain.ts:662:14)
-    at chainWalker.next (<anonymous>)
-    at loadProgrammaticChain (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-chain.ts:150:36)
-    at buildRootChain.next (<anonymous>)
-    at loadPrivatePartialConfig (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/partial.ts:110:44)
-    at loadPrivatePartialConfig.next (<anonymous>)
-    at loadFullConfig (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/full.ts:58:49)
-    at loadFullConfig.next (<anonymous>)
-    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/parse.ts:31:35)
+现在分析的文件是: /Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal/node-red-3.0.2/package/red.js
+error信息unknown: 'return' outside of function. (26:4)
+
+[0m [90m 24 |[39m         console[33m.[39mlog(err)[0m
+[0m [90m 25 |[39m     }[0m
+[0m[31m[1m>[22m[39m[90m 26 |[39m     [36mreturn[39m[33m;[39m[0m
+[0m [90m    |[39m     [31m[1m^[22m[39m[0m
+[0m [90m 27 |[39m }[0m
+[0m [90m 28 |[39m[0m
+[0m [90m 29 |[39m [36mvar[39m http [33m=[39m require([32m'http'[39m)[33m;[39m[0m
+error名称: SyntaxError
+错误栈SyntaxError: unknown: 'return' outside of function. (26:4)
+
+[0m [90m 24 |[39m         console[33m.[39mlog(err)[0m
+[0m [90m 25 |[39m     }[0m
+[0m[31m[1m>[22m[39m[90m 26 |[39m     [36mreturn[39m[33m;[39m[0m
+[0m [90m    |[39m     [31m[1m^[22m[39m[0m
+[0m [90m 27 |[39m }[0m
+[0m [90m 28 |[39m[0m
+[0m [90m 29 |[39m [36mvar[39m http [33m=[39m require([32m'http'[39m)[33m;[39m[0m
+    at instantiate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.parseReturnStatement (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12910:12)
+    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12574:21)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseStatementListItem (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12522:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13106:61)
+    at FlowParserMixin.parseBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseBlock (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13087:10)
+    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12628:21)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseStatementOrFunctionDeclaration (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12525:17)
+    at FlowParserMixin.parseIfStatement (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12904:28)
+    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12572:21)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
     at parse.next (<anonymous>)
     at evaluateSync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:251:28)
     at sync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:89:14)
-    at fn (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:97:14)
-    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/parse.ts:59:52)
-    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/src/ASTUtil.ts:26:18
+    at stopHiding - secret - don't use this - v1 (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Users/huchaoqun/Desktop/code/school-course/%E6%AF%95%E8%AE%BE/source-code/feature-extract/out/src/ASTUtil.js:27:19
     at Generator.next (<anonymous>)
-    at fulfilled (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/src/ASTUtil.ts:28:58)
+    at fulfilled (file:///Users/huchaoqun/Desktop/code/school-course/%E6%AF%95%E8%AE%BE/source-code/feature-extract/out/src/ASTUtil.js:4:58)
+现在分析的文件是: /Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal/casperjs-1.1.4/package/tests/clitests/error/syntax.js
+error名称: SyntaxError
+error信息unknown: Missing semicolon. (1:7)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m qsfjdhf[33m![39mèrè[32m"èqwnfkmsghfkswjdgfjksn[39m[0m
+[0m [90m   |[39m        [31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+错误栈SyntaxError: unknown: Missing semicolon. (1:7)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m qsfjdhf[33m![39mèrè[32m"èqwnfkmsghfkswjdgfjksn[39m[0m
+[0m [90m   |[39m        [31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+    at instantiate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.semicolon (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3622:10)
+    at FlowParserMixin.parseExpressionStatement (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13075:10)
+    at FlowParserMixin.parseExpressionStatement (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5158:18)
+    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12679:19)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Users/huchaoqun/Desktop/code/school-course/%E6%AF%95%E8%AE%BE/source-code/feature-extract/out/src/ASTUtil.js:27:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Users/huchaoqun/Desktop/code/school-course/%E6%AF%95%E8%AE%BE/source-code/feature-extract/out/src/ASTUtil.js:4:58)
+现在分析的文件是: /Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal/cleave.js-1.6.0/package/src/Cleave.react.js
+error信息unknown: Unexpected token, expected "," (451:16)
+
+[0m [90m 449 |[39m         [36mreturn[39m ([0m
+[0m [90m 450 |[39m             [33m<[39m[33minput[39m[0m
+[0m[31m[1m>[22m[39m[90m 451 |[39m                 type[33m=[39m[32m"text"[39m[0m
+[0m [90m     |[39m                 [31m[1m^[22m[39m[0m
+[0m [90m 452 |[39m                 ref[33m=[39m{[36mfunction[39m (ref) {[0m
+[0m [90m 453 |[39m                     owner[33m.[39melement [33m=[39m ref[33m;[39m[0m
+[0m [90m 454 |[39m[0m
+error名称: SyntaxError
+错误栈SyntaxError: unknown: Unexpected token, expected "," (451:16)
+
+[0m [90m 449 |[39m         [36mreturn[39m ([0m
+[0m [90m 450 |[39m             [33m<[39m[33minput[39m[0m
+[0m[31m[1m>[22m[39m[90m 451 |[39m                 type[33m=[39m[32m"text"[39m[0m
+[0m [90m     |[39m                 [31m[1m^[22m[39m[0m
+[0m [90m 452 |[39m                 ref[33m=[39m{[36mfunction[39m (ref) {[0m
+[0m [90m 453 |[39m                     owner[33m.[39melement [33m=[39m ref[33m;[39m[0m
+[0m [90m 454 |[39m[0m
+    at instantiate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.unexpected (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3281:16)
+    at FlowParserMixin.expect (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3627:28)
+    at FlowParserMixin.flowParseTypeParameterDeclaration (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:4416:14)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5778:31
+    at FlowParserMixin.tryParse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3634:20)
+    at FlowParserMixin.parseMaybeAssign (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5776:26)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10559:39
+    at FlowParserMixin.allowInAnd (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12238:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10559:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11462:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5861:18)
+    at FlowParserMixin.parseExprAtom (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11113:23)
+    at FlowParserMixin.parseExprSubscripts (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseUpdate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10832:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10808:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10646:61)
+    at FlowParserMixin.parseExprOps (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10651:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10628:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10589:21)
+    at FlowParserMixin.parseMaybeAssign (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5817:18)
+    at FlowParserMixin.parseExpressionBase (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10543:23)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10539:39
+    at FlowParserMixin.allowInAnd (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12233:16)
+    at FlowParserMixin.parseExpression (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10539:17)
+    at FlowParserMixin.parseReturnStatement (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12918:28)
+    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12574:21)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseStatementListItem (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12522:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13106:61)
+    at FlowParserMixin.parseBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseBlock (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13087:10)
+    at FlowParserMixin.parseFunctionBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11905:24)
+    at FlowParserMixin.parseFunctionBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5113:18)
+    at FlowParserMixin.parseFunctionBodyAndFinish (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11891:10)
+    at FlowParserMixin.parseFunctionBodyAndFinish (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5121:18)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13237:12
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseFunction (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13236:10)
+    at FlowParserMixin.parseFunctionOrFunctionSent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11361:17)
+    at FlowParserMixin.parseExprAtom (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11134:21)
+    at FlowParserMixin.parseExprSubscripts (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseUpdate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10832:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10808:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10646:61)
+    at FlowParserMixin.parseExprOps (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10651:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10628:23)
+现在分析的文件是: /Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal/recyclerlistview-4.2.0/package/docs/guides/samplecode/web/Sample1.js
+error名称: SyntaxError
+error信息unknown: Unexpected token, expected "," (22:20)
+
+[0m [90m 20 |[39m     }[0m
+[0m [90m 21 |[39m     render() {[0m
+[0m[31m[1m>[22m[39m[90m 22 |[39m         [36mreturn[39m [33m<[39m[33mdiv[39m {[33m...[39m[36mthis[39m[33m.[39mprops}[33m>[39m{[36mthis[39m[33m.[39mprops[33m.[39mchildren}[33m<[39m[33mdiv[39m[33m>[39m[33mCell[39m [33mId[39m[33m:[39m {[36mthis[39m[33m.[39m_containerId}[33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[33m;[39m[0m
+[0m [90m    |[39m                     [31m[1m^[22m[39m[0m
+[0m [90m 23 |[39m     }[0m
+[0m [90m 24 |[39m }[0m
+[0m [90m 25 |[39m[0m
+错误栈SyntaxError: unknown: Unexpected token, expected "," (22:20)
+
+[0m [90m 20 |[39m     }[0m
+[0m [90m 21 |[39m     render() {[0m
+[0m[31m[1m>[22m[39m[90m 22 |[39m         [36mreturn[39m [33m<[39m[33mdiv[39m {[33m...[39m[36mthis[39m[33m.[39mprops}[33m>[39m{[36mthis[39m[33m.[39mprops[33m.[39mchildren}[33m<[39m[33mdiv[39m[33m>[39m[33mCell[39m [33mId[39m[33m:[39m {[36mthis[39m[33m.[39m_containerId}[33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[33m;[39m[0m
+[0m [90m    |[39m                     [31m[1m^[22m[39m[0m
+[0m [90m 23 |[39m     }[0m
+[0m [90m 24 |[39m }[0m
+[0m [90m 25 |[39m[0m
+    at instantiate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.unexpected (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3281:16)
+    at FlowParserMixin.expect (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3627:28)
+    at FlowParserMixin.flowParseTypeParameterDeclaration (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:4416:14)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5778:31
+    at FlowParserMixin.tryParse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3634:20)
+    at FlowParserMixin.parseMaybeAssign (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5776:26)
+    at FlowParserMixin.parseExpressionBase (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10543:23)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10539:39
+    at FlowParserMixin.allowInAnd (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12233:16)
+    at FlowParserMixin.parseExpression (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10539:17)
+    at FlowParserMixin.parseReturnStatement (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12918:28)
+    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12574:21)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseStatementListItem (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12522:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13106:61)
+    at FlowParserMixin.parseBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseBlock (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13087:10)
+    at FlowParserMixin.parseFunctionBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11905:24)
+    at FlowParserMixin.parseFunctionBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5113:18)
+    at FlowParserMixin.parseFunctionBodyAndFinish (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11891:10)
+    at FlowParserMixin.parseFunctionBodyAndFinish (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5121:18)
+    at FlowParserMixin.parseMethod (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11849:31)
+    at FlowParserMixin.pushClassMethod (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13542:30)
+    at FlowParserMixin.pushClassMethod (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5504:11)
+    at FlowParserMixin.parseClassMemberWithIsStatic (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13414:12)
+    at FlowParserMixin.parseClassMember (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13358:10)
+    at FlowParserMixin.parseClassMember (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5386:11)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13308:14
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12570:21)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+现在分析的文件是: /Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal/recyclerlistview-4.2.0/package/docs/guides/samplecode/reactnative/Sample1.js
+error名称: SyntaxError
+error信息unknown: Unexpected token, expected "," (23:21)
+
+[0m [90m 21 |[39m     }[0m
+[0m [90m 22 |[39m     render() {[0m
+[0m[31m[1m>[22m[39m[90m 23 |[39m         [36mreturn[39m [33m<[39m[33mView[39m {[33m...[39m[36mthis[39m[33m.[39mprops}[33m>[39m{[36mthis[39m[33m.[39mprops[33m.[39mchildren}[33m<[39m[33mText[39m[33m>[39m[33mCell[39m [33mId[39m[33m:[39m {[36mthis[39m[33m.[39m_containerId}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m[0m
+[0m [90m    |[39m                      [31m[1m^[22m[39m[0m
+[0m [90m 24 |[39m     }[0m
+[0m [90m 25 |[39m }[0m
+[0m [90m 26 |[39m[0m
+错误栈SyntaxError: unknown: Unexpected token, expected "," (23:21)
+
+[0m [90m 21 |[39m     }[0m
+[0m [90m 22 |[39m     render() {[0m
+[0m[31m[1m>[22m[39m[90m 23 |[39m         [36mreturn[39m [33m<[39m[33mView[39m {[33m...[39m[36mthis[39m[33m.[39mprops}[33m>[39m{[36mthis[39m[33m.[39mprops[33m.[39mchildren}[33m<[39m[33mText[39m[33m>[39m[33mCell[39m [33mId[39m[33m:[39m {[36mthis[39m[33m.[39m_containerId}[33m<[39m[33m/[39m[33mText[39m[33m>[39m[33m<[39m[33m/[39m[33mView[39m[33m>[39m[33m;[39m[0m
+[0m [90m    |[39m                      [31m[1m^[22m[39m[0m
+[0m [90m 24 |[39m     }[0m
+[0m [90m 25 |[39m }[0m
+[0m [90m 26 |[39m[0m
+    at instantiate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.unexpected (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3281:16)
+    at FlowParserMixin.expect (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3627:28)
+    at FlowParserMixin.flowParseTypeParameterDeclaration (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:4416:14)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5778:31
+    at FlowParserMixin.tryParse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3634:20)
+    at FlowParserMixin.parseMaybeAssign (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5776:26)
+    at FlowParserMixin.parseExpressionBase (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10543:23)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10539:39
+    at FlowParserMixin.allowInAnd (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12233:16)
+    at FlowParserMixin.parseExpression (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:10539:17)
+    at FlowParserMixin.parseReturnStatement (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12918:28)
+    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12574:21)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseStatementListItem (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12522:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13106:61)
+    at FlowParserMixin.parseBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseBlock (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13087:10)
+    at FlowParserMixin.parseFunctionBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11905:24)
+    at FlowParserMixin.parseFunctionBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5113:18)
+    at FlowParserMixin.parseFunctionBodyAndFinish (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11891:10)
+    at FlowParserMixin.parseFunctionBodyAndFinish (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5121:18)
+    at FlowParserMixin.parseMethod (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:11849:31)
+    at FlowParserMixin.pushClassMethod (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13542:30)
+    at FlowParserMixin.pushClassMethod (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5504:11)
+    at FlowParserMixin.parseClassMemberWithIsStatic (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13414:12)
+    at FlowParserMixin.parseClassMember (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13358:10)
+    at FlowParserMixin.parseClassMember (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5386:11)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13308:14
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12570:21)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)

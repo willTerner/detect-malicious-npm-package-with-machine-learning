@@ -19,6 +19,7 @@ import { stringify } from "csv-stringify/sync";
 import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
 import { getPackageFeatureInfo } from "./PackageFeatureInfo";
+import { test_malicious_path, test_normal_csv_path } from "./Paths";
 const malicious_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious";
 const normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/normal";
 const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
@@ -26,12 +27,28 @@ export var ResovlePackagePath;
 (function (ResovlePackagePath) {
     ResovlePackagePath[ResovlePackagePath["By_Knife"] = 0] = "By_Knife";
     ResovlePackagePath[ResovlePackagePath["By_Normal"] = 1] = "By_Normal";
+    ResovlePackagePath[ResovlePackagePath["By_Duan"] = 2] = "By_Duan";
+    ResovlePackagePath[ResovlePackagePath["By_Test_Normal"] = 3] = "By_Test_Normal";
 })(ResovlePackagePath || (ResovlePackagePath = {}));
-export function extractFeatureFromPackage(sourcePath, isMaliciousPackage) {
+function getDirectory(resolvePath) {
+    if (resolvePath === ResovlePackagePath.By_Knife) {
+        return malicious_path;
+    }
+    if (resolvePath === ResovlePackagePath.By_Normal) {
+        return normal_path;
+    }
+    if (resolvePath === ResovlePackagePath.By_Duan) {
+        return test_malicious_path;
+    }
+    if (resolvePath === ResovlePackagePath.By_Test_Normal) {
+        return test_normal_csv_path;
+    }
+}
+export function extractFeatureFromPackage(sourcePath, resolvepath) {
     return __awaiter(this, void 0, void 0, function* () {
         const result = yield getPackageFeatureInfo(sourcePath);
         const fileName = result.packageName.replace(/\//g, "-");
-        const csvPath = join(isMaliciousPackage ? malicious_path : normal_path, fileName + ".csv");
+        const csvPath = join(getDirectory(resolvepath), fileName + ".csv");
         const featureArr = [];
         featureArr.push(["editDistance", result.editDistance]);
         featureArr.push(["averageBracket", result.averageBracketNumber]);
@@ -77,7 +94,7 @@ export function extractFeatureFromPackage(sourcePath, isMaliciousPackage) {
         });
     });
 }
-export function extractFeatureFromDir(dirPath, isMaliciousPath, resolvePath) {
+export function extractFeatureFromDir(dirPath, resolvePath) {
     return __awaiter(this, void 0, void 0, function* () {
         let oldPackageArr = JSON.parse(yield readFile(progress_json_path, { encoding: "utf-8" }));
         let counter = 0;
@@ -152,7 +169,7 @@ export function extractFeatureFromDir(dirPath, isMaliciousPath, resolvePath) {
                 if (oldPackageArr.indexOf(packagePath) < 0) {
                     newPackageArr.push(packagePath);
                     console.log(chalk("现在分析了" + counter + "个包"));
-                    yield extractFeatureFromPackage(packagePath, isMaliciousPath);
+                    yield extractFeatureFromPackage(packagePath, resolvePath);
                     counter++;
                     if (counter === max_package_number) {
                         //  更新progress.json
@@ -168,7 +185,7 @@ export function extractFeatureFromDir(dirPath, isMaliciousPath, resolvePath) {
         if (resolvePath === ResovlePackagePath.By_Knife) {
             yield resolveExtractByKnife(dirPath);
         }
-        if (resolvePath === ResovlePackagePath.By_Normal) {
+        if (resolvePath === ResovlePackagePath.By_Normal || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Test_Normal) {
             yield resolveExtractByNormal(dirPath);
         }
     });

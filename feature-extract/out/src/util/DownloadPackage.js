@@ -14,29 +14,46 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
     function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
     function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 };
-import { opendir, mkdir, rm, readFile } from "fs/promises";
+import { opendir, access, mkdir, rm, readFile } from "fs/promises";
 import { join, basename, dirname } from "path";
 import { promisify } from "util";
 import { exec } from 'child_process';
 import { readdirSync } from "fs";
+import { duan_path, test_normal_path } from "../Paths";
 const asyncExec = promisify(exec);
 export var ResolveDepressDir;
 (function (ResolveDepressDir) {
     ResolveDepressDir[ResolveDepressDir["KNIFE"] = 0] = "KNIFE";
     ResolveDepressDir[ResolveDepressDir["NORMAL"] = 1] = "NORMAL";
+    ResolveDepressDir[ResolveDepressDir["DUAN"] = 2] = "DUAN";
+    ResolveDepressDir[ResolveDepressDir["TEST_NORMAL"] = 3] = "TEST_NORMAL";
 })(ResolveDepressDir || (ResolveDepressDir = {}));
 function resolveDepressDir(tgzPath, resolveDepressDir) {
     return __awaiter(this, void 0, void 0, function* () {
         if (resolveDepressDir === ResolveDepressDir.KNIFE) {
             return dirname(tgzPath);
         }
-        if (resolveDepressDir === ResolveDepressDir.NORMAL) {
+        if (resolveDepressDir === ResolveDepressDir.NORMAL || resolveDepressDir === ResolveDepressDir.TEST_NORMAL) {
             const dotIndex = basename(tgzPath).lastIndexOf(".");
             let fileName = basename(tgzPath).substring(0, dotIndex);
-            fileName = fileName.replace(/\/g/, "-");
+            fileName = fileName.replace(/\//g, "-");
             const returnDir = join(dirname(tgzPath), fileName);
             yield mkdir(returnDir);
             return returnDir;
+        }
+        if (resolveDepressDir === ResolveDepressDir.DUAN) {
+            const dotIndex = basename(tgzPath).lastIndexOf(".");
+            let fileName = basename(tgzPath).substring(0, dotIndex);
+            fileName = fileName.replace(/\//g, "-");
+            const returnDir = join(duan_path, fileName);
+            try {
+                yield access(returnDir);
+                return returnDir;
+            }
+            catch (error) {
+                yield mkdir(returnDir);
+                return returnDir;
+            }
         }
     });
 }
@@ -105,11 +122,11 @@ function downloadPopularPackage() {
     return __awaiter(this, void 0, void 0, function* () {
         const jsonContent = yield readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", { encoding: "utf-8" });
         let packageArr = JSON.parse(jsonContent);
-        packageArr = packageArr.slice(0, 2000);
+        packageArr = packageArr.slice(2000, 4000);
         packageArr = packageArr.map(el => el.name);
         for (let packageName of packageArr) {
             try {
-                const { stdout, stderr } = yield asyncExec(`cd /Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集 && npm pack ${packageName}`);
+                const { stdout, stderr } = yield asyncExec(`cd /Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal && npm pack ${packageName}`);
                 console.log(stdout, stderr);
             }
             catch (error) {
@@ -122,8 +139,9 @@ function downloadPopularPackage() {
 //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/补充数据集");
 export function doSomething() {
     return __awaiter(this, void 0, void 0, function* () {
-        normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集");
-        //depressPackageAndSetDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集", ResolveDepressDir.NORMAL);
+        // normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集");
+        depressPackageAndSetDir(test_normal_path, ResolveDepressDir.TEST_NORMAL);
+        // downloadPopularPackage();
     });
 }
 //# sourceMappingURL=DownloadPackage.js.map
