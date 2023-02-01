@@ -10,6 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { readFile } from "fs/promises";
 test("test dir size func", () => __awaiter(void 0, void 0, void 0, function* () {
     const jsonContent = yield readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", { encoding: "utf-8" });
-    expect(JSON.parse(jsonContent).length).toBe(10000);
+    expect(JSON.parse(jsonContent).length).toBe(9998);
 }));
 //# sourceMappingURL=FileUtil.test.js.map

@@ -83,6 +83,6 @@ async function normalizeDir(targetDir) {
 
 //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/补充数据集");
 export async function doSomething() {
-   //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集");
-   depressPackageAndSetDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集", ResolveDepressDir.NORMAL);
+   normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集");
+   //depressPackageAndSetDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集", ResolveDepressDir.NORMAL);
 }

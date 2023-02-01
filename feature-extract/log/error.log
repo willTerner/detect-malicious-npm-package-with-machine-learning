@@ -1,42 +1,39 @@
-现在分析的文件是: /Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/JSONStream-1.3.5/package/test/gen.js
-error信息unknown: 'return' outside of function. (1:0)
-
-[0m[31m[1m>[22m[39m[90m 1 |[39m [36mreturn[39m [90m// dont run this test for now since tape is weird and broken on 0.10[39m[0m
-[0m [90m   |[39m [31m[1m^[22m[39m[0m
-[0m [90m 2 |[39m[0m
-[0m [90m 3 |[39m [36mvar[39m fs [33m=[39m require([32m'fs'[39m)[0m
-[0m [90m 4 |[39m [36mvar[39m [33mJSONStream[39m [33m=[39m require([32m'../'[39m)[0m
-error名称: SyntaxError
-错误栈SyntaxError: unknown: 'return' outside of function. (1:0)
-
-[0m[31m[1m>[22m[39m[90m 1 |[39m [36mreturn[39m [90m// dont run this test for now since tape is weird and broken on 0.10[39m[0m
-[0m [90m   |[39m [31m[1m^[22m[39m[0m
-[0m [90m 2 |[39m[0m
-[0m [90m 3 |[39m [36mvar[39m fs [33m=[39m require([32m'fs'[39m)[0m
-[0m [90m 4 |[39m [36mvar[39m [33mJSONStream[39m [33m=[39m require([32m'../'[39m)[0m
-    at instantiate (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
-    at constructor (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
-    at FlowParserMixin.raise (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
-    at FlowParserMixin.parseReturnStatement (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12910:12)
-    at FlowParserMixin.parseStatementContent (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12574:21)
-    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
-    at FlowParserMixin.parseStatementLike (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
-    at FlowParserMixin.parseModuleItem (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
-    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
-    at FlowParserMixin.parseBlockBody (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
-    at FlowParserMixin.parseProgram (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
-    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
-    at FlowParserMixin.parseTopLevel (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
-    at FlowParserMixin.parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
-    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
-    at parser (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
-    at parser.next (<anonymous>)
-    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+现在分析的文件是: 
+error名称: TypeError
+error信息yield* (intermediate value)(intermediate value)(intermediate value) is not iterable
+错误栈TypeError: yield* (intermediate value)(intermediate value)(intermediate value) is not iterable
+    at all (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-descriptors.ts:263:38)
+    at createDescriptors.next (<anonymous>)
+    at createDescriptors (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-descriptors.ts:253:17)
+    at createPluginDescriptors.next (<anonymous>)
+    at createPluginDescriptors (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-descriptors.ts:178:34)
+    at Generator.next (<anonymous>)
+    at Function.<anonymous> (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/gensync-utils/async.ts:10:3)
+    at Generator.next (<anonymous>)
+    at evaluateSync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:251:28)
+    at Function.sync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:89:14)
+    at sync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/gensync-utils/async.ts:83:25)
+    at sync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:182:19)
+    at onFirstPause (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:210:24)
+    at Generator.next (<anonymous>)
+    at cachedFunction (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/caching.ts:131:34)
+    at cachedFunction.next (<anonymous>)
+    at plugins (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-chain.ts:725:34)
+    at mergeChainOpts.next (<anonymous>)
+    at mergeChainOpts (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-chain.ts:662:14)
+    at chainWalker.next (<anonymous>)
+    at loadProgrammaticChain (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/config-chain.ts:150:36)
+    at buildRootChain.next (<anonymous>)
+    at loadPrivatePartialConfig (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/partial.ts:110:44)
+    at loadPrivatePartialConfig.next (<anonymous>)
+    at loadFullConfig (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/config/full.ts:58:49)
+    at loadFullConfig.next (<anonymous>)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/parse.ts:31:35)
     at parse.next (<anonymous>)
     at evaluateSync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:251:28)
     at sync (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/gensync/index.js:89:14)
-    at stopHiding - secret - don't use this - v1 (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
-    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
-    at file:///Users/huchaoqun/Desktop/code/school-course/%E6%AF%95%E8%AE%BE/source-code/feature-extract/out/src/ASTUtil.js:27:19
+    at fn (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:97:14)
+    at parse (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/node_modules/@babel/core/src/parse.ts:59:52)
+    at /Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/src/ASTUtil.ts:26:18
     at Generator.next (<anonymous>)
-    at fulfilled (file:///Users/huchaoqun/Desktop/code/school-course/%E6%AF%95%E8%AE%BE/source-code/feature-extract/out/src/ASTUtil.js:4:58)
+    at fulfilled (/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/src/ASTUtil.ts:28:58)

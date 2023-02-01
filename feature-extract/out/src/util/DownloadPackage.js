@@ -122,8 +122,8 @@ function downloadPopularPackage() {
 //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/补充数据集");
 export function doSomething() {
     return __awaiter(this, void 0, void 0, function* () {
-        //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集");
-        depressPackageAndSetDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集", ResolveDepressDir.NORMAL);
+        normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集");
+        //depressPackageAndSetDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集", ResolveDepressDir.NORMAL);
     });
 }
 //# sourceMappingURL=DownloadPackage.js.map

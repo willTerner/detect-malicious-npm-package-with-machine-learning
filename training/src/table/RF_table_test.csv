@@ -1,0 +1,2 @@
+hyperparamter,accuracy,precision,recall,f1,MCC
+estimators = 64; max_depth=15,0.9976905311778291,1.0,0.9696969696969697,0.9846153846153847,0.9835033160925575
