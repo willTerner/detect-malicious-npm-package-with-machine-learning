@@ -26,7 +26,7 @@ This program is used to extract feature values from npm package originally. It s
 This project is used to traing classifier model and evaluate the performance of the model. At this time, MLP and RF are used as classifier.  
 
 The train set is material/training_set. Malicious-dedupli subdirecotry contains malicous package feature vectors. Normal subdirectory contains benign package feature vectors.  
-The test set is traning.  
+
 
 The test set is material/test_set. Malicious-dedupli subdirectory contains malicous package feature vector. Normal subdirectory contains benign package feature vectors.
 
