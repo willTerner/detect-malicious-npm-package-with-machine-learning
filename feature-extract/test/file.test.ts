@@ -16,10 +16,5 @@ test("test json", async() => {
 });
 
 test("teset opendir", async() => {
-   const dir = await opendir("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/src");
-   let counter = 0;
-   for await (const dirent of dir) {
-      counter++;
-      console.log(counter);
-   }
+  
 });

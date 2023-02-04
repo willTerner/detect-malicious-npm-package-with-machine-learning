@@ -12,7 +12,7 @@ import { writeFile } from "fs/promises";
 import { stringify } from "csv-stringify/sync";
 import { fork } from "child_process";
 import { IGNORE_JS_FILES } from "./IgnoreJSFiles";
-import { getDirectorySizeInBytes } from "./FileUtil";
+import { getDirectorySizeInBytes } from "./Util";
 
 
 const BABEL_STUCK_FILES_PATH = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/babel-struck-files.csv";
@@ -44,7 +44,7 @@ export interface PackageFeatureInfo {
    accessNetworkInInstallScript: boolean;
    accessProcessEnvInJSFile: boolean;
    accessProcessEnvInInstallScript: boolean;
-   useCrpytoAndZip: boolean;
+   accessCryptoAndZip: boolean;
    accessSensitiveAPI: boolean;
    containSuspiciousString: boolean;
    installCommand: string[],
@@ -119,7 +119,7 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
       accessNetworkInInstallScript: false,
       accessProcessEnvInJSFile: false,
       accessProcessEnvInInstallScript: false,
-      useCrpytoAndZip: false,
+      accessCryptoAndZip: false,
       accessSensitiveAPI: false,
       containSuspiciousString: false,
       installCommand: [],

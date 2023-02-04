@@ -2,7 +2,12 @@
 import csv
 import os
 
-feature_name_arr = ["editDistance","averageBracket","packageSize","dependencyNumber","devDependencyNumber","jsFileNumber",
+feature_name_arr = ["editDistance",
+"averageBracket",
+"packageSize",
+"dependencyNumber",
+"devDependencyNumber",
+"jsFileNumber",
 "bracketNumber",
 "hasInstallScript",
 "containIP",
@@ -22,7 +27,7 @@ feature_name_arr = ["editDistance","averageBracket","packageSize","dependencyNum
 "accessProcessEnvInJSFile",
 "accessProcessEnvInInstallScript",
 "containSuspicousString",
-"useCrpytoAndZip",
+"accessCryptoAndZip",
 "accessSensitiveAPI"]
 
 def normalize_feature(value, i):
@@ -46,6 +51,8 @@ def read_feature_from_file(file_path):
          _, value = row
          feature_vec.append(normalize_feature(value, i))
          i += 1
+   if i != len(feature_name_arr):
+      raise ValueError(file_path + "有" + str(i) + "个特征")
    return feature_vec
       
 

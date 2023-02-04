@@ -23,5 +23,5 @@ accessNetworkInInstallScript,false
 accessProcessEnvInJSFile,true
 accessProcessEnvInInstallScript,true
 containSuspicousString,false
-useCrpytoAndZip,true
+accessCryptoAndZipInJSFile,true
 accessSensitiveAPI,true

@@ -19,10 +19,9 @@ import { join } from "path";
 import { parse } from 'csv-parse/sync';
 import { readdirSync } from "fs";
 import { rm } from "fs/promises";
-import { test_malicious_dedupl_path, test_malicious_path } from "../Paths";
+import { knife_csv_path } from "../Paths";
 const ignore_prop_names = ["editDistance", "packageSize", "packageName", "version", "installCommand", "executeJSFiles"];
 const unique_features = [];
-const knife_csv_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious";
 export function isDuplicatePackage(featureSet) {
     if (unique_features.findIndex((singleFeature) => {
         for (const key of Object.keys(featureSet)) {
@@ -55,6 +54,9 @@ export function removeDuplicatePackage(targetDir, saveDir) {
                     const csvPath = join(targetDir, dirent.name);
                     const csvContent = yield readFile(csvPath, { encoding: "utf-8" });
                     const featureArr = yield parse(csvContent);
+                    if (dirent.name === "@azure-tests-perf-storage-file-share.csv") {
+                        debugger;
+                    }
                     if (uniques.findIndex((feature, idx) => {
                         for (let i = 0; i < feature.length; i++) {
                             if (!ignore_feature_names.includes(feature[i][0])) {
@@ -129,10 +131,10 @@ export function removeDuplicatePackageForDuan(targetDir) {
         }
     });
 }
-export function doSomethingRemove() {
+export function doSomethingRemove(csv_path, dedupli_path) {
     return __awaiter(this, void 0, void 0, function* () {
         //await removeDuplicatePackageForDuan(duan_path)
-        yield removeDuplicatePackage(test_malicious_path, test_malicious_dedupl_path);
+        yield removeDuplicatePackage(csv_path, dedupli_path);
     });
 }
 //# sourceMappingURL=RemoveDuplicatePackage.js.map

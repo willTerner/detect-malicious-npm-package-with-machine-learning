@@ -1,6 +1,6 @@
 editDistance,3
 averageBracket,137.23529411764707
-packageSize,393377
+packageSize,1566661
 dependencyNumber,0
 devDependencyNumber,32
 jsFileNumber,51
@@ -22,6 +22,6 @@ accessNetworkInJSFile,false
 accessNetworkInInstallScript,false
 accessProcessEnvInJSFile,true
 accessProcessEnvInInstallScript,false
-containSuspicousString,true
-useCrpytoAndZip,false
+containSuspicousString,false
+accessCryptoAndZipInJSFile,false
 accessSensitiveAPI,false

@@ -14,13 +14,12 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
     function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
     function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 };
-import { opendir, access, mkdir, rm, readFile } from "fs/promises";
+import { opendir, access, mkdir, readFile, unlink } from "fs/promises";
 import { join, basename, dirname } from "path";
-import { promisify } from "util";
-import { exec } from 'child_process';
 import { readdirSync } from "fs";
-import { duan_path, test_normal_path } from "../Paths";
-const asyncExec = promisify(exec);
+import { duan_path, normal_path } from "../Paths";
+import chalk from "chalk";
+import { asyncExec } from "../Util";
 export var ResolveDepressDir;
 (function (ResolveDepressDir) {
     ResolveDepressDir[ResolveDepressDir["KNIFE"] = 0] = "KNIFE";
@@ -108,12 +107,21 @@ export function depressPackageAndSetDir(targetDir, resolveDir) {
         }
     });
 }
+export function depressPackage(tgzPath) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const outputDir = yield resolveDepressDir(tgzPath, ResolveDepressDir.NORMAL);
+        const { stdout, stderr } = yield asyncExec(`tar -xvf ${tgzPath} -C ${outputDir}`);
+        console.log(stdout, stderr);
+        console.log(chalk.red("package depress directory is " + outputDir));
+        return outputDir;
+    });
+}
 function normalizeDir(targetDir) {
     return __awaiter(this, void 0, void 0, function* () {
-        const files = readdirSync(targetDir, { withFileTypes: true });
+        const files = readdirSync(targetDir);
         for (const file of files) {
-            if (file.isDirectory() && file.name.length > 5) {
-                yield rm(join(targetDir, file.name), { force: true, recursive: true });
+            if (file.endsWith(".csv")) {
+                yield unlink(join(targetDir, file));
             }
         }
     });
@@ -139,8 +147,8 @@ function downloadPopularPackage() {
 //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/补充数据集");
 export function doSomething() {
     return __awaiter(this, void 0, void 0, function* () {
-        // normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集");
-        depressPackageAndSetDir(test_normal_path, ResolveDepressDir.TEST_NORMAL);
+        yield normalizeDir(normal_path);
+        //depressPackageAndSetDir(test_normal_path, ResolveDepressDir.TEST_NORMAL);
         // downloadPopularPackage();
     });
 }

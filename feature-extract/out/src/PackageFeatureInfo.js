@@ -27,7 +27,7 @@ import { writeFile } from "fs/promises";
 import { stringify } from "csv-stringify/sync";
 import { fork } from "child_process";
 import { IGNORE_JS_FILES } from "./IgnoreJSFiles";
-import { getDirectorySizeInBytes } from "./FileUtil";
+import { getDirectorySizeInBytes } from "./Util";
 const BABEL_STUCK_FILES_PATH = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/babel-struck-files.csv";
 const ALLOWED_MAX_JS_SIZE = 2 * 1024 * 1024;
 function parseJSAsync(code, featureSet, isInstallScript, targetJSFilePath) {
@@ -96,7 +96,7 @@ export function getPackageFeatureInfo(dirPath) {
             accessNetworkInInstallScript: false,
             accessProcessEnvInJSFile: false,
             accessProcessEnvInInstallScript: false,
-            useCrpytoAndZip: false,
+            accessCryptoAndZip: false,
             accessSensitiveAPI: false,
             containSuspiciousString: false,
             installCommand: [],

@@ -6,12 +6,17 @@
 + averageBracketNumber可能为NaN, 因为jsFiles number可能为0
 
 ### 训练
-
++ RF
+  + 不需要缩放，表现好
++ MLP
+  + 需要缩放，采取Standard
+  + activation取logistic
+  + max_iter要取大
 1. 交叉训练评估? 四重
 2. 使用不同分类器，取交集作为结果
 3. 训练模型
    + 四个预处理方法
-     + 标准化，Min-max-scale等数据转化
+     + standardlize，Min-max-scale等数据转化
    + 三个超采样方法（论文中表现不好）
    + 三个特征加权方法方法，权重Bone, t-SNE, PCA, and Spearman Correlation(论文中没有优化?)
    + 机器学习专用超参数

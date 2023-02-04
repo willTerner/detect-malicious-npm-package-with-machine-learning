@@ -4,6 +4,6 @@
       "moduleResolution": "node",
       "outDir": "out",
       "esModuleInterop": true,
-      "target": "ES6",
+      "target": "ES6"
    }
 }

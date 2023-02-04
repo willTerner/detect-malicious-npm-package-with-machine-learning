@@ -2,13 +2,14 @@ import chalk from "chalk";
 import { stringify } from "csv-stringify/sync";
 import { writeFile, opendir, readFile, readdir } from "fs/promises";
 import { join } from "path";
+import { getRootDirectory } from "./Util";
 import { getPackageFeatureInfo, PackageFeatureInfo } from "./PackageFeatureInfo";
-import { test_malicious_path, test_normal_csv_path } from "./Paths";
+import { knife_csv_path, normal_csv_path, normal_path, test_malicious_path, test_normal_csv_path } from "./Paths";
 
 
-const malicious_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious";
 
-const normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/normal";
+
+
 
 const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
 
@@ -18,21 +19,25 @@ export enum ResovlePackagePath {
    By_Knife,
    By_Normal,
    By_Duan,
-   By_Test_Normal
+   By_Test_Normal,
+   By_Single_Package,
 }
 
 function getDirectory(resolvePath: ResovlePackagePath) {
    if (resolvePath === ResovlePackagePath.By_Knife) {
-      return malicious_path;
+      return knife_csv_path;
    }
    if (resolvePath === ResovlePackagePath.By_Normal) {
-      return normal_path;
+      return normal_csv_path;
    }
    if (resolvePath === ResovlePackagePath.By_Duan) {
       return test_malicious_path;
    }
    if (resolvePath === ResovlePackagePath.By_Test_Normal) {
       return test_normal_csv_path;
+   }
+   if (resolvePath === ResovlePackagePath.By_Single_Package) {
+      return join(getRootDirectory(), "output_feature");
    }
 }
 
@@ -67,7 +72,7 @@ export async function extractFeatureFromPackage(sourcePath: string, resolvepath:
    featureArr.push(["accessProcessEnvInJSFile", result.accessProcessEnvInJSFile]);
    featureArr.push(["accessProcessEnvInInstallScript", result.accessProcessEnvInInstallScript]);
    featureArr.push(["containSuspicousString", result.containSuspiciousString]);
-   featureArr.push(["useCrpytoAndZip", result.useCrpytoAndZip]);
+   featureArr.push(["accessCryptoAndZipInJSFile", result.accessCryptoAndZip]);
    featureArr.push(["accessSensitiveAPI", result.accessSensitiveAPI]);
    await new Promise(resolve => {
       setTimeout(async() => {
@@ -84,6 +89,7 @@ export async function extractFeatureFromPackage(sourcePath: string, resolvepath:
         resolve(true);
      });
    });
+   return csvPath;
 }
 
 export async function extractFeatureFromDir(dirPath: string, resolvePath: ResovlePackagePath) {
@@ -91,7 +97,7 @@ export async function extractFeatureFromDir(dirPath: string, resolvePath: Resovl
 
    let counter = 0;
 
-   const max_package_number = 100;
+   const max_package_number = 2000;
 
    let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
 

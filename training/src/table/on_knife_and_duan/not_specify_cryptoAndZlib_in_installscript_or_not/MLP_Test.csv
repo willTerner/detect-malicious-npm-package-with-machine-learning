@@ -1,0 +1,2 @@
+hyperparamter,accuracy,precision,recall,f1,MCC
+"layer_size = (16,); activation=logistic; solver=lbfgs;learn_rate_int=0.05045994670005887;max_iter=400",0.996872207,0.97826087,0.983606557,0.980926431,0.97922718

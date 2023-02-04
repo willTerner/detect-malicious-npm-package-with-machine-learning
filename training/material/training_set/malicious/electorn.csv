@@ -1,6 +1,6 @@
 editDistance,2
 averageBracket,1.5
-packageSize,1426
+packageSize,2974
 dependencyNumber,3
 devDependencyNumber,0
 jsFileNumber,2
@@ -23,5 +23,5 @@ accessNetworkInInstallScript,true
 accessProcessEnvInJSFile,false
 accessProcessEnvInInstallScript,false
 containSuspicousString,false
-useCrpytoAndZip,false
+accessCryptoAndZipInJSFile,false
 accessSensitiveAPI,true

@@ -18,10 +18,9 @@ import chalk from "chalk";
 import { stringify } from "csv-stringify/sync";
 import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
+import { getRootDirectory } from "./Util";
 import { getPackageFeatureInfo } from "./PackageFeatureInfo";
-import { test_malicious_path, test_normal_csv_path } from "./Paths";
-const malicious_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious";
-const normal_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/normal";
+import { knife_csv_path, normal_csv_path, test_malicious_path, test_normal_csv_path } from "./Paths";
 const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
 export var ResovlePackagePath;
 (function (ResovlePackagePath) {
@@ -29,19 +28,23 @@ export var ResovlePackagePath;
     ResovlePackagePath[ResovlePackagePath["By_Normal"] = 1] = "By_Normal";
     ResovlePackagePath[ResovlePackagePath["By_Duan"] = 2] = "By_Duan";
     ResovlePackagePath[ResovlePackagePath["By_Test_Normal"] = 3] = "By_Test_Normal";
+    ResovlePackagePath[ResovlePackagePath["By_Single_Package"] = 4] = "By_Single_Package";
 })(ResovlePackagePath || (ResovlePackagePath = {}));
 function getDirectory(resolvePath) {
     if (resolvePath === ResovlePackagePath.By_Knife) {
-        return malicious_path;
+        return knife_csv_path;
     }
     if (resolvePath === ResovlePackagePath.By_Normal) {
-        return normal_path;
+        return normal_csv_path;
     }
     if (resolvePath === ResovlePackagePath.By_Duan) {
         return test_malicious_path;
     }
     if (resolvePath === ResovlePackagePath.By_Test_Normal) {
         return test_normal_csv_path;
+    }
+    if (resolvePath === ResovlePackagePath.By_Single_Package) {
+        return join(getRootDirectory(), "output_feature");
     }
 }
 export function extractFeatureFromPackage(sourcePath, resolvepath) {
@@ -75,7 +78,7 @@ export function extractFeatureFromPackage(sourcePath, resolvepath) {
         featureArr.push(["accessProcessEnvInJSFile", result.accessProcessEnvInJSFile]);
         featureArr.push(["accessProcessEnvInInstallScript", result.accessProcessEnvInInstallScript]);
         featureArr.push(["containSuspicousString", result.containSuspiciousString]);
-        featureArr.push(["useCrpytoAndZip", result.useCrpytoAndZip]);
+        featureArr.push(["accessCryptoAndZipInJSFile", result.accessCryptoAndZip]);
         featureArr.push(["accessSensitiveAPI", result.accessSensitiveAPI]);
         yield new Promise(resolve => {
             setTimeout(() => __awaiter(this, void 0, void 0, function* () {
@@ -92,13 +95,14 @@ export function extractFeatureFromPackage(sourcePath, resolvepath) {
                 resolve(true);
             }));
         });
+        return csvPath;
     });
 }
 export function extractFeatureFromDir(dirPath, resolvePath) {
     return __awaiter(this, void 0, void 0, function* () {
         let oldPackageArr = JSON.parse(yield readFile(progress_json_path, { encoding: "utf-8" }));
         let counter = 0;
-        const max_package_number = 100;
+        const max_package_number = 2000;
         let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
         const progress_detail_path = join("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material", idx_ + ".csv");
         let newPackageArr = [];

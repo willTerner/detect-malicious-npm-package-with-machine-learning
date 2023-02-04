@@ -1,7 +1,8 @@
 import { scanJSFileByAST } from "../src/ASTUtil";
+import { PackageFeatureInfo } from "../src/PackageFeatureInfo";
 
 test('createBufferFromASCII works on [] and b = []', () => { 
-   let result = {
+   let result: PackageFeatureInfo = {
       editDistance: 0,
       averageBracketNumber: 0,
       packageSize: 0,
@@ -27,17 +28,14 @@ test('createBufferFromASCII works on [] and b = []', () => {
       accessProcessEnvInJSFile: false,
       accessProcessEnvInInstallScript: false,
       containSuspiciousString: false,
-      useCrpytoAndZip: false,
+      accessCryptoAndZip: false,
       accessSensitiveAPI: false,
       installCommand: [],
       executeJSFiles: [],
       packageName: "",
       version: ""
    };
-   let code = `// @flow
-   function add(a: number, b: number): number {
-     return a + b;
-   }
-   `;
+   let code = `import zlib from "zlib"`;
    scanJSFileByAST(code, result, false, "");
+   console.log(result)
  });

@@ -4,7 +4,6 @@ import { PackageFeatureInfo } from './PackageFeatureInfo';
 import * as t from "@babel/types";
 import { base64_Pattern, getDomainPattern, IP_Pattern, SensitiveStringPattern } from './Patterns';
 import { getFileLogger } from './FileLogger';
-import chalk from 'chalk';
 
 let traverse: any;
 
@@ -73,7 +72,7 @@ export async function scanJSFileByAST(code: string, featureSet: PackageFeatureIn
             if (path.node.arguments.length > 0) {
                const moduleName = path.node.arguments[0].value as string;
                if (moduleName === "crypto" || moduleName === "zlib") {
-                  featureSet.useCrpytoAndZip = true;
+                  featureSet.accessCryptoAndZip= true;
                }
             }
          }
@@ -177,6 +176,11 @@ export async function scanJSFileByAST(code: string, featureSet: PackageFeatureIn
                featureSet.containDomain = true;
             }
          }
+         {
+            if (moduleName === "crypto" || moduleName === "zlib") {
+               featureSet.accessCryptoAndZip = true;
+            }
+         }
       },
       Identifier: function(path) {
          if (path.node.name === "eval") {
@@ -187,6 +191,47 @@ export async function scanJSFileByAST(code: string, featureSet: PackageFeatureIn
 
    return featureSet;
 }
+
+
+export async function doSomethingAST() {
+   let result: PackageFeatureInfo = {
+      editDistance: 0,
+      averageBracketNumber: 0,
+      packageSize: 0,
+      dependencyNumber: 0,
+      devDependencyNumber: 0,
+      numberOfJSFiles: 0,
+      totalBracketsNumber: 0,
+      hasInstallScripts: false,
+      containIP: false,
+      useBase64Conversion: false,
+      containBase64String: false,
+      createBufferFromASCII: false,
+      containBytestring: false,
+      containDomain: false,
+      useBufferFrom: false,
+      useEval: false,
+      requireChildProcessInJSFile: false,
+      requireChildProcessInInstallScript: false,
+      accessFSInJSFile: false,
+      accessFSInInstallScript: false,
+      accessNetworkInJSFile: false,
+      accessNetworkInInstallScript: false,
+      accessProcessEnvInJSFile: false,
+      accessProcessEnvInInstallScript: false,
+      containSuspiciousString: false,
+      accessCryptoAndZip: false,
+      accessSensitiveAPI: false,
+      installCommand: [],
+      executeJSFiles: [],
+      packageName: "",
+      version: ""
+   };
+   let code = `require("crypto")`;
+   await scanJSFileByAST(code, result, true, "");
+   console.log(result)
+}
+
 
 
 

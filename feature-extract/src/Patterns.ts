@@ -4,7 +4,7 @@ export const IP_Pattern = /(\d{1,3}\.){3}\d{1,3}/;
 
 export const base64_Pattern =  /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
 
-export const bytestring_Pattern1 = /^(0x[0-9a-f]{1,4})+$/i; // 没用，这个是16进制
+export const bytestring_pattern1 = /(\\x[0-9a-f]{2})+/i; // 没用，这个是16进制
 
 export const bytestring_pattern2 = /\".*(\\x[0-9a-f]{2})+.*\"/i;
 

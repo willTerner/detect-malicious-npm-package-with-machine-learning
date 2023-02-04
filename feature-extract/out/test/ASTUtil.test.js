@@ -26,18 +26,15 @@ test('createBufferFromASCII works on [] and b = []', () => {
         accessProcessEnvInJSFile: false,
         accessProcessEnvInInstallScript: false,
         containSuspiciousString: false,
-        useCrpytoAndZip: false,
+        accessCryptoAndZip: false,
         accessSensitiveAPI: false,
         installCommand: [],
         executeJSFiles: [],
         packageName: "",
         version: ""
     };
-    let code = `// @flow
-   function add(a: number, b: number): number {
-     return a + b;
-   }
-   `;
+    let code = `import zlib from "zlib"`;
     scanJSFileByAST(code, result, false, "");
+    console.log(result);
 });
 //# sourceMappingURL=ASTUtil.test.js.map
