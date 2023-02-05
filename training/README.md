@@ -11,8 +11,17 @@
 + MLP
   + 需要缩放，采取Standard
   + activation取logistic
-  + max_iter要取大
-1. 交叉训练评估? 四重
+  + max_iter要取大，400
++ SVM
+  + 表现差于MLP
+  + c取1.611045328589775
+  + gramma_val取scale
+  + 预处理方法取标准化
++ NB
+  + smoothing取1e-9
+  + 预处理方法取标准化
+  
+1. 交叉训练评估-四重
 2. 使用不同分类器，取交集作为结果
 3. 训练模型
    + 四个预处理方法
