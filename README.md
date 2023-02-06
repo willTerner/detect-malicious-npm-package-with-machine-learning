@@ -3,8 +3,8 @@
 + python3
 #### usage
 1. clone the repository 
-2. install necessary python library
-3.  execute these commands. please look for training/src for detail.
+2. install necessary python library.please look for training/src for detail.
+3.  execute these commands.
 ````
 cd feature-extract
 npm install
@@ -23,7 +23,7 @@ This program is used to extract feature values from npm package originally. It s
 
 #### training directory
 
-This project is used to traing classifier model and evaluate the performance of the model. At this time, MLP and RF are used as classifier.  
+This project is used to traing classifier model and evaluate the performance of the model. At this time, MLP,RF, NB, Kernel SVM are used as classifier.  
 
 The train set is material/training_set. Malicious-dedupli subdirecotry contains malicous package feature vectors. Normal subdirectory contains benign package feature vectors.  
 
