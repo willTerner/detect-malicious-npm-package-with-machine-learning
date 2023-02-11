@@ -5,5 +5,6 @@
       "outDir": "out",
       "esModuleInterop": true,
       "target": "ES6"
-   }
+   },
+   "exclude": ["material"]
 }

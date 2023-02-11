@@ -1,5 +1,5 @@
 from model_util import evaluate_model
-from pickle_util import save_classifier
+from pickle_util import load_classifier, save_classifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import StratifiedKFold, cross_validate
 from prettytable import PrettyTable
@@ -44,6 +44,18 @@ def test_RF(X_train, y_train, X_test, y_test):
 
    save_classifier(model, save_path)
 
+   test_table_path = os.path.join(table_path, "RF_table_test.csv")
+   table = PrettyTable()
+   table.field_names = field_names
+   y_pred = model.predict(X_test)
+   [accuracy, precision, recall, f1, mcc] = evaluate_model(y_test, y_pred)
+   table.add_row([f'estimators = {rf_best_estimator}; max_depth={rf_best_depth}', accuracy, precision, recall, f1, mcc])
+   with open(test_table_path, "w+") as f:
+      f.write(table.get_csv_string())
+
+def test_RF_load(X_test, y_test):
+   rf_classifier_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "classifier", "RF.pkl")
+   model = load_classifier(rf_classifier_path)
    test_table_path = os.path.join(table_path, "RF_table_test.csv")
    table = PrettyTable()
    table.field_names = field_names

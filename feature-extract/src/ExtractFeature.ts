@@ -4,7 +4,7 @@ import { writeFile, opendir, readFile, readdir } from "fs/promises";
 import { join } from "path";
 import { getRootDirectory } from "./Util";
 import { getPackageFeatureInfo, PackageFeatureInfo } from "./PackageFeatureInfo";
-import { knife_csv_path, normal_csv_path, normal_path, test_malicious_path, test_normal_csv_path } from "./Paths";
+import { knife_csv_path, normal_csv_path, normal_path, npm_registry_csv_path, should_use_console_log, test_malicious_path, test_normal_csv_path, test_set_mix_csv_path } from "./commons";
 
 
 
@@ -21,6 +21,8 @@ export enum ResovlePackagePath {
    By_Duan,
    By_Test_Normal,
    By_Single_Package,
+   By_Test_Set,
+   None,
 }
 
 function getDirectory(resolvePath: ResovlePackagePath) {
@@ -39,13 +41,16 @@ function getDirectory(resolvePath: ResovlePackagePath) {
    if (resolvePath === ResovlePackagePath.By_Single_Package) {
       return join(getRootDirectory(), "output_feature");
    }
+   if (resolvePath === ResovlePackagePath.By_Test_Set) {
+      return test_set_mix_csv_path;
+   }
 }
 
 
-export async function extractFeatureFromPackage(sourcePath: string, resolvepath: ResovlePackagePath) {
+export async function extractFeatureFromPackage(sourcePath: string, resolvepath: ResovlePackagePath, csvDir?: string) {
    const result: PackageFeatureInfo = await getPackageFeatureInfo(sourcePath);
    const fileName = result.packageName.replace(/\//g, "-");
-   const csvPath = join(getDirectory(resolvepath), fileName + ".csv");
+   const csvPath = join(csvDir ? csvDir : getDirectory(resolvepath), fileName + ".csv");
    const featureArr: [string, number|boolean][] = [];
    featureArr.push(["editDistance", result.editDistance]);
    featureArr.push(["averageBracket", result.averageBracketNumber]);
@@ -97,7 +102,7 @@ export async function extractFeatureFromDir(dirPath: string, resolvePath: Resovl
 
    let counter = 0;
 
-   const max_package_number = 2000;
+   const max_package_number = 10000 * 10000;
 
    let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
 
@@ -131,7 +136,7 @@ export async function extractFeatureFromDir(dirPath: string, resolvePath: Resovl
    async function resolveExtract(packagePath) {
       if (oldPackageArr.indexOf(packagePath) < 0) {
          newPackageArr.push(packagePath);
-         console.log(chalk("现在分析了" + counter + "个包"));
+         should_use_console_log && console.log(chalk("现在分析了" + counter + "个包"));
          await extractFeatureFromPackage(packagePath, resolvePath);
          counter++;
          if (counter === max_package_number) {
@@ -149,7 +154,7 @@ export async function extractFeatureFromDir(dirPath: string, resolvePath: Resovl
       await resolveExtractByKnife(dirPath);
    }
 
-   if (resolvePath === ResovlePackagePath.By_Normal || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Test_Normal) {
+   if (resolvePath === ResovlePackagePath.By_Normal || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Test_Normal || resolvePath === ResovlePackagePath.By_Test_Set) {
       await resolveExtractByNormal(dirPath);
    }
    

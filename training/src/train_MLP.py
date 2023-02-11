@@ -8,6 +8,8 @@ import os
 from model_util import evaluate_model
 import pickle
 
+from pickle_util import save_classifier
+
 best_layer_size = (100,)
 best_activation="logistic"
 best_solver="lbfgs"
@@ -56,8 +58,7 @@ def test_MLP(X_train, y_train, X_test, y_test):
    model.fit(X_train, y_train)
    y_pred = model.predict(X_test)
 
-   with open(save_path, "wb") as f:
-      pickle.dump(model, f)
+   save_classifier(model, save_path)
 
    [accuracy, precision, recall, f1, mcc] = evaluate_model(y_test, y_pred)
 

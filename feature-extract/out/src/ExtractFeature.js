@@ -20,7 +20,7 @@ import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
 import { getRootDirectory } from "./Util";
 import { getPackageFeatureInfo } from "./PackageFeatureInfo";
-import { knife_csv_path, normal_csv_path, test_malicious_path, test_normal_csv_path } from "./Paths";
+import { knife_csv_path, normal_csv_path, should_use_console_log, test_malicious_path, test_normal_csv_path, test_set_mix_csv_path } from "./commons";
 const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
 export var ResovlePackagePath;
 (function (ResovlePackagePath) {
@@ -29,6 +29,8 @@ export var ResovlePackagePath;
     ResovlePackagePath[ResovlePackagePath["By_Duan"] = 2] = "By_Duan";
     ResovlePackagePath[ResovlePackagePath["By_Test_Normal"] = 3] = "By_Test_Normal";
     ResovlePackagePath[ResovlePackagePath["By_Single_Package"] = 4] = "By_Single_Package";
+    ResovlePackagePath[ResovlePackagePath["By_Test_Set"] = 5] = "By_Test_Set";
+    ResovlePackagePath[ResovlePackagePath["None"] = 6] = "None";
 })(ResovlePackagePath || (ResovlePackagePath = {}));
 function getDirectory(resolvePath) {
     if (resolvePath === ResovlePackagePath.By_Knife) {
@@ -46,12 +48,15 @@ function getDirectory(resolvePath) {
     if (resolvePath === ResovlePackagePath.By_Single_Package) {
         return join(getRootDirectory(), "output_feature");
     }
+    if (resolvePath === ResovlePackagePath.By_Test_Set) {
+        return test_set_mix_csv_path;
+    }
 }
-export function extractFeatureFromPackage(sourcePath, resolvepath) {
+export function extractFeatureFromPackage(sourcePath, resolvepath, csvDir) {
     return __awaiter(this, void 0, void 0, function* () {
         const result = yield getPackageFeatureInfo(sourcePath);
         const fileName = result.packageName.replace(/\//g, "-");
-        const csvPath = join(getDirectory(resolvepath), fileName + ".csv");
+        const csvPath = join(csvDir ? csvDir : getDirectory(resolvepath), fileName + ".csv");
         const featureArr = [];
         featureArr.push(["editDistance", result.editDistance]);
         featureArr.push(["averageBracket", result.averageBracketNumber]);
@@ -102,7 +107,7 @@ export function extractFeatureFromDir(dirPath, resolvePath) {
     return __awaiter(this, void 0, void 0, function* () {
         let oldPackageArr = JSON.parse(yield readFile(progress_json_path, { encoding: "utf-8" }));
         let counter = 0;
-        const max_package_number = 2000;
+        const max_package_number = 10000 * 10000;
         let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
         const progress_detail_path = join("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material", idx_ + ".csv");
         let newPackageArr = [];
@@ -172,7 +177,7 @@ export function extractFeatureFromDir(dirPath, resolvePath) {
             return __awaiter(this, void 0, void 0, function* () {
                 if (oldPackageArr.indexOf(packagePath) < 0) {
                     newPackageArr.push(packagePath);
-                    console.log(chalk("现在分析了" + counter + "个包"));
+                    should_use_console_log && console.log(chalk("现在分析了" + counter + "个包"));
                     yield extractFeatureFromPackage(packagePath, resolvePath);
                     counter++;
                     if (counter === max_package_number) {
@@ -189,7 +194,7 @@ export function extractFeatureFromDir(dirPath, resolvePath) {
         if (resolvePath === ResovlePackagePath.By_Knife) {
             yield resolveExtractByKnife(dirPath);
         }
-        if (resolvePath === ResovlePackagePath.By_Normal || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Test_Normal) {
+        if (resolvePath === ResovlePackagePath.By_Normal || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Test_Normal || resolvePath === ResovlePackagePath.By_Test_Set) {
             yield resolveExtractByNormal(dirPath);
         }
     });

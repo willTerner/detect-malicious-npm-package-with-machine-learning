@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { open } from "fs/promises";
+import { join } from "path";
+import { getRootDirectory } from "./Util";
 export class FileLogger {
     init(logFilePath) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -31,7 +33,8 @@ export function getFileLogger() {
             return logger;
         }
         logger = new FileLogger();
-        yield logger.init("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/log/error.log");
+        const log_path = join(getRootDirectory(), 'log', 'error.log');
+        yield logger.init(log_path);
         return logger;
     });
 }

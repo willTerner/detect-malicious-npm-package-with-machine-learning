@@ -4,7 +4,7 @@ import { PackageFeatureInfo } from "../PackageFeatureInfo";
 import {parse} from 'csv-parse/sync';
 import { readdirSync } from "fs";
 import { rm } from "fs/promises";
-import {  duan_path, knife_csv_path, knife_dedupl_saveDir, knife_path, test_malicious_dedupl_path, test_malicious_path } from "../Paths";
+import {  duan_path, knife_csv_path, knife_dedupl_saveDir, knife_path, test_malicious_dedupl_path, test_malicious_path } from "../commons";
 
 const ignore_prop_names = ["editDistance", "packageSize", "packageName", "version", "installCommand", "executeJSFiles"];
 

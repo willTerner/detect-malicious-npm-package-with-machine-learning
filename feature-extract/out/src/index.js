@@ -11,10 +11,11 @@ import chalk from "chalk";
 import { constants } from "fs";
 import { access } from "fs/promises";
 import { extractFeatureFromDir, extractFeatureFromPackage, ResovlePackagePath } from "./ExtractFeature";
-import { duan_path, knife_csv_path, knife_dedupl_saveDir, knife_path, normal_csv_path, predict_py_path, test_malicious_dedupl_path, test_malicious_path, test_normal_csv_path, test_normal_path } from "./Paths";
+import { duan_path, knife_csv_path, knife_dedupl_saveDir, knife_path, normal_csv_path, predict_py_path, test_malicious_dedupl_path, test_malicious_path, test_normal_csv_path, test_normal_path, test_set_mix_csv_path, test_set_path } from "./commons";
 import { asyncExec } from "./Util";
-import { doSomething } from "./util/DownloadPackage";
+import { depressPackageAndSetDir, doSomething, ResolveDepressDir } from "./util/DownloadPackage";
 import { doSomethingRemove } from "./util/RemoveDuplicatePackage";
+import { scanNPMRegistry } from "./scanNPMRegistry";
 const momnetPath = "/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/momnet/2.28.0";
 const pornhub_alert = "/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/@pornhub_alerts/94.0.1";
 const event_stream = "/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/event-stream/3.3.6";
@@ -23,16 +24,18 @@ var Action;
 (function (Action) {
     Action[Action["Extract"] = 0] = "Extract";
     Action[Action["DoSomething"] = 1] = "DoSomething";
+    Action[Action["DepressPackageFromDir"] = 2] = "DepressPackageFromDir";
+    Action[Action["ScanNPMRegistry"] = 3] = "ScanNPMRegistry";
 })(Action || (Action = {}));
 function extract_feature() {
     return __awaiter(this, void 0, void 0, function* () {
-        let resolve_path = ResovlePackagePath.By_Test_Normal;
+        let resolve_path = ResovlePackagePath.By_Test_Set;
         let source_path;
         let csv_path;
         let csv_dedupli_path;
         //@ts-ignore
-        let is_malicous = (resolve_path === ResovlePackagePath.By_Knife || resolve_path === ResovlePackagePath.By_Duan) ? true : false;
-        const action = Action.Extract;
+        let is_malicous = false;
+        const action = Action.ScanNPMRegistry;
         // @ts-ignore
         if (resolve_path === ResovlePackagePath.By_Knife) {
             source_path = knife_path;
@@ -49,10 +52,15 @@ function extract_feature() {
             source_path = duan_path;
             csv_path = test_malicious_path;
             csv_dedupli_path = test_malicious_dedupl_path;
+            // @ts-ignore
         }
-        else {
+        else if (resolve_path === ResovlePackagePath.By_Test_Normal) {
             source_path = test_normal_path;
             csv_path = test_normal_csv_path;
+        }
+        else if (resolve_path === ResovlePackagePath.By_Test_Set) {
+            source_path = test_set_path;
+            csv_path = test_set_mix_csv_path;
         }
         // @ts-ignore
         if (action === Action.Extract) {
@@ -60,9 +68,17 @@ function extract_feature() {
             if (is_malicous) {
                 yield doSomethingRemove(csv_path, csv_dedupli_path);
             }
+            // @ts-ignore
         }
         else if (action === Action.DoSomething) {
             yield doSomething();
+            // @ts-ignore
+        }
+        else if (action === Action.DepressPackageFromDir) {
+            yield depressPackageAndSetDir(test_set_path, ResolveDepressDir.TEST_SET);
+        }
+        else if (action === Action.ScanNPMRegistry) {
+            yield scanNPMRegistry();
         }
         //doSomethingAST();
     });

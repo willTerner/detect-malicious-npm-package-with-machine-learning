@@ -23,47 +23,10 @@ import { getAllInstallScripts } from "./GetInstallScripts";
 import { scanJSFileByAST } from "./ASTUtil";
 import { matchUseRegExp } from "./RegExpUtil";
 import chalk from "chalk";
-import { writeFile } from "fs/promises";
-import { stringify } from "csv-stringify/sync";
-import { fork } from "child_process";
 import { IGNORE_JS_FILES } from "./IgnoreJSFiles";
 import { getDirectorySizeInBytes } from "./Util";
 const BABEL_STUCK_FILES_PATH = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/babel-struck-files.csv";
 const ALLOWED_MAX_JS_SIZE = 2 * 1024 * 1024;
-function parseJSAsync(code, featureSet, isInstallScript, targetJSFilePath) {
-    return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
-            const childProcess = fork("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/out/src/ProcessSingleFileProces.js");
-            const sendData = {
-                code,
-                featureSet,
-                isInstallScript,
-                targetJSFilePath
-            };
-            childProcess.send(sendData);
-            const MAX_WAIT_TIME = 2000;
-            const start_time_stamp = Date.now();
-            let timer_id = setInterval(() => __awaiter(this, void 0, void 0, function* () {
-                const time_diff = Date.now() - start_time_stamp;
-                console.log(chalk.green("时间差为" + time_diff));
-                if (time_diff >= MAX_WAIT_TIME) {
-                    // babel处理代码卡住，停止转义，并记录在文件中
-                    yield writeFile(BABEL_STUCK_FILES_PATH, stringify([[targetJSFilePath]]));
-                    childProcess.kill();
-                    console.log(chalk.red("调用terminate"));
-                    reject(new Error("babel struck at file" + targetJSFilePath));
-                }
-            }), 10);
-            childProcess.on('message', resolve);
-            childProcess.on('error', reject);
-            childProcess.on('exit', (code) => {
-                console.log("babel 处理进程退出信号为" + code);
-                clearInterval(timer_id);
-            });
-        }));
-    });
-}
-;
 /**
  *
  * @param dirPath 源码包（目录下有package.json文件）的路径

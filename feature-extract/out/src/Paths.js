@@ -11,4 +11,7 @@ export const duan_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/测
 export const test_malicious_dedupl_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test_set/malicious-dedupli";
 export const test_malicious_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test_set/malicious";
 export const predict_py_path = join(dirname(getRootDirectory()), "training", "src", "predict.py");
+export const test_set_csv_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test";
+export const test_set_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/测试/test_dataset";
+export const test_set_mix_csv_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test";
 //# sourceMappingURL=Paths.js.map

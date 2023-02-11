@@ -1,3 +1,5 @@
+#### 配置
+commons.ts 中should_use_console_log控制是否输出信息
 ### 恶意包特征  
 
 #### 从单个包提取的特征

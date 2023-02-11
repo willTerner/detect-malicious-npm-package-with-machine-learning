@@ -4,7 +4,7 @@ import { promisify } from "util";
 import {exec} from 'child_process';
 import { file } from "@babel/types";
 import { readdirSync } from "fs";
-import { duan_path, normal_path, test_normal_path } from "../Paths";
+import { duan_path, normal_path, test_normal_path } from "../commons";
 import chalk from "chalk";
 import { asyncExec } from "../Util";
 
@@ -14,7 +14,8 @@ export enum ResolveDepressDir {
    KNIFE,
    NORMAL,
    DUAN,
-   TEST_NORMAL
+   TEST_NORMAL,
+   TEST_SET,
 }
 
 
@@ -23,13 +24,18 @@ async function resolveDepressDir(tgzPath: string, resolveDepressDir: ResolveDepr
    if (resolveDepressDir === ResolveDepressDir.KNIFE) {
       return dirname(tgzPath);
    }
-   if (resolveDepressDir === ResolveDepressDir.NORMAL || resolveDepressDir === ResolveDepressDir.TEST_NORMAL) {
+   if (resolveDepressDir === ResolveDepressDir.NORMAL || resolveDepressDir === ResolveDepressDir.TEST_NORMAL || resolveDepressDir === ResolveDepressDir.TEST_SET) {
       const dotIndex = basename(tgzPath).lastIndexOf(".");
       let fileName = basename(tgzPath).substring(0, dotIndex);
       fileName = fileName.replace(/\//g, "-");
       const returnDir =  join(dirname(tgzPath),fileName);
-      await mkdir(returnDir);
-      return returnDir;
+      try{
+         await access(returnDir);
+         return returnDir;
+      } catch(error) {
+         await mkdir(returnDir);
+         return returnDir;
+      }
    }
    if (resolveDepressDir === ResolveDepressDir.DUAN) {
       const dotIndex = basename(tgzPath).lastIndexOf(".");
@@ -75,9 +81,13 @@ export async function depressPackageAndSetDir(targetDir: string, resolveDir: Res
    }
 }
 
+export async function depressSinglePackage(tgzPath: string, depressDir: string) {
+   return await asyncExec(`tar -xvf ${tgzPath} -C ${depressDir}`);
+}
+
 export async function depressPackage(tgzPath: string) {
    const outputDir = await resolveDepressDir(tgzPath, ResolveDepressDir.NORMAL);
-   const {stdout,stderr} = await asyncExec(`tar -xvf ${tgzPath} -C ${outputDir}`);
+   const {stdout,stderr} = await depressSinglePackage(tgzPath, outputDir);
    console.log(stdout, stderr);
    console.log(chalk.red("package depress directory is " + outputDir));
    return outputDir;
@@ -92,14 +102,19 @@ async function normalizeDir(targetDir) {
    }
 }
 
+export async function downloadSinglePackage(packageName: string, saveDir: string) {
+   return await asyncExec(`cd ${saveDir} && npm pack ${packageName}`);
+}
+
  async function downloadPopularPackage() {
    const jsonContent = await readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", {encoding: "utf-8"});
+   const saveDir = "/Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal";
    let packageArr = JSON.parse(jsonContent);
    packageArr = packageArr.slice(2000, 4000);
    packageArr = packageArr.map(el => el.name);
    for (let packageName of packageArr) {
       try {
-         const {stdout, stderr} = await asyncExec(`cd /Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal && npm pack ${packageName}`);
+         const {stdout, stderr} = await downloadSinglePackage(packageName, saveDir);
          console.log(stdout, stderr);
       } catch (error) {
          console.log(error);

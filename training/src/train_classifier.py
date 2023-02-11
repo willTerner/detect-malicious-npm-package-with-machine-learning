@@ -2,7 +2,7 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from read_feature import read_features
 from train_MLP import train_MLP_validation, test_MLP
 from train_NB import test_NB, train_NB_Validate
-from train_RF import test_RF, train_classifier_RF_Validation
+from train_RF import test_RF, test_RF_load, train_classifier_RF_Validation
 from train_SVM import test_SVM, train_SVM_validate
 
 methods = ["none", "standardlize", "min-max-scale"]
@@ -11,8 +11,8 @@ preprocess_method = methods[1]
 models = ["RF", "MLP", "NB", "SVM"]
 use_model = models[2]
 
-
-is_training = False
+actions = ['training', 'save', 'test']
+action = actions[2]
 
 def preprocess(X_train, X_test):
    if preprocess_method == methods[0]:
@@ -46,11 +46,13 @@ if __name__ == "__main__":
    [X_test, y_test, _] = read_features(test_malicous_dedupl_path, test_normal_path)
 
 
+
+
    #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
    
    # preprocess data
    [X_train, X_test] = preprocess(X_train, X_test)
-   if is_training:
+   if action == actions[0]:
       if use_model == models[0]:
          train_classifier_RF_Validation(X_train, y_train)
       elif use_model == models[1]:
@@ -59,7 +61,7 @@ if __name__ == "__main__":
          train_SVM_validate(X_train, y_train)
       else:
          train_NB_Validate(X_train, y_train)
-   else:
+   elif action == actions[1]:
       if use_model == models[0]:
          test_RF(X_train, y_train, X_test, y_test)
       elif use_model == models[1]:
@@ -68,4 +70,5 @@ if __name__ == "__main__":
          test_SVM(X_train, y_train, X_test, y_test)
       else:
          test_NB(X_train, y_train, X_test, y_test)
-   
+   elif action == actions[2]:
+      test_RF_load(X_test, y_test)

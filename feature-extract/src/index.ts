@@ -3,10 +3,11 @@ import { constants, readdirSync } from "fs";
 import { access } from "fs/promises";
 import { doSomethingAST } from "./ASTUtil";
 import { extractFeatureFromDir, extractFeatureFromPackage, ResovlePackagePath } from "./ExtractFeature";
-import { duan_path, knife_csv_path, knife_dedupl_saveDir, knife_path, normal_csv_path, predict_py_path, test_malicious_dedupl_path, test_malicious_path, test_normal_csv_path, test_normal_path } from "./Paths";
+import { duan_path, knife_csv_path, knife_dedupl_saveDir, knife_path, normal_csv_path, predict_py_path, test_malicious_dedupl_path, test_malicious_path, test_normal_csv_path, test_normal_path, test_set_mix_csv_path, test_set_path } from "./commons";
 import { asyncExec } from "./Util";
-import { depressPackage, doSomething } from "./util/DownloadPackage";
+import { depressPackage, depressPackageAndSetDir, doSomething, ResolveDepressDir } from "./util/DownloadPackage";
 import { doSomethingRemove, removeDuplicatePackage } from "./util/RemoveDuplicatePackage";
+import { scanNPMRegistry } from "./scanNPMRegistry";
 
 
 
@@ -21,16 +22,18 @@ const event_stream = "/Users/huchaoqun/Desktop/code/school-course/毕设/数据�
 
  enum Action {
    Extract,
-   DoSomething
+   DoSomething,
+   DepressPackageFromDir,
+   ScanNPMRegistry,
  }
 async function extract_feature() {
-   let resolve_path = ResovlePackagePath.By_Test_Normal;
+   let resolve_path = ResovlePackagePath.By_Test_Set;
    let source_path: string;
    let csv_path: string;
    let csv_dedupli_path: string;
    //@ts-ignore
-   let is_malicous = (resolve_path === ResovlePackagePath.By_Knife || resolve_path === ResovlePackagePath.By_Duan) ? true : false;
-   const action = Action.Extract;
+   let is_malicous = false;
+   const action = Action.ScanNPMRegistry;
    // @ts-ignore
    if (resolve_path === ResovlePackagePath.By_Knife) {
       source_path = knife_path;
@@ -45,9 +48,13 @@ async function extract_feature() {
       source_path = duan_path;
       csv_path = test_malicious_path;
       csv_dedupli_path = test_malicious_dedupl_path;
-   } else {
+   // @ts-ignore
+   } else if (resolve_path === ResovlePackagePath.By_Test_Normal) {
       source_path = test_normal_path;
       csv_path = test_normal_csv_path;
+   } else if (resolve_path === ResovlePackagePath.By_Test_Set) {
+      source_path = test_set_path;
+      csv_path = test_set_mix_csv_path;
    }
    // @ts-ignore
    if (action === Action.Extract) {
@@ -55,8 +62,14 @@ async function extract_feature() {
       if (is_malicous) {
          await doSomethingRemove(csv_path, csv_dedupli_path);
       }
+   // @ts-ignore
    } else if (action === Action.DoSomething) {
       await doSomething();
+   // @ts-ignore
+   } else if (action === Action.DepressPackageFromDir) {
+      await depressPackageAndSetDir(test_set_path, ResolveDepressDir.TEST_SET);
+   } else if (action === Action.ScanNPMRegistry) {
+      await scanNPMRegistry();
    }
    //doSomethingAST();
 }

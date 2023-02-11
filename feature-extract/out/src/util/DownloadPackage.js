@@ -17,7 +17,7 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
 import { opendir, access, mkdir, readFile, unlink } from "fs/promises";
 import { join, basename, dirname } from "path";
 import { readdirSync } from "fs";
-import { duan_path, normal_path } from "../Paths";
+import { duan_path, normal_path } from "../commons";
 import chalk from "chalk";
 import { asyncExec } from "../Util";
 export var ResolveDepressDir;
@@ -26,19 +26,26 @@ export var ResolveDepressDir;
     ResolveDepressDir[ResolveDepressDir["NORMAL"] = 1] = "NORMAL";
     ResolveDepressDir[ResolveDepressDir["DUAN"] = 2] = "DUAN";
     ResolveDepressDir[ResolveDepressDir["TEST_NORMAL"] = 3] = "TEST_NORMAL";
+    ResolveDepressDir[ResolveDepressDir["TEST_SET"] = 4] = "TEST_SET";
 })(ResolveDepressDir || (ResolveDepressDir = {}));
 function resolveDepressDir(tgzPath, resolveDepressDir) {
     return __awaiter(this, void 0, void 0, function* () {
         if (resolveDepressDir === ResolveDepressDir.KNIFE) {
             return dirname(tgzPath);
         }
-        if (resolveDepressDir === ResolveDepressDir.NORMAL || resolveDepressDir === ResolveDepressDir.TEST_NORMAL) {
+        if (resolveDepressDir === ResolveDepressDir.NORMAL || resolveDepressDir === ResolveDepressDir.TEST_NORMAL || resolveDepressDir === ResolveDepressDir.TEST_SET) {
             const dotIndex = basename(tgzPath).lastIndexOf(".");
             let fileName = basename(tgzPath).substring(0, dotIndex);
             fileName = fileName.replace(/\//g, "-");
             const returnDir = join(dirname(tgzPath), fileName);
-            yield mkdir(returnDir);
-            return returnDir;
+            try {
+                yield access(returnDir);
+                return returnDir;
+            }
+            catch (error) {
+                yield mkdir(returnDir);
+                return returnDir;
+            }
         }
         if (resolveDepressDir === ResolveDepressDir.DUAN) {
             const dotIndex = basename(tgzPath).lastIndexOf(".");
@@ -107,10 +114,15 @@ export function depressPackageAndSetDir(targetDir, resolveDir) {
         }
     });
 }
+export function depressSinglePackage(tgzPath, depressDir) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield asyncExec(`tar -xvf ${tgzPath} -C ${depressDir}`);
+    });
+}
 export function depressPackage(tgzPath) {
     return __awaiter(this, void 0, void 0, function* () {
         const outputDir = yield resolveDepressDir(tgzPath, ResolveDepressDir.NORMAL);
-        const { stdout, stderr } = yield asyncExec(`tar -xvf ${tgzPath} -C ${outputDir}`);
+        const { stdout, stderr } = yield depressSinglePackage(tgzPath, outputDir);
         console.log(stdout, stderr);
         console.log(chalk.red("package depress directory is " + outputDir));
         return outputDir;
@@ -126,15 +138,21 @@ function normalizeDir(targetDir) {
         }
     });
 }
+export function downloadSinglePackage(packageName, saveDir) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield asyncExec(`cd ${saveDir} && npm pack ${packageName}`);
+    });
+}
 function downloadPopularPackage() {
     return __awaiter(this, void 0, void 0, function* () {
         const jsonContent = yield readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", { encoding: "utf-8" });
+        const saveDir = "/Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal";
         let packageArr = JSON.parse(jsonContent);
         packageArr = packageArr.slice(2000, 4000);
         packageArr = packageArr.map(el => el.name);
         for (let packageName of packageArr) {
             try {
-                const { stdout, stderr } = yield asyncExec(`cd /Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal && npm pack ${packageName}`);
+                const { stdout, stderr } = yield downloadSinglePackage(packageName, saveDir);
                 console.log(stdout, stderr);
             }
             catch (error) {

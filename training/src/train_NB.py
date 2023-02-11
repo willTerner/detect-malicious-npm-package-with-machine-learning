@@ -6,6 +6,7 @@ import os
 import pickle
 
 from model_util import evaluate_model
+from pickle_util import save_classifier
 
 best_smoothing = 1e-9
 
@@ -28,8 +29,7 @@ def test_NB(X_train, y_train, X_test, y_test):
    model = GaussianNB(var_smoothing=best_smoothing)
    model.fit(X_train, y_train)
 
-   with open(save_path, "wb") as f:
-      pickle.dump(model, f)
+   save_classifier(model, save_path)
 
    csv_path = os.path.join(table_path, "NB_test.csv")
 

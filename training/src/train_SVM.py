@@ -6,6 +6,8 @@ from commons import table_path, scoring, field_names, classifier_save_path
 from model_util import evaluate_model
 import pickle
 
+from pickle_util import save_classifier
+
 best_C = 1.611045328589775
 best_gamma = "scale"
 
@@ -33,8 +35,8 @@ def test_SVM(X_train, y_train, X_test, y_test):
    y_pred = model.predict(X_test)
 
    save_path = os.path.join(classifier_save_path, "SVM.pkl")
-   with open(save_path, "wb") as f:
-      pickle.dump(model, f)
+   save_classifier(model, save_path)
+   
    [accuracy, precision, recall, f1, mcc] = evaluate_model(y_test, y_pred)
 
    csv_path = os.path.join(table_path, "SVM_test.csv")

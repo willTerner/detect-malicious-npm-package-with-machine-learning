@@ -1,5 +1,7 @@
 
 import { FileHandle, open } from "fs/promises";
+import { join } from "path";
+import { getRootDirectory } from "./Util";
 
 
 
@@ -26,7 +28,8 @@ export async function getFileLogger() {
       return logger;
    }
    logger = new FileLogger();
-   await logger.init("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/log/error.log");
+   const log_path = join(getRootDirectory(), 'log', 'error.log');
+   await logger.init(log_path);
    return logger;
 }
 

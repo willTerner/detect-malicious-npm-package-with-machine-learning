@@ -53,41 +53,6 @@ export interface PackageFeatureInfo {
    version: string,
 }
 
-async function parseJSAsync(code: string, featureSet: PackageFeatureInfo, isInstallScript: boolean, targetJSFilePath: string): Promise<PackageFeatureInfo> {
-   return new Promise(async(resolve, reject) => {
-     const childProcess = fork("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/out/src/ProcessSingleFileProces.js");
-     const sendData = {
-         code,
-         featureSet,
-         isInstallScript,
-         targetJSFilePath
-     };
-
-     childProcess.send(sendData);
-
-     const MAX_WAIT_TIME = 2000;
-     const start_time_stamp = Date.now();
-     let timer_id = setInterval(async() => {
-         const time_diff = Date.now() - start_time_stamp;
-         console.log(chalk.green("时间差为" + time_diff));
-         if (time_diff >= MAX_WAIT_TIME) {
-            // babel处理代码卡住，停止转义，并记录在文件中
-            await writeFile(BABEL_STUCK_FILES_PATH,  stringify([[targetJSFilePath]]));
-            childProcess.kill();
-            console.log(chalk.red("调用terminate"));
-            reject(new Error("babel struck at file" + targetJSFilePath));
-         }
-     }, 10);
-
-     childProcess.on('message', resolve);
-     childProcess.on('error', reject);
-     childProcess.on('exit', (code) => {
-         console.log("babel 处理进程退出信号为" + code);
-         clearInterval(timer_id);
-     });
-   });
-};
-
 /**
  * 
  * @param dirPath 源码包（目录下有package.json文件）的路径

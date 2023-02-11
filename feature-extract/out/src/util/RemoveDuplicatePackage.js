@@ -19,7 +19,7 @@ import { join } from "path";
 import { parse } from 'csv-parse/sync';
 import { readdirSync } from "fs";
 import { rm } from "fs/promises";
-import { knife_csv_path } from "../Paths";
+import { knife_csv_path } from "../commons";
 const ignore_prop_names = ["editDistance", "packageSize", "packageName", "version", "installCommand", "executeJSFiles"];
 const unique_features = [];
 export function isDuplicatePackage(featureSet) {

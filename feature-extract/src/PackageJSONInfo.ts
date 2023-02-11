@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import { access } from 'fs/promises';
 import {stat, readFile} from 'fs/promises';
 import { dirname, join } from 'path';
+import { should_use_console_log } from './commons';
 
 
 
@@ -58,7 +59,7 @@ export async function getPackageJSONInfo(filePath: string): Promise<PackageJSONI
             await access(jsFile);
             executeJSFiles.push(jsFile);
          }catch(error) {
-            console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+            should_use_console_log && console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
          }
       }
    }
@@ -71,7 +72,7 @@ export async function getPackageJSONInfo(filePath: string): Promise<PackageJSONI
             await access(jsFile);
             executeJSFiles.push(jsFile);
          }catch(error) {
-            console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+            should_use_console_log && console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
          }
       }
    }
@@ -84,7 +85,7 @@ export async function getPackageJSONInfo(filePath: string): Promise<PackageJSONI
             await access(jsFile);
             executeJSFiles.push(jsFile);
          }catch(error) {
-            console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+            should_use_console_log && console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
          }
       }
    }
