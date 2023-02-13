@@ -6,35 +6,23 @@ import { getDomainPattern, IP_Pattern, Network_Command_Pattern, SensitiveStringP
 import { getAllInstallScripts } from "./GetInstallScripts";
 import { scanJSFileByAST } from "./ASTUtil";
 import { matchUseRegExp } from "./RegExpUtil";
-import { Worker, workerData } from "worker_threads";
 import chalk from "chalk";
-import { writeFile } from "fs/promises";
-import { stringify } from "csv-stringify/sync";
-import { fork } from "child_process";
-import { IGNORE_JS_FILES } from "./IgnoreJSFiles";
-import { getDirectorySizeInBytes } from "./Util";
 
 
-const BABEL_STUCK_FILES_PATH = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/babel-struck-files.csv";
 
 const ALLOWED_MAX_JS_SIZE = 2 * 1024 * 1024;
 
 export interface PackageFeatureInfo {
-   editDistance: number;
-   averageBracketNumber: number;
-   packageSize: number;
-   dependencyNumber: number;
-   devDependencyNumber: number;
-   numberOfJSFiles: number;
-   totalBracketsNumber: number;
    hasInstallScripts: boolean;
    containIP: boolean;
    useBase64Conversion: boolean;
-   containBase64String: boolean;
-   createBufferFromASCII: boolean;
+   useBase64ConversionInInstallScript: boolean;
+   containBase64StringInJSFile: boolean;
+   containBase64StringInInstallScript: boolean;
+   containDomainInJSFile: boolean;
+   containDomainInInstallScript: boolean;
    containBytestring: boolean;
-   containDomain: boolean;
-   useBufferFrom: boolean;
+   useBuffer: boolean;
    useEval: boolean;
    requireChildProcessInJSFile: boolean;
    requireChildProcessInInstallScript: boolean;
@@ -60,21 +48,16 @@ export interface PackageFeatureInfo {
  */
 export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFeatureInfo> {
    let result: PackageFeatureInfo = {
-      editDistance: 0,
-      averageBracketNumber: 0,
-      packageSize: 0,
-      dependencyNumber: 0,
-      devDependencyNumber: 0,
-      numberOfJSFiles: 0,
-      totalBracketsNumber: 0,
       hasInstallScripts: false,
       containIP: false,
       useBase64Conversion: false,
-      containBase64String: false,
-      createBufferFromASCII: false,
+      useBase64ConversionInInstallScript: false,
+      containBase64StringInJSFile: false,
+      containBase64StringInInstallScript: false,
       containBytestring: false,
-      containDomain: false,
-      useBufferFrom: false,
+      containDomainInJSFile: false,
+      containDomainInInstallScript: false,
+      useBuffer: false,
       useEval: false,
       requireChildProcessInJSFile: false,
       requireChildProcessInInstallScript: false,
@@ -96,10 +79,10 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
    const packageJSONInfo: PackageJSONInfo = await getPackageJSONInfo(packageJSONPath);
    Object.assign(result, packageJSONInfo);
 
-   result.editDistance = await minEditDistance(packageJSONInfo.packageName);
+   //result.editDistance = await minEditDistance(packageJSONInfo.packageName);
 
  
-   result.packageSize = getDirectorySizeInBytes(dirPath);
+   // result.packageSize = getDirectorySizeInBytes(dirPath);
 
 
    // 分析install hook command
@@ -113,7 +96,7 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
       {
          const matchResult = scriptContent.match(getDomainPattern());
          if (matchResult) {
-            result.containDomain = true;
+            result.containDomainInInstallScript = true;
          }
       }
      {
@@ -142,14 +125,13 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
          const jsFilePath = join(dirPath, dirent.name);
          const isInstallScriptFile = result.executeJSFiles.findIndex(filePath => filePath === jsFilePath) >= 0;
          if (dirent.isFile() && (dirent.name.endsWith(".js") || isInstallScriptFile)) {
-            result.numberOfJSFiles++;
             await new Promise((resolve) => {
                setTimeout(async () => {
                   let targetJSFilePath = join(dirPath, dirent.name);
                   let jsFileContent = await readFile(targetJSFilePath, {encoding: "utf-8"});
                   const fileInfo = await stat(targetJSFilePath);
                   console.log(chalk.blue("现在分析的js文件路径是") + chalk.red(targetJSFilePath) + "  文件大小为" + fileInfo.size);
-                  if (fileInfo.size <= ALLOWED_MAX_JS_SIZE && IGNORE_JS_FILES.indexOf(targetJSFilePath) < 0) {
+                  if (fileInfo.size <= ALLOWED_MAX_JS_SIZE) {
                      await scanJSFileByAST(jsFileContent, result, isInstallScriptFile, targetJSFilePath);
                      matchUseRegExp(jsFileContent, result);
                   }
@@ -162,6 +144,5 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
       }
    }
    await traverseDir(dirPath);
-   result.averageBracketNumber = result.totalBracketsNumber / result.numberOfJSFiles;
    return result;
 }

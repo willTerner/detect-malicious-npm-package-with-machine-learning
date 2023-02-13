@@ -8,5 +8,4 @@ test("test extract js file", async () => {
 
 test("test package feature", async() => {
    const result = await getPackageFeatureInfo("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/@azure-tests/perf-ai-form-recognizer/99.10.9/package");
-   expect(result.packageSize).toBe(1454);
 });

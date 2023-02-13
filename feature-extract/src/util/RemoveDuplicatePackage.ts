@@ -4,7 +4,7 @@ import { PackageFeatureInfo } from "../PackageFeatureInfo";
 import {parse} from 'csv-parse/sync';
 import { readdirSync } from "fs";
 import { rm } from "fs/promises";
-import {  duan_path, knife_csv_path, knife_dedupl_saveDir, knife_path, test_malicious_dedupl_path, test_malicious_path } from "../commons";
+import {  malicious_csv_path } from "../commons";
 
 const ignore_prop_names = ["editDistance", "packageSize", "packageName", "version", "installCommand", "executeJSFiles"];
 
@@ -65,7 +65,7 @@ export async function removeDuplicatePackage(targetDir: string, saveDir: string)
 }
 
 export async function removeDuplicatePackageForDuan(targetDir) {
-   let dir = await opendir(knife_csv_path);
+   let dir = await opendir(malicious_csv_path);
    const csvNameArr: string[] = [];
    for await (const dirent of dir) {
       if (dirent.isFile()) {

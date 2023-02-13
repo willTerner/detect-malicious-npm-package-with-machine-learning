@@ -5,11 +5,11 @@ def evaluate_model(y_test, y_pred):
    # Evaluate the model
    acc = accuracy_score(y_test, y_pred)
 
-   precision = precision_score(y_test, y_pred, pos_label="malicous")
+   precision = precision_score(y_test, y_pred, pos_label="malicious")
 
-   recall = recall_score(y_test, y_pred, pos_label="malicous")
+   recall = recall_score(y_test, y_pred, pos_label="malicious")
 
-   f1 = f1_score(y_test, y_pred, pos_label="malicous")
+   f1 = f1_score(y_test, y_pred, pos_label="malicious")
 
    mcc = matthews_corrcoef(y_test, y_pred)
    

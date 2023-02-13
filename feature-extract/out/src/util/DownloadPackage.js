@@ -17,7 +17,7 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
 import { opendir, access, mkdir, readFile, unlink } from "fs/promises";
 import { join, basename, dirname } from "path";
 import { readdirSync } from "fs";
-import { duan_path, normal_path } from "../commons";
+import { duan_path, normal1_path } from "../commons";
 import chalk from "chalk";
 import { asyncExec } from "../Util";
 export var ResolveDepressDir;
@@ -165,7 +165,7 @@ function downloadPopularPackage() {
 //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/补充数据集");
 export function doSomething() {
     return __awaiter(this, void 0, void 0, function* () {
-        yield normalizeDir(normal_path);
+        yield normalizeDir(normal1_path);
         //depressPackageAndSetDir(test_normal_path, ResolveDepressDir.TEST_NORMAL);
         // downloadPopularPackage();
     });

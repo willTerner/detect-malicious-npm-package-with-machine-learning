@@ -19,7 +19,7 @@ import { join } from "path";
 import { parse } from 'csv-parse/sync';
 import { readdirSync } from "fs";
 import { rm } from "fs/promises";
-import { knife_csv_path } from "../commons";
+import { malicious_csv_path } from "../commons";
 const ignore_prop_names = ["editDistance", "packageSize", "packageName", "version", "installCommand", "executeJSFiles"];
 const unique_features = [];
 export function isDuplicatePackage(featureSet) {
@@ -91,7 +91,7 @@ export function removeDuplicatePackage(targetDir, saveDir) {
 export function removeDuplicatePackageForDuan(targetDir) {
     var _a, e_2, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
-        let dir = yield opendir(knife_csv_path);
+        let dir = yield opendir(malicious_csv_path);
         const csvNameArr = [];
         try {
             for (var _d = true, dir_2 = __asyncValues(dir), dir_2_1; dir_2_1 = yield dir_2.next(), _a = dir_2_1.done, !_a;) {

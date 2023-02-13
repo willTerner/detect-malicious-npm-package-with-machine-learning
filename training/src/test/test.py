@@ -1,17 +1,19 @@
 import random
 import numpy as np
+from sklearn.model_selection import train_test_split
 
-interval = [0.5, 2.0]
-n = 5
-samples_1 = [random.uniform(0.5, 2.0) for i in range(5)]
+X = []
+for i in range(25):
+   X.append([i])
+y = []
+for i in range(25):
+   if i < 15:
+      y.append(1)
+   else:
+      y.append(0)
+x_train, x_test, y_train , y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
 
-
-
-mean = 0.2
-std = 0.075
-
-# Generate 3 random values from the normal distribution
-samples_2 = np.random.normal(mean, std, 3)
-
-print(samples_2)
-
+print(x_train)
+print(y_train)
+print(x_test)
+print(y_test)

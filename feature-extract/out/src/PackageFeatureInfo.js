@@ -17,15 +17,11 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
 import { opendir, readFile, stat } from "fs/promises";
 import { getPackageJSONInfo } from "./PackageJSONInfo";
 import { basename, join } from "path";
-import { minEditDistance } from "./EditDistance";
 import { getDomainPattern, IP_Pattern, Network_Command_Pattern, SensitiveStringPattern } from "./Patterns";
 import { getAllInstallScripts } from "./GetInstallScripts";
 import { scanJSFileByAST } from "./ASTUtil";
 import { matchUseRegExp } from "./RegExpUtil";
 import chalk from "chalk";
-import { IGNORE_JS_FILES } from "./IgnoreJSFiles";
-import { getDirectorySizeInBytes } from "./Util";
-const BABEL_STUCK_FILES_PATH = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/babel-struck-files.csv";
 const ALLOWED_MAX_JS_SIZE = 2 * 1024 * 1024;
 /**
  *
@@ -35,21 +31,16 @@ const ALLOWED_MAX_JS_SIZE = 2 * 1024 * 1024;
 export function getPackageFeatureInfo(dirPath) {
     return __awaiter(this, void 0, void 0, function* () {
         let result = {
-            editDistance: 0,
-            averageBracketNumber: 0,
-            packageSize: 0,
-            dependencyNumber: 0,
-            devDependencyNumber: 0,
-            numberOfJSFiles: 0,
-            totalBracketsNumber: 0,
             hasInstallScripts: false,
             containIP: false,
             useBase64Conversion: false,
-            containBase64String: false,
-            createBufferFromASCII: false,
+            useBase64ConversionInInstallScript: false,
+            containBase64StringInJSFile: false,
+            containBase64StringInInstallScript: false,
             containBytestring: false,
-            containDomain: false,
-            useBufferFrom: false,
+            containDomainInJSFile: false,
+            containDomainInInstallScript: false,
+            useBuffer: false,
             useEval: false,
             requireChildProcessInJSFile: false,
             requireChildProcessInInstallScript: false,
@@ -70,8 +61,8 @@ export function getPackageFeatureInfo(dirPath) {
         const packageJSONPath = join(dirPath, "package.json");
         const packageJSONInfo = yield getPackageJSONInfo(packageJSONPath);
         Object.assign(result, packageJSONInfo);
-        result.editDistance = yield minEditDistance(packageJSONInfo.packageName);
-        result.packageSize = getDirectorySizeInBytes(dirPath);
+        //result.editDistance = await minEditDistance(packageJSONInfo.packageName);
+        // result.packageSize = getDirectorySizeInBytes(dirPath);
         // 分析install hook command
         for (const scriptContent of packageJSONInfo.installCommand) {
             {
@@ -83,7 +74,7 @@ export function getPackageFeatureInfo(dirPath) {
             {
                 const matchResult = scriptContent.match(getDomainPattern());
                 if (matchResult) {
-                    result.containDomain = true;
+                    result.containDomainInInstallScript = true;
                 }
             }
             {
@@ -117,14 +108,13 @@ export function getPackageFeatureInfo(dirPath) {
                             const jsFilePath = join(dirPath, dirent.name);
                             const isInstallScriptFile = result.executeJSFiles.findIndex(filePath => filePath === jsFilePath) >= 0;
                             if (dirent.isFile() && (dirent.name.endsWith(".js") || isInstallScriptFile)) {
-                                result.numberOfJSFiles++;
                                 yield new Promise((resolve) => {
                                     setTimeout(() => __awaiter(this, void 0, void 0, function* () {
                                         let targetJSFilePath = join(dirPath, dirent.name);
                                         let jsFileContent = yield readFile(targetJSFilePath, { encoding: "utf-8" });
                                         const fileInfo = yield stat(targetJSFilePath);
                                         console.log(chalk.blue("现在分析的js文件路径是") + chalk.red(targetJSFilePath) + "  文件大小为" + fileInfo.size);
-                                        if (fileInfo.size <= ALLOWED_MAX_JS_SIZE && IGNORE_JS_FILES.indexOf(targetJSFilePath) < 0) {
+                                        if (fileInfo.size <= ALLOWED_MAX_JS_SIZE) {
                                             yield scanJSFileByAST(jsFileContent, result, isInstallScriptFile, targetJSFilePath);
                                             matchUseRegExp(jsFileContent, result);
                                         }
@@ -151,7 +141,6 @@ export function getPackageFeatureInfo(dirPath) {
             });
         }
         yield traverseDir(dirPath);
-        result.averageBracketNumber = result.totalBracketsNumber / result.numberOfJSFiles;
         return result;
     });
 }

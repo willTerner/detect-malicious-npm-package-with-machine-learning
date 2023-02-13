@@ -14,6 +14,5 @@ test("test extract js file", () => __awaiter(void 0, void 0, void 0, function* (
 }));
 test("test package feature", () => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield getPackageFeatureInfo("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/@azure-tests/perf-ai-form-recognizer/99.10.9/package");
-    expect(result.packageSize).toBe(1454);
 }));
 //# sourceMappingURL=PackageFeatureInfo.test.js.map

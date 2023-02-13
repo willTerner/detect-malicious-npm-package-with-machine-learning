@@ -20,36 +20,26 @@ import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
 import { getRootDirectory } from "./Util";
 import { getPackageFeatureInfo } from "./PackageFeatureInfo";
-import { knife_csv_path, normal_csv_path, should_use_console_log, test_malicious_path, test_normal_csv_path, test_set_mix_csv_path } from "./commons";
-const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
+import { malicious_csv_path, normal_csv_path, should_use_console_log } from "./commons";
+const progress_json_path = join(getRootDirectory(), 'material', 'progress.json');
 export var ResovlePackagePath;
 (function (ResovlePackagePath) {
     ResovlePackagePath[ResovlePackagePath["By_Knife"] = 0] = "By_Knife";
-    ResovlePackagePath[ResovlePackagePath["By_Normal"] = 1] = "By_Normal";
+    ResovlePackagePath[ResovlePackagePath["By_Normal1"] = 1] = "By_Normal1";
     ResovlePackagePath[ResovlePackagePath["By_Duan"] = 2] = "By_Duan";
-    ResovlePackagePath[ResovlePackagePath["By_Test_Normal"] = 3] = "By_Test_Normal";
+    ResovlePackagePath[ResovlePackagePath["By_Normal2"] = 3] = "By_Normal2";
     ResovlePackagePath[ResovlePackagePath["By_Single_Package"] = 4] = "By_Single_Package";
-    ResovlePackagePath[ResovlePackagePath["By_Test_Set"] = 5] = "By_Test_Set";
-    ResovlePackagePath[ResovlePackagePath["None"] = 6] = "None";
+    ResovlePackagePath[ResovlePackagePath["None"] = 5] = "None";
 })(ResovlePackagePath || (ResovlePackagePath = {}));
 function getDirectory(resolvePath) {
-    if (resolvePath === ResovlePackagePath.By_Knife) {
-        return knife_csv_path;
+    if (resolvePath === ResovlePackagePath.By_Knife || resolvePath === ResovlePackagePath.By_Duan) {
+        return malicious_csv_path;
     }
-    if (resolvePath === ResovlePackagePath.By_Normal) {
+    if (resolvePath === ResovlePackagePath.By_Normal1 || resolvePath === ResovlePackagePath.By_Normal2) {
         return normal_csv_path;
-    }
-    if (resolvePath === ResovlePackagePath.By_Duan) {
-        return test_malicious_path;
-    }
-    if (resolvePath === ResovlePackagePath.By_Test_Normal) {
-        return test_normal_csv_path;
     }
     if (resolvePath === ResovlePackagePath.By_Single_Package) {
         return join(getRootDirectory(), "output_feature");
-    }
-    if (resolvePath === ResovlePackagePath.By_Test_Set) {
-        return test_set_mix_csv_path;
     }
 }
 export function extractFeatureFromPackage(sourcePath, resolvepath, csvDir) {
@@ -58,21 +48,16 @@ export function extractFeatureFromPackage(sourcePath, resolvepath, csvDir) {
         const fileName = result.packageName.replace(/\//g, "-");
         const csvPath = join(csvDir ? csvDir : getDirectory(resolvepath), fileName + ".csv");
         const featureArr = [];
-        featureArr.push(["editDistance", result.editDistance]);
-        featureArr.push(["averageBracket", result.averageBracketNumber]);
-        featureArr.push(["packageSize", result.packageSize]);
-        featureArr.push(["dependencyNumber", result.dependencyNumber]);
-        featureArr.push(["devDependencyNumber", result.devDependencyNumber]);
-        featureArr.push(["jsFileNumber", result.numberOfJSFiles]);
-        featureArr.push(["bracketNumber", result.totalBracketsNumber]);
         featureArr.push(["hasInstallScript", result.hasInstallScripts]);
         featureArr.push(["containIP", result.containIP]);
         featureArr.push(["useBase64Conversion", result.useBase64Conversion]);
-        featureArr.push(["containBase64String", result.containBase64String]);
-        featureArr.push(["createBufferFromASCII", result.createBufferFromASCII]);
+        featureArr.push(["useBase64ConversionInInstallScript", result.useBase64ConversionInInstallScript]);
+        featureArr.push(["containBase64StringInJSFile", result.containBase64StringInJSFile]);
+        featureArr.push(["containBase64StringInInstallScript", result.containBase64StringInInstallScript]);
         featureArr.push(["containBytestring", result.containBytestring]);
-        featureArr.push(["containDomain", result.containDomain]);
-        featureArr.push(["useBufferFrom", result.useBufferFrom]);
+        featureArr.push(["containDomainInJSFile", result.containDomainInJSFile]);
+        featureArr.push(["containDomainInInstallScript", result.containDomainInInstallScript]);
+        featureArr.push(["useBuffer", result.useBuffer]);
         featureArr.push(["useEval", result.useEval]);
         featureArr.push(["requireChildProcessInJSFile", result.requireChildProcessInJSFile]);
         featureArr.push(["requireChildProcessInInstallScript", result.requireChildProcessInInstallScript]);
@@ -83,7 +68,7 @@ export function extractFeatureFromPackage(sourcePath, resolvepath, csvDir) {
         featureArr.push(["accessProcessEnvInJSFile", result.accessProcessEnvInJSFile]);
         featureArr.push(["accessProcessEnvInInstallScript", result.accessProcessEnvInInstallScript]);
         featureArr.push(["containSuspicousString", result.containSuspiciousString]);
-        featureArr.push(["accessCryptoAndZipInJSFile", result.accessCryptoAndZip]);
+        featureArr.push(["accessCryptoAndZip", result.accessCryptoAndZip]);
         featureArr.push(["accessSensitiveAPI", result.accessSensitiveAPI]);
         yield new Promise(resolve => {
             setTimeout(() => __awaiter(this, void 0, void 0, function* () {
@@ -107,9 +92,9 @@ export function extractFeatureFromDir(dirPath, resolvePath) {
     return __awaiter(this, void 0, void 0, function* () {
         let oldPackageArr = JSON.parse(yield readFile(progress_json_path, { encoding: "utf-8" }));
         let counter = 0;
-        const max_package_number = 10000 * 10000;
+        const max_package_number = 2200;
         let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
-        const progress_detail_path = join("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material", idx_ + ".csv");
+        const progress_detail_path = join(getRootDirectory(), 'material', idx_ + ".csv");
         let newPackageArr = [];
         function resolveExtractByKnife(dirPath) {
             var _a, e_1, _b, _c;
@@ -194,7 +179,7 @@ export function extractFeatureFromDir(dirPath, resolvePath) {
         if (resolvePath === ResovlePackagePath.By_Knife) {
             yield resolveExtractByKnife(dirPath);
         }
-        if (resolvePath === ResovlePackagePath.By_Normal || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Test_Normal || resolvePath === ResovlePackagePath.By_Test_Set) {
+        if (resolvePath === ResovlePackagePath.By_Normal1 || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Normal2) {
             yield resolveExtractByNormal(dirPath);
         }
     });

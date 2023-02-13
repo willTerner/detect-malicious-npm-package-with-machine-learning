@@ -1,48 +1,38 @@
 import chalk from "chalk";
 import { stringify } from "csv-stringify/sync";
-import { writeFile, opendir, readFile, readdir } from "fs/promises";
+import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
 import { getRootDirectory } from "./Util";
 import { getPackageFeatureInfo, PackageFeatureInfo } from "./PackageFeatureInfo";
-import { knife_csv_path, normal_csv_path, normal_path, npm_registry_csv_path, should_use_console_log, test_malicious_path, test_normal_csv_path, test_set_mix_csv_path } from "./commons";
+import { malicious_csv_path, normal_csv_path, should_use_console_log } from "./commons";
 
 
 
 
 
 
-const progress_json_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/progress.json";
+const progress_json_path = join(getRootDirectory(), 'material', 'progress.json');
 
 
 
 export enum ResovlePackagePath {
    By_Knife,
-   By_Normal,
+   By_Normal1,
    By_Duan,
-   By_Test_Normal,
+   By_Normal2,
    By_Single_Package,
-   By_Test_Set,
    None,
 }
 
 function getDirectory(resolvePath: ResovlePackagePath) {
-   if (resolvePath === ResovlePackagePath.By_Knife) {
-      return knife_csv_path;
+   if (resolvePath === ResovlePackagePath.By_Knife || resolvePath === ResovlePackagePath.By_Duan) {
+      return malicious_csv_path;
    }
-   if (resolvePath === ResovlePackagePath.By_Normal) {
+   if (resolvePath === ResovlePackagePath.By_Normal1 || resolvePath === ResovlePackagePath.By_Normal2) {
       return normal_csv_path;
-   }
-   if (resolvePath === ResovlePackagePath.By_Duan) {
-      return test_malicious_path;
-   }
-   if (resolvePath === ResovlePackagePath.By_Test_Normal) {
-      return test_normal_csv_path;
    }
    if (resolvePath === ResovlePackagePath.By_Single_Package) {
       return join(getRootDirectory(), "output_feature");
-   }
-   if (resolvePath === ResovlePackagePath.By_Test_Set) {
-      return test_set_mix_csv_path;
    }
 }
 
@@ -52,21 +42,16 @@ export async function extractFeatureFromPackage(sourcePath: string, resolvepath:
    const fileName = result.packageName.replace(/\//g, "-");
    const csvPath = join(csvDir ? csvDir : getDirectory(resolvepath), fileName + ".csv");
    const featureArr: [string, number|boolean][] = [];
-   featureArr.push(["editDistance", result.editDistance]);
-   featureArr.push(["averageBracket", result.averageBracketNumber]);
-   featureArr.push(["packageSize", result.packageSize]);
-   featureArr.push(["dependencyNumber", result.dependencyNumber]);
-   featureArr.push(["devDependencyNumber", result.devDependencyNumber]);
-   featureArr.push(["jsFileNumber", result.numberOfJSFiles]);
-   featureArr.push(["bracketNumber", result.totalBracketsNumber]);
    featureArr.push(["hasInstallScript", result.hasInstallScripts]);
    featureArr.push(["containIP", result.containIP]);
    featureArr.push(["useBase64Conversion", result.useBase64Conversion]);
-   featureArr.push(["containBase64String", result.containBase64String]);
-   featureArr.push(["createBufferFromASCII", result.createBufferFromASCII]);
+   featureArr.push(["useBase64ConversionInInstallScript", result.useBase64ConversionInInstallScript]);
+   featureArr.push(["containBase64StringInJSFile", result.containBase64StringInJSFile]);
+   featureArr.push(["containBase64StringInInstallScript", result.containBase64StringInInstallScript]);
    featureArr.push(["containBytestring", result.containBytestring]);
-   featureArr.push(["containDomain", result.containDomain]);
-   featureArr.push(["useBufferFrom", result.useBufferFrom]);
+   featureArr.push(["containDomainInJSFile", result.containDomainInJSFile]);
+   featureArr.push(["containDomainInInstallScript", result.containDomainInInstallScript])
+   featureArr.push(["useBuffer", result.useBuffer]);
    featureArr.push(["useEval", result.useEval]);
    featureArr.push(["requireChildProcessInJSFile", result.requireChildProcessInJSFile]);
    featureArr.push(["requireChildProcessInInstallScript", result.requireChildProcessInInstallScript]);
@@ -77,7 +62,7 @@ export async function extractFeatureFromPackage(sourcePath: string, resolvepath:
    featureArr.push(["accessProcessEnvInJSFile", result.accessProcessEnvInJSFile]);
    featureArr.push(["accessProcessEnvInInstallScript", result.accessProcessEnvInInstallScript]);
    featureArr.push(["containSuspicousString", result.containSuspiciousString]);
-   featureArr.push(["accessCryptoAndZipInJSFile", result.accessCryptoAndZip]);
+   featureArr.push(["accessCryptoAndZip", result.accessCryptoAndZip]);
    featureArr.push(["accessSensitiveAPI", result.accessSensitiveAPI]);
    await new Promise(resolve => {
       setTimeout(async() => {
@@ -102,11 +87,11 @@ export async function extractFeatureFromDir(dirPath: string, resolvePath: Resovl
 
    let counter = 0;
 
-   const max_package_number = 10000 * 10000;
+   const max_package_number = 2200;
 
    let idx_ = Math.floor(oldPackageArr.length / max_package_number) + 1;
 
-   const progress_detail_path = join("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material", idx_ + ".csv");
+   const progress_detail_path = join(getRootDirectory(),'material', idx_ + ".csv");
 
    let newPackageArr: string[] = [];
 
@@ -154,7 +139,7 @@ export async function extractFeatureFromDir(dirPath: string, resolvePath: Resovl
       await resolveExtractByKnife(dirPath);
    }
 
-   if (resolvePath === ResovlePackagePath.By_Normal || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Test_Normal || resolvePath === ResovlePackagePath.By_Test_Set) {
+   if (resolvePath === ResovlePackagePath.By_Normal1 || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Normal2) {
       await resolveExtractByNormal(dirPath);
    }
    

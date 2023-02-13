@@ -38,7 +38,7 @@ export function getDomainPattern() {
     return domain_pattern;
 }
 export const Network_Command_Pattern = /(curl)|(wget)|(host)|(ping)|(\/dev\/tcp)|(ping)/;
-export const SensitiveStringPattern = /(\/etc\/shadow)|(\.bashrc)|(.zshrc)|(\/etc\/hosts)|(\/etc\/passwd)|(\/bin\/sh)|(shutdown)/;
+export const SensitiveStringPattern = /(\/etc\/shadow)|(\.bashrc)|(.zshrc)|(\/etc\/hosts)|(\/etc\/passwd)|(\/bin\/sh)/;
 function test() {
     return __awaiter(this, void 0, void 0, function* () {
         const pattern = yield getDomainPattern();

@@ -2,45 +2,13 @@
 import csv
 import os
 
-feature_name_arr = ["editDistance",
-"averageBracket",
-"packageSize",
-"dependencyNumber",
-"devDependencyNumber",
-"jsFileNumber",
-"bracketNumber",
-"hasInstallScript",
-"containIP",
-"useBase64Conversion",
-"containBase64String",
-"createBufferFromASCII",
-"containBytestring",
-"containDomain",
-"useBufferFrom",
-"useEval",
-"requireChildProcessInJSFile",
-"requireChildProcessInInstallScript",
-"accessFSInJSFile",
-"accessFSInInstallScript",
-"accessNetworkInJSFile",
-"accessNetworkInInstallScript",
-"accessProcessEnvInJSFile",
-"accessProcessEnvInInstallScript",
-"containSuspicousString",
-"accessCryptoAndZip",
-"accessSensitiveAPI"]
+feature_number = 22
 
 def normalize_feature(value, i):
-   if i < 7:
-      if value == "NaN":
-         value = 0
-      else:
-         value = float(value)
+   if value == "true":
+      value = True
    else:
-      if value == "true":
-         value = True
-      else:
-         value = False
+      value = False
    return value
 
 def read_feature_from_file(file_path):
@@ -51,7 +19,7 @@ def read_feature_from_file(file_path):
          _, value = row
          feature_vec.append(normalize_feature(value, i))
          i += 1
-   if i != len(feature_name_arr):
+   if i != feature_number:
       raise ValueError(file_path + "有" + str(i) + "个特征")
    return feature_vec
       
@@ -71,5 +39,5 @@ def read_features_from_di(dirPath, feature_arr: list, label_arr: list, isMalicou
          csvPath = os.path.join(root, f)
          csv_name_arr.append(f)
          feature_arr.append(read_feature_from_file(csvPath))
-         label_arr.append("malicous" if isMalicous  else "benign")
+         label_arr.append("malicious" if isMalicous  else "benign")
                   

@@ -9,8 +9,8 @@ import numpy as np
 from commons import table_path, field_names,classifier_save_path,scoring
 
 
-rf_best_estimator = 64
-rf_best_depth = 15
+rf_best_estimator = 16
+rf_best_depth = 7
 
 def train_classifier_RF_Validation(X, y):
    k = 4

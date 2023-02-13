@@ -28,7 +28,7 @@ function get_all_packages() {
         return names;
     });
 }
-export function scanNPMRegistry() {
+export function scanNPMRegistry(haveFeatureChanged) {
     return __awaiter(this, void 0, void 0, function* () {
         const names = yield get_all_packages();
         const progress_path = join(getRootDirectory(), 'material', 'scan-registry-progress.json');
@@ -42,7 +42,7 @@ export function scanNPMRegistry() {
         const logger = yield getFileLogger();
         const unit_size = 50;
         const counter = Math.ceil(names.length / unit_size);
-        for (let i = idx; i < counter; i++) {
+        for (let i = 0; i < counter; i++) {
             const saveDir = join(getRootDirectory(), 'material', 'registry', String(i));
             try {
                 yield access(saveDir);
@@ -50,62 +50,67 @@ export function scanNPMRegistry() {
             catch (error) {
                 yield mkdir(saveDir);
             }
-            // 下载unit_size个包
-            for (let j = 0; j < unit_size && j + i * unit_size < names.length; j++) {
-                try {
-                    const { stdout, stderr } = yield downloadSinglePackage(names[j + i * unit_size], saveDir);
-                    should_use_console_log && console.log(stdout, stderr);
-                }
-                catch (error) {
-                    logger.log(`现在下载的包是:${names[j + i * unit_size]}`);
-                    logger.log(`error name: ${error.name}`);
-                    logger.log(`error message: ${error.message}`);
-                    logger.log(`error stack: ${error.stack}`);
-                }
-            }
-            // 解压包
-            const files = readdirSync(saveDir).filter(fileName => fileName.endsWith(".tgz"));
-            for (let file of files) {
-                const dotIdx = basename(file).lastIndexOf('.');
-                const fileName = basename(file).substring(0, dotIdx);
-                const depressDir = join(saveDir, fileName.replace(/\//g, '-'));
-                try {
-                    yield access(depressDir);
-                }
-                catch (error) {
-                    yield mkdir(depressDir);
-                }
-                try {
-                    let { stdout, stderr } = yield depressSinglePackage(join(saveDir, file), depressDir);
-                    should_use_console_log && console.log(stdout, stderr);
-                }
-                catch (error) {
-                    logger.log(`现在解压的包是: ${file}`);
-                    logger.log(`error name: ${error.name}`);
-                    logger.log(`error message: ${error.message}`);
-                    logger.log(`error stack: ${error.stack}`);
-                }
-            }
-            // 提取特征
-            const package_files = readdirSync(saveDir, { withFileTypes: true });
-            for (const packageDir of package_files) {
-                if (packageDir.isDirectory()) {
-                    const source_path = join(saveDir, packageDir.name, 'package');
+            // 对于之前下载解压过的包，不需要再下载解压
+            if (i >= idx) {
+                // 下载unit_size个包
+                for (let j = 0; j < unit_size && j + i * unit_size < names.length; j++) {
                     try {
-                        yield access(source_path);
+                        const { stdout, stderr } = yield downloadSinglePackage(names[j + i * unit_size], saveDir);
+                        should_use_console_log && console.log(stdout, stderr);
                     }
                     catch (error) {
-                        logger.log(`现在分析的包是: ${packageDir.name};找不到package目录`);
-                        continue;
-                    }
-                    try {
-                        yield extractFeatureFromPackage(source_path, ResovlePackagePath.None, saveDir);
-                    }
-                    catch (error) {
-                        logger.log(`现在分析的包是: ${packageDir.name}`);
+                        logger.log(`现在下载的包是:${names[j + i * unit_size]}`);
                         logger.log(`error name: ${error.name}`);
                         logger.log(`error message: ${error.message}`);
                         logger.log(`error stack: ${error.stack}`);
+                    }
+                }
+                // 解压包
+                const files = readdirSync(saveDir).filter(fileName => fileName.endsWith(".tgz"));
+                for (let file of files) {
+                    const dotIdx = basename(file).lastIndexOf('.');
+                    const fileName = basename(file).substring(0, dotIdx);
+                    const depressDir = join(saveDir, fileName.replace(/\//g, '-'));
+                    try {
+                        yield access(depressDir);
+                    }
+                    catch (error) {
+                        yield mkdir(depressDir);
+                    }
+                    try {
+                        let { stdout, stderr } = yield depressSinglePackage(join(saveDir, file), depressDir);
+                        should_use_console_log && console.log(stdout, stderr);
+                    }
+                    catch (error) {
+                        logger.log(`现在解压的包是: ${file}`);
+                        logger.log(`error name: ${error.name}`);
+                        logger.log(`error message: ${error.message}`);
+                        logger.log(`error stack: ${error.stack}`);
+                    }
+                }
+            }
+            // 下载包后和特征发生变化时需要提取特征
+            if (i >= idx || haveFeatureChanged) {
+                const package_files = readdirSync(saveDir, { withFileTypes: true });
+                for (const packageDir of package_files) {
+                    if (packageDir.isDirectory()) {
+                        const source_path = join(saveDir, packageDir.name, 'package');
+                        try {
+                            yield access(source_path);
+                        }
+                        catch (error) {
+                            logger.log(`现在分析的包是: ${packageDir.name};找不到package目录`);
+                            continue;
+                        }
+                        try {
+                            yield extractFeatureFromPackage(source_path, ResovlePackagePath.None, saveDir);
+                        }
+                        catch (error) {
+                            logger.log(`现在分析的包是: ${packageDir.name}`);
+                            logger.log(`error name: ${error.name}`);
+                            logger.log(`error message: ${error.message}`);
+                            logger.log(`error stack: ${error.stack}`);
+                        }
                     }
                 }
             }
@@ -117,7 +122,7 @@ export function scanNPMRegistry() {
                     const { stderr, stdout } = yield asyncExec(`python3  ${predict_py_path} ${join(saveDir, file)}`);
                     if (stdout) {
                         should_use_console_log && console.log(chalk.green(`finish analyze ${basename(file)}. It is ${stdout}`));
-                        if (stdout === "malicous\n") {
+                        if (stdout === "malicious\n") {
                             malicious_packages.push(basename(file));
                         }
                     }

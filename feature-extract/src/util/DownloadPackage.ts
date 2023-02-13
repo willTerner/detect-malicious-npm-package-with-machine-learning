@@ -1,10 +1,7 @@
-import { opendir, access, mkdir, readdir, rm, readFile, rmdir, unlink } from "fs/promises";
+import { opendir, access, mkdir, readFile, unlink } from "fs/promises";
 import { join, basename, dirname } from "path";
-import { promisify } from "util";
-import {exec} from 'child_process';
-import { file } from "@babel/types";
 import { readdirSync } from "fs";
-import { duan_path, normal_path, test_normal_path } from "../commons";
+import { duan_path, normal1_path } from "../commons";
 import chalk from "chalk";
 import { asyncExec } from "../Util";
 
@@ -126,7 +123,7 @@ export async function downloadSinglePackage(packageName: string, saveDir: string
 
 //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/补充数据集");
 export async function doSomething() {
-   await normalizeDir(normal_path);
+   await normalizeDir(normal1_path);
    //depressPackageAndSetDir(test_normal_path, ResolveDepressDir.TEST_NORMAL);
   // downloadPopularPackage();
 }
