@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { readFileSync } from "fs";
+import { join } from "path";
+import { getRootDirectory } from "./Util";
 export const IP_Pattern = /(\d{1,3}\.){3}\d{1,3}/;
 export const base64_Pattern = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
 export const bytestring_pattern1 = /(\\x[0-9a-f]{2})+/i; // 没用，这个是16进制
@@ -20,7 +22,7 @@ export function getDomainPattern() {
         return domain_pattern;
     }
     let domain_pattern_string = "([a-zA-Z0-9\\-]+\\.)+";
-    const fileContent = readFileSync("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-domains.json", { encoding: "utf-8" });
+    const fileContent = readFileSync(join(getRootDirectory(), 'material', 'top-domains.json'), { encoding: "utf-8" });
     const domainArr = JSON.parse(fileContent)["most-used-tlds"];
     for (let i = 0; i < domainArr.length; i++) {
         const domain = domainArr[i].substring(1);

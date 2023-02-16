@@ -19,11 +19,13 @@ export class FileLogger {
     }
     log(message) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.fileHandler.writeFile(message + "\n");
+            yield this.fileHandler.writeFile(message + " " + new Date().toLocaleString() + "\n");
         });
     }
     close() {
-        return this.fileHandler.close();
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.fileHandler.close();
+        });
     }
 }
 let logger;

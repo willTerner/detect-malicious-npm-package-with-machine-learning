@@ -6,7 +6,10 @@ jobs
 fg %number
 
 # start docker container
-docker run -it -d --privileged=true -v /home/data4T2/huchaoqun:/home/huchaoqun nikolaik/python-nodejs /bin/bash
+docker run --cpu-shares 512  -it -d --privileged=true  -v /home/data4T2/huchaoqun:/home/huchaoqun nikolaik/python-nodejs /bin/bash
+
+# start node docker container
+docker run  -it -d --privileged=true  -v /home/data4T2/huchaoqun:/home/huchaoqun node /bin/bash
 
 # stop docker
 docker stop $id

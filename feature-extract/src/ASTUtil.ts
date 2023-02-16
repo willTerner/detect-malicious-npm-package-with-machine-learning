@@ -16,7 +16,7 @@ if (process.env.NODE_ENV) {
 
 
 
-
+const MAX_STRING_LENGTH = 66875;
 
 export async function scanJSFileByAST(code: string, featureSet: PackageFeatureInfo, isInstallScript: boolean, targetJSFilePath: string) {
    const logger = await getFileLogger();
@@ -93,6 +93,9 @@ export async function scanJSFileByAST(code: string, featureSet: PackageFeatureIn
                if (isInstallScript) {
                   featureSet.useBase64ConversionInInstallScript = true;
                }
+            }
+            if (content.length >= MAX_STRING_LENGTH) {
+               return ;
             }
             {
                const matchResult = content.match(IP_Pattern);

@@ -22,6 +22,7 @@ import { getAllInstallScripts } from "./GetInstallScripts";
 import { scanJSFileByAST } from "./ASTUtil";
 import { matchUseRegExp } from "./RegExpUtil";
 import chalk from "chalk";
+import { should_use_console_log } from "./commons";
 const ALLOWED_MAX_JS_SIZE = 2 * 1024 * 1024;
 /**
  *
@@ -113,7 +114,7 @@ export function getPackageFeatureInfo(dirPath) {
                                         let targetJSFilePath = join(dirPath, dirent.name);
                                         let jsFileContent = yield readFile(targetJSFilePath, { encoding: "utf-8" });
                                         const fileInfo = yield stat(targetJSFilePath);
-                                        console.log(chalk.blue("现在分析的js文件路径是") + chalk.red(targetJSFilePath) + "  文件大小为" + fileInfo.size);
+                                        should_use_console_log && console.log(chalk.blue("现在分析的js文件路径是") + chalk.red(targetJSFilePath) + "  文件大小为" + fileInfo.size);
                                         if (fileInfo.size <= ALLOWED_MAX_JS_SIZE) {
                                             yield scanJSFileByAST(jsFileContent, result, isInstallScriptFile, targetJSFilePath);
                                             matchUseRegExp(jsFileContent, result);

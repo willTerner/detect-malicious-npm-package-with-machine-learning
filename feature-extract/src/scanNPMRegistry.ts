@@ -27,25 +27,25 @@ export async function scanNPMRegistry(haveFeatureChanged: boolean) {
    
    const progress_path = join(getRootDirectory(), 'material', 'scan-registry-progress.json');
    const progress_content = await readFile(progress_path, {encoding: 'utf-8'});
-   let idx = JSON.parse(progress_content).progress as number;
+   const idx = JSON.parse(progress_content).progress as number;
    
    const malicious_pacakage_path = join(getRootDirectory(), 'material', 'registry-malicious-package.csv');
-   const malicious_package_content = await readFile(malicious_pacakage_path, {encoding: 'utf-8'});
-   let malicious_packages = parse(malicious_package_content);
-   malicious_packages = malicious_packages.map(el => el[0]);
-   const malicious_file_handler = await open(malicious_pacakage_path, "w+");
+
+   const malicious_file_handler = await open(malicious_pacakage_path, "r+");
 
    const logger = await getFileLogger();
 
    const unit_size = 50;
 
    const counter = Math.ceil(names.length / unit_size);
+
    for (let i = 0; i < counter; i++) {
       const saveDir = join(getRootDirectory(), 'material', 'registry', String(i));
       try{
          await access(saveDir);
       }catch(error) {
          await mkdir(saveDir);
+         process.stdout.write(`mkdir ${saveDir} ${new Date().toLocaleString()}\n`);
       }
       // 对于之前下载解压过的包，不需要再下载解压
       if (i >= idx) {
@@ -53,12 +53,13 @@ export async function scanNPMRegistry(haveFeatureChanged: boolean) {
          for (let j = 0; j < unit_size && j + i * unit_size < names.length; j++) {
             try{
                const {stdout, stderr} = await downloadSinglePackage(names[j + i * unit_size], saveDir);
+               process.stdout.write(`现在下载的包是:${names[j + i * unit_size]}. ${new Date().toLocaleString()}\n`);
                should_use_console_log && console.log(stdout, stderr);
             }catch(error) {
-               logger.log(`现在下载的包是:${names[j + i * unit_size]}`);
-               logger.log(`error name: ${error.name}`);
-               logger.log(`error message: ${error.message}`);
-               logger.log(`error stack: ${error.stack}`);  
+               await logger.log(`现在下载的包是:${names[j + i * unit_size]}`);
+               await logger.log(`error name: ${error.name}`);
+               await logger.log(`error message: ${error.message}`);
+               await logger.log(`error stack: ${error.stack}`);  
             }
          }
             // 解压包
@@ -74,14 +75,18 @@ export async function scanNPMRegistry(haveFeatureChanged: boolean) {
             }
             try{
                let {stdout, stderr} = await depressSinglePackage(join(saveDir, file), depressDir);
+               process.stdout.write(`现在解压的包是: ${basename(file)} ${new Date().toLocaleString()}\n`);
                should_use_console_log && console.log(stdout, stderr);
             }catch(error) {
-               logger.log(`现在解压的包是: ${file}`);
-               logger.log(`error name: ${error.name}`);
-               logger.log(`error message: ${error.message}`);
-               logger.log(`error stack: ${error.stack}`);
+               await logger.log(`现在解压的包是: ${file}`);
+               await logger.log(`error name: ${error.name}`);
+               await logger.log(`error message: ${error.message}`);
+               await logger.log(`error stack: ${error.stack}`);
             }
          }
+         // 更新下载解压的进度
+         // 进度为此次运行前下载解压的进度
+         await writeFile(progress_path, JSON.stringify({progress: i}));
       }   
       
       // 下载包后和特征发生变化时需要提取特征
@@ -93,53 +98,46 @@ export async function scanNPMRegistry(haveFeatureChanged: boolean) {
                try{
                   await access(source_path);
                }catch(error) {
-                  logger.log(`现在分析的包是: ${packageDir.name};找不到package目录`);
+                  await logger.log(`现在分析的包是: ${packageDir.name};找不到package目录`);
                   continue;
                }
                try{
                   await extractFeatureFromPackage(source_path, ResovlePackagePath.None, saveDir);
+                  process.stdout.write(`现在提取特征的包是: ${packageDir.name} ${new Date().toLocaleString()}\n`);
                }catch(error) {
-                  logger.log(`现在分析的包是: ${packageDir.name}`);
-                  logger.log(`error name: ${error.name}`);
-                  logger.log(`error message: ${error.message}`);
-                  logger.log(`error stack: ${error.stack}`);
+                  await logger.log(`现在分析的包是: ${packageDir.name}`);
+                  await logger.log(`error name: ${error.name}`);
+                  await logger.log(`error message: ${error.message}`);
+                  await logger.log(`error stack: ${error.stack}`);
                }
             }
          }
       }
       
-
+      const malicious_packages: string[][] = [];
       // 使用分类器判断是否为恶意包
       let all_files = readdirSync(saveDir);
       all_files = all_files.filter(fileName => fileName.endsWith(".csv"));
       for (let file of all_files) {
          try{
             const {stderr, stdout} = await asyncExec(`python3  ${predict_py_path} ${join(saveDir, file)}`);
+            process.stdout.write(`***************finish analyze ${basename(file)}. It is ${stdout} ${new Date().toLocaleString()}`);
             if (stdout) {
-               should_use_console_log && console.log(chalk.green(`finish analyze ${basename(file)}. It is ${stdout}`));
                if (stdout === "malicious\n") {
-                  malicious_packages.push(basename(file));
+                  malicious_packages.push([basename(file), String(i)]);
                }
-            } else {
-               should_use_console_log && console.log(stderr);
             }
          }catch(error) {
-            logger.log(`分类器分析的包是: ${basename(file)}`);
-            logger.log(`error name: ${error.name}`);
-            logger.log(`error message: ${error.message}`);
-            logger.log(`error stack: ${error.stack}`);
+            await logger.log(`分类器分析的包是: ${basename(file)}`);
+            await logger.log(`error name: ${error.name}`);
+            await logger.log(`error message: ${error.message}`);
+            await logger.log(`error stack: ${error.stack}`);
          }
       }
-      await new Promise((resolve) => {
-         setTimeout(async() => {
-            await malicious_file_handler.writeFile(stringify(malicious_packages.map(el => [el])));
-            resolve(true);
-         }, 0);
-      });
-
-      // 更新进度
-      idx++;
-      await writeFile(progress_path, JSON.stringify({progress: idx}));
+      // 之间检测过的恶意包不需要再写入
+    
+         await malicious_file_handler.writeFile(stringify(malicious_packages));
+     
    }
    await malicious_file_handler.close();
 }

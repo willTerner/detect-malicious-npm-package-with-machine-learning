@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { getRootDirectory } from './Util';
 let jsonContent = "";
 /**
  * @desciption
@@ -19,7 +21,7 @@ export function minEditDistance(packageName) {
     return __awaiter(this, void 0, void 0, function* () {
         let minDistance = Number.MAX_SAFE_INTEGER;
         if (!jsonContent) {
-            jsonContent = yield readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", { encoding: "utf-8" });
+            jsonContent = yield readFile(join(getRootDirectory(), 'material', 'top-10000.json'), { encoding: "utf-8" });
         }
         const popularPackageNames = JSON.parse(jsonContent);
         for (const popularPackageName of popularPackageNames) {
