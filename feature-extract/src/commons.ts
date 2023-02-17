@@ -22,4 +22,4 @@ export const test_set_mix_csv_path = "/Users/huchaoqun/Desktop/code/school-cours
 
 export const npm_registry_csv_path = join(getRootDirectory(), 'material', 'registry-csv');
 
-export const should_use_console_log = true;
+export const should_use_console_log = false;

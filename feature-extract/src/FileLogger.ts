@@ -13,11 +13,11 @@ export class FileLogger {
    }
 
    async log(message: string) {
-      return this.fileHandler.writeFile(message + "\n");
+      await this.fileHandler.writeFile(message + " " + new Date().toLocaleString() + "\n");
    }
 
-   close() {
-      return this.fileHandler.close();
+   async close() {
+      await this.fileHandler.close();
    }
 }
 

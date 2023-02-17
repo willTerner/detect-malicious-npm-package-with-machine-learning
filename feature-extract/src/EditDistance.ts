@@ -1,4 +1,6 @@
 import {readFile} from 'node:fs/promises'
+import { join } from 'node:path';
+import { getRootDirectory } from './Util';
 interface PackageDescription {
    name: string;
 }
@@ -13,7 +15,7 @@ let jsonContent = "";
 export async function minEditDistance(packageName: string): Promise<number> {
    let minDistance = Number.MAX_SAFE_INTEGER;
    if (!jsonContent) {
-      jsonContent = await readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", {encoding: "utf-8"});
+      jsonContent = await readFile(join(getRootDirectory(), 'material', 'top-10000.json'), {encoding: "utf-8"});
    }
    const popularPackageNames = JSON.parse(jsonContent) as PackageDescription[];
    for (const popularPackageName of popularPackageNames) {

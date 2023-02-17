@@ -19,7 +19,7 @@ if (process.env.NODE_ENV) {
 else {
     traverse = traversePkg.default;
 }
-const MAX_STRING_LENGTH = 600000;
+const MAX_STRING_LENGTH = 66875;
 export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFilePath) {
     return __awaiter(this, void 0, void 0, function* () {
         const logger = yield getFileLogger();
