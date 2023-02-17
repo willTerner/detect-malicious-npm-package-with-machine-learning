@@ -11,10 +11,10 @@ import os
 from commons import getCurrentDir, rf_scaler_save_path, mlp_scaler_save_path, nb_scaler_save_path, svm_scaler_save_path, training_path, malicous_csv_path, normal_csv_path
 
 methods = ["none", "standardlize", "min-max-scale"]
-preprocess_method = methods[0]
+preprocess_method = methods[1]
 
 models = ["RF", "MLP", "NB", "SVM"]
-use_model = models[0]
+use_model = models[3]
 
 actions = ['training', 'save', 'test']
 action = actions[1]

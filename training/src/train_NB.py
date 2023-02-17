@@ -8,7 +8,7 @@ import pickle
 from model_util import evaluate_model
 from pickle_util import save_classifier
 
-best_smoothing = 1e-9
+best_smoothing = 1e-4
 
 def train_NB_Validate(X, y):
    table = PrettyTable()

@@ -10,10 +10,10 @@ import pickle
 
 from pickle_util import save_classifier
 
-best_layer_size = (100,)
+best_layer_size = (16,)
 best_activation="logistic"
-best_solver="lbfgs"
-best_learn_rate_init=0.05045994670005887
+best_solver="adam"
+best_learn_rate_init=0.05255545233279812
 best_max_iter=400
 
 def train_MLP_validation(X_train, y_train):
