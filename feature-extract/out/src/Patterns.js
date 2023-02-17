@@ -39,10 +39,14 @@ export function getDomainPattern() {
 }
 export const Network_Command_Pattern = /(curl)|(wget)|(host)|(ping)|(\/dev\/tcp)|(ping)/;
 export const SensitiveStringPattern = /(\/etc\/shadow)|(\.bashrc)|(.zshrc)|(\/etc\/hosts)|(\/etc\/passwd)|(\/bin\/sh)/;
-function test() {
+export function pattern_test() {
     return __awaiter(this, void 0, void 0, function* () {
-        const pattern = yield getDomainPattern();
-        console.log("taobao-cn/etc".match(SensitiveStringPattern));
+        const pattern = getDomainPattern();
+        let string = new Array(66875).fill("1").join("");
+        for (let i = 66875; true; i += 1000) {
+            console.log(`字符串长度为${i}. 匹配结果为:` + pattern.test(string));
+            string = string + new Array(1000).fill("1").join();
+        }
     });
 }
 //test();

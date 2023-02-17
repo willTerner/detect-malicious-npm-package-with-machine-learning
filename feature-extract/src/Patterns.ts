@@ -40,9 +40,13 @@ export const Network_Command_Pattern = /(curl)|(wget)|(host)|(ping)|(\/dev\/tcp)
 
 export const SensitiveStringPattern = /(\/etc\/shadow)|(\.bashrc)|(.zshrc)|(\/etc\/hosts)|(\/etc\/passwd)|(\/bin\/sh)/;
 
-async function test() {
-   const pattern = await getDomainPattern();
-   console.log("taobao-cn/etc".match(SensitiveStringPattern));
+export async function pattern_test() {
+   const pattern = getDomainPattern();
+   let string = new Array(66875).fill("1").join("");
+   for (let i = 66875; true; i+=1000) {
+      console.log(`字符串长度为${i}. 匹配结果为:` + pattern.test(string));
+      string = string + new Array(1000).fill("1").join();
+   }
 }
 
 //test();
