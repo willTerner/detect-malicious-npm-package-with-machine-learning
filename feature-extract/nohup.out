@@ -1,0 +1,2028 @@
+
+> feature-extract@1.0.0 start
+> tsc && node --es-module-specifier-resolution=node out/src/index.js
+
+This usage is for personal experiment. The right usage is as follows
+npm run start $package_path}. package_path is absolute path of a npm package directory which should have a file named package.json.
+***************finish analyze -.csv. It is benign
+ 2023/2/16 22:17:12***************finish analyze 0---top.csv. It is benign
+ 2023/2/16 22:17:13***************finish analyze 0--0double.csv. It is benign
+ 2023/2/16 22:17:13***************finish analyze 0-1-project.csv. It is benign
+ 2023/2/16 22:17:14***************finish analyze 0-100.csv. It is benign
+ 2023/2/16 22:17:15***************finish analyze 0-24.csv. It is benign
+ 2023/2/16 22:17:16***************finish analyze 0-3day1.csv. It is benign
+ 2023/2/16 22:17:16***************finish analyze 0-60.csv. It is benign
+ 2023/2/16 22:17:17***************finish analyze 0-dd-trace-first.csv. It is benign
+ 2023/2/16 22:17:18***************finish analyze 0-dd-trace-init-first-datadog-enabled.csv. It is benign
+ 2023/2/16 22:17:19***************finish analyze 0-dd-trace-init-first-production.csv. It is benign
+ 2023/2/16 22:17:19***************finish analyze 0-dd-trace-init.csv. It is benign
+ 2023/2/16 22:17:20***************finish analyze 0-dd-trace.csv. It is benign
+ 2023/2/16 22:17:21***************finish analyze 0-dns.csv. It is benign
+ 2023/2/16 22:17:21***************finish analyze 0-hun_ajax.csv. It is benign
+ 2023/2/16 22:17:22***************finish analyze 0-logger.csv. It is benign
+ 2023/2/16 22:17:23***************finish analyze 0-multby.csv. It is benign
+ 2023/2/16 22:17:24***************finish analyze 0-npm.csv. It is benign
+ 2023/2/16 22:17:24***************finish analyze 0-plume-css.csv. It is benign
+ 2023/2/16 22:17:25***************finish analyze 0-shadowenv.csv. It is benign
+ 2023/2/16 22:17:26***************finish analyze 0-this-is-a-test.csv. It is benign
+ 2023/2/16 22:17:26***************finish analyze 0-_-0.csv. It is benign
+ 2023/2/16 22:17:27***************finish analyze 0.0.0.0.csv. It is benign
+ 2023/2/16 22:17:28***************finish analyze 0.0.1.csv. It is benign
+ 2023/2/16 22:17:29***************finish analyze 0.0.168.csv. It is benign
+ 2023/2/16 22:17:29***************finish analyze 0.0.250.csv. It is benign
+ 2023/2/16 22:17:30***************finish analyze 0.0.9-alpha.5.csv. It is benign
+ 2023/2/16 22:17:31***************finish analyze 0.1.unity-settings-daemon.csv. It is benign
+ 2023/2/16 22:17:31***************finish analyze 0.1f.csv. It is benign
+ 2023/2/16 22:17:32***************finish analyze 0.2.18.csv. It is benign
+ 2023/2/16 22:17:33***************finish analyze 0.3.20-beta.11.csv. It is benign
+ 2023/2/16 22:17:34***************finish analyze 0.8.18-p11.csv. It is benign
+ 2023/2/16 22:17:34***************finish analyze 0.app1.csv. It is benign
+ 2023/2/16 22:17:35***************finish analyze 0.apppack.csv. It is benign
+ 2023/2/16 22:17:36***************finish analyze 0.css.csv. It is benign
+ 2023/2/16 22:17:37***************finish analyze 0.draw.io.csv. It is benign
+ 2023/2/16 22:17:37***************finish analyze 0.edsql.build.csv. It is benign
+ 2023/2/16 22:17:38***************finish analyze 0.edsql.csv. It is benign
+ 2023/2/16 22:17:39***************finish analyze 0.edsql.electron.csv. It is benign
+ 2023/2/16 22:17:40***************finish analyze 0.edsql.electronapp.csv. It is benign
+ 2023/2/16 22:17:40***************finish analyze 0.edsql.mysql.csv. It is benign
+ 2023/2/16 22:17:41***************finish analyze 0.edsql.pack1.csv. It is benign
+ 2023/2/16 22:17:42***************finish analyze 0.edsql.react.csv. It is benign
+ 2023/2/16 22:17:43***************finish analyze 0.electron.main.csv. It is benign
+ 2023/2/16 22:17:43***************finish analyze 0.electron.preload.csv. It is benign
+ 2023/2/16 22:17:44***************finish analyze 0.extends.draw.io.csv. It is benign
+ 2023/2/16 22:17:45***************finish analyze 0.extends.electron.csv. It is benign
+ 2023/2/16 22:17:46***************finish analyze 0.extends.fc.csv. It is benign
+ 2023/2/16 22:17:46***************finish analyze 0.extends.packapp.csv. It is benign
+ 2023/2/16 22:17:47***************finish analyze 0.extends.react.csv. It is benign
+ 2023/2/16 22:17:48***************finish analyze 0.extends.sql.csv. It is benign
+ 2023/2/16 22:17:49***************finish analyze 0.extends.vscode.csv. It is benign
+ 2023/2/16 22:17:49***************finish analyze 0.extends.wechat.csv. It is benign
+ 2023/2/16 22:17:50***************finish analyze 0.extends.whistle.csv. It is benign
+ 2023/2/16 22:17:51***************finish analyze 0.js.csv. It is benign
+ 2023/2/16 22:17:52***************finish analyze 0.pack.csv. It is benign
+ 2023/2/16 22:17:52***************finish analyze 0.sql.csv. It is benign
+ 2023/2/16 22:17:53***************finish analyze 0.tsx.csv. It is benign
+ 2023/2/16 22:17:54***************finish analyze 0.workspace.csv. It is malicious
+ 2023/2/16 22:17:55***************finish analyze 00-components.csv. It is benign
+ 2023/2/16 22:17:55***************finish analyze 00-test.csv. It is benign
+ 2023/2/16 22:17:56***************finish analyze 00.demo.csv. It is benign
+ 2023/2/16 22:17:57***************finish analyze 000-webpack.csv. It is benign
+ 2023/2/16 22:17:58***************finish analyze 0000lqb.csv. It is benign
+ 2023/2/16 22:17:59***************finish analyze 0000lqb1.csv. It is benign
+ 2023/2/16 22:17:59***************finish analyze 0002npm.csv. It is benign
+ 2023/2/16 22:18:00***************finish analyze 0003-lion-lib.csv. It is benign
+ 2023/2/16 22:18:01***************finish analyze 000demo.csv. It is benign
+ 2023/2/16 22:18:02***************finish analyze 001-custom-test.csv. It is benign
+ 2023/2/16 22:18:02***************finish analyze 001-mypackage.csv. It is benign
+ 2023/2/16 22:18:03***************finish analyze 001-nodelist.csv. It is benign
+ 2023/2/16 22:18:04***************finish analyze 001-npm.csv. It is benign
+ 2023/2/16 22:18:04***************finish analyze 001128jsckgcl.csv. It is benign
+ 2023/2/16 22:18:05***************finish analyze 001senge.csv. It is benign
+ 2023/2/16 22:18:06***************finish analyze 001_skt.csv. It is benign
+ 2023/2/16 22:18:07***************finish analyze 001_test.csv. It is benign
+ 2023/2/16 22:18:07***************finish analyze 002-bao.csv. It is benign
+ 2023/2/16 22:18:08***************finish analyze 002-console.csv. It is benign
+ 2023/2/16 22:18:09***************finish analyze 002-globals.csv. It is benign
+ 2023/2/16 22:18:09***************finish analyze 002-node-cli.csv. It is benign
+ 2023/2/16 22:18:10***************finish analyze 002-npm.csv. It is benign
+ 2023/2/16 22:18:11***************finish analyze 002-webpack-numbers.csv. It is benign
+ 2023/2/16 22:18:12***************finish analyze 002sjh.csv. It is benign
+ 2023/2/16 22:18:12***************finish analyze 002twoweek.csv. It is benign
+ 2023/2/16 22:18:13***************finish analyze 003-3.csv. It is benign
+ 2023/2/16 22:18:14***************finish analyze 003-bingpic.csv. It is benign
+ 2023/2/16 22:18:14***************finish analyze 003-npm.csv. It is benign
+ 2023/2/16 22:18:15***************finish analyze 003-w33d.csv. It is benign
+ 2023/2/16 22:18:16***************finish analyze 00323cjw.csv. It is benign
+ 2023/2/16 22:18:16***************finish analyze 003threeweek.csv. It is benign
+ 2023/2/16 22:18:17***************finish analyze 004-bingpic.csv. It is benign
+ 2023/2/16 22:18:18***************finish analyze 004-custom.csv. It is benign
+ 2023/2/16 22:18:19***************finish analyze 004-module.csv. It is benign
+ 2023/2/16 22:18:19***************finish analyze 004-week.csv. It is benign
+ 2023/2/16 22:18:20***************finish analyze 004_npm.csv. It is benign
+ 2023/2/16 22:18:21***************finish analyze 005-gxp.csv. It is benign
+ 2023/2/16 22:18:22***************finish analyze 005-http-antao.csv. It is benign
+ 2023/2/16 22:18:22***************finish analyze 005-http-jin.csv. It is benign
+ 2023/2/16 22:18:23***************finish analyze 005-http-open.csv. It is benign
+ 2023/2/16 22:18:24***************finish analyze 005-http.csv. It is benign
+ 2023/2/16 22:18:25***************finish analyze 005-https-cxb.csv. It is benign
+ 2023/2/16 22:18:25***************finish analyze 005http.csv. It is benign
+ 2023/2/16 22:18:26***************finish analyze 007-custom7.csv. It is benign
+ 2023/2/16 22:18:27***************finish analyze 007-library-test.csv. It is benign
+ 2023/2/16 22:18:27***************finish analyze 007-nodejs.csv. It is benign
+ 2023/2/16 22:18:28***************finish analyze 008-mysql.csv. It is benign
+ 2023/2/16 22:18:29***************finish analyze 008-npm-ejm.csv. It is benign
+ 2023/2/16 22:18:30***************finish analyze 008-somepackage.csv. It is benign
+ 2023/2/16 22:18:30***************finish analyze 00calculator-huzaifa.csv. It is benign
+ 2023/2/16 22:18:31***************finish analyze 00igrgdeghrt00.csv. It is benign
+ 2023/2/16 22:18:32***************finish analyze 00ricardo-utils.csv. It is benign
+ 2023/2/16 22:18:33***************finish analyze 00_atm.csv. It is benign
+ 2023/2/16 22:18:33***************finish analyze 00_calculator.csv. It is benign
+ 2023/2/16 22:18:34***************finish analyze 00_currency_converter.csv. It is benign
+ 2023/2/16 22:18:35***************finish analyze 00_number_guessing_game.csv. It is benign
+ 2023/2/16 22:18:36***************finish analyze 00_todo_list.csv. It is benign
+ 2023/2/16 22:18:36***************finish analyze 00_word_counter.csv. It is benign
+ 2023/2/16 22:18:37***************finish analyze 01-03.csv. It is benign
+ 2023/2/16 22:18:38***************finish analyze 01-basics.csv. It is benign
+ 2023/2/16 22:18:38***************finish analyze 01-bibliotheque.csv. It is benign
+ 2023/2/16 22:18:39***************finish analyze 01-buildings.csv. It is benign
+ 2023/2/16 22:18:40***************finish analyze 01-buildins.csv. It is benign
+ 2023/2/16 22:18:41***************finish analyze 01-calc.csv. It is benign
+ 2023/2/16 22:18:41***************finish analyze 01-custom-library-npm.csv. It is benign
+ 2023/2/16 22:18:42***************finish analyze 01-custom.csv. It is benign
+ 2023/2/16 22:18:43***************finish analyze 01-cute.csv. It is benign
+ 2023/2/16 22:18:44***************finish analyze 01-dev.csv. It is benign
+ 2023/2/16 22:18:44***************finish analyze 01-dj.csv. It is benign
+ 2023/2/16 22:18:45***************finish analyze 01-dome.csv. It is benign
+ 2023/2/16 22:18:46***************finish analyze 01-esm.csv. It is benign
+ 2023/2/16 22:18:47***************finish analyze 01-fabubao2222.csv. It is benign
+ 2023/2/16 22:18:47***************finish analyze 01-fabubaoll.csv. It is benign
+ 2023/2/16 22:18:48***************finish analyze 01-flask.csv. It is benign
+ 2023/2/16 22:18:49***************finish analyze 01-frontend-lib.csv. It is benign
+ 2023/2/16 22:18:49***************finish analyze 01-hhtclac.csv. It is benign
+ 2023/2/16 22:18:50***************finish analyze 01-hiking.csv. It is benign
+ 2023/2/16 22:18:51***************finish analyze 01-init.csv. It is benign
+ 2023/2/16 22:18:52***************finish analyze 01-jyd-tools-r.csv. It is benign
+ 2023/2/16 22:18:52***************finish analyze 01-math-01.csv. It is benign
+ 2023/2/16 22:18:53***************finish analyze 01-math-02.csv. It is benign
+ 2023/2/16 22:18:54***************finish analyze 01-math-03.csv. It is benign
+ 2023/2/16 22:18:55***************finish analyze 01-mj-test.csv. It is benign
+ 2023/2/16 22:18:55***************finish analyze 01-mudules.csv. It is benign
+ 2023/2/16 22:18:56***************finish analyze 01-myproject.csv. It is benign
+ 2023/2/16 22:18:57***************finish analyze 01-my_npm.csv. It is benign
+ 2023/2/16 22:18:58***************finish analyze 01-npm-send-first.csv. It is benign
+ 2023/2/16 22:18:58***************finish analyze 01-npmsample.csv. It is benign
+ 2023/2/16 22:18:59***************finish analyze 01-numacert.csv. It is benign
+ 2023/2/16 22:19:00***************finish analyze 01-o.csv. It is benign
+ 2023/2/16 22:19:00***************finish analyze 01-plugin.csv. It is benign
+ 2023/2/16 22:19:01***************finish analyze 01-practicemyself.csv. It is benign
+ 2023/2/16 22:19:02***************finish analyze 01-qiwang.csv. It is benign
+ 2023/2/16 22:19:03***************finish analyze 01-simple-cli-calc.csv. It is benign
+ 2023/2/16 22:19:03***************finish analyze 01-simple.csv. It is benign
+ 2023/2/16 22:19:04***************finish analyze 01-support.csv. It is benign
+ 2023/2/16 22:19:05***************finish analyze 01-szhm-wb.csv. It is benign
+ 2023/2/16 22:19:06***************finish analyze 01-szhmqd25calc.csv. It is benign
+ 2023/2/16 22:19:06***************finish analyze 01-szhmqd27cale.csv. It is benign
+ 2023/2/16 22:19:07***************finish analyze 01-taoge.csv. It is benign
+ 2023/2/16 22:19:08***************finish analyze 01-upload.csv. It is benign
+ 2023/2/16 22:19:08***************finish analyze 01-xiaoxaio.csv. It is benign
+ 2023/2/16 22:19:09***************finish analyze 01-zdyzl.csv. It is benign
+ 2023/2/16 22:19:10***************finish analyze 01-zxz-numtowords.csv. It is benign
+ 2023/2/16 22:19:11***************finish analyze 01.22pagination.csv. It is benign
+ 2023/2/16 22:19:11***************finish analyze 01.lyy_untils.csv. It is benign
+ 2023/2/16 22:19:12***************finish analyze 01.test-cnpm.csv. It is benign
+ 2023/2/16 22:19:13***************finish analyze 01.webpack-base.csv. It is benign
+ 2023/2/16 22:19:13***************finish analyze 01.webpack-study.csv. It is benign
+ 2023/2/16 22:19:14***************finish analyze 010-static-http-server.csv. It is benign
+ 2023/2/16 22:19:15***************finish analyze 0107_zhkkaoshi.csv. It is benign
+ 2023/2/16 22:19:15***************finish analyze 011-fabubao.csv. It is benign
+ 2023/2/16 22:19:16***************finish analyze 0110ss.csv. It is benign
+ 2023/2/16 22:19:17***************finish analyze 0110zk.csv. It is benign
+ 2023/2/16 22:19:18***************finish analyze 0111-wy-chunk.csv. It is benign
+ 2023/2/16 22:19:18***************finish analyze 0111js.csv. It is benign
+ 2023/2/16 22:19:19***************finish analyze 0116neirong.csv. It is benign
+ 2023/2/16 22:19:20***************finish analyze 011server.csv. It is benign
+ 2023/2/16 22:19:21***************finish analyze 011_99.csv. It is benign
+ 2023/2/16 22:19:21***************finish analyze 0126af95c0e2d9b0a7c78738c4c00a860b04acc8.csv. It is benign
+ 2023/2/16 22:19:22***************finish analyze 013-carrousel-multipe.csv. It is benign
+ 2023/2/16 22:19:23***************finish analyze 01basic.csv. It is benign
+ 2023/2/16 22:19:24***************finish analyze 01daxie.csv. It is benign
+ 2023/2/16 22:19:24***************finish analyze 01demozz.csv. It is benign
+ 2023/2/16 22:19:25***************finish analyze 01gind-modulea.csv. It is benign
+ 2023/2/16 22:19:26***************finish analyze 01homework.csv. It is benign
+ 2023/2/16 22:19:26***************finish analyze 01imook-cli.csv. It is benign
+ 2023/2/16 22:19:27***************finish analyze 01lab.csv. It is benign
+ 2023/2/16 22:19:28***************finish analyze 01lab1.csv. It is benign
+ 2023/2/16 22:19:29***************finish analyze 01_01_node_moment_practice_ray.csv. It is benign
+ 2023/2/16 22:19:29***************finish analyze 01_add.csv. It is benign
+ 2023/2/16 22:19:30***************finish analyze 01_atm.csv. It is benign
+ 2023/2/16 22:19:31***************finish analyze 01_basic_webpack.csv. It is benign
+ 2023/2/16 22:19:32***************finish analyze 01_cpcpcp.csv. It is benign
+ 2023/2/16 22:19:32***************finish analyze 01_dev_harun_pitchaipandi_environment.csv. It is benign
+ 2023/2/16 22:19:33***************finish analyze 01_guessing_number.csv. It is benign
+ 2023/2/16 22:19:34***************finish analyze 01_harun_pitchaipandi_dev_environment.csv. It is benign
+ 2023/2/16 22:19:35***************finish analyze 01_library.csv. It is benign
+ 2023/2/16 22:19:35***************finish analyze 01_npmshangchuan.csv. It is benign
+ 2023/2/16 22:19:36***************finish analyze 01_npm_demo.csv. It is benign
+ 2023/2/16 22:19:37***************finish analyze 01_output_77.csv. It is benign
+ 2023/2/16 22:19:38***************finish analyze 01_phil_modules.csv. It is benign
+ 2023/2/16 22:19:38***************finish analyze 01_publish_package.csv. It is benign
+ 2023/2/16 22:19:39***************finish analyze 01_user_npm.csv. It is benign
+ 2023/2/16 22:19:40***************finish analyze 01_use_npm.csv. It is benign
+ 2023/2/16 22:19:40***************finish analyze 01_use_npm_xiaokong.csv. It is benign
+ 2023/2/16 22:19:41***************finish analyze 01_why_utils.csv. It is benign
+ 2023/2/16 22:19:42***************finish analyze 01myxiaoxie.csv. It is benign
+ 2023/2/16 22:19:43***************finish analyze 01npm.csv. It is benign
+ 2023/2/16 22:19:43***************finish analyze 01npmxiaoxie1.csv. It is benign
+ 2023/2/16 22:19:44***************finish analyze 01number-guessinggame-huzaifa.csv. It is benign
+ 2023/2/16 22:19:45***************finish analyze 01pack.csv. It is benign
+ 2023/2/16 22:19:46***************finish analyze 01plus.csv. It is benign
+ 2023/2/16 22:19:46***************finish analyze 01pro.csv. It is benign
+ 2023/2/16 22:19:47***************finish analyze 01random.csv. It is benign
+ 2023/2/16 22:19:48***************finish analyze 01runmodel.csv. It is benign
+ 2023/2/16 22:19:49***************finish analyze 01slc_unsolved.csv. It is benign
+ 2023/2/16 22:19:49***************finish analyze 01template1.csv. It is benign
+ 2023/2/16 22:19:50***************finish analyze 01test.csv. It is benign
+ 2023/2/16 22:19:51***************finish analyze 01uppercase.csv. It is benign
+ 2023/2/16 22:19:52***************finish analyze 01web.csv. It is benign
+ 2023/2/16 22:19:52***************finish analyze 01zhuanda.csv. It is benign
+ 2023/2/16 22:19:53***************finish analyze 02---random-number-library-rz.csv. It is benign
+ 2023/2/16 22:19:54***************finish analyze 02-atm-huzaifak.csv. It is benign
+ 2023/2/16 22:19:54***************finish analyze 02-be-modular.csv. It is benign
+ 2023/2/16 22:19:55***************finish analyze 02-cp-array.csv. It is benign
+ 2023/2/16 22:19:56***************finish analyze 02-custom-chengjiqiang.csv. It is benign
+ 2023/2/16 22:19:57***************finish analyze 02-daluwebpack-numbers.csv. It is benign
+ 2023/2/16 22:19:57***************finish analyze 02-echo.csv. It is benign
+ 2023/2/16 22:19:58***************finish analyze 02-hm-array.csv. It is benign
+ 2023/2/16 22:19:59***************finish analyze 02-infrastructure.csv. It is benign
+ 2023/2/16 22:20:00***************finish analyze 02-jjjc.csv. It is benign
+ 2023/2/16 22:20:00***************finish analyze 02-learn-cil.csv. It is benign
+ 2023/2/16 22:20:01***************finish analyze 02-li-sen.csv. It is benign
+ 2023/2/16 22:20:02***************finish analyze 02-library-basic.csv. It is benign
+ 2023/2/16 22:20:03***************finish analyze 02-library-lz.csv. It is benign
+ 2023/2/16 22:20:03***************finish analyze 02-library-number.csv. It is benign
+ 2023/2/16 22:20:04***************finish analyze 02-module.csv. It is benign
+ 2023/2/16 22:20:05***************finish analyze 02-modules-kevin.csv. It is benign
+ 2023/2/16 22:20:06***************finish analyze 02-modules.csv. It is benign
+ 2023/2/16 22:20:06***************finish analyze 02-modules_lty.csv. It is benign
+ 2023/2/16 22:20:07***************finish analyze 02-my-erqi-package.csv. It is benign
+ 2023/2/16 22:20:08***************finish analyze 02-myfirstnpmpackage.csv. It is benign
+ 2023/2/16 22:20:09***************finish analyze 02-mymockjs-ytf.csv. It is benign
+ 2023/2/16 22:20:09***************finish analyze 02-mypackage.csv. It is benign
+ 2023/2/16 22:20:10***************finish analyze 02-myself-module.csv. It is benign
+ 2023/2/16 22:20:11***************finish analyze 02-myself.csv. It is benign
+ 2023/2/16 22:20:11***************finish analyze 02-newmodule.csv. It is benign
+ 2023/2/16 22:20:12***************finish analyze 02-npm-fabu.csv. It is benign
+ 2023/2/16 22:20:13***************finish analyze 02-npm-jialetest.csv. It is benign
+ 2023/2/16 22:20:13***************finish analyze 02-npm-ngota.csv. It is benign
+ 2023/2/16 22:20:14***************finish analyze 02-npm.csv. It is benign
+ 2023/2/16 22:20:15***************finish analyze 02-npmproject.csv. It is benign
+ 2023/2/16 22:20:16***************finish analyze 02-npmtesasdss.csv. It is benign
+ 2023/2/16 22:20:16***************finish analyze 02-numbers.csv. It is benign
+ 2023/2/16 22:20:17***************finish analyze 02-parameters-insert-plugin.csv. It is benign
+ 2023/2/16 22:20:18***************finish analyze 02-publish.csv. It is benign
+ 2023/2/16 22:20:19鐜板湪涓嬭浇鐨勫寘鏄?02-qhlashleycalc. 2023/2/16 22:20:19
+鐜板湪涓嬭浇鐨勫寘鏄?02-self. 2023/2/16 22:20:20
+鐜板湪涓嬭浇鐨勫寘鏄?02-sms-async. 2023/2/16 22:20:20
+鐜板湪涓嬭浇鐨勫寘鏄?02-szhm18. 2023/2/16 22:20:21
+鐜板湪涓嬭浇鐨勫寘鏄?02-test-project. 2023/2/16 22:20:22
+鐜板湪涓嬭浇鐨勫寘鏄?02-there_modules. 2023/2/16 22:20:22
+鐜板湪涓嬭浇鐨勫寘鏄?02-thirtpart. 2023/2/16 22:20:23
+鐜板湪涓嬭浇鐨勫寘鏄?02-tthirdparty. 2023/2/16 22:20:24
+鐜板湪涓嬭浇鐨勫寘鏄?02-use_my_utils. 2023/2/16 22:20:24
+鐜板湪涓嬭浇鐨勫寘鏄?02-weback-numbers. 2023/2/16 22:20:25
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack. 2023/2/16 22:20:25
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-library. 2023/2/16 22:20:26
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-nubers. 2023/2/16 22:20:27
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-numbers-ctest. 2023/2/16 22:20:27
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-numbers-demo. 2023/2/16 22:20:28
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-numbers-gx. 2023/2/16 22:20:28
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-numbers-haoyue. 2023/2/16 22:20:29
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-numbers-hui. 2023/2/16 22:20:29
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-numbers-junny. 2023/2/16 22:20:30
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-numbers-testingtest. 2023/2/16 22:20:31
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-numbers-tj. 2023/2/16 22:20:31
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-numbers-xie. 2023/2/16 22:20:32
+鐜板湪涓嬭浇鐨勫寘鏄?02-webpack-publish-demo. 2023/2/16 22:20:32
+鐜板湪涓嬭浇鐨勫寘鏄?02-xtn. 2023/2/16 22:20:33
+鐜板湪涓嬭浇鐨勫寘鏄?02-yyy-utils. 2023/2/16 22:20:33
+鐜板湪涓嬭浇鐨勫寘鏄?02-zk-array. 2023/2/16 22:20:34
+鐜板湪涓嬭浇鐨勫寘鏄?02.aula. 2023/2/16 22:20:34
+鐜板湪涓嬭浇鐨勫寘鏄?02.koa-demo. 2023/2/16 22:20:35
+鐜板湪涓嬭浇鐨勫寘鏄?02.lijcreatefolder. 2023/2/16 22:20:35
+鐜板湪涓嬭浇鐨勫寘鏄?02.nsm. 2023/2/16 22:20:36
+鐜板湪涓嬭浇鐨勫寘鏄?02.opject. 2023/2/16 22:20:36
+鐜板湪涓嬭浇鐨勫寘鏄?02.wenjianmokuai. 2023/2/16 22:20:37
+鐜板湪涓嬭浇鐨勫寘鏄?020-webpack-numbers. 2023/2/16 22:20:37
+鐜板湪涓嬭浇鐨勫寘鏄?02022021var. 2023/2/16 22:20:38
+鐜板湪涓嬭浇鐨勫寘鏄?020npmxiaoxie. 2023/2/16 22:20:38
+鐜板湪涓嬭浇鐨勫寘鏄?021-webpack-numbers. 2023/2/16 22:20:39
+鐜板湪涓嬭浇鐨勫寘鏄?021.2-my-first-package-dancg. 2023/2/16 22:20:39
+鐜板湪涓嬭浇鐨勫寘鏄?02112019lab6. 2023/2/16 22:20:40
+鐜板湪涓嬭浇鐨勫寘鏄?0212test. 2023/2/16 22:20:41
+鐜板湪涓嬭浇鐨勫寘鏄?0213_choma-utils. 2023/2/16 22:20:41
+鐜板湪涓嬭浇鐨勫寘鏄?0216tool_xiaoye. 2023/2/16 22:20:42
+鐜板湪涓嬭浇鐨勫寘鏄?0221nodejs. 2023/2/16 22:20:42
+鐜板湪涓嬭浇鐨勫寘鏄?0222night. 2023/2/16 22:20:43
+鐜板湪涓嬭浇鐨勫寘鏄?0222zy. 2023/2/16 22:20:43
+鐜板湪涓嬭浇鐨勫寘鏄?0224wyj121. 2023/2/16 22:20:43
+鐜板湪涓嬭浇鐨勫寘鏄?0224zhoukoa. 2023/2/16 22:20:44
+鐜板湪涓嬭浇鐨勫寘鏄?0226rikao. 2023/2/16 22:20:44
+鐜板湪涓嬭浇鐨勫寘鏄?023package. 2023/2/16 22:20:45
+鐜板湪涓嬭浇鐨勫寘鏄?02_add_lodash. 2023/2/16 22:20:46
+鐜板湪涓嬭浇鐨勫寘鏄?02_atm_project. 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-qhlashleycalc-1.0.3.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-self-1.0.0.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-sms-async-1.0.0.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-szhm18-1.0.1.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-test-project-1.0.0.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-there_modules-1.0.0.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-thirtpart-1.0.0.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-tthirdparty-1.0.2.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-use_my_utils-1.0.0.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-weback-numbers-1.0.1.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-1.0.2.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-library-1.0.1.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-nubers-1.0.2.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-numbers-ctest-1.0.6.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-numbers-demo-1.0.2.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-numbers-gx-1.0.1.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-numbers-haoyue-1.0.1.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-numbers-hui-1.0.8.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-numbers-junny-1.0.1.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-numbers-testingtest-1.0.3.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-numbers-tj-1.0.1.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-numbers-xie-1.0.1.tgz 2023/2/16 22:20:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-webpack-publish-demo-1.0.1.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-xtn-1.0.1.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-yyy-utils-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02-zk-array-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02.aula-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02.koa-demo-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02.lijcreatefolder-1.0.1.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02.nsm-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02.opject-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02.wenjianmokuai-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 020-webpack-numbers-1.0.1.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02022021var-1.0.1.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 020npmxiaoxie-1.1.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 021-webpack-numbers-1.0.2.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 021.2-my-first-package-dancg-1.0.2.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02112019lab6-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0212test-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0213_choma-utils-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0216tool_xiaoye-1.2.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0221nodejs-1.0.3.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0222night-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0222zy-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0224wyj121-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0224zhoukoa-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0226rikao-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 023package-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_add_lodash-1.0.0.tgz 2023/2/16 22:20:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_atm_project-1.1.0.tgz 2023/2/16 22:20:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-qhlashleycalc-1.0.3 2023/2/16 22:20:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-self-1.0.0 2023/2/16 22:20:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-sms-async-1.0.0 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-szhm18-1.0.1 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-test-project-1.0.0 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-there_modules-1.0.0 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-thirtpart-1.0.0 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-tthirdparty-1.0.2 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-use_my_utils-1.0.0 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-weback-numbers-1.0.1 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-1.0.2 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-library-1.0.1 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-nubers-1.0.2 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-numbers-ctest-1.0.6 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-numbers-demo-1.0.2 2023/2/16 22:20:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-numbers-gx-1.0.1 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-numbers-haoyue-1.0.1 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-numbers-hui-1.0.8 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-numbers-junny-1.0.1 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-numbers-testingtest-1.0.3 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-numbers-tj-1.0.1 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-numbers-xie-1.0.1 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-webpack-publish-demo-1.0.1 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-xtn-1.0.1 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-yyy-utils-1.0.0 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02-zk-array-1.0.0 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02.aula-1.0.0 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02.koa-demo-1.0.0 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02.lijcreatefolder-1.0.1 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02.nsm-1.0.0 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02.opject-1.0.0 2023/2/16 22:20:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02.wenjianmokuai-1.0.0 2023/2/16 22:20:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 020-webpack-numbers-1.0.1 2023/2/16 22:20:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02022021var-1.0.1 2023/2/16 22:20:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 020npmxiaoxie-1.1.0 2023/2/16 22:20:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 021-webpack-numbers-1.0.2 2023/2/16 22:20:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 021.2-my-first-package-dancg-1.0.2 2023/2/16 22:20:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02112019lab6-1.0.0 2023/2/16 22:20:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0212test-1.0.0 2023/2/16 22:20:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0213_choma-utils-1.0.0 2023/2/16 22:20:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0216tool_xiaoye-1.2.0 2023/2/16 22:20:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0221nodejs-1.0.3 2023/2/16 22:20:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0222night-1.0.0 2023/2/16 22:20:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0222zy-1.0.0 2023/2/16 22:20:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0224wyj121-1.0.0 2023/2/16 22:20:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0224zhoukoa-1.0.0 2023/2/16 22:20:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0226rikao-1.0.0 2023/2/16 22:20:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 023package-1.0.0 2023/2/16 22:20:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_add_lodash-1.0.0 2023/2/16 22:20:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_atm_project-1.1.0 2023/2/16 22:20:51
+***************finish analyze 02-qhlashleycalc.csv. It is benign
+ 2023/2/16 22:20:52***************finish analyze 02-self.csv. It is benign
+ 2023/2/16 22:20:52***************finish analyze 02-sms-async.csv. It is benign
+ 2023/2/16 22:20:53***************finish analyze 02-szhm18.csv. It is benign
+ 2023/2/16 22:20:54***************finish analyze 02-test-project.csv. It is benign
+ 2023/2/16 22:20:54***************finish analyze 02-there_modules.csv. It is benign
+ 2023/2/16 22:20:55***************finish analyze 02-thirtpart.csv. It is benign
+ 2023/2/16 22:20:56***************finish analyze 02-tthirdparty.csv. It is benign
+ 2023/2/16 22:20:56***************finish analyze 02-use_my_utils.csv. It is benign
+ 2023/2/16 22:20:57***************finish analyze 02-weback-numbers.csv. It is benign
+ 2023/2/16 22:20:58***************finish analyze 02-webpack-library.csv. It is benign
+ 2023/2/16 22:20:59***************finish analyze 02-webpack-nubers.csv. It is benign
+ 2023/2/16 22:20:59***************finish analyze 02-webpack-numbers-ctest.csv. It is benign
+ 2023/2/16 22:21:00***************finish analyze 02-webpack-numbers-demo.csv. It is benign
+ 2023/2/16 22:21:01***************finish analyze 02-webpack-numbers-gx.csv. It is benign
+ 2023/2/16 22:21:01***************finish analyze 02-webpack-numbers-haoyue.csv. It is benign
+ 2023/2/16 22:21:02***************finish analyze 02-webpack-numbers-hui.csv. It is benign
+ 2023/2/16 22:21:03***************finish analyze 02-webpack-numbers-junny.csv. It is benign
+ 2023/2/16 22:21:03***************finish analyze 02-webpack-numbers-testingtest.csv. It is benign
+ 2023/2/16 22:21:04***************finish analyze 02-webpack-numbers-tj.csv. It is benign
+ 2023/2/16 22:21:05***************finish analyze 02-webpack-numbers-xie.csv. It is benign
+ 2023/2/16 22:21:06***************finish analyze 02-webpack-publish-demo.csv. It is benign
+ 2023/2/16 22:21:06***************finish analyze 02-webpack.csv. It is benign
+ 2023/2/16 22:21:07***************finish analyze 02-xtn.csv. It is benign
+ 2023/2/16 22:21:08***************finish analyze 02-yyy-utils.csv. It is benign
+ 2023/2/16 22:21:08***************finish analyze 02-zk-array.csv. It is benign
+ 2023/2/16 22:21:09***************finish analyze 02.aula.csv. It is benign
+ 2023/2/16 22:21:10***************finish analyze 02.koa-demo.csv. It is benign
+ 2023/2/16 22:21:10***************finish analyze 02.lijcreatefolder.csv. It is benign
+ 2023/2/16 22:21:11***************finish analyze 02.nsm.csv. It is benign
+ 2023/2/16 22:21:12***************finish analyze 02.opject.csv. It is benign
+ 2023/2/16 22:21:13***************finish analyze 02.wenjianmokuai.csv. It is benign
+ 2023/2/16 22:21:13***************finish analyze 020-webpack-numbers.csv. It is benign
+ 2023/2/16 22:21:14***************finish analyze 02022021var.csv. It is benign
+ 2023/2/16 22:21:15***************finish analyze 020npmxiaoxie.csv. It is benign
+ 2023/2/16 22:21:15***************finish analyze 021-webpack-numbers.csv. It is benign
+ 2023/2/16 22:21:16***************finish analyze 021.2-my-first-package-dancg.csv. It is benign
+ 2023/2/16 22:21:17***************finish analyze 02112019lab6.csv. It is benign
+ 2023/2/16 22:21:18***************finish analyze 0212test.csv. It is benign
+ 2023/2/16 22:21:18***************finish analyze 0213_choma-utils.csv. It is benign
+ 2023/2/16 22:21:19***************finish analyze 0216tool_xiaoye.csv. It is benign
+ 2023/2/16 22:21:20***************finish analyze 0221nodejs.csv. It is benign
+ 2023/2/16 22:21:20***************finish analyze 0222night.csv. It is benign
+ 2023/2/16 22:21:21***************finish analyze 0222zy.csv. It is benign
+ 2023/2/16 22:21:22***************finish analyze 0224wyj121.csv. It is benign
+ 2023/2/16 22:21:23***************finish analyze 0224zhoukoa.csv. It is benign
+ 2023/2/16 22:21:23***************finish analyze 0226rikao.csv. It is benign
+ 2023/2/16 22:21:24***************finish analyze 023package.csv. It is benign
+ 2023/2/16 22:21:25***************finish analyze 02_add_lodash.csv. It is benign
+ 2023/2/16 22:21:26***************finish analyze 02_atm_project.csv. It is benign
+ 2023/2/16 22:21:26鐜板湪涓嬭浇鐨勫寘鏄?02_codewei. 2023/2/16 22:21:27
+鐜板湪涓嬭浇鐨勫寘鏄?02_day. 2023/2/16 22:21:27
+鐜板湪涓嬭浇鐨勫寘鏄?02_how-to-npm. 2023/2/16 22:21:28
+鐜板湪涓嬭浇鐨勫寘鏄?02_learn-cli-cqtext. 2023/2/16 22:21:28
+鐜板湪涓嬭浇鐨勫寘鏄?02_learn_cli. 2023/2/16 22:21:29
+鐜板湪涓嬭浇鐨勫寘鏄?02_linlin. 2023/2/16 22:21:29
+鐜板湪涓嬭浇鐨勫寘鏄?02_my_utils. 2023/2/16 22:21:30
+鐜板湪涓嬭浇鐨勫寘鏄?02_nodejs. 2023/2/16 22:21:31
+鐜板湪涓嬭浇鐨勫寘鏄?02_testpackage. 2023/2/16 22:21:31
+鐜板湪涓嬭浇鐨勫寘鏄?02_xiaobai_utils. 2023/2/16 22:21:32
+鐜板湪涓嬭浇鐨勫寘鏄?02calc-utils. 2023/2/16 22:21:32
+鐜板湪涓嬭浇鐨勫寘鏄?02code-npm. 2023/2/16 22:21:33
+鐜板湪涓嬭浇鐨勫寘鏄?02daxie. 2023/2/16 22:21:34
+鐜板湪涓嬭浇鐨勫寘鏄?02day. 2023/2/16 22:21:34
+鐜板湪涓嬭浇鐨勫寘鏄?02day1rikaojiangpeng. 2023/2/16 22:21:35
+鐜板湪涓嬭浇鐨勫寘鏄?02dongfan. 2023/2/16 22:21:35
+鐜板湪涓嬭浇鐨勫寘鏄?02hyeok. 2023/2/16 22:21:36
+鐜板湪涓嬭浇鐨勫寘鏄?02jiangpengdebao. 2023/2/16 22:21:36
+鐜板湪涓嬭浇鐨勫寘鏄?02moduletest. 2023/2/16 22:21:37
+鐜板湪涓嬭浇鐨勫寘鏄?02moduletest2406. 2023/2/16 22:21:37
+鐜板湪涓嬭浇鐨勫寘鏄?02mynpmpackage. 2023/2/16 22:21:38
+鐜板湪涓嬭浇鐨勫寘鏄?02node. 2023/2/16 22:21:39
+鐜板湪涓嬭浇鐨勫寘鏄?02nodetest. 2023/2/16 22:21:39
+鐜板湪涓嬭浇鐨勫寘鏄?02npmconversion. 2023/2/16 22:21:40
+鐜板湪涓嬭浇鐨勫寘鏄?02npmpublish. 2023/2/16 22:21:40
+鐜板湪涓嬭浇鐨勫寘鏄?02npmxiaol. 2023/2/16 22:21:41
+鐜板湪涓嬭浇鐨勫寘鏄?02npmxiaoli. 2023/2/16 22:21:41
+鐜板湪涓嬭浇鐨勫寘鏄?02npmxiaor. 2023/2/16 22:21:42
+鐜板湪涓嬭浇鐨勫寘鏄?02npmzywb. 2023/2/16 22:21:42
+鐜板湪涓嬭浇鐨勫寘鏄?02pratik. 2023/2/16 22:21:43
+鐜板湪涓嬭浇鐨勫寘鏄?02text. 2023/2/16 22:21:44
+鐜板湪涓嬭浇鐨勫寘鏄?02url-querystring-http. 2023/2/16 22:21:45
+鐜板湪涓嬭浇鐨勫寘鏄?02vue_toast_demo. 2023/2/16 22:21:46
+鐜板湪涓嬭浇鐨勫寘鏄?02wapcalc. 2023/2/16 22:21:47
+鐜板湪涓嬭浇鐨勫寘鏄?02wzdbcala. 2023/2/16 22:21:48
+鐜板湪涓嬭浇鐨勫寘鏄?02zy2. 2023/2/16 22:21:49
+鐜板湪涓嬭浇鐨勫寘鏄?03---use-smiley. 2023/2/16 22:21:50
+鐜板湪涓嬭浇鐨勫寘鏄?03--password-generator-by-dana. 2023/2/16 22:21:51
+鐜板湪涓嬭浇鐨勫寘鏄?03-01. 2023/2/16 22:21:51
+鐜板湪涓嬭浇鐨勫寘鏄?03-09import1601l. 2023/2/16 22:21:52
+鐜板湪涓嬭浇鐨勫寘鏄?03-24. 2023/2/16 22:21:53
+鐜板湪涓嬭浇鐨勫寘鏄?03-31. 2023/2/16 22:21:54
+鐜板湪涓嬭浇鐨勫寘鏄?03-ahao062. 2023/2/16 22:21:55
+鐜板湪涓嬭浇鐨勫寘鏄?03-asenkronsdasdsadavehttprequest. 2023/2/16 22:21:56
+鐜板湪涓嬭浇鐨勫寘鏄?03-cccustom. 2023/2/16 22:21:56
+鐜板湪涓嬭浇鐨勫寘鏄?03-code-zwl. 2023/2/16 22:21:57
+鐜板湪涓嬭浇鐨勫寘鏄?03-coustom. 2023/2/16 22:21:58
+鐜板湪涓嬭浇鐨勫寘鏄?03-creatfront. 2023/2/16 22:21:59
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom. 2023/2/16 22:22:00
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-00111. 2023/2/16 22:22:00
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02calc-utils-1.0.0.tgz 2023/2/16 22:22:00
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02code-npm-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02daxie-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02day-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02day1rikaojiangpeng-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02dongfan-1.0.2.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02hyeok-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02jiangpengdebao-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02moduletest-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02moduletest2406-1.0.4.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02mynpmpackage-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02node-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02nodetest-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02npmconversion-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02npmpublish-1.1.2.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02npmxiaol-1.1.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02npmxiaoli-1.1.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02npmxiaor-1.1.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02npmzywb-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02pratik-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02text-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02url-querystring-http-1.0.4.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02vue_toast_demo-1.0.4.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02wapcalc-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02wzdbcala-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02zy2-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_codewei-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_day-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_how-to-npm-1.0.2.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_learn-cli-cqtext-1.2.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_learn_cli-1.0.2.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_linlin-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_my_utils-0.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_nodejs-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_testpackage-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 02_xiaobai_utils-1.1.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03---use-smiley-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03--password-generator-by-dana-1.1.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-01-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-09import1601l-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-24-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-31-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-ahao062-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-asenkronsdasdsadavehttprequest-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-cccustom-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-code-zwl-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-coustom-1.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-creatfront-2.0.0.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-00111-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-1.0.1.tgz 2023/2/16 22:22:01
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02calc-utils-1.0.0 2023/2/16 22:22:02
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02code-npm-1.0.0 2023/2/16 22:22:02
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02daxie-1.0.0 2023/2/16 22:22:02
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02day-1.0.0 2023/2/16 22:22:02
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02day1rikaojiangpeng-1.0.1 2023/2/16 22:22:02
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02dongfan-1.0.2 2023/2/16 22:22:02
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02hyeok-1.0.0 2023/2/16 22:22:02
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02jiangpengdebao-1.0.0 2023/2/16 22:22:02
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02moduletest-1.0.1 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02moduletest2406-1.0.4 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02mynpmpackage-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02node-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02nodetest-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02npmconversion-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02npmpublish-1.1.2 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02npmxiaol-1.1.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02npmxiaoli-1.1.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02npmxiaor-1.1.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02npmzywb-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02pratik-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02text-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02url-querystring-http-1.0.4 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02vue_toast_demo-1.0.4 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02wapcalc-1.0.1 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02wzdbcala-1.0.1 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02zy2-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_codewei-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_day-1.0.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_how-to-npm-1.0.2 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_learn-cli-cqtext-1.2.0 2023/2/16 22:22:03
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_learn_cli-1.0.2 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_linlin-1.0.1 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_my_utils-0.0.1 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_nodejs-1.0.1 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_testpackage-1.0.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 02_xiaobai_utils-1.1.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03---use-smiley-1.0.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03--password-generator-by-dana-1.1.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-01-1.0.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-09import1601l-1.0.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-24-1.0.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-31-1.0.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-ahao062-1.0.1 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-asenkronsdasdsadavehttprequest-1.0.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-cccustom-1.0.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-code-zwl-1.0.1 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-coustom-1.0.0 2023/2/16 22:22:04
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-creatfront-2.0.0 2023/2/16 22:22:05
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-00111-1.0.1 2023/2/16 22:22:05
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-1.0.1 2023/2/16 22:22:05
+***************finish analyze 02calc-utils.csv. It is benign
+ 2023/2/16 22:22:05***************finish analyze 02code-npm.csv. It is benign
+ 2023/2/16 22:22:06***************finish analyze 02daxie.csv. It is benign
+ 2023/2/16 22:22:07***************finish analyze 02day.csv. It is benign
+ 2023/2/16 22:22:08***************finish analyze 02day1rikaojiangpeng.csv. It is benign
+ 2023/2/16 22:22:08***************finish analyze 02dongfan.csv. It is benign
+ 2023/2/16 22:22:09***************finish analyze 02hyeok.csv. It is benign
+ 2023/2/16 22:22:10***************finish analyze 02jiangpengdebao.csv. It is benign
+ 2023/2/16 22:22:11***************finish analyze 02moduletest.csv. It is benign
+ 2023/2/16 22:22:12***************finish analyze 02moduletest2406.csv. It is benign
+ 2023/2/16 22:22:12***************finish analyze 02mynpmpackage.csv. It is benign
+ 2023/2/16 22:22:13***************finish analyze 02node.csv. It is benign
+ 2023/2/16 22:22:14***************finish analyze 02nodetest.csv. It is benign
+ 2023/2/16 22:22:15***************finish analyze 02npmconversion.csv. It is benign
+ 2023/2/16 22:22:15***************finish analyze 02npmpublish.csv. It is benign
+ 2023/2/16 22:22:16***************finish analyze 02npmxiaol.csv. It is benign
+ 2023/2/16 22:22:17***************finish analyze 02npmxiaoli.csv. It is benign
+ 2023/2/16 22:22:18***************finish analyze 02npmxiaor.csv. It is benign
+ 2023/2/16 22:22:18***************finish analyze 02npmzywb.csv. It is benign
+ 2023/2/16 22:22:19***************finish analyze 02pratik.csv. It is benign
+ 2023/2/16 22:22:20***************finish analyze 02text.csv. It is benign
+ 2023/2/16 22:22:21***************finish analyze 02url-querystring-http.csv. It is benign
+ 2023/2/16 22:22:21***************finish analyze 02vue_toast_demo.csv. It is benign
+ 2023/2/16 22:22:22***************finish analyze 02wapcalc.csv. It is benign
+ 2023/2/16 22:22:23***************finish analyze 02wzdbcala.csv. It is benign
+ 2023/2/16 22:22:24***************finish analyze 02zy2.csv. It is benign
+ 2023/2/16 22:22:24***************finish analyze 02_codewei.csv. It is benign
+ 2023/2/16 22:22:25***************finish analyze 02_day.csv. It is benign
+ 2023/2/16 22:22:26***************finish analyze 02_how-to-npm.csv. It is benign
+ 2023/2/16 22:22:27***************finish analyze 02_learn-cli-cqtext.csv. It is benign
+ 2023/2/16 22:22:27***************finish analyze 02_learn_cli.csv. It is benign
+ 2023/2/16 22:22:28***************finish analyze 02_linlin.csv. It is benign
+ 2023/2/16 22:22:29***************finish analyze 02_my_utils.csv. It is benign
+ 2023/2/16 22:22:29***************finish analyze 02_nodejs.csv. It is benign
+ 2023/2/16 22:22:30***************finish analyze 02_testpackage.csv. It is benign
+ 2023/2/16 22:22:31***************finish analyze 02_xiaobai_utils.csv. It is benign
+ 2023/2/16 22:22:32***************finish analyze 03---use-smiley.csv. It is benign
+ 2023/2/16 22:22:32***************finish analyze 03--password-generator-by-dana.csv. It is benign
+ 2023/2/16 22:22:33***************finish analyze 03-01.csv. It is benign
+ 2023/2/16 22:22:34***************finish analyze 03-09import1601l.csv. It is benign
+ 2023/2/16 22:22:35***************finish analyze 03-24.csv. It is benign
+ 2023/2/16 22:22:35***************finish analyze 03-31.csv. It is benign
+ 2023/2/16 22:22:36***************finish analyze 03-ahao062.csv. It is benign
+ 2023/2/16 22:22:37***************finish analyze 03-asenkronsdasdsadavehttprequest.csv. It is benign
+ 2023/2/16 22:22:38***************finish analyze 03-cccustom.csv. It is benign
+ 2023/2/16 22:22:38***************finish analyze 03-code-zwl.csv. It is benign
+ 2023/2/16 22:22:39***************finish analyze 03-coustom.csv. It is benign
+ 2023/2/16 22:22:40***************finish analyze 03-creatfront.csv. It is benign
+ 2023/2/16 22:22:41***************finish analyze 03-custom-00111.csv. It is benign
+ 2023/2/16 22:22:41***************finish analyze 03-custom.csv. It is benign
+ 2023/2/16 22:22:42mkdir C:\Users\huchaoqun\Desktop\璇剧▼\姣曚笟璁捐\detect-malicious-npm-package-with-machine-learning\feature-extract\material\registry\8 2023/2/16 22:22:42
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-071621. 2023/2/16 22:22:43
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-111. 2023/2/16 22:22:44
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-606. 2023/2/16 22:22:45
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-ben. 2023/2/16 22:22:46
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-cctest. 2023/2/16 22:22:47
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-chen. 2023/2/16 22:22:48
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-chl. 2023/2/16 22:22:49
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-clh. 2023/2/16 22:22:50
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-crystal. 2023/2/16 22:22:51
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-dddddd. 2023/2/16 22:22:52
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-hahah. 2023/2/16 22:22:53
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-hayley. 2023/2/16 22:22:54
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-jokerjason. 2023/2/16 22:22:55
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-jydandf. 2023/2/16 22:22:56
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-kouyou. 2023/2/16 22:22:57
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-l1limboo. 2023/2/16 22:22:58
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-leilei. 2023/2/16 22:22:59
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-lilei-firstdemo. 2023/2/16 22:22:59
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-liukan. 2023/2/16 22:23:01
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-liuxqb-lzw. 2023/2/16 22:23:02
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-ll. 2023/2/16 22:23:02
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-lth-test. 2023/2/16 22:23:03
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-lvjiajun. 2023/2/16 22:23:04
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-lwj. 2023/2/16 22:23:05
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-lyc. 2023/2/16 22:23:06
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-lzy. 2023/2/16 22:23:07
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-me. 2023/2/16 22:23:08
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-modules. 2023/2/16 22:23:09
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-mrkleo-niubi. 2023/2/16 22:23:10
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-package. 2023/2/16 22:23:10
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-qian. 2023/2/16 22:23:11
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-qifumin. 2023/2/16 22:23:12
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-qingxu. 2023/2/16 22:23:13
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-sanyang. 2023/2/16 22:23:14
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-sjdh. 2023/2/16 22:23:14
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-sz. 2023/2/16 22:23:15
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-test. 2023/2/16 22:23:16
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-test-lth. 2023/2/16 22:23:17
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-tian. 2023/2/16 22:23:18
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-wangnian. 2023/2/16 22:23:19
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-wl. 2023/2/16 22:23:20
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-wuke. 2023/2/16 22:23:21
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-wyt. 2023/2/16 22:23:21
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-x. 2023/2/16 22:23:22
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-xia-test. 2023/2/16 22:23:23
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-xie. 2023/2/16 22:23:24
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-xjl. 2023/2/16 22:23:25
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-yxq. 2023/2/16 22:23:26
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-zhaoxianhe. 2023/2/16 22:23:27
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-zhe. 2023/2/16 22:23:27
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-071621-1.0.1.tgz 2023/2/16 22:23:27
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-111-1.0.0.tgz 2023/2/16 22:23:27
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-606-1.0.2.tgz 2023/2/16 22:23:27
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-ben-1.0.0.tgz 2023/2/16 22:23:27
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-cctest-1.0.0.tgz 2023/2/16 22:23:27
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-chen-1.0.1.tgz 2023/2/16 22:23:27
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-chl-1.0.0.tgz 2023/2/16 22:23:27
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-clh-1.0.0.tgz 2023/2/16 22:23:27
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-crystal-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-dddddd-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-hahah-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-hayley-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-jokerjason-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-jydandf-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-kouyou-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-l1limboo-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-leilei-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-lilei-firstdemo-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-liukan-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-liuxqb-lzw-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-ll-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-lth-test-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-lvjiajun-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-lwj-1.0.3.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-lyc-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-lzy-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-me-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-modules-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-mrkleo-niubi-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-package-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-qian-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-qifumin-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-qingxu-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-sanyang-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-sjdh-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-sz-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-test-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-test-lth-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-tian-1.0.6.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-wangnian-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-wl-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-wuke-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-wyt-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-x-1.0.1.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-xia-test-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-xie-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-xjl-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-yxq-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-zhaoxianhe-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-zhe-1.0.0.tgz 2023/2/16 22:23:28
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-071621-1.0.1 2023/2/16 22:23:28
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-111-1.0.0 2023/2/16 22:23:28
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-606-1.0.2 2023/2/16 22:23:28
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-ben-1.0.0 2023/2/16 22:23:28
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-cctest-1.0.0 2023/2/16 22:23:28
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-chen-1.0.1 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-chl-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-clh-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-crystal-1.0.1 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-dddddd-1.0.1 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-hahah-1.0.1 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-hayley-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-jokerjason-1.0.1 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-jydandf-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-kouyou-1.0.1 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-l1limboo-1.0.1 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-leilei-1.0.1 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-lilei-firstdemo-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-liukan-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-liuxqb-lzw-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-ll-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-lth-test-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-lvjiajun-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-lwj-1.0.3 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-lyc-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-lzy-1.0.1 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-me-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-modules-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-mrkleo-niubi-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-package-1.0.0 2023/2/16 22:23:29
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-qian-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-qifumin-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-qingxu-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-sanyang-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-sjdh-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-sz-1.0.1 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-test-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-test-lth-1.0.1 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-tian-1.0.6 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-wangnian-1.0.1 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-wl-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-wuke-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-wyt-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-x-1.0.1 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-xia-test-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-xie-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-xjl-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-yxq-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-zhaoxianhe-1.0.0 2023/2/16 22:23:30
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-zhe-1.0.0 2023/2/16 22:23:30
+***************finish analyze 03-custom-071621.csv. It is benign
+ 2023/2/16 22:23:31***************finish analyze 03-custom-111.csv. It is benign
+ 2023/2/16 22:23:32***************finish analyze 03-custom-606.csv. It is benign
+ 2023/2/16 22:23:33***************finish analyze 03-custom-ben.csv. It is benign
+ 2023/2/16 22:23:33***************finish analyze 03-custom-cctest.csv. It is benign
+ 2023/2/16 22:23:34***************finish analyze 03-custom-chen.csv. It is benign
+ 2023/2/16 22:23:35***************finish analyze 03-custom-chl.csv. It is benign
+ 2023/2/16 22:23:35***************finish analyze 03-custom-clh.csv. It is benign
+ 2023/2/16 22:23:36***************finish analyze 03-custom-crystal.csv. It is benign
+ 2023/2/16 22:23:37***************finish analyze 03-custom-dddddd.csv. It is benign
+ 2023/2/16 22:23:37***************finish analyze 03-custom-hahah.csv. It is benign
+ 2023/2/16 22:23:38***************finish analyze 03-custom-hayley.csv. It is benign
+ 2023/2/16 22:23:39***************finish analyze 03-custom-jokerjason.csv. It is benign
+ 2023/2/16 22:23:40***************finish analyze 03-custom-jydandf.csv. It is benign
+ 2023/2/16 22:23:40***************finish analyze 03-custom-kouyou.csv. It is benign
+ 2023/2/16 22:23:41***************finish analyze 03-custom-l1limboo.csv. It is benign
+ 2023/2/16 22:23:42***************finish analyze 03-custom-leilei.csv. It is benign
+ 2023/2/16 22:23:43***************finish analyze 03-custom-lilei-firstdemo.csv. It is benign
+ 2023/2/16 22:23:43***************finish analyze 03-custom-liukan.csv. It is benign
+ 2023/2/16 22:23:44***************finish analyze 03-custom-liuxqb-lzw.csv. It is benign
+ 2023/2/16 22:23:45***************finish analyze 03-custom-ll.csv. It is benign
+ 2023/2/16 22:23:45***************finish analyze 03-custom-lth-test.csv. It is benign
+ 2023/2/16 22:23:46***************finish analyze 03-custom-lvjiajun.csv. It is benign
+ 2023/2/16 22:23:47***************finish analyze 03-custom-lwj.csv. It is benign
+ 2023/2/16 22:23:47***************finish analyze 03-custom-lyc.csv. It is benign
+ 2023/2/16 22:23:48***************finish analyze 03-custom-lzy.csv. It is benign
+ 2023/2/16 22:23:49***************finish analyze 03-custom-me.csv. It is benign
+ 2023/2/16 22:23:50***************finish analyze 03-custom-modules.csv. It is benign
+ 2023/2/16 22:23:50***************finish analyze 03-custom-mrkleo-niubi.csv. It is benign
+ 2023/2/16 22:23:51***************finish analyze 03-custom-package.csv. It is benign
+ 2023/2/16 22:23:52***************finish analyze 03-custom-qian.csv. It is benign
+ 2023/2/16 22:23:52***************finish analyze 03-custom-qifumin.csv. It is benign
+ 2023/2/16 22:23:53***************finish analyze 03-custom-qingxu.csv. It is benign
+ 2023/2/16 22:23:54***************finish analyze 03-custom-sanyang.csv. It is benign
+ 2023/2/16 22:23:54***************finish analyze 03-custom-sjdh.csv. It is benign
+ 2023/2/16 22:23:55***************finish analyze 03-custom-sz.csv. It is benign
+ 2023/2/16 22:23:56***************finish analyze 03-custom-test-lth.csv. It is benign
+ 2023/2/16 22:23:57***************finish analyze 03-custom-test.csv. It is benign
+ 2023/2/16 22:23:57***************finish analyze 03-custom-tian.csv. It is benign
+ 2023/2/16 22:23:58***************finish analyze 03-custom-wangnian.csv. It is benign
+ 2023/2/16 22:23:59***************finish analyze 03-custom-wl.csv. It is benign
+ 2023/2/16 22:24:00***************finish analyze 03-custom-wuke.csv. It is benign
+ 2023/2/16 22:24:00***************finish analyze 03-custom-wyt.csv. It is benign
+ 2023/2/16 22:24:01***************finish analyze 03-custom-x.csv. It is benign
+ 2023/2/16 22:24:02***************finish analyze 03-custom-xia-test.csv. It is benign
+ 2023/2/16 22:24:02***************finish analyze 03-custom-xie.csv. It is benign
+ 2023/2/16 22:24:03***************finish analyze 03-custom-xjl.csv. It is benign
+ 2023/2/16 22:24:04***************finish analyze 03-custom-yxq.csv. It is benign
+ 2023/2/16 22:24:05***************finish analyze 03-custom-zhaoxianhe.csv. It is benign
+ 2023/2/16 22:24:05***************finish analyze 03-custom-zhe.csv. It is benign
+ 2023/2/16 22:24:06mkdir C:\Users\huchaoqun\Desktop\璇剧▼\姣曚笟璁捐\detect-malicious-npm-package-with-machine-learning\feature-extract\material\registry\9 2023/2/16 22:24:06
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-zhoumz. 2023/2/16 22:24:07
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-zhp. 2023/2/16 22:24:08
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-zhu. 2023/2/16 22:24:09
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom-zifeng. 2023/2/16 22:24:10
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom001. 2023/2/16 22:24:11
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom11. 2023/2/16 22:24:12
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom111222. 2023/2/16 22:24:13
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom123. 2023/2/16 22:24:14
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom123456. 2023/2/16 22:24:15
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom1996. 2023/2/16 22:24:15
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom34fd. 2023/2/16 22:24:16
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom7. 2023/2/16 22:24:17
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom_ren. 2023/2/16 22:24:18
+鐜板湪涓嬭浇鐨勫寘鏄?03-custom_xiaohua. 2023/2/16 22:24:19
+鐜板湪涓嬭浇鐨勫寘鏄?03-customcopy. 2023/2/16 22:24:20
+鐜板湪涓嬭浇鐨勫寘鏄?03-customcxb. 2023/2/16 22:24:21
+鐜板湪涓嬭浇鐨勫寘鏄?03-customer. 2023/2/16 22:24:22
+鐜板湪涓嬭浇鐨勫寘鏄?03-customfafa. 2023/2/16 22:24:23
+鐜板湪涓嬭浇鐨勫寘鏄?03-customgoodzt. 2023/2/16 22:24:24
+鐜板湪涓嬭浇鐨勫寘鏄?03-customhhh. 2023/2/16 22:24:25
+鐜板湪涓嬭浇鐨勫寘鏄?03-customli. 2023/2/16 22:24:26
+鐜板湪涓嬭浇鐨勫寘鏄?03-customlsidemoqi. 2023/2/16 22:24:27
+鐜板湪涓嬭浇鐨勫寘鏄?03-custommmq. 2023/2/16 22:24:27
+鐜板湪涓嬭浇鐨勫寘鏄?03-customnpm. 2023/2/16 22:24:28
+鐜板湪涓嬭浇鐨勫寘鏄?03-customok. 2023/2/16 22:24:29
+鐜板湪涓嬭浇鐨勫寘鏄?03-customs. 2023/2/16 22:24:30
+鐜板湪涓嬭浇鐨勫寘鏄?03-customs-hlq. 2023/2/16 22:24:31
+鐜板湪涓嬭浇鐨勫寘鏄?03-customwcx1015. 2023/2/16 22:24:32
+鐜板湪涓嬭浇鐨勫寘鏄?03-customz. 2023/2/16 22:24:33
+鐜板湪涓嬭浇鐨勫寘鏄?03-custon. 2023/2/16 22:24:34
+鐜板湪涓嬭浇鐨勫寘鏄?03-custorn. 2023/2/16 22:24:35
+鐜板湪涓嬭浇鐨勫寘鏄?03-defined-me. 2023/2/16 22:24:35
+鐜板湪涓嬭浇鐨勫寘鏄?03-defined-memy. 2023/2/16 22:24:36
+鐜板湪涓嬭浇鐨勫寘鏄?03-extends. 2023/2/16 22:24:37
+鐜板湪涓嬭浇鐨勫寘鏄?03-github-paged-profile-search. 2023/2/16 22:24:38
+鐜板湪涓嬭浇鐨勫寘鏄?03-global-variables. 2023/2/16 22:24:39
+鐜板湪涓嬭浇鐨勫寘鏄?03-guo-custom. 2023/2/16 22:24:40
+鐜板湪涓嬭浇鐨勫寘鏄?03-hyl. 2023/2/16 22:24:40
+鐜板湪涓嬭浇鐨勫寘鏄?03-index. 2023/2/16 22:24:41
+鐜板湪涓嬭浇鐨勫寘鏄?03-library. 2023/2/16 22:24:42
+鐜板湪涓嬭浇鐨勫寘鏄?03-lion-lib. 2023/2/16 22:24:43
+鐜板湪涓嬭浇鐨勫寘鏄?03-lion-lib-69. 2023/2/16 22:24:45
+鐜板湪涓嬭浇鐨勫寘鏄?03-luoqingzhu-tools-kkk. 2023/2/16 22:24:45
+鐜板湪涓嬭浇鐨勫寘鏄?03-maincustom. 2023/2/16 22:24:46
+鐜板湪涓嬭浇鐨勫寘鏄?03-math-utils. 2023/2/16 22:24:47
+鐜板湪涓嬭浇鐨勫寘鏄?03-maths-project. 2023/2/16 22:24:48
+鐜板湪涓嬭浇鐨勫寘鏄?03-maths-util. 2023/2/16 22:24:49
+鐜板湪涓嬭浇鐨勫寘鏄?03-modelstudy. 2023/2/16 22:24:49
+鐜板湪涓嬭浇鐨勫寘鏄?03-module-zhouguanglei. 2023/2/16 22:24:50
+鐜板湪涓嬭浇鐨勫寘鏄?03-my-self. 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-zhoumz-1.0.0.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-zhp-1.0.0.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-zhu-1.0.0.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom-zifeng-1.0.1.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom001-1.0.1.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom11-1.0.0.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom111222-1.0.0.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom123-1.2.1.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom123456-1.0.0.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom1996-1.0.1.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom34fd-1.0.1.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom7-1.0.3.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customcopy-1.0.1.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customcxb-1.0.0.tgz 2023/2/16 22:24:51
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customer-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customfafa-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customgoodzt-1.0.2.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customhhh-1.0.1.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customli-1.0.1.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customlsidemoqi-1.0.1.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custommmq-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customnpm-1.0.1.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customok-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customs-1.0.11.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customs-hlq-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customwcx1015-1.0.1.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-customz-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom_ren-1.0.1.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custom_xiaohua-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custon-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-custorn-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-defined-me-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-defined-memy-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-extends-1.0.1.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-github-paged-profile-search-1.1.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-global-variables-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-guo-custom-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-hyl-1.0.1.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-index-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-library-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-lion-lib-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-lion-lib-69-1.1.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-luoqingzhu-tools-kkk-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-maincustom-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-math-utils-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-maths-project-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-maths-util-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-modelstudy-1.0.1.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-module-zhouguanglei-1.1.5.tgz 2023/2/16 22:24:52
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-my-self-1.0.0.tgz 2023/2/16 22:24:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-zhoumz-1.0.0 2023/2/16 22:24:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-zhp-1.0.0 2023/2/16 22:24:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-zhu-1.0.0 2023/2/16 22:24:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom-zifeng-1.0.1 2023/2/16 22:24:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom001-1.0.1 2023/2/16 22:24:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom11-1.0.0 2023/2/16 22:24:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom111222-1.0.0 2023/2/16 22:24:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom123-1.2.1 2023/2/16 22:24:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom123456-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom1996-1.0.1 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom34fd-1.0.1 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom7-1.0.3 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customcopy-1.0.1 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customcxb-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customer-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customfafa-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customgoodzt-1.0.2 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customhhh-1.0.1 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customli-1.0.1 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customlsidemoqi-1.0.1 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custommmq-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customnpm-1.0.1 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customok-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customs-1.0.11 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customs-hlq-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customwcx1015-1.0.1 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-customz-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom_ren-1.0.1 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custom_xiaohua-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custon-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-custorn-1.0.0 2023/2/16 22:24:53
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-defined-me-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-defined-memy-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-extends-1.0.1 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-github-paged-profile-search-1.1.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-global-variables-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-guo-custom-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-hyl-1.0.1 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-index-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-library-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-lion-lib-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-lion-lib-69-1.1.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-luoqingzhu-tools-kkk-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-maincustom-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-math-utils-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-maths-project-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-maths-util-1.0.0 2023/2/16 22:24:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-modelstudy-1.0.1 2023/2/16 22:24:55
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-module-zhouguanglei-1.1.5 2023/2/16 22:24:55
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-my-self-1.0.0 2023/2/16 22:24:55
+***************finish analyze 03-custom-zhoumz.csv. It is benign
+ 2023/2/16 22:24:55***************finish analyze 03-custom-zhp.csv. It is benign
+ 2023/2/16 22:24:56***************finish analyze 03-custom-zhu.csv. It is benign
+ 2023/2/16 22:24:57***************finish analyze 03-custom-zifeng.csv. It is benign
+ 2023/2/16 22:24:57***************finish analyze 03-custom001.csv. It is benign
+ 2023/2/16 22:24:58***************finish analyze 03-custom11.csv. It is benign
+ 2023/2/16 22:24:59***************finish analyze 03-custom111222.csv. It is benign
+ 2023/2/16 22:25:00***************finish analyze 03-custom123.csv. It is benign
+ 2023/2/16 22:25:00***************finish analyze 03-custom123456.csv. It is benign
+ 2023/2/16 22:25:01***************finish analyze 03-custom1996.csv. It is benign
+ 2023/2/16 22:25:02***************finish analyze 03-custom34fd.csv. It is benign
+ 2023/2/16 22:25:02***************finish analyze 03-custom7.csv. It is benign
+ 2023/2/16 22:25:03***************finish analyze 03-customcopy.csv. It is benign
+ 2023/2/16 22:25:04***************finish analyze 03-customcxb.csv. It is benign
+ 2023/2/16 22:25:05***************finish analyze 03-customer.csv. It is benign
+ 2023/2/16 22:25:05***************finish analyze 03-customfafa.csv. It is benign
+ 2023/2/16 22:25:06***************finish analyze 03-customgoodzt.csv. It is benign
+ 2023/2/16 22:25:07***************finish analyze 03-customhhh.csv. It is benign
+ 2023/2/16 22:25:07***************finish analyze 03-customli.csv. It is benign
+ 2023/2/16 22:25:08***************finish analyze 03-customlsidemoqi.csv. It is benign
+ 2023/2/16 22:25:09***************finish analyze 03-custommmq.csv. It is benign
+ 2023/2/16 22:25:09***************finish analyze 03-customnpm.csv. It is benign
+ 2023/2/16 22:25:10***************finish analyze 03-customok.csv. It is benign
+ 2023/2/16 22:25:11***************finish analyze 03-customs-hlq.csv. It is benign
+ 2023/2/16 22:25:12***************finish analyze 03-customs.csv. It is benign
+ 2023/2/16 22:25:12***************finish analyze 03-customwcx1015.csv. It is benign
+ 2023/2/16 22:25:13***************finish analyze 03-customz.csv. It is benign
+ 2023/2/16 22:25:14***************finish analyze 03-custom_ren.csv. It is benign
+ 2023/2/16 22:25:14***************finish analyze 03-custom_xiaohua.csv. It is benign
+ 2023/2/16 22:25:15***************finish analyze 03-custon.csv. It is benign
+ 2023/2/16 22:25:16***************finish analyze 03-custorn.csv. It is benign
+ 2023/2/16 22:25:17***************finish analyze 03-defined-me.csv. It is benign
+ 2023/2/16 22:25:17***************finish analyze 03-defined-memy.csv. It is benign
+ 2023/2/16 22:25:18***************finish analyze 03-extends.csv. It is benign
+ 2023/2/16 22:25:19***************finish analyze 03-github-paged-profile-search.csv. It is benign
+ 2023/2/16 22:25:19***************finish analyze 03-global-variables.csv. It is benign
+ 2023/2/16 22:25:20***************finish analyze 03-guo-custom.csv. It is benign
+ 2023/2/16 22:25:21***************finish analyze 03-hyl.csv. It is benign
+ 2023/2/16 22:25:22***************finish analyze 03-index.csv. It is benign
+ 2023/2/16 22:25:22***************finish analyze 03-library.csv. It is benign
+ 2023/2/16 22:25:23***************finish analyze 03-lion-lib-69.csv. It is benign
+ 2023/2/16 22:25:24***************finish analyze 03-lion-lib.csv. It is benign
+ 2023/2/16 22:25:24***************finish analyze 03-luoqingzhu-tools-kkk.csv. It is benign
+ 2023/2/16 22:25:25***************finish analyze 03-maincustom.csv. It is benign
+ 2023/2/16 22:25:26***************finish analyze 03-math-utils.csv. It is benign
+ 2023/2/16 22:25:26***************finish analyze 03-maths-project.csv. It is benign
+ 2023/2/16 22:25:27***************finish analyze 03-maths-util.csv. It is benign
+ 2023/2/16 22:25:28***************finish analyze 03-modelstudy.csv. It is benign
+ 2023/2/16 22:25:29***************finish analyze 03-module-zhouguanglei.csv. It is benign
+ 2023/2/16 22:25:29***************finish analyze 03-my-self.csv. It is benign
+ 2023/2/16 22:25:30mkdir C:\Users\huchaoqun\Desktop\璇剧▼\姣曚笟璁捐\detect-malicious-npm-package-with-machine-learning\feature-extract\material\registry\10 2023/2/16 22:25:30
+鐜板湪涓嬭浇鐨勫寘鏄?03-npm. 2023/2/16 22:25:31
+鐜板湪涓嬭浇鐨勫寘鏄?03-npm-abc. 2023/2/16 22:25:32
+鐜板湪涓嬭浇鐨勫寘鏄?03-npm-abcd. 2023/2/16 22:25:33
+鐜板湪涓嬭浇鐨勫寘鏄?03-ooooooooo. 2023/2/16 22:25:34
+鐜板湪涓嬭浇鐨勫寘鏄?03-project-dirsize. 2023/2/16 22:25:35
+鐜板湪涓嬭浇鐨勫寘鏄?03-qsmodules. 2023/2/16 22:25:36
+鐜板湪涓嬭浇鐨勫寘鏄?03-random-messages. 2023/2/16 22:25:37
+鐜板湪涓嬭浇鐨勫寘鏄?03-raysealee-custom. 2023/2/16 22:25:38
+鐜板湪涓嬭浇鐨勫寘鏄?03-rnt-lib. 2023/2/16 22:25:39
+鐜板湪涓嬭浇鐨勫寘鏄?03-scripts. 2023/2/16 22:25:40
+鐜板湪涓嬭浇鐨勫寘鏄?03-self. 2023/2/16 22:25:41
+鐜板湪涓嬭浇鐨勫寘鏄?03-self-wxq. 2023/2/16 22:25:42
+鐜板湪涓嬭浇鐨勫寘鏄?03-selfasa. 2023/2/16 22:25:43
+鐜板湪涓嬭浇鐨勫寘鏄?03-testcustom. 2023/2/16 22:25:44
+鐜板湪涓嬭浇鐨勫寘鏄?03-testuploadingnpm. 2023/2/16 22:25:45
+鐜板湪涓嬭浇鐨勫寘鏄?03-todo-list-huzaifak. 2023/2/16 22:25:46
+鐜板湪涓嬭浇鐨勫寘鏄?03-up-npm. 2023/2/16 22:25:47
+鐜板湪涓嬭浇鐨勫寘鏄?03-webpack-number. 2023/2/16 22:25:48
+鐜板湪涓嬭浇鐨勫寘鏄?03-webpack-numbers. 2023/2/16 22:25:49
+鐜板湪涓嬭浇鐨勫寘鏄?03-webpack-numbers-lr. 2023/2/16 22:25:50
+鐜板湪涓嬭浇鐨勫寘鏄?03-wjhyj1124. 2023/2/16 22:25:51
+鐜板湪涓嬭浇鐨勫寘鏄?03.custom-210425. 2023/2/16 22:25:51
+鐜板湪涓嬭浇鐨勫寘鏄?03.liabgyuankang. 2023/2/16 22:25:52
+鐜板湪涓嬭浇鐨勫寘鏄?03.modulse. 2023/2/16 22:25:53
+鐜板湪涓嬭浇鐨勫寘鏄?030-custom-wyt. 2023/2/16 22:25:54
+鐜板湪涓嬭浇鐨勫寘鏄?0303-lb3-paket. 2023/2/16 22:25:55
+鐜板湪涓嬭浇鐨勫寘鏄?03051151beijing. 2023/2/16 22:25:56
+鐜板湪涓嬭浇鐨勫寘鏄?031212-custom. 2023/2/16 22:25:56
+鐜板湪涓嬭浇鐨勫寘鏄?0317wyh. 2023/2/16 22:25:57
+鐜板湪涓嬭浇鐨勫寘鏄?0323exam. 2023/2/16 22:25:58
+鐜板湪涓嬭浇鐨勫寘鏄?0324_work. 2023/2/16 22:25:59
+鐜板湪涓嬭浇鐨勫寘鏄?0326-cxdgw. 2023/2/16 22:26:00
+鐜板湪涓嬭浇鐨勫寘鏄?0326-dgw. 2023/2/16 22:26:01
+鐜板湪涓嬭浇鐨勫寘鏄?033--customl. 2023/2/16 22:26:02
+鐜板湪涓嬭浇鐨勫寘鏄?033-custom. 2023/2/16 22:26:03
+鐜板湪涓嬭浇鐨勫寘鏄?03333-custom. 2023/2/16 22:26:03
+鐜板湪涓嬭浇鐨勫寘鏄?03_09_2019. 2023/2/16 22:26:04
+鐜板湪涓嬭浇鐨勫寘鏄?03_a_package. 2023/2/16 22:26:05
+鐜板湪涓嬭浇鐨勫寘鏄?03_bin. 2023/2/16 22:26:06
+鐜板湪涓嬭浇鐨勫寘鏄?03_ceshi. 2023/2/16 22:26:07
+鐜板湪涓嬭浇鐨勫寘鏄?03_class. 2023/2/16 22:26:08
+鐜板湪涓嬭浇鐨勫寘鏄?03_custom_isxeq. 2023/2/16 22:26:08
+鐜板湪涓嬭浇鐨勫寘鏄?03_customss. 2023/2/16 22:26:09
+鐜板湪涓嬭浇鐨勫寘鏄?03_demons. 2023/2/16 22:26:10
+鐜板湪涓嬭浇鐨勫寘鏄?03_my_utils. 2023/2/16 22:26:11
+鐜板湪涓嬭浇鐨勫寘鏄?03_node_1. 2023/2/16 22:26:12
+鐜板湪涓嬭浇鐨勫寘鏄?03_npm-ccc. 2023/2/16 22:26:12
+鐜板湪涓嬭浇鐨勫寘鏄?03_npm-library-test. 2023/2/16 22:26:13
+鐜板湪涓嬭浇鐨勫寘鏄?03_npm_utils. 2023/2/16 22:26:14
+鐜板湪涓嬭浇鐨勫寘鏄?03_random. 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-npm-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-npm-abc-1.1.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-npm-abcd-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-ooooooooo-1.0.2.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-project-dirsize-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-qsmodules-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-random-messages-1.0.2.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-raysealee-custom-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-rnt-lib-1.1.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-scripts-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-self-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-self-wxq-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-selfasa-1.1.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-testcustom-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-testuploadingnpm-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-todo-list-huzaifak-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-up-npm-1.0.1.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-webpack-number-1.0.1.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-webpack-numbers-1.0.1.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-webpack-numbers-lr-1.0.1.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03-wjhyj1124-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03.custom-210425-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03.liabgyuankang-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03.modulse-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 030-custom-wyt-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0303-lb3-paket-1.0.1.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03051151beijing-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 031212-custom-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0317wyh-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0323exam-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0324_work-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0326-cxdgw-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0326-dgw-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 033--customl-1.0.1.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 033-custom-1.0.2.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03333-custom-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_09_2019-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_a_package-1.1.1.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_bin-1.0.0.tgz 2023/2/16 22:26:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_ceshi-1.0.0.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_class-1.0.1.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_customss-1.0.0.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_custom_isxeq-1.0.1.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_demons-1.0.1.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_my_utils-1.0.0.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_node_1-1.0.0.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_npm-ccc-1.1.0.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_npm-library-test-1.0.0.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_npm_utils-1.0.0.tgz 2023/2/16 22:26:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_random-1.0.0.tgz 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-npm-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-npm-abc-1.1.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-npm-abcd-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-ooooooooo-1.0.2 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-project-dirsize-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-qsmodules-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-random-messages-1.0.2 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-raysealee-custom-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-rnt-lib-1.1.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-scripts-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-self-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-self-wxq-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-selfasa-1.1.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-testcustom-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-testuploadingnpm-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-todo-list-huzaifak-1.0.0 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-up-npm-1.0.1 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-webpack-number-1.0.1 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-webpack-numbers-1.0.1 2023/2/16 22:26:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-webpack-numbers-lr-1.0.1 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03-wjhyj1124-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03.custom-210425-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03.liabgyuankang-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03.modulse-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 030-custom-wyt-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0303-lb3-paket-1.0.1 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03051151beijing-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 031212-custom-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0317wyh-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0323exam-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0324_work-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0326-cxdgw-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0326-dgw-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 033--customl-1.0.1 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 033-custom-1.0.2 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03333-custom-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_09_2019-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_a_package-1.1.1 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_bin-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_ceshi-1.0.0 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_class-1.0.1 2023/2/16 22:26:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_customss-1.0.0 2023/2/16 22:26:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_custom_isxeq-1.0.1 2023/2/16 22:26:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_demons-1.0.1 2023/2/16 22:26:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_my_utils-1.0.0 2023/2/16 22:26:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_node_1-1.0.0 2023/2/16 22:26:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_npm-ccc-1.1.0 2023/2/16 22:26:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_npm-library-test-1.0.0 2023/2/16 22:26:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_npm_utils-1.0.0 2023/2/16 22:26:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_random-1.0.0 2023/2/16 22:26:18
+***************finish analyze 03-npm-abc.csv. It is benign
+ 2023/2/16 22:26:19***************finish analyze 03-npm-abcd.csv. It is benign
+ 2023/2/16 22:26:19***************finish analyze 03-npm.csv. It is benign
+ 2023/2/16 22:26:20***************finish analyze 03-ooooooooo.csv. It is benign
+ 2023/2/16 22:26:21***************finish analyze 03-project-dirsize.csv. It is benign
+ 2023/2/16 22:26:22***************finish analyze 03-qsmodules.csv. It is benign
+ 2023/2/16 22:26:22***************finish analyze 03-random-messages.csv. It is benign
+ 2023/2/16 22:26:23***************finish analyze 03-raysealee-custom.csv. It is benign
+ 2023/2/16 22:26:24***************finish analyze 03-rnt-lib.csv. It is benign
+ 2023/2/16 22:26:24***************finish analyze 03-scripts.csv. It is benign
+ 2023/2/16 22:26:25***************finish analyze 03-self-wxq.csv. It is benign
+ 2023/2/16 22:26:26***************finish analyze 03-self.csv. It is benign
+ 2023/2/16 22:26:27***************finish analyze 03-selfasa.csv. It is benign
+ 2023/2/16 22:26:27***************finish analyze 03-testcustom.csv. It is benign
+ 2023/2/16 22:26:28***************finish analyze 03-testuploadingnpm.csv. It is benign
+ 2023/2/16 22:26:29***************finish analyze 03-todo-list-huzaifak.csv. It is benign
+ 2023/2/16 22:26:29***************finish analyze 03-up-npm.csv. It is benign
+ 2023/2/16 22:26:30***************finish analyze 03-webpack-number.csv. It is benign
+ 2023/2/16 22:26:31***************finish analyze 03-webpack-numbers-lr.csv. It is benign
+ 2023/2/16 22:26:31***************finish analyze 03-webpack-numbers.csv. It is benign
+ 2023/2/16 22:26:32***************finish analyze 03-wjhyj1124.csv. It is benign
+ 2023/2/16 22:26:33***************finish analyze 03.custom-210425.csv. It is benign
+ 2023/2/16 22:26:33***************finish analyze 03.liabgyuankang.csv. It is benign
+ 2023/2/16 22:26:34***************finish analyze 03.modulse.csv. It is benign
+ 2023/2/16 22:26:35***************finish analyze 030-custom-wyt.csv. It is benign
+ 2023/2/16 22:26:36***************finish analyze 0303-lb3-paket.csv. It is benign
+ 2023/2/16 22:26:36***************finish analyze 03051151beijing.csv. It is benign
+ 2023/2/16 22:26:37***************finish analyze 031212-custom.csv. It is benign
+ 2023/2/16 22:26:38***************finish analyze 0317wyh.csv. It is benign
+ 2023/2/16 22:26:38***************finish analyze 0323exam.csv. It is benign
+ 2023/2/16 22:26:39***************finish analyze 0324_work.csv. It is benign
+ 2023/2/16 22:26:40***************finish analyze 0326-cxdgw.csv. It is benign
+ 2023/2/16 22:26:40***************finish analyze 0326-dgw.csv. It is benign
+ 2023/2/16 22:26:41***************finish analyze 033--customl.csv. It is benign
+ 2023/2/16 22:26:42***************finish analyze 033-custom.csv. It is benign
+ 2023/2/16 22:26:43***************finish analyze 03333-custom.csv. It is benign
+ 2023/2/16 22:26:43***************finish analyze 03_09_2019.csv. It is benign
+ 2023/2/16 22:26:44***************finish analyze 03_a_package.csv. It is benign
+ 2023/2/16 22:26:45***************finish analyze 03_bin.csv. It is benign
+ 2023/2/16 22:26:45***************finish analyze 03_ceshi.csv. It is benign
+ 2023/2/16 22:26:46***************finish analyze 03_class.csv. It is benign
+ 2023/2/16 22:26:47***************finish analyze 03_customss.csv. It is benign
+ 2023/2/16 22:26:47***************finish analyze 03_custom_isxeq.csv. It is benign
+ 2023/2/16 22:26:48***************finish analyze 03_demons.csv. It is benign
+ 2023/2/16 22:26:49***************finish analyze 03_my_utils.csv. It is benign
+ 2023/2/16 22:26:50***************finish analyze 03_node_1.csv. It is benign
+ 2023/2/16 22:26:50***************finish analyze 03_npm-ccc.csv. It is benign
+ 2023/2/16 22:26:51***************finish analyze 03_npm-library-test.csv. It is benign
+ 2023/2/16 22:26:52***************finish analyze 03_npm_utils.csv. It is benign
+ 2023/2/16 22:26:52***************finish analyze 03_random.csv. It is benign
+ 2023/2/16 22:26:53mkdir C:\Users\huchaoqun\Desktop\璇剧▼\姣曚笟璁捐\detect-malicious-npm-package-with-machine-learning\feature-extract\material\registry\11 2023/2/16 22:26:53
+鐜板湪涓嬭浇鐨勫寘鏄?03_todo. 2023/2/16 22:26:55
+鐜板湪涓嬭浇鐨勫寘鏄?03_username. 2023/2/16 22:26:56
+鐜板湪涓嬭浇鐨勫寘鏄?03_yyb_defined. 2023/2/16 22:26:57
+鐜板湪涓嬭浇鐨勫寘鏄?03asd25. 2023/2/16 22:26:58
+鐜板湪涓嬭浇鐨勫寘鏄?03b. 2023/2/16 22:26:59
+鐜板湪涓嬭浇鐨勫寘鏄?03custom999. 2023/2/16 22:26:59
+鐜板湪涓嬭浇鐨勫寘鏄?03day. 2023/2/16 22:27:05
+鐜板湪涓嬭浇鐨勫寘鏄?03factorial. 2023/2/16 22:27:06
+鐜板湪涓嬭浇鐨勫寘鏄?03lait. 2023/2/16 22:27:07
+鐜板湪涓嬭浇鐨勫寘鏄?03ldy_custom. 2023/2/16 22:27:08
+鐜板湪涓嬭浇鐨勫寘鏄?03longemodule. 2023/2/16 22:27:09
+鐜板湪涓嬭浇鐨勫寘鏄?03main. 2023/2/16 22:27:10
+鐜板湪涓嬭浇鐨勫寘鏄?03mymath. 2023/2/16 22:27:11
+鐜板湪涓嬭浇鐨勫寘鏄?03mynpm. 2023/2/16 22:27:12
+鐜板湪涓嬭浇鐨勫寘鏄?03npmdemoda92. 2023/2/16 22:27:13
+鐜板湪涓嬭浇鐨勫寘鏄?03npmxiaoxie. 2023/2/16 22:27:14
+鐜板湪涓嬭浇鐨勫寘鏄?03npmxiaoxiea. 2023/2/16 22:27:15
+鐜板湪涓嬭浇鐨勫寘鏄?03qaq. 2023/2/16 22:27:16
+鐜板湪涓嬭浇鐨勫寘鏄?03test. 2023/2/16 22:27:17
+鐜板湪涓嬭浇鐨勫寘鏄?03test-array-map. 2023/2/16 22:27:18
+鐜板湪涓嬭浇鐨勫寘鏄?03thirdparty. 2023/2/16 22:27:18
+鐜板湪涓嬭浇鐨勫寘鏄?03wenjianshangchuan. 2023/2/16 22:27:19
+鐜板湪涓嬭浇鐨勫寘鏄?03williammoses. 2023/2/16 22:27:20
+鐜板湪涓嬭浇鐨勫寘鏄?03xdscustom. 2023/2/16 22:27:21
+鐜板湪涓嬭浇鐨勫寘鏄?03zhbcustom. 2023/2/16 22:27:22
+鐜板湪涓嬭浇鐨勫寘鏄?04-17. 2023/2/16 22:27:23
+鐜板湪涓嬭浇鐨勫寘鏄?04-17zy. 2023/2/16 22:27:24
+鐜板湪涓嬭浇鐨勫寘鏄?04-18jineng. 2023/2/16 22:27:25
+鐜板湪涓嬭浇鐨勫寘鏄?04-23-test. 2023/2/16 22:27:26
+鐜板湪涓嬭浇鐨勫寘鏄?04-a. 2023/2/16 22:27:26
+鐜板湪涓嬭浇鐨勫寘鏄?04-biblitotheque. 2023/2/16 22:27:27
+鐜板湪涓嬭浇鐨勫寘鏄?04-buildin-nodule. 2023/2/16 22:27:28
+鐜板湪涓嬭浇鐨勫寘鏄?04-code. 2023/2/16 22:27:30
+鐜板湪涓嬭浇鐨勫寘鏄?04-currency-converter-huzaifak. 2023/2/16 22:27:31
+鐜板湪涓嬭浇鐨勫寘鏄?04-custom. 2023/2/16 22:27:32
+鐜板湪涓嬭浇鐨勫寘鏄?04-cute-puppies-cli-package. 2023/2/16 22:27:33
+鐜板湪涓嬭浇鐨勫寘鏄?04-erqi-package. 2023/2/16 22:27:34
+鐜板湪涓嬭浇鐨勫寘鏄?04-hyt. 2023/2/16 22:27:34
+鐜板湪涓嬭浇鐨勫寘鏄?04-lh_utils. 2023/2/16 22:27:35
+鐜板湪涓嬭浇鐨勫寘鏄?04-libreria. 2023/2/16 22:27:36
+鐜板湪涓嬭浇鐨勫寘鏄?04-librerias. 2023/2/16 22:27:37
+鐜板湪涓嬭浇鐨勫寘鏄?04-lion. 2023/2/16 22:27:38
+鐜板湪涓嬭浇鐨勫寘鏄?04-lion-lib. 2023/2/16 22:27:39
+鐜板湪涓嬭浇鐨勫寘鏄?04-musicplayer. 2023/2/16 22:27:42
+鐜板湪涓嬭浇鐨勫寘鏄?04-my-self. 2023/2/16 22:27:43
+鐜板湪涓嬭浇鐨勫寘鏄?04-node-ts-boilerplate. 2023/2/16 22:27:44
+鐜板湪涓嬭浇鐨勫寘鏄?04-npm-publish. 2023/2/16 22:27:45
+鐜板湪涓嬭浇鐨勫寘鏄?04-npm_fabu. 2023/2/16 22:27:46
+鐜板湪涓嬭浇鐨勫寘鏄?04-npmbag. 2023/2/16 22:27:47
+鐜板湪涓嬭浇鐨勫寘鏄?04-oct. 2023/2/16 22:27:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03asd25-1.0.0.tgz 2023/2/16 22:27:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03b-1.0.0.tgz 2023/2/16 22:27:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03custom999-1.0.1.tgz 2023/2/16 22:27:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03day-1.1.1.tgz 2023/2/16 22:27:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03factorial-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03lait-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03ldy_custom-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03longemodule-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03main-1.0.1.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03mymath-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03mynpm-1.0.1.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03npmdemoda92-1.1.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03npmxiaoxie-1.1.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03npmxiaoxiea-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03qaq-1.0.1.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03test-1.0.2.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03test-array-map-1.0.3.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03thirdparty-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03wenjianshangchuan-3.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03williammoses-0.1.5.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03xdscustom-2.4.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03zhbcustom-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_todo-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_username-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 03_yyb_defined-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-17-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-17zy-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-18jineng-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-23-test-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-a-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-biblitotheque-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-buildin-nodule-1.0.0.tgz 2023/2/16 22:27:48
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-code-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-currency-converter-huzaifak-1.1.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-custom-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-cute-puppies-cli-package-2.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-erqi-package-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-hyt-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-lh_utils-1.1.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-libreria-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-librerias-1.1.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-lion-1.2.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-lion-lib-1.1.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-musicplayer-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-my-self-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-node-ts-boilerplate-1.0.1.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-npm-publish-1.2.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-npmbag-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-npm_fabu-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-oct-1.0.0.tgz 2023/2/16 22:27:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03asd25-1.0.0 2023/2/16 22:27:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03b-1.0.0 2023/2/16 22:27:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03custom999-1.0.1 2023/2/16 22:27:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03day-1.1.1 2023/2/16 22:27:49
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03factorial-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03lait-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03ldy_custom-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03longemodule-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03main-1.0.1 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03mymath-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03mynpm-1.0.1 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03npmdemoda92-1.1.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03npmxiaoxie-1.1.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03npmxiaoxiea-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03qaq-1.0.1 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03test-1.0.2 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03test-array-map-1.0.3 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03thirdparty-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03wenjianshangchuan-3.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03williammoses-0.1.5 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03xdscustom-2.4.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03zhbcustom-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_todo-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_username-1.0.0 2023/2/16 22:27:50
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 03_yyb_defined-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-17-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-17zy-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-18jineng-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-23-test-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-a-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-biblitotheque-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-buildin-nodule-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-code-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-currency-converter-huzaifak-1.1.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-custom-1.0.0 2023/2/16 22:27:51
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-cute-puppies-cli-package-2.0.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-erqi-package-1.0.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-hyt-1.0.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-lh_utils-1.1.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-libreria-1.0.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-librerias-1.1.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-lion-1.2.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-lion-lib-1.1.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-musicplayer-1.0.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-my-self-1.0.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-node-ts-boilerplate-1.0.1 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-npm-publish-1.2.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-npmbag-1.0.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-npm_fabu-1.0.0 2023/2/16 22:27:52
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-oct-1.0.0 2023/2/16 22:27:52
+***************finish analyze 03asd25.csv. It is benign
+ 2023/2/16 22:27:53***************finish analyze 03b.csv. It is benign
+ 2023/2/16 22:27:54***************finish analyze 03custom999.csv. It is benign
+ 2023/2/16 22:27:55***************finish analyze 03day.csv. It is benign
+ 2023/2/16 22:27:55***************finish analyze 03factorial.csv. It is benign
+ 2023/2/16 22:27:56***************finish analyze 03lait.csv. It is benign
+ 2023/2/16 22:27:57***************finish analyze 03ldy_custom.csv. It is benign
+ 2023/2/16 22:27:58***************finish analyze 03longemodule.csv. It is benign
+ 2023/2/16 22:27:58***************finish analyze 03main.csv. It is benign
+ 2023/2/16 22:27:59***************finish analyze 03mymath.csv. It is benign
+ 2023/2/16 22:28:00***************finish analyze 03mynpm.csv. It is benign
+ 2023/2/16 22:28:00***************finish analyze 03npmdemoda92.csv. It is benign
+ 2023/2/16 22:28:01***************finish analyze 03npmxiaoxie.csv. It is benign
+ 2023/2/16 22:28:02***************finish analyze 03npmxiaoxiea.csv. It is benign
+ 2023/2/16 22:28:03***************finish analyze 03qaq.csv. It is benign
+ 2023/2/16 22:28:03***************finish analyze 03test-array-map.csv. It is benign
+ 2023/2/16 22:28:04***************finish analyze 03test.csv. It is benign
+ 2023/2/16 22:28:05***************finish analyze 03thirdparty.csv. It is benign
+ 2023/2/16 22:28:05***************finish analyze 03wenjianshangchuan.csv. It is benign
+ 2023/2/16 22:28:06***************finish analyze 03williammoses.csv. It is benign
+ 2023/2/16 22:28:07***************finish analyze 03xdscustom.csv. It is benign
+ 2023/2/16 22:28:08***************finish analyze 03zhbcustom.csv. It is benign
+ 2023/2/16 22:28:08***************finish analyze 03_todo.csv. It is benign
+ 2023/2/16 22:28:09***************finish analyze 03_username.csv. It is benign
+ 2023/2/16 22:28:10***************finish analyze 03_yyb_defined.csv. It is benign
+ 2023/2/16 22:28:11***************finish analyze 04-17.csv. It is benign
+ 2023/2/16 22:28:11***************finish analyze 04-17zy.csv. It is benign
+ 2023/2/16 22:28:12***************finish analyze 04-18jineng.csv. It is benign
+ 2023/2/16 22:28:13***************finish analyze 04-23-test.csv. It is benign
+ 2023/2/16 22:28:13***************finish analyze 04-a.csv. It is benign
+ 2023/2/16 22:28:14***************finish analyze 04-biblitotheque.csv. It is benign
+ 2023/2/16 22:28:15***************finish analyze 04-buildin-nodule.csv. It is benign
+ 2023/2/16 22:28:15***************finish analyze 04-code.csv. It is benign
+ 2023/2/16 22:28:16***************finish analyze 04-currency-converter-huzaifak.csv. It is benign
+ 2023/2/16 22:28:17***************finish analyze 04-custom.csv. It is benign
+ 2023/2/16 22:28:18***************finish analyze 04-cute-puppies-cli-package.csv. It is benign
+ 2023/2/16 22:28:18***************finish analyze 04-erqi-package.csv. It is benign
+ 2023/2/16 22:28:19***************finish analyze 04-hyt.csv. It is benign
+ 2023/2/16 22:28:20***************finish analyze 04-lh_utils.csv. It is benign
+ 2023/2/16 22:28:20***************finish analyze 04-libreria.csv. It is benign
+ 2023/2/16 22:28:21***************finish analyze 04-librerias.csv. It is benign
+ 2023/2/16 22:28:22***************finish analyze 04-lion-lib.csv. It is benign
+ 2023/2/16 22:28:23***************finish analyze 04-lion.csv. It is benign
+ 2023/2/16 22:28:23***************finish analyze 04-musicplayer.csv. It is benign
+ 2023/2/16 22:28:24***************finish analyze 04-my-self.csv. It is benign
+ 2023/2/16 22:28:25***************finish analyze 04-node-ts-boilerplate.csv. It is benign
+ 2023/2/16 22:28:25***************finish analyze 04-npm-publish.csv. It is benign
+ 2023/2/16 22:28:26***************finish analyze 04-npmbag.csv. It is benign
+ 2023/2/16 22:28:27***************finish analyze 04-npm_fabu.csv. It is benign
+ 2023/2/16 22:28:27***************finish analyze 04-oct.csv. It is benign
+ 2023/2/16 22:28:28mkdir C:\Users\huchaoqun\Desktop\璇剧▼\姣曚笟璁捐\detect-malicious-npm-package-with-machine-learning\feature-extract\material\registry\12 2023/2/16 22:28:28
+鐜板湪涓嬭浇鐨勫寘鏄?04-packages-and-dependencies. 2023/2/16 22:28:29
+鐜板湪涓嬭浇鐨勫寘鏄?04-proyecto-matematicas. 2023/2/16 22:28:30
+鐜板湪涓嬭浇鐨勫寘鏄?04-qsmodules. 2023/2/16 22:28:31
+鐜板湪涓嬭浇鐨勫寘鏄?04-self. 2023/2/16 22:28:32
+鐜板湪涓嬭浇鐨勫寘鏄?04-starshipz. 2023/2/16 22:28:33
+鐜板湪涓嬭浇鐨勫寘鏄?04-szhm_wcy. 2023/2/16 22:28:34
+鐜板湪涓嬭浇鐨勫寘鏄?04-test. 2023/2/16 22:28:35
+鐜板湪涓嬭浇鐨勫寘鏄?04-webpack-numbers. 2023/2/16 22:28:36
+鐜板湪涓嬭浇鐨勫寘鏄?04.12.2017. 2023/2/16 22:28:37
+鐜板湪涓嬭浇鐨勫寘鏄?041-lion-lib. 2023/2/16 22:28:38
+鐜板湪涓嬭浇鐨勫寘鏄?0417-eee-9012. 2023/2/16 22:28:39
+鐜板湪涓嬭浇鐨勫寘鏄?0418test. 2023/2/16 22:28:40
+鐜板湪涓嬭浇鐨勫寘鏄?0419--zqq. 2023/2/16 22:28:41
+鐜板湪涓嬭浇鐨勫寘鏄?0419_jianglong. 2023/2/16 22:28:42
+鐜板湪涓嬭浇鐨勫寘鏄?0419chengjinhong. 2023/2/16 22:28:42
+鐜板湪涓嬭浇鐨勫寘鏄?0419liujinhong. 2023/2/16 22:28:43
+鐜板湪涓嬭浇鐨勫寘鏄?0423-lijintao. 2023/2/16 22:28:44
+鐜板湪涓嬭浇鐨勫寘鏄?0425-imooc-test. 2023/2/16 22:28:45
+鐜板湪涓嬭浇鐨勫寘鏄?042501bj. 2023/2/16 22:28:46
+鐜板湪涓嬭浇鐨勫寘鏄?0425xm. 2023/2/16 22:28:47
+鐜板湪涓嬭浇鐨勫寘鏄?0425zjhdemofn. 2023/2/16 22:28:48
+鐜板湪涓嬭浇鐨勫寘鏄?0427rkpublish. 2023/2/16 22:28:49
+鐜板湪涓嬭浇鐨勫寘鏄?04_111. 2023/2/16 22:28:49
+鐜板湪涓嬭浇鐨勫寘鏄?04_currency_conveerter. 2023/2/16 22:28:50
+鐜板湪涓嬭浇鐨勫寘鏄?04_nodedersornegibyrecep. 2023/2/16 22:28:52
+鐜板湪涓嬭浇鐨勫寘鏄?04_npmdevolp. 2023/2/16 22:28:53
+鐜板湪涓嬭浇鐨勫寘鏄?04_publish_gttest. 2023/2/16 22:28:54
+鐜板湪涓嬭浇鐨勫寘鏄?04a-liu-list. 2023/2/16 22:28:54
+鐜板湪涓嬭浇鐨勫寘鏄?04daxie. 2023/2/16 22:28:55
+鐜板湪涓嬭浇鐨勫寘鏄?04dhh6666. 2023/2/16 22:28:56
+鐜板湪涓嬭浇鐨勫寘鏄?04egypt-orgchart. 2023/2/16 22:28:57
+鐜板湪涓嬭浇鐨勫寘鏄?04fengzhi. 2023/2/16 22:28:58
+鐜板湪涓嬭浇鐨勫寘鏄?04home22. 2023/2/16 22:28:59
+鐜板湪涓嬭浇鐨勫寘鏄?04npmlowercase. 2023/2/16 22:28:59
+鐜板湪涓嬭浇鐨勫寘鏄?04npmrandomnumber. 2023/2/16 22:29:00
+鐜板湪涓嬭浇鐨勫寘鏄?04publish. 2023/2/16 22:29:01
+鐜板湪涓嬭浇鐨勫寘鏄?04uppercase. 2023/2/16 22:29:03
+鐜板湪涓嬭浇鐨勫寘鏄?04yyl. 2023/2/16 22:29:04
+鐜板湪涓嬭浇鐨勫寘鏄?05-add-script. 2023/2/16 22:29:05
+鐜板湪涓嬭浇鐨勫寘鏄?05-clima-mundo. 2023/2/16 22:29:06
+鐜板湪涓嬭浇鐨勫寘鏄?05-custom. 2023/2/16 22:29:07
+鐜板湪涓嬭浇鐨勫寘鏄?05-custom-node. 2023/2/16 22:29:07
+鐜板湪涓嬭浇鐨勫寘鏄?05-fabu. 2023/2/16 22:29:08
+鐜板湪涓嬭浇鐨勫寘鏄?05-fabu-2103. 2023/2/16 22:29:09
+鐜板湪涓嬭浇鐨勫寘鏄?05-fabule. 2023/2/16 22:29:10
+鐜板湪涓嬭浇鐨勫寘鏄?05-feb. 2023/2/16 22:29:11
+鐜板湪涓嬭浇鐨勫寘鏄?05-hh. 2023/2/16 22:29:12
+鐜板湪涓嬭浇鐨勫寘鏄?05-lx_utils. 2023/2/16 22:29:13
+鐜板湪涓嬭浇鐨勫寘鏄?05-me. 2023/2/16 22:29:14
+鐜板湪涓嬭浇鐨勫寘鏄?05-modules. 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-packages-and-dependencies-0.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-proyecto-matematicas-1.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-qsmodules-1.1.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-self-1.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-starshipz-1.1.2.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-szhm_wcy-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-test-1.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04-webpack-numbers-1.0.3.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04.12.2017-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 041-lion-lib-1.1.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0417-eee-9012-0.0.2.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0418test-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0419--zqq-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0419chengjinhong-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0419liujinhong-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0419_jianglong-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0423-lijintao-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0425-imooc-test-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 042501bj-1.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0425xm-1.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0425zjhdemofn-1.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0427rkpublish-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04a-liu-list-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04daxie-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04dhh6666-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04egypt-orgchart-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04fengzhi-0.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04home22-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04npmlowercase-1.2.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04npmrandomnumber-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04publish-0.0.2.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04uppercase-1.0.4.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04yyl-1.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04_111-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04_currency_conveerter-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04_nodedersornegibyrecep-1.1.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04_npmdevolp-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 04_publish_gttest-1.0.1.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-add-script-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-clima-mundo-1.0.0.tgz 2023/2/16 22:29:15
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-custom-1.0.0.tgz 2023/2/16 22:29:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-custom-node-1.0.1.tgz 2023/2/16 22:29:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-fabu-1.0.0.tgz 2023/2/16 22:29:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-fabu-2103-1.2.0.tgz 2023/2/16 22:29:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-fabule-1.0.0.tgz 2023/2/16 22:29:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-feb-1.0.0.tgz 2023/2/16 22:29:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-hh-1.0.0.tgz 2023/2/16 22:29:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-lx_utils-1.0.0.tgz 2023/2/16 22:29:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-me-1.0.1.tgz 2023/2/16 22:29:16
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-modules-1.0.0.tgz 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-packages-and-dependencies-0.0.1 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-proyecto-matematicas-1.0.1 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-qsmodules-1.1.1 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-self-1.0.1 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-starshipz-1.1.2 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-szhm_wcy-1.0.0 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-test-1.0.1 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04-webpack-numbers-1.0.3 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04.12.2017-1.0.0 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 041-lion-lib-1.1.0 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0417-eee-9012-0.0.2 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0418test-1.0.0 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0419--zqq-1.0.0 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0419chengjinhong-1.0.0 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0419liujinhong-1.0.0 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0419_jianglong-1.0.0 2023/2/16 22:29:16
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0423-lijintao-1.0.0 2023/2/16 22:29:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0425-imooc-test-1.0.0 2023/2/16 22:29:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 042501bj-1.0.1 2023/2/16 22:29:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0425xm-1.0.1 2023/2/16 22:29:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0425zjhdemofn-1.0.1 2023/2/16 22:29:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0427rkpublish-1.0.0 2023/2/16 22:29:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04a-liu-list-1.0.0 2023/2/16 22:29:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04daxie-1.0.0 2023/2/16 22:29:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04dhh6666-1.0.0 2023/2/16 22:29:17
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04egypt-orgchart-1.0.0 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04fengzhi-0.0.1 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04home22-1.0.0 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04npmlowercase-1.2.0 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04npmrandomnumber-1.0.0 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04publish-0.0.2 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04uppercase-1.0.4 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04yyl-1.0.1 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04_111-1.0.0 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04_currency_conveerter-1.0.0 2023/2/16 22:29:18
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04_nodedersornegibyrecep-1.1.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04_npmdevolp-1.0.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 04_publish_gttest-1.0.1 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-add-script-1.0.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-clima-mundo-1.0.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-custom-1.0.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-custom-node-1.0.1 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-fabu-1.0.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-fabu-2103-1.2.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-fabule-1.0.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-feb-1.0.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-hh-1.0.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-lx_utils-1.0.0 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-me-1.0.1 2023/2/16 22:29:19
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-modules-1.0.0 2023/2/16 22:29:19
+***************finish analyze 04-packages-and-dependencies.csv. It is benign
+ 2023/2/16 22:29:20***************finish analyze 04-proyecto-matematicas.csv. It is benign
+ 2023/2/16 22:29:21***************finish analyze 04-qsmodules.csv. It is benign
+ 2023/2/16 22:29:21***************finish analyze 04-self.csv. It is benign
+ 2023/2/16 22:29:22***************finish analyze 04-starshipz.csv. It is benign
+ 2023/2/16 22:29:23***************finish analyze 04-szhm_wcy.csv. It is benign
+ 2023/2/16 22:29:23***************finish analyze 04-test.csv. It is benign
+ 2023/2/16 22:29:24***************finish analyze 04-webpack-numbers.csv. It is benign
+ 2023/2/16 22:29:25***************finish analyze 04.12.2017.csv. It is benign
+ 2023/2/16 22:29:26***************finish analyze 041-lion-lib.csv. It is benign
+ 2023/2/16 22:29:26***************finish analyze 0417-eee-9012.csv. It is benign
+ 2023/2/16 22:29:27***************finish analyze 0418test.csv. It is benign
+ 2023/2/16 22:29:28***************finish analyze 0419--zqq.csv. It is benign
+ 2023/2/16 22:29:28***************finish analyze 0419chengjinhong.csv. It is benign
+ 2023/2/16 22:29:29***************finish analyze 0419liujinhong.csv. It is benign
+ 2023/2/16 22:29:30***************finish analyze 0419_jianglong.csv. It is benign
+ 2023/2/16 22:29:31***************finish analyze 0423-lijintao.csv. It is benign
+ 2023/2/16 22:29:31***************finish analyze 0425-imooc-test.csv. It is benign
+ 2023/2/16 22:29:32***************finish analyze 042501bj.csv. It is benign
+ 2023/2/16 22:29:33***************finish analyze 0425xm.csv. It is benign
+ 2023/2/16 22:29:33***************finish analyze 0425zjhdemofn.csv. It is benign
+ 2023/2/16 22:29:34***************finish analyze 0427rkpublish.csv. It is benign
+ 2023/2/16 22:29:35***************finish analyze 04a-liu-list.csv. It is benign
+ 2023/2/16 22:29:36***************finish analyze 04daxie.csv. It is benign
+ 2023/2/16 22:29:36***************finish analyze 04dhh6666.csv. It is benign
+ 2023/2/16 22:29:37***************finish analyze 04egypt-orgchart.csv. It is benign
+ 2023/2/16 22:29:38***************finish analyze 04fengzhi.csv. It is benign
+ 2023/2/16 22:29:38***************finish analyze 04home22.csv. It is benign
+ 2023/2/16 22:29:39***************finish analyze 04npmlowercase.csv. It is benign
+ 2023/2/16 22:29:40***************finish analyze 04npmrandomnumber.csv. It is benign
+ 2023/2/16 22:29:41***************finish analyze 04publish.csv. It is benign
+ 2023/2/16 22:29:41***************finish analyze 04uppercase.csv. It is benign
+ 2023/2/16 22:29:42***************finish analyze 04yyl.csv. It is benign
+ 2023/2/16 22:29:43***************finish analyze 04_111.csv. It is benign
+ 2023/2/16 22:29:43***************finish analyze 04_currency_conveerter.csv. It is benign
+ 2023/2/16 22:29:44***************finish analyze 04_nodedersornegibyrecep.csv. It is benign
+ 2023/2/16 22:29:45***************finish analyze 04_npmdevolp.csv. It is benign
+ 2023/2/16 22:29:45***************finish analyze 04_publish_gttest.csv. It is benign
+ 2023/2/16 22:29:46***************finish analyze 05-add-script.csv. It is benign
+ 2023/2/16 22:29:47***************finish analyze 05-clima-mundo.csv. It is benign
+ 2023/2/16 22:29:48***************finish analyze 05-custom-node.csv. It is benign
+ 2023/2/16 22:29:48***************finish analyze 05-custom.csv. It is benign
+ 2023/2/16 22:29:49***************finish analyze 05-fabu-2103.csv. It is benign
+ 2023/2/16 22:29:50***************finish analyze 05-fabu.csv. It is benign
+ 2023/2/16 22:29:50***************finish analyze 05-fabule.csv. It is benign
+ 2023/2/16 22:29:51***************finish analyze 05-feb.csv. It is benign
+ 2023/2/16 22:29:52***************finish analyze 05-hh.csv. It is benign
+ 2023/2/16 22:29:53***************finish analyze 05-lx_utils.csv. It is benign
+ 2023/2/16 22:29:53***************finish analyze 05-me.csv. It is benign
+ 2023/2/16 22:29:54***************finish analyze 05-modules.csv. It is benign
+ 2023/2/16 22:29:55mkdir C:\Users\huchaoqun\Desktop\璇剧▼\姣曚笟璁捐\detect-malicious-npm-package-with-machine-learning\feature-extract\material\registry\13 2023/2/16 22:29:55
+鐜板湪涓嬭浇鐨勫寘鏄?05-mynpm. 2023/2/16 22:29:56
+鐜板湪涓嬭浇鐨勫寘鏄?05-node. 2023/2/16 22:29:57
+鐜板湪涓嬭浇鐨勫寘鏄?05-npm-test. 2023/2/16 22:29:58
+鐜板湪涓嬭浇鐨勫寘鏄?05-proyecto. 2023/2/16 22:29:59
+鐜板湪涓嬭浇鐨勫寘鏄?05-prueba-libreria. 2023/2/16 22:30:00
+鐜板湪涓嬭浇鐨勫寘鏄?05-typescript. 2023/2/16 22:30:01
+鐜板湪涓嬭浇鐨勫寘鏄?05-word-counter-huzaifak. 2023/2/16 22:30:02
+鐜板湪涓嬭浇鐨勫寘鏄?05-zk1. 2023/2/16 22:30:03
+鐜板湪涓嬭浇鐨勫寘鏄?05.learn-cli. 2023/2/16 22:30:04
+鐜板湪涓嬭浇鐨勫寘鏄?05.npm-package-demo. 2023/2/16 22:30:05
+鐜板湪涓嬭浇鐨勫寘鏄?05.xcxc. 2023/2/16 22:30:06
+鐜板湪涓嬭浇鐨勫寘鏄?0513route. 2023/2/16 22:30:07
+鐜板湪涓嬭浇鐨勫寘鏄?0517-1. 2023/2/16 22:30:08
+鐜板湪涓嬭浇鐨勫寘鏄?05192003b. 2023/2/16 22:30:09
+鐜板湪涓嬭浇鐨勫寘鏄?0520shangkela. 2023/2/16 22:30:11
+鐜板湪涓嬭浇鐨勫寘鏄?0526caikuai-kb. 2023/2/16 22:30:14
+鐜板湪涓嬭浇鐨勫寘鏄?052hide-stencil-wc. 2023/2/16 22:30:15
+鐜板湪涓嬭浇鐨勫寘鏄?05_19. 2023/2/16 22:30:16
+鐜板湪涓嬭浇鐨勫寘鏄?05__demo. 2023/2/16 22:30:17
+鐜板湪涓嬭浇鐨勫寘鏄?05_addnum. 2023/2/16 22:30:18
+鐜板湪涓嬭浇鐨勫寘鏄?05_anzuhang_utils. 2023/2/16 22:30:19
+鐜板湪涓嬭浇鐨勫寘鏄?05_custom_zuziqiu. 2023/2/16 22:30:20
+鐜板湪涓嬭浇鐨勫寘鏄?05_npm_demo. 2023/2/16 22:30:21
+鐜板湪涓嬭浇鐨勫寘鏄?05_packge_dh. 2023/2/16 22:30:22
+鐜板湪涓嬭浇鐨勫寘鏄?05_word_counter. 2023/2/16 22:30:23
+鐜板湪涓嬭浇鐨勫寘鏄?05_xl_utlis_00. 2023/2/16 22:30:24
+鐜板湪涓嬭浇鐨勫寘鏄?05a_mwh_demo. 2023/2/16 22:30:25
+鐜板湪涓嬭浇鐨勫寘鏄?05chucifabu. 2023/2/16 22:30:26
+鐜板湪涓嬭浇鐨勫寘鏄?05day. 2023/2/16 22:30:27
+鐜板湪涓嬭浇鐨勫寘鏄?05kangjia. 2023/2/16 22:30:28
+鐜板湪涓嬭浇鐨勫寘鏄?05module_package. 2023/2/16 22:30:29
+鐜板湪涓嬭浇鐨勫寘鏄?05npm. 2023/2/16 22:30:30
+鐜板湪涓嬭浇鐨勫寘鏄?05npmdate. 2023/2/16 22:30:31
+鐜板湪涓嬭浇鐨勫寘鏄?05publish. 2023/2/16 22:30:32
+鐜板湪涓嬭浇鐨勫寘鏄?05test. 2023/2/16 22:30:33
+鐜板湪涓嬭浇鐨勫寘鏄?05using-package-json. 2023/2/16 22:30:33
+鐜板湪涓嬭浇鐨勫寘鏄?06-10. 2023/2/16 22:30:34
+鐜板湪涓嬭浇鐨勫寘鏄?06-asserts. 2023/2/16 22:30:35
+鐜板湪涓嬭浇鐨勫寘鏄?06-beiyou-tools1. 2023/2/16 22:30:36
+鐜板湪涓嬭浇鐨勫寘鏄?06-beiyou-tools2. 2023/2/16 22:30:37
+鐜板湪涓嬭浇鐨勫寘鏄?06-createfolder. 2023/2/16 22:30:38
+鐜板湪涓嬭浇鐨勫寘鏄?06-db. 2023/2/16 22:30:39
+鐜板湪涓嬭浇鐨勫寘鏄?06-db-rosie. 2023/2/16 22:30:39
+鐜板湪涓嬭浇鐨勫寘鏄?06-dutur_utils. 2023/2/16 22:30:40
+鐜板湪涓嬭浇鐨勫寘鏄?06-express-server. 2023/2/16 22:30:41
+鐜板湪涓嬭浇鐨勫寘鏄?06-iq. 2023/2/16 22:30:42
+鐜板湪涓嬭浇鐨勫寘鏄?06-publish-to-npm. 2023/2/16 22:30:43
+鐜板湪涓嬭浇鐨勫寘鏄?06-publish-to-npm-first. 2023/2/16 22:30:44
+鐜板湪涓嬭浇鐨勫寘鏄?06-servidor-con-node-p1. 2023/2/16 22:30:45
+鐜板湪涓嬭浇鐨勫寘鏄?06-student-management-system. 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-mynpm-1.0.1.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-node-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-npm-test-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-proyecto-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-prueba-libreria-1.1.1.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-typescript-1.0.1.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-word-counter-huzaifak-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05-zk1-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05.learn-cli-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05.npm-package-demo-1.0.1.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05.xcxc-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0513route-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0517-1-1.0.1.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05192003b-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0520shangkela-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0526caikuai-kb-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 052hide-stencil-wc-0.1.2.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05a_mwh_demo-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05chucifabu-1.0.0.tgz 2023/2/16 22:30:46
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05day-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05kangjia-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05module_package-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05npm-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05npmdate-1.1.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05publish-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05test-1.0.1.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05using-package-json-1.0.1.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05_19-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05_addnum-1.0.1.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05_anzuhang_utils-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05_custom_zuziqiu-1.0.2.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05_npm_demo-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05_packge_dh-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05_word_counter-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05_xl_utlis_00-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 05__demo-2.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-10-1.0.1.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-asserts-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-beiyou-tools1-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-beiyou-tools2-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-createfolder-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-db-1.0.1.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-db-rosie-1.0.1.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-dutur_utils-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-express-server-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-iq-1.1.1.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-publish-to-npm-1.0.1.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-publish-to-npm-first-1.0.1.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-servidor-con-node-p1-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-student-management-system-1.0.0.tgz 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-mynpm-1.0.1 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-node-1.0.0 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-npm-test-1.0.0 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-proyecto-1.0.0 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-prueba-libreria-1.1.1 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-typescript-1.0.1 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-word-counter-huzaifak-1.0.0 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05-zk1-1.0.0 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05.learn-cli-1.0.0 2023/2/16 22:30:47
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05.npm-package-demo-1.0.1 2023/2/16 22:30:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05.xcxc-1.0.0 2023/2/16 22:30:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0513route-1.0.0 2023/2/16 22:30:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0517-1-1.0.1 2023/2/16 22:30:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05192003b-1.0.0 2023/2/16 22:30:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0520shangkela-1.0.0 2023/2/16 22:30:48
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0526caikuai-kb-1.0.0 2023/2/16 22:30:54
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 052hide-stencil-wc-0.1.2 2023/2/16 22:30:55
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05a_mwh_demo-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05chucifabu-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05day-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05kangjia-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05module_package-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05npm-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05npmdate-1.1.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05publish-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05test-1.0.1 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05using-package-json-1.0.1 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05_19-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05_addnum-1.0.1 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05_anzuhang_utils-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05_custom_zuziqiu-1.0.2 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05_npm_demo-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05_packge_dh-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05_word_counter-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05_xl_utlis_00-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 05__demo-2.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-10-1.0.1 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-asserts-1.0.0 2023/2/16 22:30:56
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-beiyou-tools1-1.0.0 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-beiyou-tools2-1.0.0 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-createfolder-1.0.0 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-db-1.0.1 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-db-rosie-1.0.1 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-dutur_utils-1.0.0 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-express-server-1.0.0 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-iq-1.1.1 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-publish-to-npm-1.0.1 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-publish-to-npm-first-1.0.1 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-servidor-con-node-p1-1.0.0 2023/2/16 22:30:57
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-student-management-system-1.0.0 2023/2/16 22:30:57
+***************finish analyze 05-mynpm.csv. It is benign
+ 2023/2/16 22:30:58***************finish analyze 05-node.csv. It is benign
+ 2023/2/16 22:30:58***************finish analyze 05-npm-test.csv. It is benign
+ 2023/2/16 22:30:59***************finish analyze 05-proyecto.csv. It is benign
+ 2023/2/16 22:31:00***************finish analyze 05-prueba-libreria.csv. It is benign
+ 2023/2/16 22:31:01***************finish analyze 05-typescript.csv. It is benign
+ 2023/2/16 22:31:01***************finish analyze 05-word-counter-huzaifak.csv. It is benign
+ 2023/2/16 22:31:02***************finish analyze 05-zk1.csv. It is benign
+ 2023/2/16 22:31:03***************finish analyze 05.learn-cli.csv. It is benign
+ 2023/2/16 22:31:03***************finish analyze 05.npm-package-demo.csv. It is benign
+ 2023/2/16 22:31:04***************finish analyze 05.xcxc.csv. It is benign
+ 2023/2/16 22:31:05***************finish analyze 0513route.csv. It is benign
+ 2023/2/16 22:31:06***************finish analyze 0517-1.csv. It is benign
+ 2023/2/16 22:31:06***************finish analyze 05192003b.csv. It is benign
+ 2023/2/16 22:31:07***************finish analyze 0520shangkela.csv. It is benign
+ 2023/2/16 22:31:08***************finish analyze 0526caikuai-kb.csv. It is benign
+ 2023/2/16 22:31:08***************finish analyze 052hide-stencil-wc.csv. It is benign
+ 2023/2/16 22:31:09***************finish analyze 05a_mwh_demo.csv. It is benign
+ 2023/2/16 22:31:10***************finish analyze 05chucifabu.csv. It is benign
+ 2023/2/16 22:31:10***************finish analyze 05day.csv. It is benign
+ 2023/2/16 22:31:11***************finish analyze 05kangjia.csv. It is benign
+ 2023/2/16 22:31:12***************finish analyze 05module_package.csv. It is benign
+ 2023/2/16 22:31:13***************finish analyze 05npm.csv. It is benign
+ 2023/2/16 22:31:13***************finish analyze 05npmdate.csv. It is benign
+ 2023/2/16 22:31:14***************finish analyze 05publish.csv. It is benign
+ 2023/2/16 22:31:15***************finish analyze 05test.csv. It is benign
+ 2023/2/16 22:31:15***************finish analyze 05using-package-json.csv. It is benign
+ 2023/2/16 22:31:16***************finish analyze 05_19.csv. It is benign
+ 2023/2/16 22:31:17***************finish analyze 05_addnum.csv. It is benign
+ 2023/2/16 22:31:17***************finish analyze 05_anzuhang_utils.csv. It is benign
+ 2023/2/16 22:31:18***************finish analyze 05_custom_zuziqiu.csv. It is benign
+ 2023/2/16 22:31:19***************finish analyze 05_npm_demo.csv. It is benign
+ 2023/2/16 22:31:19***************finish analyze 05_packge_dh.csv. It is benign
+ 2023/2/16 22:31:20***************finish analyze 05_word_counter.csv. It is benign
+ 2023/2/16 22:31:21***************finish analyze 05_xl_utlis_00.csv. It is benign
+ 2023/2/16 22:31:21***************finish analyze 05__demo.csv. It is benign
+ 2023/2/16 22:31:22***************finish analyze 06-10.csv. It is benign
+ 2023/2/16 22:31:23***************finish analyze 06-asserts.csv. It is benign
+ 2023/2/16 22:31:23***************finish analyze 06-beiyou-tools1.csv. It is benign
+ 2023/2/16 22:31:24***************finish analyze 06-beiyou-tools2.csv. It is benign
+ 2023/2/16 22:31:25***************finish analyze 06-createfolder.csv. It is benign
+ 2023/2/16 22:31:26***************finish analyze 06-db-rosie.csv. It is benign
+ 2023/2/16 22:31:26***************finish analyze 06-db.csv. It is benign
+ 2023/2/16 22:31:27***************finish analyze 06-dutur_utils.csv. It is benign
+ 2023/2/16 22:31:28***************finish analyze 06-express-server.csv. It is benign
+ 2023/2/16 22:31:28***************finish analyze 06-iq.csv. It is benign
+ 2023/2/16 22:31:29***************finish analyze 06-publish-to-npm-first.csv. It is benign
+ 2023/2/16 22:31:30***************finish analyze 06-publish-to-npm.csv. It is benign
+ 2023/2/16 22:31:30***************finish analyze 06-servidor-con-node-p1.csv. It is benign
+ 2023/2/16 22:31:31***************finish analyze 06-student-management-system.csv. It is benign
+ 2023/2/16 22:31:32mkdir C:\Users\huchaoqun\Desktop\璇剧▼\姣曚笟璁捐\detect-malicious-npm-package-with-machine-learning\feature-extract\material\registry\14 2023/2/16 22:31:32
+鐜板湪涓嬭浇鐨勫寘鏄?06-use-weixing-bao. 2023/2/16 22:31:34
+鐜板湪涓嬭浇鐨勫寘鏄?06-why_utils_52. 2023/2/16 22:31:36
+鐜板湪涓嬭浇鐨勫寘鏄?06-why_utils_521. 2023/2/16 22:31:37
+鐜板湪涓嬭浇鐨勫寘鏄?0602laba. 2023/2/16 22:31:49
+鐜板湪涓嬭浇鐨勫寘鏄?0602vanya. 2023/2/16 22:31:51
+鐜板湪涓嬭浇鐨勫寘鏄?0624zmj. 2023/2/16 22:31:53
+鐜板湪涓嬭浇鐨勫寘鏄?06_03_vnvika_1. 2023/2/16 22:31:54
+鐜板湪涓嬭浇鐨勫寘鏄?06_byvoidmodule. 2023/2/16 22:31:56
+鐜板湪涓嬭浇鐨勫寘鏄?06_changfu_utils. 2023/2/16 22:31:57
+鐜板湪涓嬭浇鐨勫寘鏄?06_cli_applications_using_nodejs. 2023/2/16 22:31:58
+鐜板湪涓嬭浇鐨勫寘鏄?06_coder_utils. 2023/2/16 22:32:00
+鐜板湪涓嬭浇鐨勫寘鏄?06_czl_utils. 2023/2/16 22:32:02
+鐜板湪涓嬭浇鐨勫寘鏄?06_huyun_06. 2023/2/16 22:32:03
+鐜板湪涓嬭浇鐨勫寘鏄?06_jc_utils. 2023/2/16 22:32:05
+鐜板湪涓嬭浇鐨勫寘鏄?06_jia_utils. 2023/2/16 22:32:06
+鐜板湪涓嬭浇鐨勫寘鏄?06_jim_utils. 2023/2/16 22:32:08
+鐜板湪涓嬭浇鐨勫寘鏄?06_library. 2023/2/16 22:32:10
+鐜板湪涓嬭浇鐨勫寘鏄?06_lion-lib. 2023/2/16 22:32:11
+鐜板湪涓嬭浇鐨勫寘鏄?06_my_fn_xixi. 2023/2/16 22:32:13
+鐜板湪涓嬭浇鐨勫寘鏄?06_my_utils. 2023/2/16 22:32:14
+鐜板湪涓嬭浇鐨勫寘鏄?06_nht_math00. 2023/2/16 22:32:15
+鐜板湪涓嬭浇鐨勫寘鏄?06_nono_npm_publish. 2023/2/16 22:32:16
+鐜板湪涓嬭浇鐨勫寘鏄?06_npm_demo5. 2023/2/16 22:32:17
+鐜板湪涓嬭浇鐨勫寘鏄?06_npx. 2023/2/16 22:32:19
+鐜板湪涓嬭浇鐨勫寘鏄?06_route-cli. 2023/2/16 22:32:20
+鐜板湪涓嬭浇鐨勫寘鏄?06_testutils. 2023/2/16 22:32:21
+鐜板湪涓嬭浇鐨勫寘鏄?06_why_utils. 2023/2/16 22:32:22
+鐜板湪涓嬭浇鐨勫寘鏄?06_xj. 2023/2/16 22:32:23
+鐜板湪涓嬭浇鐨勫寘鏄?06_zmh_utils. 2023/2/16 22:32:24
+鐜板湪涓嬭浇鐨勫寘鏄?06a-dd. 2023/2/16 22:32:25
+鐜板湪涓嬭浇鐨勫寘鏄?06a-first-cli. 2023/2/16 22:32:26
+鐜板湪涓嬭浇鐨勫寘鏄?06aaa. 2023/2/16 22:32:27
+鐜板湪涓嬭浇鐨勫寘鏄?06demo-1. 2023/2/16 22:32:28
+鐜板湪涓嬭浇鐨勫寘鏄?06fanyi. 2023/2/16 22:32:29
+鐜板湪涓嬭浇鐨勫寘鏄?06ghl. 2023/2/16 22:32:29
+鐜板湪涓嬭浇鐨勫寘鏄?06npm-chuangjianbao. 2023/2/16 22:32:30
+鐜板湪涓嬭浇鐨勫寘鏄?06tiny-npm-deploy. 2023/2/16 22:32:31
+鐜板湪涓嬭浇鐨勫寘鏄?07-adventure-game-huzaifak. 2023/2/16 22:32:32
+鐜板湪涓嬭浇鐨勫寘鏄?07-cli. 2023/2/16 22:32:33
+鐜板湪涓嬭浇鐨勫寘鏄?07-esercizio-fake-users. 2023/2/16 22:32:34
+鐜板湪涓嬭浇鐨勫寘鏄?07-npm. 2023/2/16 22:32:35
+鐜板湪涓嬭浇鐨勫寘鏄?07-sc-cs. 2023/2/16 22:32:35
+鐜板湪涓嬭浇鐨勫寘鏄?07-tools. 2023/2/16 22:32:36
+鐜板湪涓嬭浇鐨勫寘鏄?07.31-it. 2023/2/16 22:32:37
+鐜板湪涓嬭浇鐨勫寘鏄?07.learn_cli. 2023/2/16 22:32:38
+鐜板湪涓嬭浇鐨勫寘鏄?0709day1. 2023/2/16 22:32:39
+鐜板湪涓嬭浇鐨勫寘鏄?0715cocked. 2023/2/16 22:32:40
+鐜板湪涓嬭浇鐨勫寘鏄?0715rikao. 2023/2/16 22:32:40
+鐜板湪涓嬭浇鐨勫寘鏄?0716testpackage. 2023/2/16 22:32:41
+鐜板湪涓嬭浇鐨勫寘鏄?0717_node. 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-use-weixing-bao-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-why_utils_52-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06-why_utils_521-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0602laba-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0602vanya-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0624zmj-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06a-dd-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06a-first-cli-1.0.1.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06aaa-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06demo-1-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06fanyi-0.0.7.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06ghl-1.1.1.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06npm-chuangjianbao-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06tiny-npm-deploy-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_03_vnvika_1-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_byvoidmodule-0.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_changfu_utils-1.0.1.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_cli_applications_using_nodejs-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_coder_utils-1.1.1.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_czl_utils-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_huyun_06-1.0.0.tgz 2023/2/16 22:32:42
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_jc_utils-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_jia_utils-1.1.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_jim_utils-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_library-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_lion-lib-1.0.1.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_my_fn_xixi-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_my_utils-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_nht_math00-1.1.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_nono_npm_publish-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_npm_demo5-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_npx-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_route-cli-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_testutils-1.1.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_why_utils-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_xj-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 06_zmh_utils-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 07-adventure-game-huzaifak-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 07-cli-2.8.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 07-esercizio-fake-users-1.0.1.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 07-npm-1.0.5.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 07-sc-cs-1.2.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 07-tools-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 07.31-it-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 07.learn_cli-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0709day1-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0715cocked-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0715rikao-1.0.1.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0716testpackage-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪瑙ｅ帇鐨勫寘鏄? 0717_node-1.0.0.tgz 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-use-weixing-bao-1.0.0 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-why_utils_52-1.0.0 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06-why_utils_521-1.0.0 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0602laba-1.0.0 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0602vanya-1.0.0 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0624zmj-1.0.0 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06a-dd-1.0.0 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06a-first-cli-1.0.1 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06aaa-1.0.0 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06demo-1-1.0.0 2023/2/16 22:32:43
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06fanyi-0.0.7 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06ghl-1.1.1 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06npm-chuangjianbao-1.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06tiny-npm-deploy-1.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_03_vnvika_1-1.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_byvoidmodule-0.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_changfu_utils-1.0.1 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_cli_applications_using_nodejs-1.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_coder_utils-1.1.1 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_czl_utils-1.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_huyun_06-1.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_jc_utils-1.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_jia_utils-1.1.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_jim_utils-1.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_library-1.0.0 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_lion-lib-1.0.1 2023/2/16 22:32:44
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_my_fn_xixi-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_my_utils-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_nht_math00-1.1.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_nono_npm_publish-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_npm_demo5-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_npx-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_route-cli-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_testutils-1.1.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_why_utils-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_xj-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 06_zmh_utils-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 07-adventure-game-huzaifak-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 07-cli-2.8.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 07-esercizio-fake-users-1.0.1 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 07-npm-1.0.5 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 07-sc-cs-1.2.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 07-tools-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 07.31-it-1.0.0 2023/2/16 22:32:45
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 07.learn_cli-1.0.0 2023/2/16 22:32:46
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0709day1-1.0.0 2023/2/16 22:32:46
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0715cocked-1.0.0 2023/2/16 22:32:46
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0715rikao-1.0.1 2023/2/16 22:32:46
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0716testpackage-1.0.0 2023/2/16 22:32:46
+鐜板湪鎻愬彇鐗瑰緛鐨勫寘鏄? 0717_node-1.0.0 2023/2/16 22:32:46
+***************finish analyze 06-use-weixing-bao.csv. It is benign
+ 2023/2/16 22:32:47***************finish analyze 06-why_utils_52.csv. It is benign
+ 2023/2/16 22:32:47***************finish analyze 06-why_utils_521.csv. It is benign
+ 2023/2/16 22:32:48***************finish analyze 0602laba.csv. It is benign
+ 2023/2/16 22:32:49***************finish analyze 0602vanya.csv. It is benign
+ 2023/2/16 22:32:49***************finish analyze 0624zmj.csv. It is benign
+ 2023/2/16 22:32:50***************finish analyze 06a-dd.csv. It is benign
+ 2023/2/16 22:32:51***************finish analyze 06a-first-cli.csv. It is benign
+ 2023/2/16 22:32:52***************finish analyze 06aaa.csv. It is benign

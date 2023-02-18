@@ -10,35 +10,36 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { mkdir, open, readFile } from "fs/promises";
 import { basename, join } from "path";
 import { asyncExec, getRootDirectory } from "./Util";
-import { depressSinglePackage, downloadSinglePackage } from "./util/DownloadPackage";
+import { depressSinglePackage, downloadSinglePackage, } from "./util/DownloadPackage";
 import { getFileLogger } from "./FileLogger";
 import { readdirSync } from "node:fs";
 import { access, writeFile } from "fs/promises";
-import { extractFeatureFromPackage, ResovlePackagePath } from "./ExtractFeature";
+import { extractFeatureFromPackage, ResovlePackagePath, } from "./ExtractFeature";
 import { predict_py_path, should_use_console_log } from "./commons";
-import { stringify } from 'csv-stringify/sync';
+import { stringify } from "csv-stringify/sync";
+import { EOL } from "os";
 function get_all_packages() {
     return __awaiter(this, void 0, void 0, function* () {
-        const names_path = join(getRootDirectory(), 'material', 'names.json');
-        const fileContent = yield readFile(names_path, { encoding: 'utf-8' });
+        const names_path = join(getRootDirectory(), "material", "names.json");
+        const fileContent = yield readFile(names_path, { encoding: "utf-8" });
         let names = JSON.parse(fileContent);
-        names = names.filter(name => name === name.toLowerCase());
+        names = names.filter((name) => name === name.toLowerCase());
         return names;
     });
 }
 export function scanNPMRegistry(haveFeatureChanged) {
     return __awaiter(this, void 0, void 0, function* () {
         const names = yield get_all_packages();
-        const progress_path = join(getRootDirectory(), 'material', 'scan-registry-progress.json');
-        const progress_content = yield readFile(progress_path, { encoding: 'utf-8' });
+        const progress_path = join(getRootDirectory(), "material", "scan-registry-progress.json");
+        const progress_content = yield readFile(progress_path, { encoding: "utf-8" });
         const idx = JSON.parse(progress_content).progress;
-        const malicious_pacakage_path = join(getRootDirectory(), 'material', 'registry-malicious-package.csv');
-        const malicious_file_handler = yield open(malicious_pacakage_path, "r+");
+        const malicious_pacakage_path = join(getRootDirectory(), "material", "registry-malicious-package.csv");
+        const malicious_file_handler = yield open(malicious_pacakage_path, "w+");
         const logger = yield getFileLogger();
         const unit_size = 50;
         const counter = Math.ceil(names.length / unit_size);
         for (let i = 0; i < counter; i++) {
-            const saveDir = join(getRootDirectory(), 'material', 'registry', String(i));
+            const saveDir = join(getRootDirectory(), "material", "registry", String(i));
             try {
                 yield access(saveDir);
             }
@@ -63,11 +64,11 @@ export function scanNPMRegistry(haveFeatureChanged) {
                     }
                 }
                 // 解压包
-                const files = readdirSync(saveDir).filter(fileName => fileName.endsWith(".tgz"));
+                const files = readdirSync(saveDir).filter((fileName) => fileName.endsWith(".tgz"));
                 for (let file of files) {
-                    const dotIdx = basename(file).lastIndexOf('.');
+                    const dotIdx = basename(file).lastIndexOf(".");
                     const fileName = basename(file).substring(0, dotIdx);
-                    const depressDir = join(saveDir, fileName.replace(/\//g, '-'));
+                    const depressDir = join(saveDir, fileName.replace(/\//g, "-"));
                     try {
                         yield access(depressDir);
                     }
@@ -95,7 +96,7 @@ export function scanNPMRegistry(haveFeatureChanged) {
                 const package_files = readdirSync(saveDir, { withFileTypes: true });
                 for (const packageDir of package_files) {
                     if (packageDir.isDirectory()) {
-                        const source_path = join(saveDir, packageDir.name, 'package');
+                        const source_path = join(saveDir, packageDir.name, "package");
                         try {
                             yield access(source_path);
                         }
@@ -119,14 +120,17 @@ export function scanNPMRegistry(haveFeatureChanged) {
             const malicious_packages = [];
             // 使用分类器判断是否为恶意包
             let all_files = readdirSync(saveDir);
-            all_files = all_files.filter(fileName => fileName.endsWith(".csv"));
+            all_files = all_files.filter((fileName) => fileName.endsWith(".csv"));
             for (let file of all_files) {
                 try {
                     const { stderr, stdout } = yield asyncExec(`python3  ${predict_py_path} ${join(saveDir, file)}`);
                     process.stdout.write(`***************finish analyze ${basename(file)}. It is ${stdout} ${new Date().toLocaleString()}`);
+                    if (basename(file) === "0.workspace.csv") {
+                        debugger;
+                    }
                     if (stdout) {
-                        if (stdout === "malicious\n") {
-                            malicious_packages.push(basename(file));
+                        if (stdout === `malicious${EOL}`) {
+                            malicious_packages.push([basename(file), String(i)]);
                         }
                     }
                 }
@@ -138,7 +142,7 @@ export function scanNPMRegistry(haveFeatureChanged) {
                 }
             }
             // 之间检测过的恶意包不需要再写入
-            yield malicious_file_handler.writeFile(stringify(malicious_packages.map(el => [el])));
+            yield malicious_file_handler.writeFile(stringify(malicious_packages));
         }
         yield malicious_file_handler.close();
     });

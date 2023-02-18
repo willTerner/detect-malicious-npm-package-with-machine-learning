@@ -11,5 +11,5 @@ export const test_set_csv_path = "/Users/huchaoqun/Desktop/code/school-course/�
 export const test_set_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/测试/test_dataset";
 export const test_set_mix_csv_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test";
 export const npm_registry_csv_path = join(getRootDirectory(), 'material', 'registry-csv');
-export const should_use_console_log = true;
+export const should_use_console_log = false;
 //# sourceMappingURL=commons.js.map
