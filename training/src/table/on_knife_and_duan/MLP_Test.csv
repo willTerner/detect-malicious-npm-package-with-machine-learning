@@ -1,2 +1,2 @@
 hyperparamter,accuracy,precision,recall,f1,MCC
-"layer_size = (100,); activation=logistic; solver=lbfgs;learn_rate_int=0.05045994670005887;max_iter=400",0.997708524,0.983606557,0.989010989,0.98630137,0.98505547
+"layer_size = (16,); activation=logistic; solver=adam;learn_rate_int=0.05255545233279812;max_iter=400",0.9762308998302207,0.9775280898876404,0.9456521739130435,0.9613259668508287,0.9444462405684668

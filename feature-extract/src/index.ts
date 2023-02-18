@@ -6,6 +6,7 @@ import { duan_path, predict_py_path,  normal1_path, knife_path, normal2_path } f
 import { asyncExec } from "./Util";
 import { doSomething } from "./util/DownloadPackage";
 import { scanNPMRegistry } from "./scanNPMRegistry";
+import { pattern_test } from "./Patterns";
 
 
 
@@ -14,12 +15,13 @@ import { scanNPMRegistry } from "./scanNPMRegistry";
    DoSomething,
    DepressPackageFromDir,
    ScanNPMRegistry,
+   PatternTest,
  }
 async function extract_feature() {
    let resolve_path = ResovlePackagePath.By_Normal2;
    let source_path: string;
    //@ts-ignore
-   const action = Action.ScanNPMRegistry;
+   const action = Action.PatternTest;
    const haveFeatureChanged = false;
    // @ts-ignore
    if (resolve_path === ResovlePackagePath.By_Knife) {
@@ -43,6 +45,8 @@ async function extract_feature() {
    // @ts-ignore
    } else if (action === Action.ScanNPMRegistry) {
       await scanNPMRegistry(haveFeatureChanged);
+   } else if (action === Action.PatternTest) {
+      await pattern_test();
    }
    //doSomethingAST();
 }

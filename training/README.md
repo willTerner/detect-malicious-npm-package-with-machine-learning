@@ -9,9 +9,9 @@ sge&ly1314
 
 ### 训练
 + RF
-  + 不需要缩放，表现好
+  + min-max缩放，表现好
 + MLP
-  + 需要缩放，采取Standard
+  + 不需要缩放
   + activation取logistic
   + max_iter要取大，400
 + SVM
@@ -22,7 +22,7 @@ sge&ly1314
   + 针对小包的误报多，但少于其他
 + NB
   + smoothing取1e-9
-  + 预处理方法取标准化
+  + 不需要缩放
 + 改进方法
   + 去掉无关特征
   + 剩下的特征分为两类：不区分以及在install script包含和js file中包含，首先测试第二类

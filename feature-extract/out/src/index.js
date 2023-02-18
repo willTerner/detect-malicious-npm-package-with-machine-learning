@@ -15,19 +15,21 @@ import { duan_path, predict_py_path, normal1_path, knife_path, normal2_path } fr
 import { asyncExec } from "./Util";
 import { doSomething } from "./util/DownloadPackage";
 import { scanNPMRegistry } from "./scanNPMRegistry";
+import { pattern_test } from "./Patterns";
 var Action;
 (function (Action) {
     Action[Action["Extract"] = 0] = "Extract";
     Action[Action["DoSomething"] = 1] = "DoSomething";
     Action[Action["DepressPackageFromDir"] = 2] = "DepressPackageFromDir";
     Action[Action["ScanNPMRegistry"] = 3] = "ScanNPMRegistry";
+    Action[Action["PatternTest"] = 4] = "PatternTest";
 })(Action || (Action = {}));
 function extract_feature() {
     return __awaiter(this, void 0, void 0, function* () {
         let resolve_path = ResovlePackagePath.By_Normal2;
         let source_path;
         //@ts-ignore
-        const action = Action.ScanNPMRegistry;
+        const action = Action.PatternTest;
         const haveFeatureChanged = false;
         // @ts-ignore
         if (resolve_path === ResovlePackagePath.By_Knife) {
@@ -56,6 +58,9 @@ function extract_feature() {
         }
         else if (action === Action.ScanNPMRegistry) {
             yield scanNPMRegistry(haveFeatureChanged);
+        }
+        else if (action === Action.PatternTest) {
+            yield pattern_test();
         }
         //doSomethingAST();
     });
