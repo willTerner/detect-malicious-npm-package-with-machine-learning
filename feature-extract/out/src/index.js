@@ -10,8 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import chalk from "chalk";
 import { constants } from "fs";
 import { access } from "fs/promises";
-import { extractFeatureFromDir, extractFeatureFromPackage, ResovlePackagePath } from "./ExtractFeature";
-import { duan_path, predict_py_path, normal1_path, knife_path, normal2_path } from "./commons";
+import { extractFeatureFromDir, extractFeatureFromPackage, ResovlePackagePath, } from "./ExtractFeature";
+import { duan_path, predict_py_path, normal1_path, knife_path, normal2_path, } from "./commons";
 import { asyncExec } from "./Util";
 import { doSomething } from "./util/DownloadPackage";
 import { scanNPMRegistry } from "./scanNPMRegistry";
@@ -29,7 +29,7 @@ function extract_feature() {
         let resolve_path = ResovlePackagePath.By_Normal2;
         let source_path;
         //@ts-ignore
-        const action = Action.PatternTest;
+        const action = Action.ScanNPMRegistry;
         const haveFeatureChanged = false;
         // @ts-ignore
         if (resolve_path === ResovlePackagePath.By_Knife) {

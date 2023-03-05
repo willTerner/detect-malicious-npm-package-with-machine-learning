@@ -53,11 +53,11 @@ export function scanNPMRegistry(haveFeatureChanged) {
                 for (let j = 0; j < unit_size && j + i * unit_size < names.length; j++) {
                     try {
                         const { stdout, stderr } = yield downloadSinglePackage(names[j + i * unit_size], saveDir);
-                        process.stdout.write(`现在下载的包是:${names[j + i * unit_size]}. ${new Date().toLocaleString()}\n`);
+                        process.stdout.write(`${new Date().toLocaleString()}: The package being downloaded:${names[j + i * unit_size]}.\n`);
                         should_use_console_log && console.log(stdout, stderr);
                     }
                     catch (error) {
-                        yield logger.log(`现在下载的包是:${names[j + i * unit_size]}`);
+                        yield logger.log(`The package being downloaded:${names[j + i * unit_size]}`);
                         yield logger.log(`error name: ${error.name}`);
                         yield logger.log(`error message: ${error.message}`);
                         yield logger.log(`error stack: ${error.stack}`);
@@ -77,11 +77,11 @@ export function scanNPMRegistry(haveFeatureChanged) {
                     }
                     try {
                         let { stdout, stderr } = yield depressSinglePackage(join(saveDir, file), depressDir);
-                        process.stdout.write(`现在解压的包是: ${basename(file)} ${new Date().toLocaleString()}\n`);
+                        process.stdout.write(`${new Date().toLocaleString()}: The package being depressed : ${basename(file)} \n`);
                         should_use_console_log && console.log(stdout, stderr);
                     }
                     catch (error) {
-                        yield logger.log(`现在解压的包是: ${file}`);
+                        yield logger.log(`The package being depressed: ${file}`);
                         yield logger.log(`error name: ${error.name}`);
                         yield logger.log(`error message: ${error.message}`);
                         yield logger.log(`error stack: ${error.stack}`);
@@ -101,15 +101,15 @@ export function scanNPMRegistry(haveFeatureChanged) {
                             yield access(source_path);
                         }
                         catch (error) {
-                            yield logger.log(`现在分析的包是: ${packageDir.name};找不到package目录`);
+                            yield logger.log(`The package being analyzed: ${packageDir.name};找不到package目录`);
                             continue;
                         }
                         try {
                             yield extractFeatureFromPackage(source_path, ResovlePackagePath.None, saveDir);
-                            process.stdout.write(`现在提取特征的包是: ${packageDir.name} ${new Date().toLocaleString()}\n`);
+                            process.stdout.write(`${new Date().toLocaleString()}: The package being analyzed: ${packageDir.name} \n`);
                         }
                         catch (error) {
-                            yield logger.log(`现在分析的包是: ${packageDir.name}`);
+                            yield logger.log(`The package being analyzed: ${packageDir.name}`);
                             yield logger.log(`error name: ${error.name}`);
                             yield logger.log(`error message: ${error.message}`);
                             yield logger.log(`error stack: ${error.stack}`);
@@ -124,7 +124,7 @@ export function scanNPMRegistry(haveFeatureChanged) {
             for (let file of all_files) {
                 try {
                     const { stderr, stdout } = yield asyncExec(`python3  ${predict_py_path} ${join(saveDir, file)}`);
-                    process.stdout.write(`***************finish analyze ${basename(file)}. It is ${stdout} ${new Date().toLocaleString()}`);
+                    process.stdout.write(`${new Date().toLocaleString()}: ***************finish analyze ${basename(file)}. It is ${stdout} `);
                     if (basename(file) === "0.workspace.csv") {
                         debugger;
                     }
@@ -135,7 +135,7 @@ export function scanNPMRegistry(haveFeatureChanged) {
                     }
                 }
                 catch (error) {
-                    yield logger.log(`分类器分析的包是: ${basename(file)}`);
+                    yield logger.log(`The package being analyzed by classifier: ${basename(file)}`);
                     yield logger.log(`error name: ${error.name}`);
                     yield logger.log(`error message: ${error.message}`);
                     yield logger.log(`error stack: ${error.stack}`);

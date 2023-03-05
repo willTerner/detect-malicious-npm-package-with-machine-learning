@@ -7,11 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { parse } from '@babel/core';
-import traversePkg from '@babel/traverse';
+import { parse } from "@babel/core";
+import traversePkg from "@babel/traverse";
 import * as t from "@babel/types";
-import { base64_Pattern, getDomainPattern, IP_Pattern, SensitiveStringPattern } from './Patterns';
-import { getFileLogger } from './FileLogger';
+import { base64_Pattern, getDomainPattern, IP_Pattern, SensitiveStringPattern, } from "./Patterns";
+import { getFileLogger } from "./FileLogger";
 let traverse;
 if (process.env.NODE_ENV) {
     traverse = traversePkg;
@@ -27,7 +27,7 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
         try {
             ast = parse(code, {
                 sourceType: "unambiguous",
-                plugins: ["@babel/plugin-syntax-flow"]
+                plugins: ["@babel/plugin-syntax-flow"],
             });
         }
         catch (error) {
@@ -40,13 +40,15 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
         traverse(ast, {
             CallExpression: function (path) {
                 if (path.node.callee.name === "require") {
-                    if (path.node.arguments.length > 0 && path.node.arguments[0].value === "base64-js") {
+                    if (path.node.arguments.length > 0 &&
+                        path.node.arguments[0].value === "base64-js") {
                         featureSet.useBase64Conversion = true;
                         if (isInstallScript) {
                             featureSet.useBase64ConversionInInstallScript = true;
                         }
                     }
-                    if (path.node.arguments.length > 0 && path.node.arguments[0].value === "child_process") {
+                    if (path.node.arguments.length > 0 &&
+                        path.node.arguments[0].value === "child_process") {
                         featureSet.requireChildProcessInJSFile = true;
                         if (isInstallScript) {
                             featureSet.requireChildProcessInInstallScript = true;
@@ -54,7 +56,10 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     }
                     if (path.node.arguments.length > 0) {
                         const importModuleName = path.node.arguments[0].value;
-                        if (importModuleName === "fs" || importModuleName === "fs/promises" || importModuleName === "path" || importModuleName === "promise-fs") {
+                        if (importModuleName === "fs" ||
+                            importModuleName === "fs/promises" ||
+                            importModuleName === "path" ||
+                            importModuleName === "promise-fs") {
                             featureSet.accessFSInJSFile = true;
                             if (isInstallScript) {
                                 featureSet.accessFSInInstallScript = true;
@@ -63,7 +68,13 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     }
                     if (path.node.arguments.length > 0) {
                         const moduleName = path.node.arguments[0].value;
-                        if (moduleName === "http" || moduleName === "https" || moduleName === "nodemailer" || moduleName === "axios" || moduleName === "request" || moduleName === "node-fetch") {
+                        if (moduleName === "http" ||
+                            moduleName === "https" ||
+                            moduleName === "nodemailer" ||
+                            moduleName === "axios" ||
+                            moduleName === "request" ||
+                            moduleName === "node-fetch" ||
+                            moduleName === "got") {
                             featureSet.accessNetworkInJSFile = true;
                             if (isInstallScript) {
                                 featureSet.accessNetworkInInstallScript = true;
@@ -86,7 +97,8 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         }
                     }
                 }
-                if (t.isMemberExpression(path.node.callee) && path.node.callee.object.name === "os") {
+                if (t.isMemberExpression(path.node.callee) &&
+                    path.node.callee.object.name === "os") {
                     featureSet.accessSensitiveAPI = true;
                 }
             },
@@ -146,7 +158,7 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                 }
             },
             NewExpression: function (path) {
-                if (path.node.callee.name === 'Buffer') {
+                if (path.node.callee.name === "Buffer") {
                     featureSet.useBuffer = true;
                 }
             },
@@ -165,7 +177,10 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     }
                 }
                 {
-                    if (moduleName === "fs" || moduleName === "fs/promises" || moduleName === "path" || moduleName === "promise-fs") {
+                    if (moduleName === "fs" ||
+                        moduleName === "fs/promises" ||
+                        moduleName === "path" ||
+                        moduleName === "promise-fs") {
                         featureSet.accessFSInJSFile = true;
                         if (isInstallScript) {
                             featureSet.accessFSInInstallScript = true;
@@ -173,7 +188,12 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     }
                 }
                 {
-                    if (moduleName === "http" || moduleName === "https" || moduleName === "nodemailer" || moduleName === "aixos" || moduleName === "request" || moduleName === "node-fetch") {
+                    if (moduleName === "http" ||
+                        moduleName === "https" ||
+                        moduleName === "nodemailer" ||
+                        moduleName === "aixos" ||
+                        moduleName === "request" ||
+                        moduleName === "node-fetch") {
                         featureSet.accessNetworkInJSFile = true;
                         if (isInstallScript) {
                             featureSet.accessNetworkInInstallScript = true;
