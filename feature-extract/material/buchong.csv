@@ -28,3 +28,10 @@
 7lab_groove_test
 7ohm
 9tsu-tag-fetcher
+@!!!!!/require
+@0x/fast-abi
+@0x/neon-router
+@0x1ance/soulbound
+@0x706b/effect-ts-express
+@0x706b/effect-ts-koa
+@0xraid/log
