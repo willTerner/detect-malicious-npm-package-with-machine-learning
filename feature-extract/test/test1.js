@@ -1,5 +1,4 @@
 import {readFileSync} from 'fs';
+import {execSync} from 'child_process';
 
-const str = readFileSync("./test2.txt", {encoding: 'utf-8'});
-const result = str.match(/\".*(\\x[0-9a-f]{2})+.*\"/i);
-console.log(result[1]);
+console.log(execSync(' python3 /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/training/src/predict.py /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/output_feature/a-function.csv'));
