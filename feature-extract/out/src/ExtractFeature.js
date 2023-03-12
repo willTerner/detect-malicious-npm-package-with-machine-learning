@@ -20,8 +20,7 @@ import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
 import { getRootDirectory } from "./Util";
 import { getPackageFeatureInfo } from "./PackageFeatureInfo";
-import { malicious_csv_path, normal_csv_path, should_use_console_log } from "./commons";
-const progress_json_path = join(getRootDirectory(), 'material', 'progress.json');
+import { malicious_csv_path, normal_csv_path, progress_json_path, should_use_console_log } from "./commons";
 export var ResovlePackagePath;
 (function (ResovlePackagePath) {
     ResovlePackagePath[ResovlePackagePath["By_Knife"] = 0] = "By_Knife";

@@ -1,7 +1,7 @@
 import { parse } from "@babel/core";
 import traversePkg from "@babel/traverse";
 import { PackageFeatureInfo } from "./PackageFeatureInfo";
-import * as t from "@babel/types";
+import * as babelTypes from "@babel/types";
 import {
   base64_Pattern,
   getDomainPattern,
@@ -9,6 +9,10 @@ import {
   SensitiveStringPattern,
 } from "./Patterns";
 import { getFileLogger } from "./FileLogger";
+import { PositionRecorder } from "./PositionRecorder";
+import type {Record} from './PositionRecorder';
+
+const t = (babelTypes as any).default;
 
 let traverse: any;
 
@@ -24,8 +28,17 @@ export async function scanJSFileByAST(
   code: string,
   featureSet: PackageFeatureInfo,
   isInstallScript: boolean,
-  targetJSFilePath: string
+  targetJSFilePath: string,
+  positionRecorder: PositionRecorder,
 ) {
+
+  function getRecord(path: any) {
+    return {
+      filePath: targetJSFilePath,
+      content: path.node.loc,
+    } as Record;
+  }
+
   const logger = await getFileLogger();
   let ast: any;
   try {
@@ -48,8 +61,10 @@ export async function scanJSFileByAST(
           path.node.arguments[0].value === "base64-js"
         ) {
           featureSet.useBase64Conversion = true;
+          positionRecorder.addRecord('useBase64Conversion', getRecord(path));
           if (isInstallScript) {
             featureSet.useBase64ConversionInInstallScript = true;
+            positionRecorder.addRecord('useBase64ConversionInInstallScript', getRecord(path));
           }
         }
         if (
@@ -57,8 +72,10 @@ export async function scanJSFileByAST(
           path.node.arguments[0].value === "child_process"
         ) {
           featureSet.requireChildProcessInJSFile = true;
+          positionRecorder.addRecord('requireChildProcessInJSFile', getRecord(path));
           if (isInstallScript) {
             featureSet.requireChildProcessInInstallScript = true;
+            positionRecorder.addRecord('requireChildProcessInInstallScript', getRecord(path));
           }
         }
         if (path.node.arguments.length > 0) {
@@ -70,8 +87,10 @@ export async function scanJSFileByAST(
             importModuleName === "promise-fs"
           ) {
             featureSet.accessFSInJSFile = true;
+            positionRecorder.addRecord('accessFSInJSFile', getRecord(path));
             if (isInstallScript) {
               featureSet.accessFSInInstallScript = true;
+              positionRecorder.addRecord('accessFSInInstallScript', getRecord(path));
             }
           }
         }
@@ -87,8 +106,10 @@ export async function scanJSFileByAST(
             moduleName === "got"
           ) {
             featureSet.accessNetworkInJSFile = true;
+            positionRecorder.addRecord('accessNetworkInJSFile', getRecord(path));
             if (isInstallScript) {
               featureSet.accessNetworkInInstallScript = true;
+              positionRecorder.addRecord('accessNetworkInInstallScript', getRecord(path));
             }
           }
         }
@@ -96,8 +117,10 @@ export async function scanJSFileByAST(
           const moduleName = path.node.arguments[0].value as string;
           if (moduleName === "dns") {
             featureSet.containDomainInJSFile = true;
+            positionRecorder.addRecord('containDomainInJSFile', getRecord(path));
             if (isInstallScript) {
               featureSet.containDomainInInstallScript = true;
+              positionRecorder.addRecord('containDomainInInstallScript', getRecord(path));
             }
           }
         }
@@ -105,6 +128,7 @@ export async function scanJSFileByAST(
           const moduleName = path.node.arguments[0].value as string;
           if (moduleName === "crypto" || moduleName === "zlib") {
             featureSet.accessCryptoAndZip = true;
+            positionRecorder.addRecord('accessCryptoAndZip', getRecord(path));
           }
         }
       }
@@ -113,14 +137,17 @@ export async function scanJSFileByAST(
         path.node.callee.object.name === "os"
       ) {
         featureSet.accessSensitiveAPI = true;
+        positionRecorder.addRecord('accessSensitiveAPI', getRecord(path));
       }
     },
     StringLiteral: function (path) {
       const content = path.node.value as string;
       if (content === "base64") {
         featureSet.useBase64Conversion = true;
+        positionRecorder.addRecord('useBase64Conversion', getRecord(path));
         if (isInstallScript) {
           featureSet.useBase64ConversionInInstallScript = true;
+          positionRecorder.addRecord('useBase64ConversionInInstallScript', getRecord(path));
         }
       }
       if (content.length >= MAX_STRING_LENGTH) {
@@ -130,14 +157,17 @@ export async function scanJSFileByAST(
         const matchResult = content.match(IP_Pattern);
         if (matchResult) {
           featureSet.containIP = true;
+          positionRecorder.addRecord('containIP', getRecord(path));
         }
       }
       {
         const matchResult = content.match(base64_Pattern);
         if (matchResult) {
           featureSet.containBase64StringInJSFile = true;
+          positionRecorder.addRecord('containBase64StringInJSFile', getRecord(path));
           if (isInstallScript) {
             featureSet.containBase64StringInInstallScript = true;
+            positionRecorder.addRecord('containBase64StringInInstallScript', getRecord(path));
           }
         }
       }
@@ -145,8 +175,10 @@ export async function scanJSFileByAST(
         const matchResult = content.match(getDomainPattern());
         if (matchResult) {
           featureSet.containDomainInJSFile = true;
+          positionRecorder.addRecord('containDomainInJSFile', getRecord(path));
           if (isInstallScript) {
             featureSet.containDomainInInstallScript = true;
+            positionRecorder.addRecord('containDomainInInstallScript', getRecord(path));
           }
         }
       }
@@ -154,6 +186,7 @@ export async function scanJSFileByAST(
         const matchResult = content.match(SensitiveStringPattern);
         if (matchResult) {
           featureSet.containSuspiciousString = true;
+          positionRecorder.addRecord('containSuspiciousString', getRecord(path));
         }
       }
     },
@@ -163,8 +196,10 @@ export async function scanJSFileByAST(
         path.get("property").isIdentifier({ name: "env" })
       ) {
         featureSet.accessProcessEnvInJSFile = true;
+        positionRecorder.addRecord('accessProcessEnvInJSFile', getRecord(path));
         if (isInstallScript) {
           featureSet.accessProcessEnvInInstallScript = true;
+          positionRecorder.addRecord('accessProcessEnvInInstallScript', getRecord(path));
         }
       }
       if (
@@ -172,25 +207,31 @@ export async function scanJSFileByAST(
         path.get("property").isIdentifier({ name: "from" })
       ) {
         featureSet.useBuffer = true;
+        positionRecorder.addRecord('useBuffer', getRecord(path));
       }
     },
     NewExpression: function (path) {
       if (path.node.callee.name === "Buffer") {
         featureSet.useBuffer = true;
+        positionRecorder.addRecord('useBuffer', getRecord(path));
       }
     },
     ImportDeclaration: function (path) {
       const moduleName = path.node.source.value;
       if (path.node.source.value === "base64-js") {
         featureSet.useBase64Conversion = true;
+        positionRecorder.addRecord('useBase64Conversion', getRecord(path));
         if (isInstallScript) {
           featureSet.useBase64ConversionInInstallScript = true;
+          positionRecorder.addRecord('useBase64ConversionInInstallScript', getRecord(path));
         }
       }
       if (path.node.source.value === "child_process") {
         featureSet.requireChildProcessInJSFile = true;
+        positionRecorder.addRecord('requireChildProcessInJSFile', getRecord(path));
         if (isInstallScript) {
           featureSet.requireChildProcessInInstallScript = true;
+          positionRecorder.addRecord('requireChildProcessInInstallScript', getRecord(path));
         }
       }
       {
@@ -201,8 +242,10 @@ export async function scanJSFileByAST(
           moduleName === "promise-fs"
         ) {
           featureSet.accessFSInJSFile = true;
+          positionRecorder.addRecord('accessFSInJSFile', getRecord(path));
           if (isInstallScript) {
             featureSet.accessFSInInstallScript = true;
+            positionRecorder.addRecord('accessFSInInstallScript', getRecord(path));
           }
         }
       }
@@ -216,28 +259,34 @@ export async function scanJSFileByAST(
           moduleName === "node-fetch"
         ) {
           featureSet.accessNetworkInJSFile = true;
+          positionRecorder.addRecord('accessNetworkInJSFile', getRecord(path));
           if (isInstallScript) {
             featureSet.accessNetworkInInstallScript = true;
+            positionRecorder.addRecord('accessNetworkInInstallScript', getRecord(path));
           }
         }
       }
       {
         if (moduleName === "dns") {
           featureSet.containDomainInJSFile = true;
+          positionRecorder.addRecord('containDomainInJSFile', getRecord(path));
           if (isInstallScript) {
             featureSet.containDomainInInstallScript = true;
+            positionRecorder.addRecord('containDomainInInstallScript', getRecord(path));
           }
         }
       }
       {
         if (moduleName === "crypto" || moduleName === "zlib") {
           featureSet.accessCryptoAndZip = true;
+          positionRecorder.addRecord('accessCryptoAndZip', getRecord(path));
         }
       }
     },
     Identifier: function (path) {
       if (path.node.name === "eval") {
         featureSet.useEval = true;
+        positionRecorder.addRecord('useEval', getRecord(path));
       }
     },
   });

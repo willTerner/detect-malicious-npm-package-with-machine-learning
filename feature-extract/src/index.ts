@@ -17,6 +17,7 @@ import { asyncExec } from "./Util";
 import { doSomething } from "./util/DownloadPackage";
 import { scanNPMRegistry } from "./scanNPMRegistry";
 import { pattern_test } from "./Patterns";
+import { setIsRecordFeaturePos } from "./config";
 
 enum Action {
   Extract,
@@ -77,6 +78,7 @@ async function main() {
       console.log(error);
       process.exit(0);
     }
+    setIsRecordFeaturePos(true);
     const csvPath = await extractFeatureFromPackage(
       package_path,
       ResovlePackagePath.By_Single_Package
@@ -86,7 +88,7 @@ async function main() {
     );
     if (stdout) {
       console.log(
-        chalk.green("finish analyzing this package. This package is " + stdout)
+        chalk.green("finish analyzing this package.\n This package is " + stdout)
       );
     } else {
       console.log(stderr);

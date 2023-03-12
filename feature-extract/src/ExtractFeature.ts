@@ -4,14 +4,8 @@ import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
 import { getRootDirectory } from "./Util";
 import { getPackageFeatureInfo, PackageFeatureInfo } from "./PackageFeatureInfo";
-import { malicious_csv_path, normal_csv_path, should_use_console_log } from "./commons";
+import { malicious_csv_path, normal_csv_path, progress_json_path, should_use_console_log } from "./commons";
 
-
-
-
-
-
-const progress_json_path = join(getRootDirectory(), 'material', 'progress.json');
 
 
 
