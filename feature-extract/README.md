@@ -1,5 +1,6 @@
 #### 配置
 
+使用时node版本不能低于16!!!，否则会报错架构不对
 commons.ts 中 should_use_console_log 控制是否输出信息
 
 ### 恶意包特征

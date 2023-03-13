@@ -1,13 +1,15 @@
 import { opendir, readFile, stat } from "fs/promises";
 import { getPackageJSONInfo, PackageJSONInfo } from "./PackageJSONInfo";
 import { basename, join } from "path";
-import { minEditDistance } from "./EditDistance";
 import { getDomainPattern, IP_Pattern, Network_Command_Pattern, SensitiveStringPattern } from "./Patterns";
 import { getAllInstallScripts } from "./GetInstallScripts";
 import { scanJSFileByAST } from "./ASTUtil";
 import { matchUseRegExp } from "./RegExpUtil";
 import chalk from "chalk";
 import { should_use_console_log } from "./commons";
+import {PositionRecorder} from './PositionRecorder';
+import { getConfig } from "./config";
+import { writeFile } from "fs/promises";
 
 
 
@@ -48,6 +50,8 @@ export interface PackageFeatureInfo {
  * @param tgzPath 压缩包的路径
  */
 export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFeatureInfo> {
+
+   const positionRecorder = new PositionRecorder();
    let result: PackageFeatureInfo = {
       hasInstallScripts: false,
       containIP: false,
@@ -85,6 +89,12 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
  
    // result.packageSize = getDirectorySizeInBytes(dirPath);
 
+   if (packageJSONInfo.hasInstallScripts) {
+      positionRecorder.addRecord('hasInstallScripts', {
+         filePath: packageJSONPath,
+         content: packageJSONInfo.installCommand[0],
+      });
+   }
 
    // 分析install hook command
    for (const scriptContent of packageJSONInfo.installCommand) {
@@ -92,24 +102,37 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
          const matchResult = scriptContent.match(IP_Pattern);
          if (matchResult) {
             result.containIP = true;
+            positionRecorder.addRecord('containIP', {filePath: packageJSONPath, content: scriptContent});
          }
       }
       {
          const matchResult = scriptContent.match(getDomainPattern());
          if (matchResult) {
             result.containDomainInInstallScript = true;
+            positionRecorder.addRecord('containDomainInInstallScript', {
+               filePath: packageJSONPath,
+               content: scriptContent,
+            });
          }
       }
      {
          const matchResult = scriptContent.match(Network_Command_Pattern);
          if (matchResult) {
             result.accessNetworkInInstallScript = true;
+            positionRecorder.addRecord('accessNetworkInInstallScript', {
+               filePath: packageJSONPath,
+               content: scriptContent,
+            });
          }
       }
       {
          const matchResult = scriptContent.match(SensitiveStringPattern);
          if (matchResult) {
             result.containSuspiciousString = true;
+            positionRecorder.addRecord('containSuspiciousString', {
+               filePath: packageJSONPath,
+               content: scriptContent,
+            });
          }
       }
    }
@@ -133,8 +156,8 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
                   const fileInfo = await stat(targetJSFilePath);
                   should_use_console_log && console.log(chalk.blue("现在分析的js文件路径是") + chalk.red(targetJSFilePath) + "  文件大小为" + fileInfo.size);
                   if (fileInfo.size <= ALLOWED_MAX_JS_SIZE) {
-                     await scanJSFileByAST(jsFileContent, result, isInstallScriptFile, targetJSFilePath);
-                     matchUseRegExp(jsFileContent, result);
+                     await scanJSFileByAST(jsFileContent, result, isInstallScriptFile, targetJSFilePath, positionRecorder);
+                     matchUseRegExp(jsFileContent, result, positionRecorder, targetJSFilePath);
                   }
                   resolve(true);
                }, 0);
@@ -145,5 +168,9 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
       }
    }
    await traverseDir(dirPath);
+   if (getConfig().isRecordFeaturePos) {
+      const featurePosPath = join(dirPath, 'feature-position-info.json');
+      await writeFile(featurePosPath, positionRecorder.serialRecord());
+   }
    return result;
 }

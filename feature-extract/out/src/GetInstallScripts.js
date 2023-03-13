@@ -11,8 +11,9 @@ import { parse } from '@babel/core';
 import traversePkg from '@babel/traverse';
 import { accessSync, readFileSync } from 'fs';
 import { dirname, join } from 'path';
-import * as t from '@babel/types';
+import * as babelTypes from '@babel/types';
 import { getFileLogger } from './FileLogger';
+const t = babelTypes.default;
 const traverse = traversePkg.default;
 /**
  *

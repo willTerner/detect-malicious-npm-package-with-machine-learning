@@ -11,13 +11,13 @@ import os
 from commons import getCurrentDir, rf_scaler_save_path, mlp_scaler_save_path, nb_scaler_save_path, svm_scaler_save_path, training_path, malicous_csv_path, normal_csv_path
 
 methods = ["none", "standardlize", "min-max-scale"]
-preprocess_method = methods[1]
+preprocess_method = methods[2]
 
 models = ["RF", "MLP", "NB", "SVM"]
-use_model = models[3]
+use_model = models[0]
 
 actions = ['training', 'save', 'test']
-action = actions[1]
+action = actions[2]
 
 def preprocess(X_train, X_test, scaler_save_path):
    if preprocess_method == methods[0]:
