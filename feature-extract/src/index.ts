@@ -18,6 +18,7 @@ import { doSomething } from "./util/DownloadPackage";
 import { scanNPMRegistry } from "./scanNPMRegistry";
 import { pattern_test } from "./Patterns";
 import { setIsRecordFeaturePos } from "./config";
+import diffPredict from "./diffPredict";
 
 enum Action {
   Extract,
@@ -25,12 +26,13 @@ enum Action {
   DepressPackageFromDir,
   ScanNPMRegistry,
   PatternTest,
+  Diff,
 }
 async function extract_feature() {
   let resolve_path = ResovlePackagePath.By_Normal2;
   let source_path: string;
   //@ts-ignore
-  const action = Action.ScanNPMRegistry;
+  const action = Action.Diff;
   const haveFeatureChanged = false;
   // @ts-ignore
   if (resolve_path === ResovlePackagePath.By_Knife) {
@@ -54,8 +56,11 @@ async function extract_feature() {
     // @ts-ignore
   } else if (action === Action.ScanNPMRegistry) {
     await scanNPMRegistry(haveFeatureChanged);
+    // @ts-ignore
   } else if (action === Action.PatternTest) {
     await pattern_test();
+  } else if (action === Action.Diff) {
+    await diffPredict();
   }
   //doSomethingAST();
 }

@@ -2,6 +2,9 @@ import { exec } from 'node:child_process';
 import fs from 'node:fs';
 import { promisify } from 'node:util';
 import path from 'path';
+import { readFile, writeFile } from "node:fs/promises";
+import {parse} from 'csv-parse/sync';
+import {stringify} from 'csv-stringify/sync';
 
 export function getDirectorySizeInBytes(dir) {
   let totalSize = 0;
@@ -40,3 +43,11 @@ export function getRootDirectory() {
 }
 
 export const asyncExec = promisify(exec);
+
+export async function getCSVFromFile(filePath: string): Promise<string[][]> {
+  return parse(await readFile(filePath, {encoding: 'utf-8'}));
+}
+
+export async function writeCSVFile(filePath: string, arr: string[][]) {
+  return await writeFile(filePath, stringify(arr));
+}
