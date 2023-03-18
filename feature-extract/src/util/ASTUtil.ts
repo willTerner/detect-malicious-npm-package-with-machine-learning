@@ -1,16 +1,16 @@
 import { parse } from "@babel/core";
 import traversePkg from "@babel/traverse";
-import { PackageFeatureInfo } from "./PackageFeatureInfo";
+import { PackageFeatureInfo } from "../PackageFeatureInfo";
 import * as babelTypes from "@babel/types";
 import {
   base64_Pattern,
   getDomainPattern,
   IP_Pattern,
   SensitiveStringPattern,
-} from "./Patterns";
-import { getFileLogger } from "./FileLogger";
-import { PositionRecorder } from "./PositionRecorder";
-import type {Record} from './PositionRecorder';
+} from "../Patterns";
+import { getFileLogger } from "../FileLogger";
+import { PositionRecorder } from "../PositionRecorder";
+import type {Record} from '../PositionRecorder';
 
 const t = (babelTypes as any).default;
 

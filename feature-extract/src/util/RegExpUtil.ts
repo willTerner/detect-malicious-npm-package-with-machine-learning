@@ -1,7 +1,7 @@
 import { readFile } from "fs/promises";
-import { PackageFeatureInfo } from "./PackageFeatureInfo";
-import { bytestring_pattern2 } from "./Patterns";
-import { PositionRecorder } from "./PositionRecorder";
+import { PackageFeatureInfo } from "../PackageFeatureInfo";
+import { bytestring_pattern2 } from "../Patterns";
+import { PositionRecorder } from "../PositionRecorder";
 
 
 export function matchUseRegExp(code: string, result: PackageFeatureInfo, positionRecorder: PositionRecorder, targetJSFilePath) {

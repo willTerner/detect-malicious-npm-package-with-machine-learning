@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 import { join } from "path";
-import { getRootDirectory } from "./Util";
+import { getRootDirectory } from "./util/Util";
 
 export const IP_Pattern = /(\d{1,3}\.){3}\d{1,3}/;
 

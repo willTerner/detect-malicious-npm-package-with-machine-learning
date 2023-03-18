@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { mkdir, open, readFile } from "fs/promises";
 import { basename, join } from "path";
-import { asyncExec, getRootDirectory } from "./Util";
+import { asyncExec, getRootDirectory } from "./util/Util";
 import { depressSinglePackage, downloadSinglePackage, } from "./util/DownloadPackage";
 import { getFileLogger } from "./FileLogger";
 import { readdirSync } from "node:fs";

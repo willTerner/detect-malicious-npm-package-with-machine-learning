@@ -7,6 +7,9 @@ from model_util import evaluate_model
 from pickle_util import load_classifier
 from commons import table_path, classifier_path, field_names
 
+import numpy as np
+
+
 
 def test(X_test, y_test):
    model = load_classifier(classifier_path)

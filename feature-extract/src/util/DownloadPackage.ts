@@ -1,9 +1,9 @@
 import { opendir, access, mkdir, readFile, unlink } from "fs/promises";
 import { join, basename, dirname } from "path";
 import { readdirSync } from "fs";
-import { duan_path, normal1_path } from "../commons";
+import { duan_path, normal1_path, supplement_data_set_path } from "../commons";
 import chalk from "chalk";
-import { asyncExec } from "../Util";
+import { asyncExec, getCSVFromFile, getRootDirectory } from "./Util";
 
 
 
@@ -103,6 +103,7 @@ export async function downloadSinglePackage(packageName: string, saveDir: string
    return await asyncExec(`cd ${saveDir} && npm pack ${packageName}`);
 }
 
+
  async function downloadPopularPackage() {
    const jsonContent = await readFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/material/top-10000.json", {encoding: "utf-8"});
    const saveDir = "/Users/huchaoqun/Desktop/code/school-course/毕设/测试数据集/normal";
@@ -123,7 +124,5 @@ export async function downloadSinglePackage(packageName: string, saveDir: string
 
 //normalizeDir("/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/正常数据集/补充数据集");
 export async function doSomething() {
-   await normalizeDir(normal1_path);
-   //depressPackageAndSetDir(test_normal_path, ResolveDepressDir.TEST_NORMAL);
-  // downloadPopularPackage();
+   
 }

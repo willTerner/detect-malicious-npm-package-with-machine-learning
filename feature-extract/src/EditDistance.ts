@@ -1,6 +1,6 @@
 import {readFile} from 'node:fs/promises'
 import { join } from 'node:path';
-import { getRootDirectory } from './Util';
+import { getRootDirectory } from './util/Util';
 interface PackageDescription {
    name: string;
 }

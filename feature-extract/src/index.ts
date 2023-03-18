@@ -12,8 +12,9 @@ import {
   normal1_path,
   knife_path,
   normal2_path,
+  supplement_data_set_path,
 } from "./commons";
-import { asyncExec } from "./Util";
+import { asyncExec } from "./util/Util";
 import { doSomething } from "./util/DownloadPackage";
 import { scanNPMRegistry } from "./scanNPMRegistry";
 import { pattern_test } from "./Patterns";
@@ -29,10 +30,10 @@ enum Action {
   Diff,
 }
 async function extract_feature() {
-  let resolve_path = ResovlePackagePath.By_Normal2;
+  let resolve_path = ResovlePackagePath.By_Supplement
   let source_path: string;
   //@ts-ignore
-  const action = Action.Diff;
+  const action = Action.Extract;
   const haveFeatureChanged = false;
   // @ts-ignore
   if (resolve_path === ResovlePackagePath.By_Knife) {
@@ -46,6 +47,8 @@ async function extract_feature() {
     // @ts-ignore
   } else if (resolve_path === ResovlePackagePath.By_Normal2) {
     source_path = normal2_path;
+  } else if (resolve_path === ResovlePackagePath.By_Supplement) {
+    source_path = supplement_data_set_path;
   }
   // @ts-ignore
   if (action === Action.Extract) {

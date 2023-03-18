@@ -34,3 +34,4 @@ scoring = {
 training_path = os.path.join(os.path.dirname(getCurrentDir()), 'material', 'training_set')
 normal_csv_path = os.path.join(training_path, 'normal')
 malicous_csv_path = os.path.join(training_path, 'malicious')
+supplement_csv_path = os.path.join(os.path.dirname(getCurrentDir()), 'material', 'supplement-test-data-set')

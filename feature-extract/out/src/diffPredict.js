@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { join } from "node:path";
-import { getCSVFromFile, getRootDirectory, writeCSVFile } from "./Util";
+import { getCSVFromFile, getRootDirectory, writeCSVFile } from "./util/Util";
 const MATERIAL_PATH = join(getRootDirectory(), 'material');
 const RF_PATH = join(MATERIAL_PATH, 'registry-malicious-package-rf-v2.csv');
 const MLP_PATH = join(MATERIAL_PATH, 'registry-malicious-package-mlp.csv');

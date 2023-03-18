@@ -11,8 +11,8 @@ import chalk from "chalk";
 import { constants } from "fs";
 import { access } from "fs/promises";
 import { extractFeatureFromDir, extractFeatureFromPackage, ResovlePackagePath, } from "./ExtractFeature";
-import { duan_path, predict_py_path, normal1_path, knife_path, normal2_path, } from "./commons";
-import { asyncExec } from "./Util";
+import { duan_path, predict_py_path, normal1_path, knife_path, normal2_path, supplement_data_set_path, } from "./commons";
+import { asyncExec } from "./util/Util";
 import { doSomething } from "./util/DownloadPackage";
 import { scanNPMRegistry } from "./scanNPMRegistry";
 import { pattern_test } from "./Patterns";
@@ -29,10 +29,10 @@ var Action;
 })(Action || (Action = {}));
 function extract_feature() {
     return __awaiter(this, void 0, void 0, function* () {
-        let resolve_path = ResovlePackagePath.By_Normal2;
+        let resolve_path = ResovlePackagePath.By_Supplement;
         let source_path;
         //@ts-ignore
-        const action = Action.Diff;
+        const action = Action.Extract;
         const haveFeatureChanged = false;
         // @ts-ignore
         if (resolve_path === ResovlePackagePath.By_Knife) {
@@ -49,6 +49,9 @@ function extract_feature() {
         }
         else if (resolve_path === ResovlePackagePath.By_Normal2) {
             source_path = normal2_path;
+        }
+        else if (resolve_path === ResovlePackagePath.By_Supplement) {
+            source_path = supplement_data_set_path;
         }
         // @ts-ignore
         if (action === Action.Extract) {

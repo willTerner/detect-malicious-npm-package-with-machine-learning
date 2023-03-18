@@ -18,9 +18,9 @@ import chalk from "chalk";
 import { stringify } from "csv-stringify/sync";
 import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
-import { getRootDirectory } from "./Util";
+import { getRootDirectory } from "./util/Util";
 import { getPackageFeatureInfo } from "./PackageFeatureInfo";
-import { malicious_csv_path, normal_csv_path, progress_json_path, should_use_console_log } from "./commons";
+import { malicious_csv_path, normal_csv_path, progress_json_path, should_use_console_log, supplement_csv_path } from "./commons";
 export var ResovlePackagePath;
 (function (ResovlePackagePath) {
     ResovlePackagePath[ResovlePackagePath["By_Knife"] = 0] = "By_Knife";
@@ -28,7 +28,8 @@ export var ResovlePackagePath;
     ResovlePackagePath[ResovlePackagePath["By_Duan"] = 2] = "By_Duan";
     ResovlePackagePath[ResovlePackagePath["By_Normal2"] = 3] = "By_Normal2";
     ResovlePackagePath[ResovlePackagePath["By_Single_Package"] = 4] = "By_Single_Package";
-    ResovlePackagePath[ResovlePackagePath["None"] = 5] = "None";
+    ResovlePackagePath[ResovlePackagePath["By_Supplement"] = 5] = "By_Supplement";
+    ResovlePackagePath[ResovlePackagePath["None"] = 6] = "None";
 })(ResovlePackagePath || (ResovlePackagePath = {}));
 function getDirectory(resolvePath) {
     if (resolvePath === ResovlePackagePath.By_Knife || resolvePath === ResovlePackagePath.By_Duan) {
@@ -39,6 +40,9 @@ function getDirectory(resolvePath) {
     }
     if (resolvePath === ResovlePackagePath.By_Single_Package) {
         return join(getRootDirectory(), "output_feature");
+    }
+    if (resolvePath === ResovlePackagePath.By_Supplement) {
+        return supplement_csv_path;
     }
 }
 export function extractFeatureFromPackage(sourcePath, resolvepath, csvDir) {
@@ -178,7 +182,7 @@ export function extractFeatureFromDir(dirPath, resolvePath) {
         if (resolvePath === ResovlePackagePath.By_Knife) {
             yield resolveExtractByKnife(dirPath);
         }
-        if (resolvePath === ResovlePackagePath.By_Normal1 || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Normal2) {
+        if (resolvePath === ResovlePackagePath.By_Normal1 || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Normal2 || resolvePath === ResovlePackagePath.By_Supplement) {
             yield resolveExtractByNormal(dirPath);
         }
     });

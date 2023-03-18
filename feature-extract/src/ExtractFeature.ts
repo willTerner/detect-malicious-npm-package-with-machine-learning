@@ -2,9 +2,9 @@ import chalk from "chalk";
 import { stringify } from "csv-stringify/sync";
 import { writeFile, opendir, readFile } from "fs/promises";
 import { join } from "path";
-import { getRootDirectory } from "./Util";
+import { getRootDirectory } from "./util/Util";
 import { getPackageFeatureInfo, PackageFeatureInfo } from "./PackageFeatureInfo";
-import { malicious_csv_path, normal_csv_path, progress_json_path, should_use_console_log } from "./commons";
+import { malicious_csv_path, normal_csv_path, progress_json_path, should_use_console_log, supplement_csv_path } from "./commons";
 
 
 
@@ -15,6 +15,7 @@ export enum ResovlePackagePath {
    By_Duan,
    By_Normal2,
    By_Single_Package,
+   By_Supplement,
    None,
 }
 
@@ -27,6 +28,9 @@ function getDirectory(resolvePath: ResovlePackagePath) {
    }
    if (resolvePath === ResovlePackagePath.By_Single_Package) {
       return join(getRootDirectory(), "output_feature");
+   }
+   if (resolvePath === ResovlePackagePath.By_Supplement) {
+      return supplement_csv_path;
    }
 }
 
@@ -133,7 +137,7 @@ export async function extractFeatureFromDir(dirPath: string, resolvePath: Resovl
       await resolveExtractByKnife(dirPath);
    }
 
-   if (resolvePath === ResovlePackagePath.By_Normal1 || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Normal2) {
+   if (resolvePath === ResovlePackagePath.By_Normal1 || resolvePath === ResovlePackagePath.By_Duan || resolvePath === ResovlePackagePath.By_Normal2 || resolvePath === ResovlePackagePath.By_Supplement) {
       await resolveExtractByNormal(dirPath);
    }
    

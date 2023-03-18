@@ -29,8 +29,10 @@ def read_features(malicousPath, normalPath):
    feature_arr = []
    label_arr = []
    csv_name_arr = []
-   read_features_from_di(malicousPath, feature_arr, label_arr, True, csv_name_arr)
-   read_features_from_di(normalPath, feature_arr, label_arr, False, csv_name_arr)
+   if malicousPath != None:
+      read_features_from_di(malicousPath, feature_arr, label_arr, True, csv_name_arr)
+   if normalPath != None:
+      read_features_from_di(normalPath, feature_arr, label_arr, False, csv_name_arr)
    return [feature_arr, label_arr, csv_name_arr]
 
 def read_features_from_di(dirPath, feature_arr: list, label_arr: list, isMalicous: bool, csv_name_arr: list):

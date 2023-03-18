@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import {parse} from 'csv-parse/sync';
 import { join } from "node:path";
-import { getCSVFromFile, getRootDirectory, writeCSVFile } from "./Util";
+import { getCSVFromFile, getRootDirectory, writeCSVFile } from "./util/Util";
 
 const MATERIAL_PATH = join(getRootDirectory(), 'material');
 

@@ -1,6 +1,6 @@
 import { mkdir, open, readFile, rm } from "fs/promises";
 import { basename, join } from "path";
-import { asyncExec, getRootDirectory } from "./Util";
+import { asyncExec, getRootDirectory } from "./util/Util";
 import { parse } from "csv-parse/sync";
 import {
   depressSinglePackage,

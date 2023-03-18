@@ -1,4 +1,4 @@
-import { scanJSFileByAST } from "../src/ASTUtil";
+import { scanJSFileByAST } from "../src/util/ASTUtil";
 import { PackageFeatureInfo } from "../src/PackageFeatureInfo";
 
 test('createBufferFromASCII works on [] and b = []', () => { 

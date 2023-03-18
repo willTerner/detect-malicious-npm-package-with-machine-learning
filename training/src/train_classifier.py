@@ -8,16 +8,17 @@ from train_SVM import test_SVM, train_SVM_validate
 from test import test
 from pickle_util import save_scaler
 import os
-from commons import getCurrentDir, rf_scaler_save_path, mlp_scaler_save_path, nb_scaler_save_path, svm_scaler_save_path, training_path, malicous_csv_path, normal_csv_path
+from commons import getCurrentDir, rf_scaler_save_path, mlp_scaler_save_path, nb_scaler_save_path, svm_scaler_save_path, training_path, malicous_csv_path, normal_csv_path, supplement_csv_path
+import numpy as np
 
 methods = ["none", "standardlize", "min-max-scale"]
-preprocess_method = methods[2]
+preprocess_method = methods[0]
 
 models = ["RF", "MLP", "NB", "SVM"]
-use_model = models[0]
+use_model = models[2]
 
 actions = ['training', 'save', 'test']
-action = actions[2]
+action = actions[1]
 
 def preprocess(X_train, X_test, scaler_save_path):
    if preprocess_method == methods[0]:
@@ -32,15 +33,13 @@ def preprocess(X_train, X_test, scaler_save_path):
       X_train_scaled = scaler.transform(X_train)
       X_test_scaled = scaler.transform(X_test)
 
-      save_scaler(scaler, scaler_save_path)
-
       return [X_train_scaled, X_test_scaled]
    if preprocess_method == methods[2]:
       scaler = MinMaxScaler()
       scaler.fit(X_train)
       X_train_scaled = scaler.transform(X_train)
       X_test_scaled = scaler.transform(X_test)
-      save_scaler(scaler, scaler_save_path)
+      
       return [X_train_scaled, X_test_scaled]
 
 if __name__ == "__main__":
@@ -49,10 +48,10 @@ if __name__ == "__main__":
 
    [X, y, csv_name_arr] = read_features(malicous_csv_path, normal_csv_path)
 
+   [X_supple, y_supple, _] = read_features(None, supplement_csv_path)
 
 
-
-
+   
    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
    
    # preprocess data
@@ -67,6 +66,7 @@ if __name__ == "__main__":
       scaler_save_path = svm_scaler_save_path
 
    [X_train, X_test] = preprocess(X_train, X_test, scaler_save_path)
+   [X_train, X_supple] = preprocess(X_train, X_supple,scaler_save_path)
    if action == actions[0]:
       if use_model == models[0]:
          train_classifier_RF_Validation(X_train, y_train)
@@ -77,6 +77,9 @@ if __name__ == "__main__":
       else:
          train_NB_Validate(X_train, y_train)
    elif action == actions[1]:
+      # 测试数据集扩展
+      X_test = np.concatenate((X_test, X_supple), axis=0)
+      y_test = np.concatenate((y_test, y_supple), axis=0)
       if use_model == models[0]:
          test_RF(X_train, y_train, X_test, y_test)
       elif use_model == models[1]:
