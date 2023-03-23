@@ -117,10 +117,8 @@ export async function scanJSFileByAST(
           const moduleName = path.node.arguments[0].value as string;
           if (moduleName === "dns") {
             featureSet.containDomainInJSFile = true;
-            positionRecorder.addRecord('containDomainInJSFile', getRecord(path));
             if (isInstallScript) {
               featureSet.containDomainInInstallScript = true;
-              positionRecorder.addRecord('containDomainInInstallScript', getRecord(path));
             }
           }
         }
@@ -164,10 +162,8 @@ export async function scanJSFileByAST(
         const matchResult = content.match(base64_Pattern);
         if (matchResult) {
           featureSet.containBase64StringInJSFile = true;
-          positionRecorder.addRecord('containBase64StringInJSFile', getRecord(path));
           if (isInstallScript) {
             featureSet.containBase64StringInInstallScript = true;
-            positionRecorder.addRecord('containBase64StringInInstallScript', getRecord(path));
           }
         }
       }
@@ -269,10 +265,8 @@ export async function scanJSFileByAST(
       {
         if (moduleName === "dns") {
           featureSet.containDomainInJSFile = true;
-          positionRecorder.addRecord('containDomainInJSFile', getRecord(path));
           if (isInstallScript) {
             featureSet.containDomainInInstallScript = true;
-            positionRecorder.addRecord('containDomainInInstallScript', getRecord(path));
           }
         }
       }

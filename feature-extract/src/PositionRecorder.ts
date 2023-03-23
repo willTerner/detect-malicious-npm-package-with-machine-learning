@@ -1,5 +1,7 @@
 import {PackageFeatureInfo} from './PackageFeatureInfo';
 
+const MAX_RECORD_NUMBER = 1000;
+
 export type Record = {
    filePath: string;
    content: {
@@ -14,15 +16,15 @@ export type Record = {
    } | string;
 }
 
+type RecordFeatureInfo = Omit<PackageFeatureInfo, 'containBase64StringInJSFile' | 'containBase64StringInInstallScript' | 'installCommand' | 'executeJSFiles' | 'packageName' | 'version'>;
+
 export class PositionRecorder {
 
-   featurePosSet: {[k in  keyof PackageFeatureInfo]: Record[]} = {
+   featurePosSet: {[k in keyof RecordFeatureInfo]: Record[]} = {
       hasInstallScripts: [],
       containIP: [],
       useBase64Conversion: [],
       useBase64ConversionInInstallScript: [],
-      containBase64StringInJSFile: [],
-      containBase64StringInInstallScript: [],
       containDomainInJSFile: [],
       containDomainInInstallScript: [],
       containBytestring: [],
@@ -39,13 +41,12 @@ export class PositionRecorder {
       accessCryptoAndZip: [],
       accessSensitiveAPI: [],
       containSuspiciousString: [],
-      installCommand: [],
-      executeJSFiles: [],
-      packageName: [],
-      version: [],
    }; 
 
    addRecord(key: keyof PackageFeatureInfo, record: Record) {
+      if (this.featurePosSet[key].length > 1000) {
+         return ;
+      }
       this.featurePosSet[key].push(record);
    }
 

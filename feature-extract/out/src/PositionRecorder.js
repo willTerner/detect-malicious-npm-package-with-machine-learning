@@ -1,3 +1,4 @@
+const MAX_RECORD_NUMBER = 1000;
 export class PositionRecorder {
     constructor() {
         this.featurePosSet = {
@@ -5,8 +6,6 @@ export class PositionRecorder {
             containIP: [],
             useBase64Conversion: [],
             useBase64ConversionInInstallScript: [],
-            containBase64StringInJSFile: [],
-            containBase64StringInInstallScript: [],
             containDomainInJSFile: [],
             containDomainInInstallScript: [],
             containBytestring: [],
@@ -23,13 +22,12 @@ export class PositionRecorder {
             accessCryptoAndZip: [],
             accessSensitiveAPI: [],
             containSuspiciousString: [],
-            installCommand: [],
-            executeJSFiles: [],
-            packageName: [],
-            version: [],
         };
     }
     addRecord(key, record) {
+        if (this.featurePosSet[key].length > 1000) {
+            return;
+        }
         this.featurePosSet[key].push(record);
     }
     serialRecord() {

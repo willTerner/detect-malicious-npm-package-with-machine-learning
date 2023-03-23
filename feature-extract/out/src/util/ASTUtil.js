@@ -100,10 +100,8 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         const moduleName = path.node.arguments[0].value;
                         if (moduleName === "dns") {
                             featureSet.containDomainInJSFile = true;
-                            positionRecorder.addRecord('containDomainInJSFile', getRecord(path));
                             if (isInstallScript) {
                                 featureSet.containDomainInInstallScript = true;
-                                positionRecorder.addRecord('containDomainInInstallScript', getRecord(path));
                             }
                         }
                     }
@@ -145,10 +143,8 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     const matchResult = content.match(base64_Pattern);
                     if (matchResult) {
                         featureSet.containBase64StringInJSFile = true;
-                        positionRecorder.addRecord('containBase64StringInJSFile', getRecord(path));
                         if (isInstallScript) {
                             featureSet.containBase64StringInInstallScript = true;
-                            positionRecorder.addRecord('containBase64StringInInstallScript', getRecord(path));
                         }
                     }
                 }
@@ -242,10 +238,8 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                 {
                     if (moduleName === "dns") {
                         featureSet.containDomainInJSFile = true;
-                        positionRecorder.addRecord('containDomainInJSFile', getRecord(path));
                         if (isInstallScript) {
                             featureSet.containDomainInInstallScript = true;
-                            positionRecorder.addRecord('containDomainInInstallScript', getRecord(path));
                         }
                     }
                 }
