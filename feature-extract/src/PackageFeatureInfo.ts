@@ -8,7 +8,7 @@ import { matchUseRegExp } from "./util/RegExpUtil";
 import chalk from "chalk";
 import { should_use_console_log } from "./commons";
 import {PositionRecorder} from './PositionRecorder';
-import { getConfig } from "./config";
+import { getConfig, setPositionRecorder } from "./config";
 import { writeFile } from "fs/promises";
 
 
@@ -169,8 +169,7 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
    }
    await traverseDir(dirPath);
    if (getConfig().isRecordFeaturePos) {
-      const featurePosPath = join(dirPath, 'feature-position-info.json');
-      await writeFile(featurePosPath, positionRecorder.serialRecord());
+      setPositionRecorder(positionRecorder);
    }
    return result;
 }

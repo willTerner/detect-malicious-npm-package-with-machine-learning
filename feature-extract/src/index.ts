@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import { constants } from "fs";
-import { access } from "fs/promises";
+import { access, writeFile } from "fs/promises";
 import {
   extractFeatureFromDir,
   extractFeatureFromPackage,
@@ -18,8 +18,9 @@ import { asyncExec } from "./util/Util";
 import { doSomething } from "./util/DownloadPackage";
 import { scanNPMRegistry } from "./scanNPMRegistry";
 import { pattern_test } from "./Patterns";
-import { setIsRecordFeaturePos } from "./config";
+import { getConfig, setIsRecordFeaturePos } from "./config";
 import diffPredict from "./diffPredict";
+import { join } from "path";
 
 enum Action {
   Extract,
@@ -98,6 +99,10 @@ async function main() {
       console.log(
         chalk.green("finish analyzing this package.\n This package is " + stdout)
       );
+      if (stdout === 'malicious\n') {
+        const featurePosPath = join(package_path, 'feature-position-info.json');
+        await writeFile(featurePosPath, getConfig().positionRecorder.serialRecord());
+      }
     } else {
       console.log(stderr);
     }

@@ -24,8 +24,7 @@ import { matchUseRegExp } from "./util/RegExpUtil";
 import chalk from "chalk";
 import { should_use_console_log } from "./commons";
 import { PositionRecorder } from './PositionRecorder';
-import { getConfig } from "./config";
-import { writeFile } from "fs/promises";
+import { getConfig, setPositionRecorder } from "./config";
 const ALLOWED_MAX_JS_SIZE = 2 * 1024 * 1024;
 /**
  *
@@ -166,8 +165,7 @@ export function getPackageFeatureInfo(dirPath) {
         }
         yield traverseDir(dirPath);
         if (getConfig().isRecordFeaturePos) {
-            const featurePosPath = join(dirPath, 'feature-position-info.json');
-            yield writeFile(featurePosPath, positionRecorder.serialRecord());
+            setPositionRecorder(positionRecorder);
         }
         return result;
     });
