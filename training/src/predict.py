@@ -55,4 +55,4 @@ if __name__ == "__main__":
    feature_file_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test_set/malicous/alba-website.csv"
    antd_file_path = "/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/training/material/training_set/normal/antd-mobile.csv"
    flatmap_path = "/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/training_set/malicious-dedupli/flatmap-stream.csv"
-   predict_package_RF(sys.argv[1])
+   predict_package_SVM(sys.argv[1])

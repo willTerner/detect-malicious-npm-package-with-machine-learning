@@ -1,10 +1,11 @@
 import { exec } from 'node:child_process';
-import fs from 'node:fs';
+import fs, { readdirSync } from 'node:fs';
 import { promisify } from 'node:util';
 import path from 'path';
 import { readFile, writeFile } from "node:fs/promises";
 import {parse} from 'csv-parse/sync';
 import {stringify} from 'csv-stringify/sync';
+import { basename, join } from 'node:path';
 
 export function getDirectorySizeInBytes(dir) {
   let totalSize = 0;
@@ -50,4 +51,22 @@ export async function getCSVFromFile(filePath: string): Promise<string[][]> {
 
 export async function writeCSVFile(filePath: string, arr: string[][]) {
   return await writeFile(filePath, stringify(arr));
+}
+
+export async function getPackagesFromDir(dirPath: string) {
+  const result: string[] = [];
+  async function resolve(dirPath: string) {
+    const files = readdirSync(dirPath, {withFileTypes: true});
+    for (const file of files) {
+      if (file.name === 'package.json' && basename(dirPath) === 'package') {
+        result.push(dirPath);
+        return ;
+      }
+      if (file.isDirectory() && file.name !== 'node_modules') {
+        await resolve(join(dirPath, file.name));
+      }
+    }
+  }
+  await resolve(dirPath);
+  return result;
 }

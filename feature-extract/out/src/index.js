@@ -19,6 +19,7 @@ import { pattern_test } from "./Patterns";
 import { getConfig, setIsRecordFeaturePos } from "./config";
 import diffPredict from "./diffPredict";
 import { join } from "path";
+import { measurePerformance } from "./measurePerformance";
 var Action;
 (function (Action) {
     Action[Action["Extract"] = 0] = "Extract";
@@ -27,13 +28,14 @@ var Action;
     Action[Action["ScanNPMRegistry"] = 3] = "ScanNPMRegistry";
     Action[Action["PatternTest"] = 4] = "PatternTest";
     Action[Action["Diff"] = 5] = "Diff";
+    Action[Action["MeasurePerformance"] = 6] = "MeasurePerformance";
 })(Action || (Action = {}));
 function extract_feature() {
     return __awaiter(this, void 0, void 0, function* () {
         let resolve_path = ResovlePackagePath.By_Supplement;
         let source_path;
         //@ts-ignore
-        const action = Action.Extract;
+        const action = Action.MeasurePerformance;
         const haveFeatureChanged = false;
         // @ts-ignore
         if (resolve_path === ResovlePackagePath.By_Knife) {
@@ -69,9 +71,13 @@ function extract_feature() {
         }
         else if (action === Action.PatternTest) {
             yield pattern_test();
+            // @ts-ignore
         }
         else if (action === Action.Diff) {
             yield diffPredict();
+        }
+        else if (action === Action.MeasurePerformance) {
+            yield measurePerformance();
         }
         //doSomethingAST();
     });
@@ -81,9 +87,8 @@ function show_usage() {
 }
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        if (process.argv.length > 0) {
-            //const package_path = process.argv[2];
-            const package_path = '/Volumes/data1/code/school/graduate-design/data-set/package';
+        if (process.argv.length === 3) {
+            const package_path = process.argv[2];
             try {
                 yield access(package_path, constants.F_OK | constants.R_OK);
             }

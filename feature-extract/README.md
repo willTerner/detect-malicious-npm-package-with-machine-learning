@@ -4,15 +4,6 @@
 commons.ts 中 should_use_console_log 控制是否输出信息
 
 ### 恶意包特征
-
-#### 从单个包提取的特征
-
- <img src="./img/截屏2023-01-15 14.17.39.png"/>
-
-##### 特征来源
-
-通过统计比较恶意样本和正常样本的差别
-
 ##### 详细解释
 
 - 关注特征的位置，是在 install hook 中有还是在普通的文件中有
@@ -84,28 +75,15 @@ commons.ts 中 should_use_console_log 控制是否输出信息
   - 敏感函数、对象
     - Function
 
-#### 特征为包版本间的差别
-
- <img src="./img/截屏2023-01-15%2014.18.08.png"/>
-
 #### 问题
 
-- 安装脚本中使用了第三方包来进行恶意操作，如何检测这种行为?
-- knife 有大量重复的样本
-  - arm-\*\*有大量重复，且版本都是 99.10.9，恶意行为为窃取并发送隐私数据
-- **todo**: 改变文件扩展名，js 改成 md --> 把 node 命令后面的文件作为 js 文件来分析
-- knife 样本集中包含非恶意包，比如 ca-bucky-client
-- package.json 中的仓库 url 不准确
-- 异常情况的处理: install hook 提供的 js 文件目录不对
 - 依赖的包是恶意的，源码没有包含恶意代码，加入对依赖包的检测?，案例 event-stream
   - 注意:也属于恶意包
 - 注入攻击检测，案例 event-stream
 - 如何检测使用代码混淆(打包和压缩，比如 webpack，rollup 等工具)的恶意包
   - 案例 event-stream
 - 没有考虑 ts 文件
-- js 中的 babel，正则表达式无法分析大文件（阈值: 2MB），比如/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/momnet/2.28.0/package/moment.js，不过恶意代码文件一般不会这么大
 - 通过命令下载恶意代码执行恶意代码，比如/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/恶意数据集/knife/rrgod/1.0.0 下载 python 执行
-  - 可以作为优化点
 
 #### npm 包
 
@@ -114,3 +92,11 @@ commons.ts 中 should_use_console_log 控制是否输出信息
 - 流行包：文件较多，包较大，提供一些功能
 - 测试包：个人发布的一些测试学习用的包，文件较少，包较小，不提供功能接口
 - 恶意包：第一次发布的恶意包和由正常包受到攻击后变成了恶意包
+
+#### 性能表现
+
++ normal1: 分析了2055个包，花了2652998ms
++ normal2: 分析了1996个包，花了2210935ms
++ duan: 分析了398个包，花了258062ms
++ knife: 分析了1841个包，花了1280223ms
++ 补充数据集: 分析了149个包，花了92958ms

@@ -1,0 +1,1311 @@
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/001-npm-1.0.0/package/dist/常用/jquery/02.20jquer选择器/jquery2.js 2023/3/24 17:08:37
+error名称: SyntaxError 2023/3/24 17:08:37
+error信息unknown: Unexpected token, expected "," (42:20)
+
+[0m [90m 40 |[39m 		[36mreturn[39m [36mthis[39m[0m
+[0m [90m 41 |[39m 	}[33m,[39m[0m
+[0m[31m[1m>[22m[39m[90m 42 |[39m 	click[33m:[39m[36mfunction[39m() {}[33m;[39m[0m
+[0m [90m    |[39m 	                   [31m[1m^[22m[39m[0m
+[0m [90m 43 |[39m 	[0m
+[0m [90m 44 |[39m }[0m 2023/3/24 17:08:37
+错误栈SyntaxError: unknown: Unexpected token, expected "," (42:20)
+
+[0m [90m 40 |[39m 		[36mreturn[39m [36mthis[39m[0m
+[0m [90m 41 |[39m 	}[33m,[39m[0m
+[0m[31m[1m>[22m[39m[90m 42 |[39m 	click[33m:[39m[36mfunction[39m() {}[33m;[39m[0m
+[0m [90m    |[39m 	                   [31m[1m^[22m[39m[0m
+[0m [90m 43 |[39m 	[0m
+[0m [90m 44 |[39m }[0m
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.unexpected (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3281:16)
+    at FlowParserMixin.expect (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3627:28)
+    at FlowParserMixin.parseObjectLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:11619:14)
+    at FlowParserMixin.parseExprAtom (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:11131:23)
+    at FlowParserMixin.parseExprSubscripts (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseUpdate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10832:21)
+    at FlowParserMixin.parseMaybeUnary (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10808:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10646:61)
+    at FlowParserMixin.parseExprOps (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10651:23)
+    at FlowParserMixin.parseMaybeConditional (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10628:23)
+    at FlowParserMixin.parseMaybeAssign (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10589:21)
+    at FlowParserMixin.parseMaybeAssign (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5817:18)
+    at FlowParserMixin.parseMaybeAssign (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10615:25)
+    at FlowParserMixin.parseMaybeAssign (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5817:18)
+    at FlowParserMixin.parseExpressionBase (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10543:23)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10539:39
+    at FlowParserMixin.allowInAnd (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12233:16)
+    at FlowParserMixin.parseExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:10539:17)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12675:23)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:37
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-input-code.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (77:3):
+
+[0m [90m 75 |[39m   }[0m
+[0m [90m 76 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 77 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 78 |[39m   handleCodeInput(index) {[0m
+[0m [90m 79 |[39m     [36mconst[39m elem [33m=[39m document[33m.[39mgetElementById([32m`code-input-${index}`[39m)[33m;[39m[0m
+[0m [90m 80 |[39m     [36mthis[39m[33m.[39mvalidateInput(elem)[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (77:3):
+
+[0m [90m 75 |[39m   }[0m
+[0m [90m 76 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 77 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 78 |[39m   handleCodeInput(index) {[0m
+[0m [90m 79 |[39m     [36mconst[39m elem [33m=[39m document[33m.[39mgetElementById([32m`code-input-${index}`[39m)[33m;[39m[0m
+[0m [90m 80 |[39m     [36mthis[39m[33m.[39mvalidateInput(elem)[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-select.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (7:3):
+
+[0m [90m  5 |[39m[0m
+[0m [90m  6 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixSelect[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m  7 |[39m   [33m@[39mtracked isExpanded [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m  8 |[39m   [33m@[39mtracked searchValue [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m [90m  9 |[39m   searchId [33m=[39m [32m'search-input-'[39m [33m+[39m guidFor([36mthis[39m)[33m;[39m[0m
+[0m [90m 10 |[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (7:3):
+
+[0m [90m  5 |[39m[0m
+[0m [90m  6 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixSelect[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m  7 |[39m   [33m@[39mtracked isExpanded [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m  8 |[39m   [33m@[39mtracked searchValue [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m [90m  9 |[39m   searchId [33m=[39m [32m'search-input-'[39m [33m+[39m guidFor([36mthis[39m)[33m;[39m[0m
+[0m [90m 10 |[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-selectable-tag.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (6:3):
+
+[0m [90m 4 |[39m[0m
+[0m [90m 5 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixSelectableTag[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m   [33m@[39mtracked isChecked [33m=[39m [36mthis[39m[33m.[39margs[33m.[39mchecked[33m;[39m[0m
+[0m [90m   |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m[0m
+[0m [90m 8 |[39m   [33m@[39maction[0m
+[0m [90m 9 |[39m   toggleIsChecked() {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (6:3):
+
+[0m [90m 4 |[39m[0m
+[0m [90m 5 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixSelectableTag[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m   [33m@[39mtracked isChecked [33m=[39m [36mthis[39m[33m.[39margs[33m.[39mchecked[33m;[39m[0m
+[0m [90m   |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m[0m
+[0m [90m 8 |[39m   [33m@[39maction[0m
+[0m [90m 9 |[39m   toggleIsChecked() {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-banner.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (30:3):
+
+[0m [90m 28 |[39m[0m
+[0m [90m 29 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixBanner[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 30 |[39m   [33m@[39mtracked isBannerVisible [33m=[39m [36mtrue[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 31 |[39m   [36mget[39m type() {[0m
+[0m [90m 32 |[39m     [36mreturn[39m types[33m.[39mincludes([36mthis[39m[33m.[39margs[33m.[39mtype) [33m?[39m [36mthis[39m[33m.[39margs[33m.[39mtype [33m:[39m [33mTYPE_INFO[39m[33m;[39m[0m
+[0m [90m 33 |[39m   }[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (30:3):
+
+[0m [90m 28 |[39m[0m
+[0m [90m 29 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixBanner[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 30 |[39m   [33m@[39mtracked isBannerVisible [33m=[39m [36mtrue[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 31 |[39m   [36mget[39m type() {[0m
+[0m [90m 32 |[39m     [36mreturn[39m types[33m.[39mincludes([36mthis[39m[33m.[39margs[33m.[39mtype) [33m?[39m [36mthis[39m[33m.[39margs[33m.[39mtype [33m:[39m [33mTYPE_INFO[39m[33m;[39m[0m
+[0m [90m 33 |[39m   }[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-dropdown.js 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (9:3):
+
+[0m [90m  7 |[39m   focusedOption [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m [90m  8 |[39m   focusedIndex [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m  9 |[39m   [33m@[39mtracked page [33m=[39m [35m1[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 10 |[39m   [33m@[39mtracked selectedOption [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m [90m 11 |[39m   [33m@[39mtracked isExpanded [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m 12 |[39m   [33m@[39mtracked options [33m=[39m [36mthis[39m[33m.[39margs[33m.[39moptions[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (9:3):
+
+[0m [90m  7 |[39m   focusedOption [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m [90m  8 |[39m   focusedIndex [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m  9 |[39m   [33m@[39mtracked page [33m=[39m [35m1[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 10 |[39m   [33m@[39mtracked selectedOption [33m=[39m [36mnull[39m[33m;[39m[0m
+[0m [90m 11 |[39m   [33m@[39mtracked isExpanded [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m 12 |[39m   [33m@[39mtracked options [33m=[39m [36mthis[39m[33m.[39margs[33m.[39moptions[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-input-password.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (15:3):
+
+[0m [90m 13 |[39m[0m
+[0m [90m 14 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixInputPassword[39m [36mextends[39m [33mPixInput[39m {[0m
+[0m[31m[1m>[22m[39m[90m 15 |[39m   [33m@[39mtracked isPasswordVisible [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 16 |[39m[0m
+[0m [90m 17 |[39m   [36mget[39m label() {[0m
+[0m [90m 18 |[39m     [36mif[39m ([33m![39m[36mthis[39m[33m.[39margs[33m.[39mlabel [33m&&[39m [33m![39m[36mthis[39m[33m.[39margs[33m.[39mariaLabel) {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (15:3):
+
+[0m [90m 13 |[39m[0m
+[0m [90m 14 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixInputPassword[39m [36mextends[39m [33mPixInput[39m {[0m
+[0m[31m[1m>[22m[39m[90m 15 |[39m   [33m@[39mtracked isPasswordVisible [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 16 |[39m[0m
+[0m [90m 17 |[39m   [36mget[39m label() {[0m
+[0m [90m 18 |[39m     [36mif[39m ([33m![39m[36mthis[39m[33m.[39margs[33m.[39mlabel [33m&&[39m [33m![39m[36mthis[39m[33m.[39margs[33m.[39mariaLabel) {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-button.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (10:3):
+
+[0m [90m  8 |[39m   defaultModel [33m=[39m [][33m;[39m[0m
+[0m [90m  9 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 10 |[39m   [33m@[39mtracked isTriggering [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 11 |[39m[0m
+[0m [90m 12 |[39m   [36mget[39m isLoading() {[0m
+[0m [90m 13 |[39m     [36mreturn[39m [36mthis[39m[33m.[39margs[33m.[39misLoading [33m||[39m [36mthis[39m[33m.[39misTriggering[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (10:3):
+
+[0m [90m  8 |[39m   defaultModel [33m=[39m [][33m;[39m[0m
+[0m [90m  9 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 10 |[39m   [33m@[39mtracked isTriggering [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 11 |[39m[0m
+[0m [90m 12 |[39m   [36mget[39m isLoading() {[0m
+[0m [90m 13 |[39m     [36mreturn[39m [36mthis[39m[33m.[39margs[33m.[39misLoading [33m||[39m [36mthis[39m[33m.[39misTriggering[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-indicator-card.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (11:3):
+
+[0m [90m  9 |[39m   tooltipId [33m=[39m [32m'tooltip-'[39m [33m+[39m [36mthis[39m[33m.[39mid[33m;[39m[0m
+[0m [90m 10 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 11 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 12 |[39m   setIconColor() {[0m
+[0m [90m 13 |[39m     [36mconst[39m element [33m=[39m document[33m.[39mgetElementById([36mthis[39m[33m.[39miconId)[33m;[39m[0m
+[0m [90m 14 |[39m     [36mtry[39m {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (11:3):
+
+[0m [90m  9 |[39m   tooltipId [33m=[39m [32m'tooltip-'[39m [33m+[39m [36mthis[39m[33m.[39mid[33m;[39m[0m
+[0m [90m 10 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 11 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 12 |[39m   setIconColor() {[0m
+[0m [90m 13 |[39m     [36mconst[39m element [33m=[39m document[33m.[39mgetElementById([36mthis[39m[33m.[39miconId)[33m;[39m[0m
+[0m [90m 14 |[39m     [36mtry[39m {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-icon-button.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (27:3):
+
+[0m [90m 25 |[39m   }[0m
+[0m [90m 26 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 27 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 28 |[39m   triggerAction(params) {[0m
+[0m [90m 29 |[39m     [36mif[39m ([36mthis[39m[33m.[39margs[33m.[39mtriggerAction) {[0m
+[0m [90m 30 |[39m       [36mthis[39m[33m.[39margs[33m.[39mtriggerAction(params)[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (27:3):
+
+[0m [90m 25 |[39m   }[0m
+[0m [90m 26 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 27 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 28 |[39m   triggerAction(params) {[0m
+[0m [90m 29 |[39m     [36mif[39m ([36mthis[39m[33m.[39margs[33m.[39mtriggerAction) {[0m
+[0m [90m 30 |[39m       [36mthis[39m[33m.[39margs[33m.[39mtriggerAction(params)[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-search-input.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (38:3):
+
+[0m [90m 36 |[39m   }[0m
+[0m [90m 37 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 38 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 39 |[39m   [36masync[39m onSearch(event) {[0m
+[0m [90m 40 |[39m     [36mawait[39m [36mthis[39m[33m.[39mdebouncedTriggerFiltering([36mthis[39m[33m.[39msearchInputId[33m,[39m event[33m.[39mtarget[33m.[39mvalue)[33m;[39m[0m
+[0m [90m 41 |[39m   }[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (38:3):
+
+[0m [90m 36 |[39m   }[0m
+[0m [90m 37 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 38 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 39 |[39m   [36masync[39m onSearch(event) {[0m
+[0m [90m 40 |[39m     [36mawait[39m [36mthis[39m[33m.[39mdebouncedTriggerFiltering([36mthis[39m[33m.[39msearchInputId[33m,[39m event[33m.[39mtarget[33m.[39mvalue)[33m;[39m[0m
+[0m [90m 41 |[39m   }[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-collapsible.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (10:3):
+
+[0m [90m  8 |[39m   contentId [33m=[39m [32m'pix-collapsible-'[39m [33m+[39m guidFor([36mthis[39m)[33m;[39m[0m
+[0m [90m  9 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 10 |[39m   [33m@[39mtracked isCollapsed [33m=[39m [36mtrue[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 11 |[39m   [33m@[39mtracked hasUnCollapsedOnce [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m 12 |[39m[0m
+[0m [90m 13 |[39m   [36mget[39m isUnCollapsed() {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (10:3):
+
+[0m [90m  8 |[39m   contentId [33m=[39m [32m'pix-collapsible-'[39m [33m+[39m guidFor([36mthis[39m)[33m;[39m[0m
+[0m [90m  9 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 10 |[39m   [33m@[39mtracked isCollapsed [33m=[39m [36mtrue[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 11 |[39m   [33m@[39mtracked hasUnCollapsedOnce [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m 12 |[39m[0m
+[0m [90m 13 |[39m   [36mget[39m isUnCollapsed() {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-tooltip.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (6:3):
+
+[0m [90m 4 |[39m[0m
+[0m [90m 5 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixTooltip[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m   [33m@[39mtracked isVisible [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m   |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m[0m
+[0m [90m 8 |[39m   [36mget[39m position() {[0m
+[0m [90m 9 |[39m     [36mconst[39m correctsPosition [33m=[39m [[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (6:3):
+
+[0m [90m 4 |[39m[0m
+[0m [90m 5 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixTooltip[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m   [33m@[39mtracked isVisible [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m   |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m[0m
+[0m [90m 8 |[39m   [36mget[39m position() {[0m
+[0m [90m 9 |[39m     [36mconst[39m correctsPosition [33m=[39m [[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-multi-select.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (22:3):
+
+[0m [90m 20 |[39m[0m
+[0m [90m 21 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixMultiSelect[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 22 |[39m   [33m@[39mtracked isExpanded [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 23 |[39m   [33m@[39mtracked searchData[33m;[39m[0m
+[0m [90m 24 |[39m[0m
+[0m [90m 25 |[39m   [33m@[39mtracked options [33m=[39m [][33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (22:3):
+
+[0m [90m 20 |[39m[0m
+[0m [90m 21 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixMultiSelect[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 22 |[39m   [33m@[39mtracked isExpanded [33m=[39m [36mfalse[39m[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 23 |[39m   [33m@[39mtracked searchData[33m;[39m[0m
+[0m [90m 24 |[39m[0m
+[0m [90m 25 |[39m   [33m@[39mtracked options [33m=[39m [][33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-toggle.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (19:3):
+
+[0m [90m 17 |[39m   }[0m
+[0m [90m 18 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 19 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 20 |[39m   onToggle() {[0m
+[0m [90m 21 |[39m     [36mthis[39m[33m.[39margs[33m.[39monChange([33m![39m[36mthis[39m[33m.[39margs[33m.[39mtoggled)[33m;[39m[0m
+[0m [90m 22 |[39m   }[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (19:3):
+
+[0m [90m 17 |[39m   }[0m
+[0m [90m 18 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 19 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 20 |[39m   onToggle() {[0m
+[0m [90m 21 |[39m     [36mthis[39m[33m.[39margs[33m.[39monChange([33m![39m[36mthis[39m[33m.[39margs[33m.[39mtoggled)[33m;[39m[0m
+[0m [90m 22 |[39m   }[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-filterable-and-searchable-select.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (7:3):
+
+[0m [90m  5 |[39m[0m
+[0m [90m  6 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixFilterableAndSearchableSelect[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m  7 |[39m   [33m@[39mtracked selectedCategories [33m=[39m [][33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m  8 |[39m[0m
+[0m [90m  9 |[39m   id [33m=[39m [32m'pix-filterable-and-searchable-select'[39m [33m+[39m guidFor([36mthis[39m)[33m;[39m[0m
+[0m [90m 10 |[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (7:3):
+
+[0m [90m  5 |[39m[0m
+[0m [90m  6 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixFilterableAndSearchableSelect[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m  7 |[39m   [33m@[39mtracked selectedCategories [33m=[39m [][33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m  8 |[39m[0m
+[0m [90m  9 |[39m   id [33m=[39m [32m'pix-filterable-and-searchable-select'[39m [33m+[39m guidFor([36mthis[39m)[33m;[39m[0m
+[0m [90m 10 |[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-sidebar.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (14:3):
+
+[0m [90m 12 |[39m   }[0m
+[0m [90m 13 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m   closeAction(event) {[0m
+[0m [90m 16 |[39m     [36mif[39m ([36mthis[39m[33m.[39margs[33m.[39monClose [33m&&[39m [36mthis[39m[33m.[39misClickOnOverlay(event)) {[0m
+[0m [90m 17 |[39m       [36mthis[39m[33m.[39margs[33m.[39monClose(event)[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (14:3):
+
+[0m [90m 12 |[39m   }[0m
+[0m [90m 13 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m   closeAction(event) {[0m
+[0m [90m 16 |[39m     [36mif[39m ([36mthis[39m[33m.[39margs[33m.[39monClose [33m&&[39m [36mthis[39m[33m.[39misClickOnOverlay(event)) {[0m
+[0m [90m 17 |[39m       [36mthis[39m[33m.[39margs[33m.[39monClose(event)[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-pagination.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (14:3):
+
+[0m [90m 12 |[39m[0m
+[0m [90m 13 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixPagination[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m   [33m@[39mservice router[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m[0m
+[0m [90m 16 |[39m   [36mget[39m isCondensed() {[0m
+[0m [90m 17 |[39m     [36mreturn[39m [36mthis[39m[33m.[39margs[33m.[39misCondensed [33m?[39m [32m'pix-pagination-condensed'[39m [33m:[39m [32m'pix-pagination'[39m[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (14:3):
+
+[0m [90m 12 |[39m[0m
+[0m [90m 13 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixPagination[39m [36mextends[39m [33mComponent[39m {[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m   [33m@[39mservice router[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m[0m
+[0m [90m 16 |[39m   [36mget[39m isCondensed() {[0m
+[0m [90m 17 |[39m     [36mreturn[39m [36mthis[39m[33m.[39margs[33m.[39misCondensed [33m?[39m [32m'pix-pagination-condensed'[39m [33m:[39m [32m'pix-pagination'[39m[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-button-upload.js 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (6:3):
+
+[0m [90m 4 |[39m[0m
+[0m [90m 5 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixButtonUpload[39m [36mextends[39m [33mPixButtonBase[39m {[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m   [33m@[39mtracked[0m
+[0m [90m   |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m   files [33m=[39m [][33m;[39m[0m
+[0m [90m 8 |[39m[0m
+[0m [90m 9 |[39m   [36mget[39m className() {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (6:3):
+
+[0m [90m 4 |[39m[0m
+[0m [90m 5 |[39m [36mexport[39m [36mdefault[39m [36mclass[39m [33mPixButtonUpload[39m [36mextends[39m [33mPixButtonBase[39m {[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m   [33m@[39mtracked[0m
+[0m [90m   |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m   files [33m=[39m [][33m;[39m[0m
+[0m [90m 8 |[39m[0m
+[0m [90m 9 |[39m   [36mget[39m className() {[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/1024pix-pix-ui-28.1.1/package/addon/components/pix-modal.js 2023/3/24 17:08:53
+error信息unknown: Support for the experimental syntax 'decorators' isn't currently enabled (14:3):
+
+[0m [90m 12 |[39m   }[0m
+[0m [90m 13 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m   closeAction(event) {[0m
+[0m [90m 16 |[39m     [36mif[39m ([36mthis[39m[33m.[39margs[33m.[39monCloseButtonClick [33m&&[39m [36mthis[39m[33m.[39misClickOnOverlay(event)) {[0m
+[0m [90m 17 |[39m       [36mthis[39m[33m.[39margs[33m.[39monCloseButtonClick(event)[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing. 2023/3/24 17:08:53
+error名称: SyntaxError 2023/3/24 17:08:53
+错误栈SyntaxError: unknown: Support for the experimental syntax 'decorators' isn't currently enabled (14:3):
+
+[0m [90m 12 |[39m   }[0m
+[0m [90m 13 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m   [33m@[39maction[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m   closeAction(event) {[0m
+[0m [90m 16 |[39m     [36mif[39m ([36mthis[39m[33m.[39margs[33m.[39monCloseButtonClick [33m&&[39m [36mthis[39m[33m.[39misClickOnOverlay(event)) {[0m
+[0m [90m 17 |[39m       [36mthis[39m[33m.[39margs[33m.[39monCloseButtonClick(event)[33m;[39m[0m
+
+Add @babel/plugin-proposal-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-proposal-decorators) to the 'plugins' section of your Babel config to enable transformation.
+If you want to leave it as-is, add @babel/plugin-syntax-decorators (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-decorators) to the 'plugins' section to enable parsing.
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.expectOnePlugin (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3297:18)
+    at FlowParserMixin.parseDecorator (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12726:10)
+    at /Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13299:32
+    at FlowParserMixin.withSmartMixTopicForbiddingContext (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12215:14)
+    at FlowParserMixin.parseClassBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13288:10)
+    at FlowParserMixin.parseClass (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13266:22)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13725:19)
+    at FlowParserMixin.parseExportDefaultExpression (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5184:18)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13645:25)
+    at FlowParserMixin.parseExport (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5313:24)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12653:27)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:08:53
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/20221110zxy-2.0.0/package/data.js 2023/3/24 17:09:11
+error名称: SyntaxError 2023/3/24 17:09:11
+error信息unknown: 'return' outside of function. (19:0)
+
+[0m [90m 17 |[39m console[33m.[39mlog(dateFormate)[33m;[39m[0m
+[0m [90m 18 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 19 |[39m [36mreturn[39m dateFormate[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m 2023/3/24 17:09:11
+错误栈SyntaxError: unknown: 'return' outside of function. (19:0)
+
+[0m [90m 17 |[39m console[33m.[39mlog(dateFormate)[33m;[39m[0m
+[0m [90m 18 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 19 |[39m [36mreturn[39m dateFormate[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.parseReturnStatement (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12910:12)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12574:21)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:09:11
+现在分析的文件是: /Volumes/data1/code/school/graduate-design/data-set/packages/supplement-data-set/4chan-0.1.0/package/4chan.js 2023/3/24 17:09:31
+error名称: SyntaxError 2023/3/24 17:09:31
+error信息unknown: 'return' outside of function. (68:4)
+
+[0m [90m 66 |[39m[0m
+[0m [90m 67 |[39m [36mif[39m(argv[33m.[39mv)[0m
+[0m[31m[1m>[22m[39m[90m 68 |[39m     [36mreturn[39m movePics(tcb)[33m;[39m[0m
+[0m [90m    |[39m     [31m[1m^[22m[39m[0m
+[0m [90m 69 |[39m[0m
+[0m [90m 70 |[39m [36mif[39m(argv[33m.[39md)[0m
+[0m [90m 71 |[39m     [36mreturn[39m deleteDirs(tcb)[33m;[39m[0m 2023/3/24 17:09:31
+错误栈SyntaxError: unknown: 'return' outside of function. (68:4)
+
+[0m [90m 66 |[39m[0m
+[0m [90m 67 |[39m [36mif[39m(argv[33m.[39mv)[0m
+[0m[31m[1m>[22m[39m[90m 68 |[39m     [36mreturn[39m movePics(tcb)[33m;[39m[0m
+[0m [90m    |[39m     [31m[1m^[22m[39m[0m
+[0m [90m 69 |[39m[0m
+[0m [90m 70 |[39m [36mif[39m(argv[33m.[39md)[0m
+[0m [90m 71 |[39m     [36mreturn[39m deleteDirs(tcb)[33m;[39m[0m
+    at instantiate (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:64:32)
+    at constructor (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:361:12)
+    at FlowParserMixin.raise (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:3251:19)
+    at FlowParserMixin.parseReturnStatement (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12910:12)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12574:21)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseStatementOrFunctionDeclaration (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12525:17)
+    at FlowParserMixin.parseIfStatement (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12904:28)
+    at FlowParserMixin.parseStatementContent (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12572:21)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12535:17)
+    at FlowParserMixin.parseStatementLike (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5136:24)
+    at FlowParserMixin.parseModuleItem (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12519:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13106:36)
+    at FlowParserMixin.parseBlockBody (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:13099:10)
+    at FlowParserMixin.parseProgram (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12433:10)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:12423:25)
+    at FlowParserMixin.parseTopLevel (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:5955:28)
+    at FlowParserMixin.parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14226:10)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/parser/lib/index.js:14247:26)
+    at parser (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:25:37)
+    at parse.next (<anonymous>)
+    at evaluateSync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:251:28)
+    at sync (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/gensync/index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:46:12)
+    at parse (/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/node_modules/@babel/core/lib/parse.js:34:76)
+    at file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:35:19
+    at Generator.next (<anonymous>)
+    at fulfilled (file:///Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/feature-extract/out/src/util/ASTUtil.js:4:58) 2023/3/24 17:09:31

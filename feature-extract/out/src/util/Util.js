@@ -8,12 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { exec } from 'node:child_process';
-import fs from 'node:fs';
+import fs, { readdirSync } from 'node:fs';
 import { promisify } from 'node:util';
 import path from 'path';
 import { readFile, writeFile } from "node:fs/promises";
 import { parse } from 'csv-parse/sync';
 import { stringify } from 'csv-stringify/sync';
+import { basename, join } from 'node:path';
 export function getDirectorySizeInBytes(dir) {
     let totalSize = 0;
     function walk(currentPath) {
@@ -49,6 +50,27 @@ export function getCSVFromFile(filePath) {
 export function writeCSVFile(filePath, arr) {
     return __awaiter(this, void 0, void 0, function* () {
         return yield writeFile(filePath, stringify(arr));
+    });
+}
+export function getPackagesFromDir(dirPath) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const result = [];
+        function resolve(dirPath) {
+            return __awaiter(this, void 0, void 0, function* () {
+                const files = readdirSync(dirPath, { withFileTypes: true });
+                for (const file of files) {
+                    if (file.name === 'package.json' && basename(dirPath) === 'package') {
+                        result.push(dirPath);
+                        return;
+                    }
+                    if (file.isDirectory() && file.name !== 'node_modules') {
+                        yield resolve(join(dirPath, file.name));
+                    }
+                }
+            });
+        }
+        yield resolve(dirPath);
+        return result;
     });
 }
 //# sourceMappingURL=Util.js.map

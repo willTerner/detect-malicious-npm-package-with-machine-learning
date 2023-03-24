@@ -21,6 +21,7 @@ import { pattern_test } from "./Patterns";
 import { getConfig, setIsRecordFeaturePos } from "./config";
 import diffPredict from "./diffPredict";
 import { join } from "path";
+import { measurePerformance } from "./measurePerformance";
 
 enum Action {
   Extract,
@@ -29,12 +30,13 @@ enum Action {
   ScanNPMRegistry,
   PatternTest,
   Diff,
+  MeasurePerformance
 }
 async function extract_feature() {
   let resolve_path = ResovlePackagePath.By_Supplement
   let source_path: string;
   //@ts-ignore
-  const action = Action.Extract;
+  const action = Action.MeasurePerformance;
   const haveFeatureChanged = false;
   // @ts-ignore
   if (resolve_path === ResovlePackagePath.By_Knife) {
@@ -63,8 +65,11 @@ async function extract_feature() {
     // @ts-ignore
   } else if (action === Action.PatternTest) {
     await pattern_test();
+    // @ts-ignore
   } else if (action === Action.Diff) {
     await diffPredict();
+  } else if (action === Action.MeasurePerformance) {
+    await measurePerformance();
   }
   //doSomethingAST();
 }

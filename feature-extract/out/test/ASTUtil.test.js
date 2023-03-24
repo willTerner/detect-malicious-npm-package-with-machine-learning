@@ -2446,5 +2446,4 @@ let code = `
     
    `;
 scanJSFileByAST(code, result, false, "", null);
-console.log(result);
 //# sourceMappingURL=ASTUtil.test.js.map

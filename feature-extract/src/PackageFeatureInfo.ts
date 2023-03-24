@@ -168,8 +168,6 @@ export async function getPackageFeatureInfo(dirPath: string): Promise<PackageFea
       }
    }
    await traverseDir(dirPath);
-   if (getConfig().isRecordFeaturePos) {
-      setPositionRecorder(positionRecorder);
-   }
+   setPositionRecorder(positionRecorder);
    return result;
 }
