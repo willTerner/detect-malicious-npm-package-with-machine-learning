@@ -11,12 +11,12 @@
          "skipFiles": [
             "<node_internals>/**"
          ],
-         "program": "${workspaceFolder}/src/index.ts",
+         "program": "${workspaceFolder}/test/ASTUtil.test.ts",
          "outFiles": [
-            "${workspaceFolder}/out/src/**/*.js"
+            "${workspaceFolder}/out/**/*.js"
          ],
-         "preLaunchTask": "tsc: build - tsconfig.json",
-         "runtimeArgs": ["--es-module-specifier-resolution=node"]
+         "runtimeArgs": ["--es-module-specifier-resolution=node"],
+         "runtimeExecutable": "/Users/huchaoqun/.nvm/versions/node/v14.15.3/bin/node"
       }
    ]
 }

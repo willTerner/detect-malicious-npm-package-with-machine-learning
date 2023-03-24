@@ -37,35 +37,43 @@ export async function getAllInstallScripts(installScripts: string[]) {
          logger.log("error信息" + errorObj.message);
          logger.log("错误栈" + errorObj.stack);
       }
-      traverse(ast, {
-         CallExpression: function(path) {
-            if (path.node.callee.name === "require") {
-               if (path.node.arguments.length > 0) {
-                  if (t.isStringLiteral(path.node.arguments[0])) {
-                     const moduleName = path.node.arguments[0].value as string;
-                  try{
-                     if (moduleName.startsWith("/") || moduleName.startsWith("./") || moduleName.startsWith("../")) {
-                        let importScript = join(dirname(installScripts[idx]), moduleName);
-                        if (importScript.endsWith(".js") || importScript.indexOf(".") < 0) {
-                           if (!importScript.endsWith(".js")) {
-                              importScript = importScript + ".js";
-                           }
-                           try{
-                              accessSync(importScript);
-                              installScripts.push(importScript);
-                           }catch(error){
-                              console.log(error);
+      try{
+         traverse(ast, {
+            CallExpression: function(path) {
+               if (path.node.callee.name === "require") {
+                  if (path.node.arguments.length > 0) {
+                     if (t.isStringLiteral(path.node.arguments[0])) {
+                        const moduleName = path.node.arguments[0].value as string;
+                     try{
+                        if (moduleName.startsWith("/") || moduleName.startsWith("./") || moduleName.startsWith("../")) {
+                           let importScript = join(dirname(installScripts[idx]), moduleName);
+                           if (importScript.endsWith(".js") || importScript.indexOf(".") < 0) {
+                              if (!importScript.endsWith(".js")) {
+                                 importScript = importScript + ".js";
+                              }
+                              try{
+                                 accessSync(importScript);
+                                 installScripts.push(importScript);
+                              }catch(error){
+                                 console.log(error);
+                              }
                            }
                         }
+                     }catch(error) {
+                        throw error;
                      }
-                  }catch(error) {
-                     throw error;
-                  }
+                     }
                   }
                }
             }
-         }
-      });
+         });
+      }catch(error) {
+         logger.log("现在分析的文件是: " + installScripts[idx]);
+         const errorObj = error as Error;
+         logger.log("error名称: " + errorObj.name);
+         logger.log("error信息" + errorObj.message);
+         logger.log("错误栈" + errorObj.stack);
+      }
       await resolveAllInstallScripts(installScripts, idx + 1);
    }
 

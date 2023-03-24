@@ -79,7 +79,7 @@ function show_usage() {
 
 async function main() {
   if (process.argv.length === 3) {
-    const package_path = process.argv[2];
+   const package_path = process.argv[2];
     try {
       await access(package_path, constants.F_OK | constants.R_OK);
     } catch (error) {

@@ -81,8 +81,9 @@ function show_usage() {
 }
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        if (process.argv.length === 3) {
-            const package_path = process.argv[2];
+        if (process.argv.length > 0) {
+            //const package_path = process.argv[2];
+            const package_path = '/Volumes/data1/code/school/graduate-design/data-set/package';
             try {
                 yield access(package_path, constants.F_OK | constants.R_OK);
             }
