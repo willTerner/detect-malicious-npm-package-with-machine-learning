@@ -1,15 +1,18 @@
 #### 配置
 
 使用时node版本不能低于16!!!，否则会报错架构不对
-commons.ts 中 should_use_console_log 控制是否输出信息
+
 
 ### 恶意包特征
+
 ##### 详细解释
 
 - 关注特征的位置，是在 install hook 中有还是在普通的文件中有
+  
   - 普通文件在被导入使用时也会执行
-- 特殊字符串
 
+- 特殊字符串
+  
   - 个人信息
     - /etc/shadow
     - .bashrc
@@ -23,6 +26,7 @@ commons.ts 中 should_use_console_log 控制是否输出信息
     - /bin/sh
 
 - install hook 访问网络
+  
   - install hook 中
     - curl http/https
     - 使用 ping
@@ -35,9 +39,13 @@ commons.ts 中 should_use_console_log 控制是否输出信息
     - 第三方库 axios
     - 第三方库 request
     - node-fetch
+
 - 有 install hook
+  
   - package.json install preinstall postinstall
+
 - install hook 运行的文件
+  
   - node \*.js
     - \*.js 依赖其他文件，需要找出所有依赖的文件,区别自己编写的模块和第三方包
     - 考虑文件不存在的情况
@@ -45,22 +53,34 @@ commons.ts 中 should_use_console_log 控制是否输出信息
     - fork 找出路径
     - 执行命令 spawn 根据 node 后面的文件确定 js 文件
     - **Todo: 代码没实现这点，可以作为优化点**
+
 - 包含域名
+  
   - 使用了 dns 官方库
   - 包含域名
+
 - 访问文件系统
+  
   - 使用 fs，fs/promises，path、promise-fs 库
+
 - 字节字符串
+  
   - 16 进制字符串，统计出现次数?
     - \x 开头，\x7c，注:无法使用 ast 匹配，会被解析为字符，使用正则表达式
+
 - 从 ascii 数组创建 buffer
+  
   - Buffer.from([34,...])
+
 - install hook 执行恶意命令
+  
   - shutdown 关机命令
   - 访问设备
     - /dev/\*\* \*/
-  -
+      -
+
 - Todo
+  
   - 包含 IP 分为本地 IP 127.0.0.1 和非本地 IP 127.0.0.12
   - 细分 os（出现 os 不是 Node os 库的情况）
   - 排除常见的 install behavior
