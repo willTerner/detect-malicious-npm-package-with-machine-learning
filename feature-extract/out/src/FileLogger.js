@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { open } from "fs/promises";
 import { join } from "path";
-import { getRootDirectory } from "./util/Util";
+import { getRootDirectory } from "./util";
 export class FileLogger {
     init(logFilePath) {
         return __awaiter(this, void 0, void 0, function* () {

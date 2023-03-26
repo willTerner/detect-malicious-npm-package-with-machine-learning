@@ -7,122 +7,68 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import chalk from "chalk";
-import { constants } from "fs";
-import { access, writeFile } from "fs/promises";
-import { extractFeatureFromDir, extractFeatureFromPackage, ResovlePackagePath, } from "./ExtractFeature";
-import { duan_path, predict_py_path, normal1_path, knife_path, normal2_path, supplement_data_set_path, } from "./commons";
-import { asyncExec } from "./util/Util";
-import { doSomething } from "./util/DownloadPackage";
-import { scanNPMRegistry } from "./scanNPMRegistry";
-import { pattern_test } from "./Patterns";
-import { getConfig, setIsRecordFeaturePos } from "./config";
-import diffPredict from "./diffPredict";
+import { accessSync, constants } from "fs";
+import { output_feature_path, } from "./constants";
 import { join } from "path";
-import { measurePerformance } from "./measurePerformance";
-var Action;
-(function (Action) {
-    Action[Action["Extract"] = 0] = "Extract";
-    Action[Action["DoSomething"] = 1] = "DoSomething";
-    Action[Action["DepressPackageFromDir"] = 2] = "DepressPackageFromDir";
-    Action[Action["ScanNPMRegistry"] = 3] = "ScanNPMRegistry";
-    Action[Action["PatternTest"] = 4] = "PatternTest";
-    Action[Action["Diff"] = 5] = "Diff";
-    Action[Action["MeasurePerformance"] = 6] = "MeasurePerformance";
-})(Action || (Action = {}));
-function extract_feature() {
-    return __awaiter(this, void 0, void 0, function* () {
-        let resolve_path = ResovlePackagePath.By_Supplement;
-        let source_path;
-        //@ts-ignore
-        const action = Action.MeasurePerformance;
-        const haveFeatureChanged = false;
-        // @ts-ignore
-        if (resolve_path === ResovlePackagePath.By_Knife) {
-            source_path = knife_path;
-            // @ts-ignore
-        }
-        else if (resolve_path === ResovlePackagePath.By_Normal1) {
-            source_path = normal1_path;
-            // @ts-ignore
-        }
-        else if (resolve_path === ResovlePackagePath.By_Duan) {
-            source_path = duan_path;
-            // @ts-ignore
-        }
-        else if (resolve_path === ResovlePackagePath.By_Normal2) {
-            source_path = normal2_path;
-        }
-        else if (resolve_path === ResovlePackagePath.By_Supplement) {
-            source_path = supplement_data_set_path;
-        }
-        // @ts-ignore
-        if (action === Action.Extract) {
-            yield extractFeatureFromDir(source_path, resolve_path);
-            // @ts-ignore
-        }
-        else if (action === Action.DoSomething) {
-            yield doSomething();
-            // @ts-ignore
-        }
-        else if (action === Action.ScanNPMRegistry) {
-            yield scanNPMRegistry(haveFeatureChanged);
-            // @ts-ignore
-        }
-        else if (action === Action.PatternTest) {
-            yield pattern_test();
-            // @ts-ignore
-        }
-        else if (action === Action.Diff) {
-            yield diffPredict();
-        }
-        else if (action === Action.MeasurePerformance) {
-            yield measurePerformance();
-        }
-        //doSomethingAST();
-    });
-}
+import { Logger } from "./Logger";
+import { analyzeDir, analyzeSinglePackage } from "./programs/AnalyzePackage/PackageAnalyzer";
+import { Classifier, setClassifier } from "./config";
 function show_usage() {
-    console.log(chalk.green(`npm run start $package_path}. package_path is absolute path of a npm package directory which should have a file named package.json.`));
+    Logger.info('\nusage:\nnode --es-module-specifier-resolution=node out/src/index.js -s $package_path [-c $classifier].  It is used to detect single package. package_path is absolute path of a npm package directory which should have a file named package.json.\nnode --es-module-specifier-resolution=node out/src/index.js -b $dir [-c $classifier]. It is used to detect all packages in the $dir\n$classifier is optional classifier from RF, SVM, NB, MLP. Default classifier is SVM.');
 }
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        if (process.argv.length === 3) {
-            const package_path = process.argv[2];
-            try {
-                yield access(package_path, constants.F_OK | constants.R_OK);
-            }
-            catch (error) {
-                console.log(chalk.red("access" + package_path + "permission denied"));
-                console.log(error);
-                process.exit(0);
-            }
-            setIsRecordFeaturePos(true);
-            const csvPath = yield extractFeatureFromPackage(package_path, ResovlePackagePath.By_Single_Package);
-            const { stderr, stdout } = yield asyncExec(`python3 ${predict_py_path} ${csvPath}`);
-            if (stdout) {
-                console.log(chalk.green("finish analyzing this package.\n This package is " + stdout));
-                if (stdout === 'malicious\n') {
-                    const featurePosPath = join(package_path, 'feature-position-info.json');
-                    yield writeFile(featurePosPath, getConfig().positionRecorder.serialRecord());
+        if (process.argv.length === 4 || process.argv.length === 6) {
+            const option = process.argv[2];
+            if (process.argv.length === 6) {
+                if (process.argv[4] !== '-c') {
+                    show_usage();
+                    return;
                 }
+                const classifier = process.argv[5];
+                if (Object.values(Classifier).findIndex(c => c === classifier) < 0) {
+                    show_usage();
+                    return;
+                }
+                setClassifier(classifier);
+            }
+            if (option === '-s') {
+                const packagePath = process.argv[3];
+                const packageJSONPath = join(packagePath, 'package.json');
+                try {
+                    accessSync(packagePath, constants.F_OK | constants.R_OK);
+                }
+                catch (error) {
+                    Logger.error(`can't access ${packagePath}. message is ${error.message}`);
+                    return;
+                }
+                try {
+                    accessSync(packageJSONPath);
+                }
+                catch (error) {
+                    Logger.error(`can't access ${packageJSONPath}`);
+                    return;
+                }
+                // detect single package
+                yield analyzeSinglePackage(packagePath, output_feature_path);
+            }
+            else if (option === '-b') {
+                const dirPath = process.argv[3];
+                try {
+                    accessSync(dirPath, constants.F_OK | constants.R_OK);
+                }
+                catch (error) {
+                    Logger.error(`can't access ${dirPath}. message is ${error.message}`);
+                    return;
+                }
+                yield analyzeDir(dirPath, output_feature_path);
             }
             else {
-                console.log(stderr);
+                show_usage();
             }
-        }
-        else if (process.argv.length == 2) {
-            console.log(chalk.red("This usage is for personal experiment. The right usage is as follows"));
-            show_usage();
-            const username = process.env.USER || process.env.USERNAME;
-            if (username === "huchaoqun") {
-                yield extract_feature();
-            }
-            process.exit(0);
         }
         else {
             show_usage();
-            process.exit(0);
         }
     });
 }

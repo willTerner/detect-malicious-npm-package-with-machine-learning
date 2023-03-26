@@ -1,6 +1,6 @@
-import { ResovlePackagePath } from "../src/ExtractFeature";
-import { getPackageFeatureInfo } from "../src/PackageFeatureInfo";
-import { extractJSFilePath } from "../src/PackageJSONInfo";
+
+import { getPackageFeatureInfo } from "../src/feature-extract/PackageFeatureInfo";
+import { extractJSFilePath } from "../src/feature-extract/PackageJSONInfo";
 
 test("test extract js file", async () => {
    expect(extractJSFilePath("start /B node preinstall.js & node preinstall.js")).toBe("preinstall.js");

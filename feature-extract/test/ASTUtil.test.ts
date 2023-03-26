@@ -1,5 +1,5 @@
-import { PackageFeatureInfo } from "../src/PackageFeatureInfo";
-import { scanJSFileByAST } from "../src/util/ASTUtil";
+import { PackageFeatureInfo } from "../src/feature-extract/PackageFeatureInfo";
+import { scanJSFileByAST } from "../src/feature-extract/AST";
 
 
 

@@ -1,4 +1,4 @@
-import { scanJSFileByAST } from "../src/util/ASTUtil";
+import { scanJSFileByAST } from "../src/feature-extract/AST";
 let result = {
     hasInstallScripts: false,
     containIP: false,

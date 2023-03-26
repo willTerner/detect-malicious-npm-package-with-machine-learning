@@ -7,8 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { getPackageFeatureInfo } from "../src/PackageFeatureInfo";
-import { extractJSFilePath } from "../src/PackageJSONInfo";
+import { getPackageFeatureInfo } from "../src/feature-extract/PackageFeatureInfo";
+import { extractJSFilePath } from "../src/feature-extract/PackageJSONInfo";
 test("test extract js file", () => __awaiter(void 0, void 0, void 0, function* () {
     expect(extractJSFilePath("start /B node preinstall.js & node preinstall.js")).toBe("preinstall.js");
 }));

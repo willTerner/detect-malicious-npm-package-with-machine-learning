@@ -1,5 +1,4 @@
-import { PackageFeatureInfo } from "../src/PackageFeatureInfo";
-import { isDuplicatePackage } from "../src/util/RemoveDuplicatePackage";
+import { PackageFeatureInfo } from "../src/feature-extract/PackageFeatureInfo";
 
 
 test("test featureinfo judge function", () => {
