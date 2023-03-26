@@ -1,5 +1,5 @@
 **/node_modules/
 **/registry
-*/README.md
-*/README.md
+**/*.md
+**/*.md
 **/output_feature
