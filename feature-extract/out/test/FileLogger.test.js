@@ -7,12 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { FileLogger } from "../src/FileLogger";
-test("file logger", () => __awaiter(void 0, void 0, void 0, function* () {
+import { FileLogger } from '../src/FileLogger';
+test('file logger', () => __awaiter(void 0, void 0, void 0, function* () {
     const logger = new FileLogger();
-    yield logger.init("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/log/error.log");
-    yield logger.log("hello");
-    yield logger.log("world");
+    yield logger.init('/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/log/error.log');
+    yield logger.log('hello');
+    yield logger.log('world');
     yield logger.close();
 }));
 //# sourceMappingURL=FileLogger.test.js.map

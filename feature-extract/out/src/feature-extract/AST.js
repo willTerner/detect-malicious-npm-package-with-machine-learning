@@ -7,11 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { parse } from "@babel/core";
-import traversePkg from "@babel/traverse";
-import * as babelTypes from "@babel/types";
-import { base64_Pattern, getDomainPattern, IP_Pattern, SensitiveStringPattern, } from "./Patterns";
-import { getFileLogger } from "../FileLogger";
+/* eslint-disable no-lone-blocks */
+import { parse } from '@babel/core';
+import traversePkg from '@babel/traverse';
+import * as babelTypes from '@babel/types';
+import { base64_Pattern, getDomainPattern, IP_Pattern, SensitiveStringPattern } from './Patterns';
+import { getFileLogger } from '../FileLogger';
 const t = babelTypes.default;
 let traverse;
 if (process.env.NODE_ENV) {
@@ -26,30 +27,30 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
         function getRecord(path) {
             return {
                 filePath: targetJSFilePath,
-                content: path.node.loc,
+                content: path.node.loc
             };
         }
         const logger = yield getFileLogger();
         let ast;
         try {
             ast = parse(code, {
-                sourceType: "unambiguous",
-                plugins: ["@babel/plugin-syntax-flow"],
+                sourceType: 'unambiguous',
+                plugins: ['@babel/plugin-syntax-flow']
             });
         }
         catch (error) {
-            logger.log("现在分析的文件是: " + targetJSFilePath);
+            yield logger.log('现在分析的文件是: ' + targetJSFilePath);
             const errorObj = error;
-            logger.log("error名称: " + errorObj.name);
-            logger.log("error信息" + errorObj.message);
-            logger.log("错误栈" + errorObj.stack);
+            yield logger.log('error名称: ' + errorObj.name);
+            yield logger.log('error信息' + errorObj.message);
+            yield logger.log('错误栈' + errorObj.stack);
         }
         try {
             traverse(ast, {
                 CallExpression: function (path) {
-                    if (path.node.callee.name === "require") {
+                    if (path.node.callee.name === 'require') {
                         if (path.node.arguments.length > 0 &&
-                            path.node.arguments[0].value === "base64-js") {
+                            path.node.arguments[0].value === 'base64-js') {
                             featureSet.useBase64Conversion = true;
                             positionRecorder.addRecord('useBase64Conversion', getRecord(path));
                             if (isInstallScript) {
@@ -58,7 +59,7 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                             }
                         }
                         if (path.node.arguments.length > 0 &&
-                            path.node.arguments[0].value === "child_process") {
+                            path.node.arguments[0].value === 'child_process') {
                             featureSet.requireChildProcessInJSFile = true;
                             positionRecorder.addRecord('requireChildProcessInJSFile', getRecord(path));
                             if (isInstallScript) {
@@ -68,10 +69,10 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         }
                         if (path.node.arguments.length > 0) {
                             const importModuleName = path.node.arguments[0].value;
-                            if (importModuleName === "fs" ||
-                                importModuleName === "fs/promises" ||
-                                importModuleName === "path" ||
-                                importModuleName === "promise-fs") {
+                            if (importModuleName === 'fs' ||
+                                importModuleName === 'fs/promises' ||
+                                importModuleName === 'path' ||
+                                importModuleName === 'promise-fs') {
                                 featureSet.accessFSInJSFile = true;
                                 positionRecorder.addRecord('accessFSInJSFile', getRecord(path));
                                 if (isInstallScript) {
@@ -82,13 +83,13 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         }
                         if (path.node.arguments.length > 0) {
                             const moduleName = path.node.arguments[0].value;
-                            if (moduleName === "http" ||
-                                moduleName === "https" ||
-                                moduleName === "nodemailer" ||
-                                moduleName === "axios" ||
-                                moduleName === "request" ||
-                                moduleName === "node-fetch" ||
-                                moduleName === "got") {
+                            if (moduleName === 'http' ||
+                                moduleName === 'https' ||
+                                moduleName === 'nodemailer' ||
+                                moduleName === 'axios' ||
+                                moduleName === 'request' ||
+                                moduleName === 'node-fetch' ||
+                                moduleName === 'got') {
                                 featureSet.accessNetworkInJSFile = true;
                                 positionRecorder.addRecord('accessNetworkInJSFile', getRecord(path));
                                 if (isInstallScript) {
@@ -99,7 +100,7 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         }
                         if (path.node.arguments.length > 0) {
                             const moduleName = path.node.arguments[0].value;
-                            if (moduleName === "dns") {
+                            if (moduleName === 'dns') {
                                 featureSet.containDomainInJSFile = true;
                                 if (isInstallScript) {
                                     featureSet.containDomainInInstallScript = true;
@@ -108,21 +109,21 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         }
                         if (path.node.arguments.length > 0) {
                             const moduleName = path.node.arguments[0].value;
-                            if (moduleName === "crypto" || moduleName === "zlib") {
+                            if (moduleName === 'crypto' || moduleName === 'zlib') {
                                 featureSet.accessCryptoAndZip = true;
                                 positionRecorder.addRecord('accessCryptoAndZip', getRecord(path));
                             }
                         }
                     }
                     if (t.isMemberExpression(path.node.callee) &&
-                        path.node.callee.object.name === "os") {
+                        path.node.callee.object.name === 'os') {
                         featureSet.accessSensitiveAPI = true;
                         positionRecorder.addRecord('accessSensitiveAPI', getRecord(path));
                     }
                 },
                 StringLiteral: function (path) {
                     const content = path.node.value;
-                    if (content === "base64") {
+                    if (content === 'base64') {
                         featureSet.useBase64Conversion = true;
                         positionRecorder.addRecord('useBase64Conversion', getRecord(path));
                         if (isInstallScript) {
@@ -135,14 +136,14 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     }
                     {
                         const matchResult = content.match(IP_Pattern);
-                        if (matchResult) {
+                        if (matchResult != null) {
                             featureSet.containIP = true;
                             positionRecorder.addRecord('containIP', getRecord(path));
                         }
                     }
                     {
                         const matchResult = content.match(base64_Pattern);
-                        if (matchResult) {
+                        if (matchResult != null) {
                             featureSet.containBase64StringInJSFile = true;
                             if (isInstallScript) {
                                 featureSet.containBase64StringInInstallScript = true;
@@ -151,7 +152,7 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     }
                     {
                         const matchResult = content.match(getDomainPattern());
-                        if (matchResult) {
+                        if (matchResult != null) {
                             featureSet.containDomainInJSFile = true;
                             positionRecorder.addRecord('containDomainInJSFile', getRecord(path));
                             if (isInstallScript) {
@@ -162,15 +163,15 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                     }
                     {
                         const matchResult = content.match(SensitiveStringPattern);
-                        if (matchResult) {
+                        if (matchResult != null) {
                             featureSet.containSuspiciousString = true;
                             positionRecorder.addRecord('containSuspiciousString', getRecord(path));
                         }
                     }
                 },
                 MemberExpression: function (path) {
-                    if (path.get("object").isIdentifier({ name: "process" }) &&
-                        path.get("property").isIdentifier({ name: "env" })) {
+                    if (path.get('object').isIdentifier({ name: 'process' }) &&
+                        path.get('property').isIdentifier({ name: 'env' })) {
                         featureSet.accessProcessEnvInJSFile = true;
                         positionRecorder.addRecord('accessProcessEnvInJSFile', getRecord(path));
                         if (isInstallScript) {
@@ -178,21 +179,21 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                             positionRecorder.addRecord('accessProcessEnvInInstallScript', getRecord(path));
                         }
                     }
-                    if (path.get("object").isIdentifier({ name: "Buffer" }) &&
-                        path.get("property").isIdentifier({ name: "from" })) {
+                    if (path.get('object').isIdentifier({ name: 'Buffer' }) &&
+                        path.get('property').isIdentifier({ name: 'from' })) {
                         featureSet.useBuffer = true;
                         positionRecorder.addRecord('useBuffer', getRecord(path));
                     }
                 },
                 NewExpression: function (path) {
-                    if (path.node.callee.name === "Buffer") {
+                    if (path.node.callee.name === 'Buffer') {
                         featureSet.useBuffer = true;
                         positionRecorder.addRecord('useBuffer', getRecord(path));
                     }
                 },
                 ImportDeclaration: function (path) {
                     const moduleName = path.node.source.value;
-                    if (path.node.source.value === "base64-js") {
+                    if (path.node.source.value === 'base64-js') {
                         featureSet.useBase64Conversion = true;
                         positionRecorder.addRecord('useBase64Conversion', getRecord(path));
                         if (isInstallScript) {
@@ -200,7 +201,7 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                             positionRecorder.addRecord('useBase64ConversionInInstallScript', getRecord(path));
                         }
                     }
-                    if (path.node.source.value === "child_process") {
+                    if (path.node.source.value === 'child_process') {
                         featureSet.requireChildProcessInJSFile = true;
                         positionRecorder.addRecord('requireChildProcessInJSFile', getRecord(path));
                         if (isInstallScript) {
@@ -209,10 +210,10 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         }
                     }
                     {
-                        if (moduleName === "fs" ||
-                            moduleName === "fs/promises" ||
-                            moduleName === "path" ||
-                            moduleName === "promise-fs") {
+                        if (moduleName === 'fs' ||
+                            moduleName === 'fs/promises' ||
+                            moduleName === 'path' ||
+                            moduleName === 'promise-fs') {
                             featureSet.accessFSInJSFile = true;
                             positionRecorder.addRecord('accessFSInJSFile', getRecord(path));
                             if (isInstallScript) {
@@ -222,12 +223,12 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         }
                     }
                     {
-                        if (moduleName === "http" ||
-                            moduleName === "https" ||
-                            moduleName === "nodemailer" ||
-                            moduleName === "aixos" ||
-                            moduleName === "request" ||
-                            moduleName === "node-fetch") {
+                        if (moduleName === 'http' ||
+                            moduleName === 'https' ||
+                            moduleName === 'nodemailer' ||
+                            moduleName === 'aixos' ||
+                            moduleName === 'request' ||
+                            moduleName === 'node-fetch') {
                             featureSet.accessNetworkInJSFile = true;
                             positionRecorder.addRecord('accessNetworkInJSFile', getRecord(path));
                             if (isInstallScript) {
@@ -237,7 +238,7 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         }
                     }
                     {
-                        if (moduleName === "dns") {
+                        if (moduleName === 'dns') {
                             featureSet.containDomainInJSFile = true;
                             if (isInstallScript) {
                                 featureSet.containDomainInInstallScript = true;
@@ -245,26 +246,26 @@ export function scanJSFileByAST(code, featureSet, isInstallScript, targetJSFileP
                         }
                     }
                     {
-                        if (moduleName === "crypto" || moduleName === "zlib") {
+                        if (moduleName === 'crypto' || moduleName === 'zlib') {
                             featureSet.accessCryptoAndZip = true;
                             positionRecorder.addRecord('accessCryptoAndZip', getRecord(path));
                         }
                     }
                 },
                 Identifier: function (path) {
-                    if (path.node.name === "eval") {
+                    if (path.node.name === 'eval') {
                         featureSet.useEval = true;
                         positionRecorder.addRecord('useEval', getRecord(path));
                     }
-                },
+                }
             });
         }
         catch (error) {
-            logger.log("现在分析的文件是: " + targetJSFilePath);
+            yield logger.log('现在分析的文件是: ' + targetJSFilePath);
             const errorObj = error;
-            logger.log("error名称: " + errorObj.name);
-            logger.log("error信息" + errorObj.message);
-            logger.log("错误栈" + errorObj.stack);
+            yield logger.log('error名称: ' + errorObj.name);
+            yield logger.log('error信息' + errorObj.message);
+            yield logger.log('错误栈' + errorObj.stack);
         }
         return featureSet;
     });

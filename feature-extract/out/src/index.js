@@ -7,13 +7,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { accessSync, constants } from "fs";
-import { output_feature_path, } from "./constants";
-import { join } from "path";
-import { Logger } from "./Logger";
-import { analyzeDir, analyzeSinglePackage } from "./programs/AnalyzePackage/PackageAnalyzer";
-import { Classifier, setClassifier } from "./config";
-function show_usage() {
+import { accessSync, constants } from 'fs';
+import { output_feature_path } from './constants';
+import { join } from 'path';
+import { Logger } from './Logger';
+import { analyzeDir, analyzeSinglePackage } from './programs/AnalyzePackage/PackageAnalyzer';
+import { Classifier, setClassifier } from './config';
+function showUsage() {
     Logger.info('\nusage:\nnode --es-module-specifier-resolution=node out/src/index.js -s $package_path [-c $classifier].  It is used to detect single package. package_path is absolute path of a npm package directory which should have a file named package.json.\nnode --es-module-specifier-resolution=node out/src/index.js -b $dir [-c $classifier]. It is used to detect all packages in the $dir\n$classifier is optional classifier from RF, SVM, NB, MLP. Default classifier is SVM.');
 }
 function main() {
@@ -22,12 +22,12 @@ function main() {
             const option = process.argv[2];
             if (process.argv.length === 6) {
                 if (process.argv[4] !== '-c') {
-                    show_usage();
+                    showUsage();
                     return;
                 }
                 const classifier = process.argv[5];
                 if (Object.values(Classifier).findIndex(c => c === classifier) < 0) {
-                    show_usage();
+                    showUsage();
                     return;
                 }
                 setClassifier(classifier);
@@ -64,13 +64,14 @@ function main() {
                 yield analyzeDir(dirPath, output_feature_path);
             }
             else {
-                show_usage();
+                showUsage();
             }
         }
         else {
-            show_usage();
+            showUsage();
         }
     });
 }
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 main();
 //# sourceMappingURL=index.js.map

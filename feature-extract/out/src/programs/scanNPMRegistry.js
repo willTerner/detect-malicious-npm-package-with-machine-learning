@@ -7,21 +7,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { mkdir, open, readFile } from "fs/promises";
-import { basename, join } from "path";
-import { asyncExec, getRootDirectory } from "../util";
-import { depressSinglePackage, downloadSinglePackage, } from "../util/PackageUtil";
-import { getFileLogger } from "../FileLogger";
-import { readdirSync } from "node:fs";
-import { access, writeFile } from "fs/promises";
-import { extractFeatureFromPackage, } from "../feature-extract";
-import { predict_py_path, should_use_console_log } from "../constants";
-import { stringify } from "csv-stringify/sync";
-import { EOL } from "os";
+import { mkdir, open, readFile, access, writeFile } from 'fs/promises';
+import { basename, join } from 'path';
+import { asyncExec, getRootDirectory } from '../util';
+import { depressSinglePackage, downloadSinglePackage } from '../util/PackageUtil';
+import { getFileLogger } from '../FileLogger';
+import { readdirSync } from 'node:fs';
+import { extractFeatureFromPackage } from '../feature-extract';
+import { predict_py_path, should_use_console_log } from '../constants';
+import { stringify } from 'csv-stringify/sync';
+import { EOL } from 'os';
 function get_all_packages() {
     return __awaiter(this, void 0, void 0, function* () {
-        const names_path = join(getRootDirectory(), "material", "names.json");
-        const fileContent = yield readFile(names_path, { encoding: "utf-8" });
+        const names_path = join(getRootDirectory(), 'material', 'names.json');
+        const fileContent = yield readFile(names_path, { encoding: 'utf-8' });
         let names = JSON.parse(fileContent);
         names = names.filter((name) => name === name.toLowerCase());
         return names;
@@ -30,16 +29,16 @@ function get_all_packages() {
 export function scanNPMRegistry(haveFeatureChanged) {
     return __awaiter(this, void 0, void 0, function* () {
         const names = yield get_all_packages();
-        const progress_path = join(getRootDirectory(), "material", "scan-registry-progress.json");
-        const progress_content = yield readFile(progress_path, { encoding: "utf-8" });
+        const progress_path = join(getRootDirectory(), 'material', 'scan-registry-progress.json');
+        const progress_content = yield readFile(progress_path, { encoding: 'utf-8' });
         const idx = JSON.parse(progress_content).progress;
-        const malicious_pacakage_path = join(getRootDirectory(), "material", "registry-malicious-package.csv");
-        const malicious_file_handler = yield open(malicious_pacakage_path, "w+");
+        const malicious_pacakage_path = join(getRootDirectory(), 'material', 'registry-malicious-package.csv');
+        const malicious_file_handler = yield open(malicious_pacakage_path, 'w+');
         const logger = yield getFileLogger();
         const unit_size = 50;
         const counter = Math.ceil(names.length / unit_size);
         for (let i = 0; i < counter; i++) {
-            const saveDir = join(getRootDirectory(), "material", "registry", String(i));
+            const saveDir = join(getRootDirectory(), 'material', 'registry', String(i));
             try {
                 yield access(saveDir);
             }
@@ -64,11 +63,11 @@ export function scanNPMRegistry(haveFeatureChanged) {
                     }
                 }
                 // 解压包
-                const files = readdirSync(saveDir).filter((fileName) => fileName.endsWith(".tgz"));
-                for (let file of files) {
-                    const dotIdx = basename(file).lastIndexOf(".");
+                const files = readdirSync(saveDir).filter((fileName) => fileName.endsWith('.tgz'));
+                for (const file of files) {
+                    const dotIdx = basename(file).lastIndexOf('.');
                     const fileName = basename(file).substring(0, dotIdx);
-                    const depressDir = join(saveDir, fileName.replace(/\//g, "-"));
+                    const depressDir = join(saveDir, fileName.replace(/\//g, '-'));
                     try {
                         yield access(depressDir);
                     }
@@ -76,7 +75,7 @@ export function scanNPMRegistry(haveFeatureChanged) {
                         yield mkdir(depressDir);
                     }
                     try {
-                        let { stdout, stderr } = yield depressSinglePackage(join(saveDir, file), depressDir);
+                        const { stdout, stderr } = yield depressSinglePackage(join(saveDir, file), depressDir);
                         process.stdout.write(`${new Date().toLocaleString()}: The package being depressed : ${basename(file)} \n`);
                         should_use_console_log && console.log(stdout, stderr);
                     }
@@ -96,7 +95,7 @@ export function scanNPMRegistry(haveFeatureChanged) {
                 const package_files = readdirSync(saveDir, { withFileTypes: true });
                 for (const packageDir of package_files) {
                     if (packageDir.isDirectory()) {
-                        const source_path = join(saveDir, packageDir.name, "package");
+                        const source_path = join(saveDir, packageDir.name, 'package');
                         try {
                             yield access(source_path);
                         }
@@ -120,14 +119,12 @@ export function scanNPMRegistry(haveFeatureChanged) {
             const malicious_packages = [];
             // 使用分类器判断是否为恶意包
             let all_files = readdirSync(saveDir);
-            all_files = all_files.filter((fileName) => fileName.endsWith(".csv"));
-            for (let file of all_files) {
+            all_files = all_files.filter((fileName) => fileName.endsWith('.csv'));
+            for (const file of all_files) {
                 try {
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
                     const { stderr, stdout } = yield asyncExec(`python3  ${predict_py_path} ${join(saveDir, file)}`);
                     process.stdout.write(`${new Date().toLocaleString()}: ***************finish analyze ${basename(file)}. It is ${stdout} `);
-                    if (basename(file) === "0.workspace.csv") {
-                        debugger;
-                    }
                     if (stdout) {
                         if (stdout === `malicious${EOL}`) {
                             malicious_packages.push([basename(file), String(i)]);

@@ -17,5 +17,6 @@ function analyzeAntDataset() {
         yield analyzeDir(ant_data_set_path, ant_data_set_path);
     });
 }
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 analyzeAntDataset();
 //# sourceMappingURL=analyzeAntDataset.js.map

@@ -21,7 +21,7 @@ export class PositionRecorder {
             accessProcessEnvInInstallScript: [],
             accessCryptoAndZip: [],
             accessSensitiveAPI: [],
-            containSuspiciousString: [],
+            containSuspiciousString: []
         };
     }
     addRecord(key, record) {

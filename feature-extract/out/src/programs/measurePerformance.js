@@ -7,14 +7,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import chalk from "chalk";
-import { accessSync } from "fs";
-import { writeFile } from "fs/promises";
-import { join } from "path";
-import { output_feature_path, predict_py_path, supplement_data_set_path } from "../constants";
-import { getConfig } from "../config";
-import { extractFeatureFromPackage } from "../feature-extract";
-import { asyncExec, getPackagesFromDir } from "../util";
+import chalk from 'chalk';
+import { accessSync } from 'fs';
+import { writeFile } from 'fs/promises';
+import { join } from 'path';
+import { output_feature_path, predict_py_path, supplement_data_set_path } from '../constants';
+import { getConfig } from '../config';
+import { extractFeatureFromPackage } from '../feature-extract';
+import { asyncExec, getPackagesFromDir } from '../util';
 let totalTime = 0;
 let totalNumber = 0;
 function measureSinglePackage(package_path) {
@@ -22,10 +22,10 @@ function measureSinglePackage(package_path) {
         totalNumber++;
         const startTime = Date.now();
         const csvPath = yield extractFeatureFromPackage(package_path, output_feature_path);
-        const { stderr, stdout } = yield asyncExec(`python3 ${predict_py_path} ${csvPath}`);
+        const { stderr, stdout } = yield asyncExec(`python3 ${predict_py_path} ${csvPath.csvPath}`);
         totalTime += Date.now() - startTime;
         if (stdout) {
-            console.log(chalk.green("finish analyzing this package.\n This package is " + stdout));
+            console.log(chalk.green('finish analyzing this package.\n This package is ' + stdout));
             if (stdout === 'malicious\n') {
                 const featurePosPath = join(package_path, 'feature-position-info.json');
                 yield writeFile(featurePosPath, getConfig().positionRecorder.serialRecord());

@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+/* eslint-disable no-useless-catch */
 import { parse } from '@babel/core';
 import traversePkg from '@babel/traverse';
 import { accessSync, readFileSync } from 'fs';
@@ -29,35 +30,35 @@ export function getAllInstallScripts(installScripts) {
                 }
                 const logger = yield getFileLogger();
                 const codeContent = readFileSync(installScripts[idx], {
-                    encoding: "utf-8"
+                    encoding: 'utf-8'
                 });
                 let ast;
                 try {
                     ast = parse(codeContent, {
-                        sourceType: "unambiguous",
-                        plugins: ["@babel/plugin-syntax-flow"]
+                        sourceType: 'unambiguous',
+                        plugins: ['@babel/plugin-syntax-flow']
                     });
                 }
                 catch (error) {
-                    logger.log("现在分析的文件是: " + installScripts[idx]);
+                    yield logger.log('现在分析的文件是: ' + installScripts[idx]);
                     const errorObj = error;
-                    logger.log("error名称: " + errorObj.name);
-                    logger.log("error信息" + errorObj.message);
-                    logger.log("错误栈" + errorObj.stack);
+                    yield logger.log('error名称: ' + errorObj.name);
+                    yield logger.log('error信息' + errorObj.message);
+                    yield logger.log('错误栈' + errorObj.stack);
                 }
                 try {
                     traverse(ast, {
                         CallExpression: function (path) {
-                            if (path.node.callee.name === "require") {
+                            if (path.node.callee.name === 'require') {
                                 if (path.node.arguments.length > 0) {
                                     if (t.isStringLiteral(path.node.arguments[0])) {
                                         const moduleName = path.node.arguments[0].value;
                                         try {
-                                            if (moduleName.startsWith("/") || moduleName.startsWith("./") || moduleName.startsWith("../")) {
+                                            if (moduleName.startsWith('/') || moduleName.startsWith('./') || moduleName.startsWith('../')) {
                                                 let importScript = join(dirname(installScripts[idx]), moduleName);
-                                                if (importScript.endsWith(".js") || importScript.indexOf(".") < 0) {
-                                                    if (!importScript.endsWith(".js")) {
-                                                        importScript = importScript + ".js";
+                                                if (importScript.endsWith('.js') || !importScript.includes('.')) {
+                                                    if (!importScript.endsWith('.js')) {
+                                                        importScript = importScript + '.js';
                                                     }
                                                     try {
                                                         accessSync(importScript);
@@ -79,11 +80,11 @@ export function getAllInstallScripts(installScripts) {
                     });
                 }
                 catch (error) {
-                    logger.log("现在分析的文件是: " + installScripts[idx]);
+                    yield logger.log('现在分析的文件是: ' + installScripts[idx]);
                     const errorObj = error;
-                    logger.log("error名称: " + errorObj.name);
-                    logger.log("error信息" + errorObj.message);
-                    logger.log("错误栈" + errorObj.stack);
+                    yield logger.log('error名称: ' + errorObj.name);
+                    yield logger.log('error信息' + errorObj.message);
+                    yield logger.log('错误栈' + errorObj.stack);
                 }
                 yield resolveAllInstallScripts(installScripts, idx + 1);
             });

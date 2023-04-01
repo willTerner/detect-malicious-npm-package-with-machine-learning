@@ -16,7 +16,7 @@ import { writeFile } from 'fs/promises';
 import { Logger } from '../../Logger';
 function getAnalyzeResult(fileName, isMalicious, featurePosPath) {
     if (isEnglish()) {
-        return `Finish analyze ${fileName}. It is ${isMalicious ? "malicious" : "benign"}. ${isMalicious ? 'Malicious feature position is recorded at' + featurePosPath : ''}`;
+        return `Finish analyze ${fileName}. It is ${isMalicious ? 'malicious' : 'benign'}. ${isMalicious ? 'Malicious feature position is recorded at' + featurePosPath : ''}`;
     }
     return `完成对${fileName}的分析. 它是 ${isMalicious ? '恶意包' : '正常包'}. ${isMalicious ? '恶意特征位置记录在' + featurePosPath : ''}`;
 }
@@ -30,6 +30,7 @@ export function analyzeSinglePackage(packagePath, csvDir) {
         const result = yield extractFeatureFromPackage(packagePath, csvDir);
         const packageName = `${result.featureInfo.packageName}@${result.featureInfo.version}`;
         try {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { stderr, stdout } = yield asyncExec(`python3 ${predict_py_path} ${result.csvPath} ${getConfig().classifier}`);
             if (stdout) {
                 const featurePosPath = join(packagePath, 'feature-position-info.json');
@@ -60,12 +61,12 @@ export function analyzeDir(dirPath, csvDir) {
         const packagsPath = yield getPackagesFromDir(dirPath);
         let counter = 0;
         let total = 0;
-        let maliciousPackages = [];
+        const maliciousPackages = [];
         const malPkgCSVPath = join(dirPath, 'malicious-packages.csv');
         for (const packagePath of packagsPath) {
             total++;
             const result = yield analyzeSinglePackage(packagePath, csvDir);
-            if (result) {
+            if (result != null) {
                 counter++;
                 maliciousPackages.push([result.featureInfo.packageName, result.featureInfo.version]);
             }

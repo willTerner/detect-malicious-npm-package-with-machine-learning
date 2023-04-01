@@ -4,7 +4,8 @@
       "moduleResolution": "node",
       "outDir": "out",
       "esModuleInterop": true,
-      "target": "ES6"
+      "target": "ES6",
+      "strictNullChecks": true
    },
    "exclude": ["material"]
 }

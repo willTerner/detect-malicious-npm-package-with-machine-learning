@@ -11,7 +11,7 @@ import { exec } from 'node:child_process';
 import fs, { readdirSync } from 'node:fs';
 import { promisify } from 'node:util';
 import path from 'path';
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from 'node:fs/promises';
 import { parse } from 'csv-parse/sync';
 import { stringify } from 'csv-stringify/sync';
 import { basename, join } from 'node:path';
@@ -34,7 +34,7 @@ export function getDirectorySizeInBytes(dir) {
     return totalSize;
 }
 export function getRootDirectory() {
-    let currentFilePath = process.argv[1];
+    const currentFilePath = process.argv[1];
     let projectRootPath = currentFilePath;
     while (!fs.existsSync(path.join(projectRootPath, 'package.json'))) {
         projectRootPath = path.dirname(projectRootPath);
@@ -49,7 +49,7 @@ export function getCSVFromFile(filePath) {
 }
 export function writeCSVFile(filePath, arr) {
     return __awaiter(this, void 0, void 0, function* () {
-        return yield writeFile(filePath, stringify(arr));
+        yield writeFile(filePath, stringify(arr));
     });
 }
 /**
@@ -84,7 +84,7 @@ export function getPackagesFromDir(dirPath) {
  * @returns 返回macos上有效的文件名字符串，对fileName中的/全部替换成-
  */
 export function getValidFileName(fileName) {
-    return fileName.replace(/\//g, "-");
+    return fileName.replace(/\//g, '-');
 }
 /**
  *
@@ -100,6 +100,7 @@ export function getFileName(filePath) {
     return fileName.substring(0, dotIndex);
 }
 export function getErrorInfo(error) {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     return `error name: ${error.name}\nerror message: ${error.message}\nerror stack: ${error.stack}`;
 }
 //# sourceMappingURL=index.js.map

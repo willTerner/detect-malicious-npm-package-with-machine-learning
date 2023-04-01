@@ -9,18 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { writeFile } from 'node:fs/promises';
 import { stringify } from 'csv-stringify/sync';
-test("test json", () => __awaiter(void 0, void 0, void 0, function* () {
-    yield writeFile("/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/test/test.csv", stringify([[true, false]], {
+test('test json', () => __awaiter(void 0, void 0, void 0, function* () {
+    yield writeFile('/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/feature-extract/test/test.csv', stringify([[true, false]], {
         cast: {
-            "boolean": function (value) {
+            boolean: function (value) {
                 if (value) {
-                    return "true";
+                    return 'true';
                 }
-                return "false";
+                return 'false';
             }
         }
     }));
 }));
-test("teset opendir", () => __awaiter(void 0, void 0, void 0, function* () {
+test('teset opendir', () => __awaiter(void 0, void 0, void 0, function* () {
 }));
 //# sourceMappingURL=file.test.js.map

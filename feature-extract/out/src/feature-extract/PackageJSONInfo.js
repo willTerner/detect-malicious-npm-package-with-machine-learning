@@ -8,8 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import chalk from 'chalk';
-import { access } from 'fs/promises';
-import { stat, readFile } from 'fs/promises';
+import { access, stat, readFile } from 'fs/promises';
 import { dirname, join } from 'path';
 import { should_use_console_log } from '../constants';
 export function getPackageSize(tgzPath) {
@@ -32,10 +31,10 @@ export function getPackageJSONInfo(filePath) {
             hasInstallScripts: false,
             installCommand: [],
             executeJSFiles: [],
-            packageName: "",
-            version: "",
+            packageName: '',
+            version: ''
         };
-        const fileContent = yield readFile(filePath, { encoding: "utf-8" });
+        const fileContent = yield readFile(filePath, { encoding: 'utf-8' });
         const metaData = JSON.parse(fileContent);
         result.dependencyNumber = Object.keys((metaData === null || metaData === void 0 ? void 0 : metaData.dependencies) || {}).length;
         result.devDependencyNumber = Object.keys((metaData === null || metaData === void 0 ? void 0 : metaData.devDependencies) || {}).length;
@@ -57,7 +56,7 @@ export function getPackageJSONInfo(filePath) {
                     executeJSFiles.push(jsFile);
                 }
                 catch (error) {
-                    should_use_console_log && console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+                    should_use_console_log && console.log(chalk.red(filePath + '中的node执行的脚本不存在'));
                 }
             }
         }
@@ -71,7 +70,7 @@ export function getPackageJSONInfo(filePath) {
                     executeJSFiles.push(jsFile);
                 }
                 catch (error) {
-                    should_use_console_log && console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+                    should_use_console_log && console.log(chalk.red(filePath + '中的node执行的脚本不存在'));
                 }
             }
         }
@@ -85,7 +84,7 @@ export function getPackageJSONInfo(filePath) {
                     executeJSFiles.push(jsFile);
                 }
                 catch (error) {
-                    should_use_console_log && console.log(chalk.red(filePath + "中的node执行的脚本不存在"));
+                    should_use_console_log && console.log(chalk.red(filePath + '中的node执行的脚本不存在'));
                 }
             }
         }
@@ -96,7 +95,7 @@ export function getPackageJSONInfo(filePath) {
 export function extractJSFilePath(scriptContent) {
     const jsFileReg = /node\s+?(.+?\.js)/;
     const matchResult = scriptContent.match(jsFileReg);
-    if (matchResult) {
+    if (matchResult != null) {
         return matchResult[1];
     }
     return undefined;

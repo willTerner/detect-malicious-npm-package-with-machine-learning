@@ -2,7 +2,7 @@
 const config = {
     verbose: true,
     transform: {
-        "^.+\\.tsx?$": "ts-jest",
+        '^.+\\.tsx?$': 'ts-jest'
     },
     testPathIgnorePatterns: ['<rootDir>/out/', '<rootDir>/node_modules/']
 };

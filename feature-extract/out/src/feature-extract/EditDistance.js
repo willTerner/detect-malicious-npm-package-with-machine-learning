@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { getRootDirectory } from '../util';
-let jsonContent = "";
+let jsonContent = '';
 /**
  * @desciption
  * + 比较packageName和流行包名称的莱文斯坦距离，求莱文斯坦的算法<https://baike.baidu.com/item/%E8%8E%B1%E6%96%87%E6%96%AF%E5%9D%A6%E8%B7%9D%E7%A6%BB/14448097#4>
@@ -21,7 +21,7 @@ export function minEditDistance(packageName) {
     return __awaiter(this, void 0, void 0, function* () {
         let minDistance = Number.MAX_SAFE_INTEGER;
         if (!jsonContent) {
-            jsonContent = yield readFile(join(getRootDirectory(), 'material', 'top-10000.json'), { encoding: "utf-8" });
+            jsonContent = yield readFile(join(getRootDirectory(), 'material', 'top-10000.json'), { encoding: 'utf-8' });
         }
         const popularPackageNames = JSON.parse(jsonContent);
         for (const popularPackageName of popularPackageNames) {
@@ -52,10 +52,4 @@ function editDistance(s1, s2) {
     }
     return dp[s1.length][s2.length];
 }
-function test() {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log(yield minEditDistance("eventstream"));
-    });
-}
-//test();
 //# sourceMappingURL=EditDistance.js.map

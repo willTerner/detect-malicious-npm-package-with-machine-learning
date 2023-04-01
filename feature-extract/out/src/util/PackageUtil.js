@@ -7,10 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { accessSync, mkdirSync, readdirSync } from "fs";
-import { join } from "path";
-import { asyncExec, getFileName } from ".";
-import { isEnglish } from "../config";
+import { accessSync, mkdirSync, readdirSync } from 'fs';
+import { join } from 'path';
+import { asyncExec, getFileName } from '.';
+import { isEnglish } from '../config';
 import { Logger } from '../Logger';
 export function depressSinglePackage(tgzPath, depressDir) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -33,12 +33,14 @@ function getAllTgzPath(dirPath) {
     resolve(dirPath);
     return result;
 }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getDepressErrorMessage(tgzPath) {
     if (isEnglish()) {
         return `error happened when depressing ${tgzPath}`;
     }
-    return `在解压${this.tgzPath}的过程中发生错误`;
+    return `在解压${tgzPath}的过程中发生错误`;
 }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getDepressInfoMessage(tgzPath, depressPath) {
     if (isEnglish()) {
         return `depress ${tgzPath} to ${depressPath}`;

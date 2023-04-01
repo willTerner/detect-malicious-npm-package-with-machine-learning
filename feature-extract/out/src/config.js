@@ -13,11 +13,17 @@ export var Classifier;
 const config = {
     positionRecorder: null,
     language: Language.CHINESE,
-    classifier: Classifier.SVM,
+    classifier: Classifier.SVM
 };
 export const getConfig = () => config;
-export const setPositionRecorder = (positionRecorder) => config.positionRecorder = positionRecorder;
-export const setLanguage = (language) => config.language = language;
+export const setPositionRecorder = (positionRecorder) => {
+    config.positionRecorder = positionRecorder;
+};
+export const setLanguage = (language) => {
+    config.language = language;
+};
 export const isEnglish = () => config.language === Language.ENGLISH;
-export const setClassifier = (classifier) => config.classifier = classifier;
+export const setClassifier = (classifier) => {
+    config.classifier = classifier;
+};
 //# sourceMappingURL=config.js.map

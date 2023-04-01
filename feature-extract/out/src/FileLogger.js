@@ -7,19 +7,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { open } from "fs/promises";
-import { join } from "path";
-import { getRootDirectory } from "./util";
+import { open } from 'fs/promises';
+import { join } from 'path';
+import { getRootDirectory } from './util';
 export class FileLogger {
     init(logFilePath) {
         return __awaiter(this, void 0, void 0, function* () {
-            this.fileHandler = yield open(logFilePath, "w+");
+            this.fileHandler = yield open(logFilePath, 'w+');
             return this;
         });
     }
     log(message) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.fileHandler.writeFile(message + " " + new Date().toLocaleString() + "\n");
+            yield this.fileHandler.writeFile(message + ' ' + new Date().toLocaleString() + '\n');
         });
     }
     close() {
@@ -31,12 +31,12 @@ export class FileLogger {
 let logger;
 export function getFileLogger() {
     return __awaiter(this, void 0, void 0, function* () {
-        if (logger) {
+        if (logger != null) {
             return logger;
         }
         logger = new FileLogger();
-        const log_path = join(getRootDirectory(), 'log', 'error.log');
-        yield logger.init(log_path);
+        const logPath = join(getRootDirectory(), 'log', 'error.log');
+        yield logger.init(logPath);
         return logger;
     });
 }

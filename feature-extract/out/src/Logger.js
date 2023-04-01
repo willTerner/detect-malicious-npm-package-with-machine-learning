@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import chalk from 'chalk';
 export const Logger = {
     info(message) {
         console.log(chalk.green(new Date().toLocaleString() + ': ' + message + '\n'));

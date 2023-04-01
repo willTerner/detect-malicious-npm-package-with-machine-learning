@@ -7,8 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { join } from "node:path";
-import { getCSVFromFile, getRootDirectory, writeCSVFile } from "../util";
+import { join } from 'node:path';
+import { getCSVFromFile, getRootDirectory, writeCSVFile } from '../util';
 const MATERIAL_PATH = join(getRootDirectory(), 'material');
 const RF_PATH = join(MATERIAL_PATH, 'registry-malicious-package-rf-v2.csv');
 const MLP_PATH = join(MATERIAL_PATH, 'registry-malicious-package-mlp.csv');
@@ -19,7 +19,7 @@ export default function diffPredict() {
         const rf = yield getCSVFromFile(RF_PATH);
         const mlp = yield getCSVFromFile(MLP_PATH);
         const svm = yield getCSVFromFile(SVM_PATH);
-        let res = [];
+        const res = [];
         diff(svm, rf, res);
         diff(svm, mlp, res);
         yield writeCSVFile(DIFF_RESULT_PATH, res);
