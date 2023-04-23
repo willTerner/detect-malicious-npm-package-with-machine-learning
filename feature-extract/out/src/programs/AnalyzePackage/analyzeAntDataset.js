@@ -7,14 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { Classifier, setClassifier } from '../../config';
-import { ant_data_set_path } from '../../constants';
-import { analyzeDir } from './PackageAnalyzer';
+import { depressPackages } from '../../util/PackageUtil';
 function analyzeAntDataset() {
     return __awaiter(this, void 0, void 0, function* () {
-        // await depressPackages(ant_data_set_path);
-        setClassifier(Classifier.MLP);
-        yield analyzeDir(ant_data_set_path, ant_data_set_path);
+        yield depressPackages('/Volumes/移动硬盘/code/school/npm_malicious_package');
+        // setClassifier(Classifier.MLP);
+        // await analyzeDir(ant_data_set_path, ant_data_set_path);
     });
 }
 // eslint-disable-next-line @typescript-eslint/no-floating-promises

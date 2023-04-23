@@ -15,3 +15,8 @@ docker run  -it -d --privileged=true  -v /home/data4T2/huchaoqun:/home/huchaoqun
 docker stop $id
 # enter docker container
 docker exec -it $id /bin/bash
+
+# detect single package
+node --es-module-specifier-resolution=node out/src/index.js -s $package_path [-c $classifier]
+
+node --es-module-specifier-resolution=node out/src/index.js -b $dir [-c $classifier]
