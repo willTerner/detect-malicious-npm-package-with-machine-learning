@@ -1,6 +1,4 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
-import { getRootDirectory } from '../util'
+import domains from './top-domains.json'
 
 export const IP_Pattern = /(\d{1,3}\.){3}\d{1,3}/
 
@@ -18,8 +16,7 @@ export function getDomainPattern () {
     return domain_pattern
   }
   let domain_pattern_string = '([a-zA-Z0-9\\-]+\\.)+'
-  const fileContent = readFileSync(join(getRootDirectory(), 'material', 'top-domains.json'), { encoding: 'utf-8' })
-  const domainArr = JSON.parse(fileContent)['most-used-tlds'] as string[]
+  const domainArr = domains['most-used-tlds'] as string[]
   for (let i = 0; i < domainArr.length; i++) {
     const domain = domainArr[i].substring(1)
     if (i === 0) {

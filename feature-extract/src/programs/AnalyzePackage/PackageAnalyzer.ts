@@ -25,7 +25,6 @@ export async function analyzeSinglePackage (packagePath: string, csvDir: string)
   )
 
   const packageName = `${result.featureInfo.packageName}@${result.featureInfo.version}`
-
   try {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { stderr, stdout } = await asyncExec(

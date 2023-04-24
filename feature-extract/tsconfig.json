@@ -5,7 +5,8 @@
       "outDir": "out",
       "esModuleInterop": true,
       "target": "ES6",
-      "strictNullChecks": true
+      "strictNullChecks": true,
+      "resolveJsonModule": true,
    },
    "exclude": ["material"]
 }

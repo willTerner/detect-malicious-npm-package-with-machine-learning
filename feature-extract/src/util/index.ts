@@ -31,6 +31,9 @@ export function getDirectorySizeInBytes (dir) {
 }
 
 export function getRootDirectory () {
+  if (isProduction()) {
+    return __dirname
+  }
   const currentFilePath = process.argv[1]
   let projectRootPath = currentFilePath
 
@@ -100,4 +103,8 @@ export function getFileName (filePath: string) {
 export function getErrorInfo (error: Error) {
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   return `error name: ${error.name}\nerror message: ${error.message}\nerror stack: ${error.stack}`
+}
+
+export function isProduction () {
+  return process.env.NODE_ENV === 'development'
 }

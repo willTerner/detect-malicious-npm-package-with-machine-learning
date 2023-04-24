@@ -22,5 +22,5 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'off',
     '@typescript-eslint/consistent-type-assertions': 'off'
   },
-  ignorePatterns: ['out']
+  ignorePatterns: ['out', 'dist']
 }

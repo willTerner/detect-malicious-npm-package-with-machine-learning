@@ -7,7 +7,7 @@
 ## usage
 
 1. clone the repository 
-2. install necessary python library.please look for training/src for detail.
+2. install sklearn (>= 1.2.0)
 3. install npm dependency
 
 ```bash
@@ -19,7 +19,8 @@ npm install
 + If you want to detect single package, please use following command.
 
 ```bash
-node --es-module-specifier-resolution=node out/src/index.js -s $package_path [-c $classifier]
+cd feature-extract/dist 
+node main.js -s $package_path [-c $classifier]
 ```
 
    Note that $packag_path is the absolute path of your npm package which should have a packgae.json file. It takes some time to analyze the package. At the end, this program will print if this package is malicious or not in console.
@@ -29,7 +30,8 @@ node --es-module-specifier-resolution=node out/src/index.js -s $package_path [-c
 + If you want to detect all npm packages in certain directory, please use following command.
 
 ```bash
-node --es-module-specifier-resolution=node out/src/index.js -b $dir [-c $classifier]
+cd feature-extract/dist
+node main.js  -b $dir [-c $classifier]
 ```
 
 + Note that $classifier is optional classifier from RF, SVM, NB, MLP. Default classifier is SVM.

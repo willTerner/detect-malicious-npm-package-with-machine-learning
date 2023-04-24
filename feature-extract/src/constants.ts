@@ -1,5 +1,5 @@
 import { dirname, join } from 'path'
-import { getRootDirectory } from './util'
+import { getRootDirectory, isProduction } from './util'
 
 export const knife_path = '/Volumes/data1/code/school/graduate-design/data-set/packages/malicious/恶意数据集/knife'
 
@@ -12,7 +12,10 @@ export const normal2_path = '/Volumes/data1/code/school/graduate-design/data-set
 
 export const normal_csv_path = '/Volumes/data1/code/school/graduate-design/detect-malicious-npm-package-with-machine-learning/training/material/training_set/normal'
 
-export const predict_py_path = join(dirname(getRootDirectory()), 'training', 'src', 'predict.py')
+export const predict_py_path = join(isProduction()
+  ? join(__dirname, 'model')
+  : join(dirname(getRootDirectory()), 'training', 'src')
+, 'predict.py')
 
 export const test_set_csv_path = '/Users/huchaoqun/Desktop/code/school-course/毕设/source-code/training/material/test'
 

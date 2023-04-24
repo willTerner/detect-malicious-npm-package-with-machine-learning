@@ -1,5 +1,5 @@
 import { stringify } from 'csv-stringify/sync'
-import { writeFile } from 'fs/promises'
+import { writeFile, mkdir } from 'fs/promises'
 import { join } from 'path'
 import { getPackagesFromDir, getValidFileName } from '../util'
 import { getPackageFeatureInfo, type PackageFeatureInfo } from './PackageFeatureInfo'
@@ -13,6 +13,13 @@ import { getPackageFeatureInfo, type PackageFeatureInfo } from './PackageFeature
 export async function extractFeatureFromPackage (sourcePath: string, csvDir: string) {
   const result: PackageFeatureInfo = await getPackageFeatureInfo(sourcePath)
   const fileName = getValidFileName(result.packageName)
+
+  try {
+    await mkdir(csvDir, { recursive: true })
+  } catch (e) {
+
+  }
+
   const csvPath = join(csvDir, fileName + '.csv')
   const featureArr: Array<[string, number | boolean]> = []
   featureArr.push(['hasInstallScript', result.hasInstallScripts])
