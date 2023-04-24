@@ -13,10 +13,9 @@
          ],
          "program": "${workspaceFolder}/src/index.ts",
          "outFiles": [
-            "${workspaceFolder}/out/**/*.js"
+            "${workspaceFolder}/dist/**/*.js"
          ],
-         "runtimeArgs": ["--es-module-specifier-resolution=node", "-s", "/Volumes/data1/code/school/graduate-design/data-set/packages/malicious/恶意数据集/knife/eslint-scope/3.7.2/package"],
-         "runtimeExecutable": "/Users/huchaoqun/.nvm/versions/node/v14.15.3/bin/node"
+         "runtimeExecutable": "/Users/huchaoqun/.nvm/versions/node/v16.16.0/bin/node"
       }
    ]
 }

@@ -1,4 +1,4 @@
-import { join } from 'node:path'
+import { join } from 'path'
 import { getCSVFromFile, getRootDirectory, writeCSVFile } from '../util'
 
 const MATERIAL_PATH = join(getRootDirectory(), 'material')

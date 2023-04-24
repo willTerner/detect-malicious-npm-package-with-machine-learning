@@ -6,7 +6,7 @@ import {
   downloadSinglePackage
 } from '../util/PackageUtil'
 import { getFileLogger } from '../FileLogger'
-import { readdirSync } from 'node:fs'
+import { readdirSync } from 'fs'
 import {
   extractFeatureFromPackage
 } from '../feature-extract'

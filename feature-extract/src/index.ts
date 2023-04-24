@@ -11,6 +11,7 @@ function showUsage () {
   Logger.info('\nusage:\nnode --es-module-specifier-resolution=node out/src/index.js -s $package_path [-c $classifier].  It is used to detect single package. package_path is absolute path of a npm package directory which should have a file named package.json.\nnode --es-module-specifier-resolution=node out/src/index.js -b $dir [-c $classifier]. It is used to detect all packages in the $dir\n$classifier is optional classifier from RF, SVM, NB, MLP. Default classifier is SVM.')
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function main () {
   if (process.argv.length === 4 || process.argv.length === 6) {
     const option = process.argv[2]
@@ -65,5 +66,13 @@ async function main () {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function debugMain () {
+  await analyzeSinglePackage('/Users/huchaoqun/Desktop/code/school-course/毕设/数据集/duan/acookie-1.0.1/package', output_feature_path)
+}
+
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 main()
+
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+// debugMain()

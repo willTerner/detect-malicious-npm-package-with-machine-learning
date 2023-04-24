@@ -16,7 +16,7 @@ export function getDomainPattern () {
     return domain_pattern
   }
   let domain_pattern_string = '([a-zA-Z0-9\\-]+\\.)+'
-  const domainArr = domains['most-used-tlds'] as string[]
+  const domainArr = domains['most-used-tlds']
   for (let i = 0; i < domainArr.length; i++) {
     const domain = domainArr[i].substring(1)
     if (i === 0) {

@@ -5,9 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "jest",
-    "start": "node --es-module-specifier-resolution=node out/src/index.js",
-    "start:local": "tsc && node --es-module-specifier-resolution=node out/src/index.js",
-    "build": "node scripts/build.js && webpack"
+    "build": "webpack && node scripts/build.js"
   },
   "keywords": [],
   "author": "",

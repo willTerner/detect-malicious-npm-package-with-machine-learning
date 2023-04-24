@@ -1,11 +1,10 @@
-import { exec } from 'node:child_process'
-import fs, { readdirSync } from 'node:fs'
-import { promisify } from 'node:util'
-import path from 'path'
-import { readFile, writeFile } from 'node:fs/promises'
+import { exec } from 'child_process'
+import fs, { readdirSync } from 'fs'
+import { promisify } from 'util'
+import { readFile, writeFile } from 'fs/promises'
 import { parse } from 'csv-parse/sync'
 import { stringify } from 'csv-stringify/sync'
-import { basename, join } from 'node:path'
+import path, { basename, join } from 'path'
 
 export function getDirectorySizeInBytes (dir) {
   let totalSize = 0
@@ -106,5 +105,5 @@ export function getErrorInfo (error: Error) {
 }
 
 export function isProduction () {
-  return process.env.NODE_ENV === 'development'
+  return !!process.env.NODE_ENV
 }

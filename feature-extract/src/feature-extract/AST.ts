@@ -1,8 +1,8 @@
 /* eslint-disable no-lone-blocks */
 import { parse } from '@babel/core'
-import traversePkg from '@babel/traverse'
+import traverse from '@babel/traverse'
 import { type PackageFeatureInfo } from './PackageFeatureInfo'
-import * as babelTypes from '@babel/types'
+import { isMemberExpression } from '@babel/types'
 import {
   base64_Pattern,
   getDomainPattern,
@@ -11,16 +11,6 @@ import {
 } from './Patterns'
 import { getFileLogger } from '../FileLogger'
 import { type PositionRecorder, type Record } from './PositionRecorder'
-
-const t = (babelTypes as any).default
-
-let traverse: any
-
-if (process.env.NODE_ENV) {
-  traverse = traversePkg as any
-} else {
-  traverse = (traversePkg as any).default
-}
 
 const MAX_STRING_LENGTH = 66875
 
@@ -42,8 +32,7 @@ export async function scanJSFileByAST (
   let ast: any
   try {
     ast = parse(code, {
-      sourceType: 'unambiguous',
-      plugins: ['@babel/plugin-syntax-flow']
+      sourceType: 'unambiguous'
     })
   } catch (error) {
     await logger.log('现在分析的文件是: ' + targetJSFilePath)
@@ -55,9 +44,11 @@ export async function scanJSFileByAST (
   try {
     traverse(ast, {
       CallExpression: function (path) {
+        // @ts-expect-error uselesss lint error
         if (path.node.callee.name === 'require') {
           if (
             path.node.arguments.length > 0 &&
+            // @ts-expect-error uselesss lint error
             path.node.arguments[0].value === 'base64-js'
           ) {
             featureSet.useBase64Conversion = true
@@ -69,6 +60,7 @@ export async function scanJSFileByAST (
           }
           if (
             path.node.arguments.length > 0 &&
+            // @ts-expect-error uselesss lint error
             path.node.arguments[0].value === 'child_process'
           ) {
             featureSet.requireChildProcessInJSFile = true
@@ -79,6 +71,7 @@ export async function scanJSFileByAST (
             }
           }
           if (path.node.arguments.length > 0) {
+            // @ts-expect-error uselesss lint error
             const importModuleName = path.node.arguments[0].value
             if (
               importModuleName === 'fs' ||
@@ -95,6 +88,7 @@ export async function scanJSFileByAST (
             }
           }
           if (path.node.arguments.length > 0) {
+            // @ts-expect-error uselesss lint error
             const moduleName = path.node.arguments[0].value as string
             if (
               moduleName === 'http' ||
@@ -114,6 +108,7 @@ export async function scanJSFileByAST (
             }
           }
           if (path.node.arguments.length > 0) {
+            // @ts-expect-error uselesss lint error
             const moduleName = path.node.arguments[0].value as string
             if (moduleName === 'dns') {
               featureSet.containDomainInJSFile = true
@@ -123,6 +118,7 @@ export async function scanJSFileByAST (
             }
           }
           if (path.node.arguments.length > 0) {
+            // @ts-expect-error uselesss lint error
             const moduleName = path.node.arguments[0].value as string
             if (moduleName === 'crypto' || moduleName === 'zlib') {
               featureSet.accessCryptoAndZip = true
@@ -131,7 +127,8 @@ export async function scanJSFileByAST (
           }
         }
         if (
-          t.isMemberExpression(path.node.callee) &&
+          isMemberExpression(path.node.callee) &&
+          // @ts-expect-error uselesss lint error
           path.node.callee.object.name === 'os'
         ) {
           featureSet.accessSensitiveAPI = true
@@ -139,7 +136,7 @@ export async function scanJSFileByAST (
         }
       },
       StringLiteral: function (path) {
-        const content = path.node.value as string
+        const content = path.node.value
         if (content === 'base64') {
           featureSet.useBase64Conversion = true
           positionRecorder.addRecord('useBase64Conversion', getRecord(path))
@@ -207,6 +204,7 @@ export async function scanJSFileByAST (
         }
       },
       NewExpression: function (path) {
+        // @ts-expect-error uselesss lint error
         if (path.node.callee.name === 'Buffer') {
           featureSet.useBuffer = true
           positionRecorder.addRecord('useBuffer', getRecord(path))

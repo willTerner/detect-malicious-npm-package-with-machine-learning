@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 const { dirname, join } = require('path')
-const { copyFileSync } = require('fs')
+const { copyFileSync, cpSync } = require('fs')
 
 /**
  * 复制python代码到dist目录
@@ -20,4 +20,14 @@ function copyModel () {
   }
 }
 
+/**
+ * 复制dist代码到find-mp 图形化程序
+ */
+async function copyDist () {
+  const src = join(dirname(__dirname), 'dist')
+  const dist = '/Users/huchaoqun/Desktop/code/front-end/find-mp/predictor'
+  cpSync(src, dist, { recursive: true })
+}
+
 copyModel()
+copyDist()

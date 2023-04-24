@@ -1,14 +1,10 @@
 /* eslint-disable no-useless-catch */
 import { parse } from '@babel/core'
-import traversePkg from '@babel/traverse'
+import traverse from '@babel/traverse'
 import { accessSync, readFileSync } from 'fs'
 import { dirname, join } from 'path'
-import * as babelTypes from '@babel/types'
+import { isStringLiteral } from '@babel/types'
 import { getFileLogger } from '../FileLogger'
-
-const t = (babelTypes as any).default
-
-const traverse = (traversePkg as any).default
 
 /**
  *
@@ -27,8 +23,7 @@ export async function getAllInstallScripts (installScripts: string[]) {
     let ast: any
     try {
       ast = parse(codeContent, {
-        sourceType: 'unambiguous',
-        plugins: ['@babel/plugin-syntax-flow']
+        sourceType: 'unambiguous'
       })
     } catch (error) {
       await logger.log('现在分析的文件是: ' + installScripts[idx])
@@ -40,10 +35,11 @@ export async function getAllInstallScripts (installScripts: string[]) {
     try {
       traverse(ast, {
         CallExpression: function (path) {
+          // @ts-expect-error uselesss lint error
           if (path.node.callee.name === 'require') {
             if (path.node.arguments.length > 0) {
-              if (t.isStringLiteral(path.node.arguments[0])) {
-                const moduleName = path.node.arguments[0].value as string
+              if (isStringLiteral(path.node.arguments[0])) {
+                const moduleName = path.node.arguments[0].value
                 try {
                   if (moduleName.startsWith('/') || moduleName.startsWith('./') || moduleName.startsWith('../')) {
                     let importScript = join(dirname(installScripts[idx]), moduleName)
