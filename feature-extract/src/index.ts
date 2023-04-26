@@ -8,7 +8,7 @@ import { analyzeDir, analyzeSinglePackage } from './programs/AnalyzePackage/Pack
 import { Classifier, setClassifier } from './config'
 
 function showUsage () {
-  Logger.info('\nusage:\nnode --es-module-specifier-resolution=node out/src/index.js -s $package_path [-c $classifier].  It is used to detect single package. package_path is absolute path of a npm package directory which should have a file named package.json.\nnode --es-module-specifier-resolution=node out/src/index.js -b $dir [-c $classifier]. It is used to detect all packages in the $dir\n$classifier is optional classifier from RF, SVM, NB, MLP. Default classifier is SVM.')
+  Logger.info('\nusage:\nnode main.js -s $package_path [-c $classifier].  It is used to detect single package. package_path is absolute path of a npm package directory which should have a file named package.json.\nnode main.js -b $dir [-c $classifier]. It is used to detect all packages in the $dir\n$classifier is optional classifier from RF, SVM, NB, MLP. Default classifier is SVM.')
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
